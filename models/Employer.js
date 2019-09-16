@@ -18,7 +18,7 @@ const EmployerSchema = new Schema({
     required: true
   },
   zip_code: {
-    type: BigInt,
+    type: Number,
     required: true
   },
   date: {

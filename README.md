@@ -1,11 +1,11 @@
-JOB-HARMONY BRAINSTORM
 
-`Background/Overview`
+# `Background/Overview`
+
 "An application resembling Tinder or Bumble that aims to connect people with potential employers based purely on qualifications.
 No picture, no name (initially), just a resume and a proximity to the job in question. Both parties can 'swipe' left or right on each other,
 marking their interest and opening up a dialogue in an instant"
 
-`Functionality and MVP`
+# `Functionality and MVP`
 - Login and Signup functionality for both Employers and Job-Seekers
     + can sign-up with linkdin or google
     + enter resume/ position one-page
@@ -25,12 +25,12 @@ marking their interest and opening up a dialogue in an instant"
 
 - Once preferences set, Users are shown a feed of matched employers/employees which they can mark 'Interested' or 'Not Interested' 
     + pending section
-    + 
+ 
 
-- Alerts/Notification Center for matches 
+# Alerts/Notification Center for matches 
     + once matched, job-seeker gets information regarding a phone interview if desired
 
-- User/Employer Ratings and review
+# User/Employer Ratings and review
     + previous emplopyees can review jobs, which become public to others considering
     + Employers can give employees 'compliment' icons
 
@@ -40,18 +40,18 @@ marking their interest and opening up a dialogue in an instant"
  + Apple Pay/Paypal API for employers' fees (Bonus)
 
 
-`Group Members and Work Breakdown`
+# `Group Members`
     + Chas
-        -
+
     + Luke
-        -
+
     + Donnie
-        -
+
     + Daniel 
-        -
 
 
-`Schema`
+
+# `Schema`
     + Employee
         - email: String
         - password: String
@@ -88,7 +88,7 @@ marking their interest and opening up a dialogue in an instant"
         -date: Date
 
 
-`State Shape`
+# `State Shape`
     + entities
         -users
         -employers
@@ -108,37 +108,33 @@ marking their interest and opening up a dialogue in an instant"
     + errors
         -session
     
-`Frontend Routes`
-    
+# `Frontend Routes`
 
 
-`Backend Routes`
 
-Employee: 
+# `Backend Routes`
+
+`Employee`: 
     -POST "/signup"
     -POST "/login"
     -POST "/resumes" - add your resume for consideration
     -DELETE "/login" (delete session)
 
-Employer: 
+`Employer`: 
     -POST "/signup"
     -POST "/login"
     -POST "/pages" - add your resume for consideration
     -DELETE "/login" (delete session)
 
-Resume:
+`Resume`:
     -GET "/" - get all
     -GET "/query?" -get all results within your preferences
 
-OnePage:
+`OnePage`:
     -GET "/" - get all
     -GET "/query?" -get all results within your preferences
     
-Match:
+`Match`:
     -POST "/match"
     -DELETE "/match/:id"
 
-
-
-Proposal must have a day-by-day breakdown for each individual. See sample proposal for clarification.
-Plan for getting users and reviews (if your app is a downloadable app)

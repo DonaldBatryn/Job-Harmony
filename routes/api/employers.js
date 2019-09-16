@@ -7,6 +7,14 @@ const keys = require('../../config/keys');
 const passport = require('passport');
 router.get("/employers", (req, res) => res.json({msg: "this is the employers route"}));
 
+const validateLoginInput = require('../../validations/login_input')
+
+
+
+
+
+
+
 router.post("/login", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
@@ -36,7 +44,7 @@ router.post("/login", (req, res) => {
 })
 
 router.post("/signup", (req,res) => {
-  debugger
+  
   const {errors, isValid} = validateLoginInput(req.body);
   if (!isValid) {
     return res.status(400).json(errors);

@@ -18,3 +18,32 @@ const App = () => (
 );
 
 export default App;
+
+
+//  /navbar
+//  - Link to Matches
+//  - Browse
+//  - Link to Preferences
+//  - Logout button
+
+
+// /preferences
+//   - preferences form container
+//   - preferences form
+
+// /matches  
+//   - matches container
+//   - matches_index
+//   - match show
+
+//  /browse
+//    - browse window container
+//    - browse window
+
+//  /pending matches (sidebar)
+      // -pending matches index
+
+// /buttons container
+      // -buttons.js
+      // if in Browser, two buttons 'Interested' + 'Not Interested'
+      // if in matchView, two buttons 'Contact' + 'Decline'

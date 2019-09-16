@@ -24,15 +24,15 @@ marking their interest and opening up a dialogue in an instant"
     + requirements (work experience and education)
 
 - Once preferences set, Users are shown a feed of matched employers/employees which they can mark 'Interested' or 'Not Interested' 
-    + pending section
++ pending section
  
 
 ## Alerts/Notification Center for matches 
-    + once matched, job-seeker gets information regarding a phone interview if desired
++ once matched, job-seeker gets information regarding a phone interview if desired
 
 ## User/Employer Ratings and review
-    + previous emplopyees can review jobs, which become public to others considering
-    + Employers can give employees 'compliment' icons
+  + previous emplopyees can review jobs, which become public to others considering
+  + Employers can give employees 'compliment' icons
 
 # `Technologies and Technical Challenges`
  + Glassdoor API for ratings
@@ -109,32 +109,46 @@ marking their interest and opening up a dialogue in an instant"
         -session
     
 # `Frontend Routes`
-
+TBD
 
 
 # `Backend Routes`
 
 `Employee`: 
-    -POST "/signup"
-    -POST "/login"
-    -POST "/resumes" - add your resume for consideration
-    -DELETE "/login" (delete session)
+
+    - POST "/signup"
+  
+    - POST "/login"
+ 
+    - POST "/resumes" - add your resume for consideration
+
+    - DELETE "/login" (delete session)
 
 `Employer`: 
-    -POST "/signup"
-    -POST "/login"
-    -POST "/pages" - add your resume for consideration
-    -DELETE "/login" (delete session)
+
+    - POST "/signup"
+  
+    - POST "/login"
+  
+    - POST "/pages" - add your resume for consideration
+  
+    - DELETE "/login" (delete session)
 
 `Resume`:
-    -GET "/" - get all
-    -GET "/query?" -get all results within your preferences
 
+    - GET "/" - get all
+  
+    - GET "/query?" -get all results within your preferences
+ 
 `OnePage`:
-    -GET "/" - get all
-    -GET "/query?" -get all results within your preferences
+
+    - GET "/" - get all
+   
+    - GET "/query?" -get all results within your preferences
     
 `Match`:
-    -POST "/match"
-    -DELETE "/match/:id"
+
+    - POST "/match"
+
+    - DELETE "/match/:id"
 

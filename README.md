@@ -10,7 +10,7 @@ marking their interest and opening up a dialogue in an instant"
     + can sign-up with linkdin or google
     + enter resume/ position one-page
 
-# Search Functionality
+## Search Functionality
 - Job Seekers set up Preferences
     + desired pay
     + location
@@ -27,14 +27,14 @@ marking their interest and opening up a dialogue in an instant"
     + pending section
  
 
-# Alerts/Notification Center for matches 
+## Alerts/Notification Center for matches 
     + once matched, job-seeker gets information regarding a phone interview if desired
 
-# User/Employer Ratings and review
+## User/Employer Ratings and review
     + previous emplopyees can review jobs, which become public to others considering
     + Employers can give employees 'compliment' icons
 
-`Technologies and Technical Challenges`
+# `Technologies and Technical Challenges`
  + Glassdoor API for ratings
  + Google Maps/GPS API for location service/ Signup/Login
  + Apple Pay/Paypal API for employers' fees (Bonus)

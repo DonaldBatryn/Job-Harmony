@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const express = require("express");
 const app = express();
 const db = require('./config/keys').mongoURI;
+const employees = require("./routes/api/employees");
+const employers = require("./routes/api/employers")
 
 mongoose
   .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })

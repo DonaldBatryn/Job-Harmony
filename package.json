@@ -1,0 +1,34 @@
+{
+  "name": "job_harmony",
+  "version": "1.0.0",
+  "description": "\"An application resembling Tinder or Bumble that aims to connect people with potential employers based purely on qualifications. No picture, no name (initially), just a resume and a proximity to the job in question. Both parties can 'swipe' left or right on each other, marking their interest and opening up a dialogue in an instant\"",
+  "main": "app.js",
+  "scripts": {
+    "server:debug": "nodemon --inspect app.js app.js",
+    "server": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DonaldBatryn/Job-Harmony.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DonaldBatryn/Job-Harmony/issues"
+  },
+  "homepage": "https://github.com/DonaldBatryn/Job-Harmony#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "validator": "^11.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  }
+}

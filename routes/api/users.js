@@ -11,12 +11,18 @@ router.get("/users", (req, res) => res.json({
   msg: "this is the users route"
 }));
 
-const validateLoginInput = require('../../validations/login_input')
+const validateLoginInput = require('../../validations/login_input');
+const validateSignupInput = require('../../validations/signup_input');
 
 router.post("/login", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
 
+  const { errors, isValid } = validateLoginInput(req.body);
+
+  if (!isValid){
+    return res.status(400).json(errors)
+  }
   User.findOne({
       email
     })
@@ -54,10 +60,7 @@ router.post("/login", (req, res) => {
 
 router.post("/register", (req, res) => {
 
-  const {
-    errors,
-    isValid
-  } = validateLoginInput(req.body);
+  const { errors, isValid } = validateSignupInput(req.body);
   if (!isValid) {
     return res.status(400).json(errors);
   }

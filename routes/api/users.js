@@ -7,9 +7,9 @@ const keys = require('../../config/keys');
 const passport = require('passport');
 
 
-router.get("/users", (req, res) => res.json({
-  msg: "this is the users route"
-}));
+// router.get("/users", (req, res) => res.json({
+//   msg: "this is the users route"
+// }));
 
 const validateLoginInput = require('../../validations/login_input');
 const validateSignupInput = require('../../validations/signup_input');
@@ -107,4 +107,17 @@ router.post("/register", (req, res) => {
     }
   })
 })
+
+router.get("/all", (req, res) => {
+  return User.find().then(users => res.json(users));
+})
+
+router.get("/:id", (req, res) => {
+  return User.findById(req.params.id)
+    .then(user => res.json(user))
+    .catch(err =>
+      res.status(404).json({ noUserFound: 'No user found with that ID' })
+    );;
+})
+
 module.exports = router;

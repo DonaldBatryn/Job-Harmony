@@ -24,6 +24,10 @@ module.exports = function validateSignupInput(data) {
         errors.password = 'Password field is required';
     }
 
+    if (data.password.length < 6){
+        errors.password = 'Password must be at least 6 characters'
+    }
+
     if (Validator.isEmpty(data.password2)) {
         errors.password2 = 'Please re-enter password';
     }
@@ -48,8 +52,8 @@ module.exports = function validateSignupInput(data) {
         errors.l_name = 'Last name name field is required';
     }
 
-    if (Validator.isEmpty(data.role)){
-        errors.role = 'Please select a role'
+    if (data.role === "Please select a role"){
+        errors.role = 'Please select a role';
     }
 
     return {

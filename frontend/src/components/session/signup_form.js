@@ -44,27 +44,23 @@ class SignupForm extends React.Component {
       zip_code: this.state.zip_code,
       role: this.state.role
     };
-    
-
     this.props.signup(user, this.props.history);
   }
 
   renderErrors() {
-    let err = Object.values(this.state.errors);
     return (
       <ul>
-        {err}
+        {
+          Object.keys(this.state.errors).map((error, i) => (
+            <li key={`error-${i}`}>
+              {this.state.errors[error]}
+            </li>
+          ))
+        }
       </ul>
     );
   }
 
-// {
-//   Object.keys(this.state.errors).map((error, i) => (
-//     <li key={`error-${i}`}>
-//       {this.state.errors[error]}
-//     </li>
-//   ))
-// }
 
   render() {
     return (

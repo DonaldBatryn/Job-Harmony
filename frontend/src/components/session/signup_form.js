@@ -44,6 +44,7 @@ class SignupForm extends React.Component {
       zip_code: this.state.zip_code,
       role: this.state.role
     };
+    
 
     this.props.signup(user, this.props.history);
   }

@@ -1,9 +1,6 @@
 const Validator = require('validator');
 const validText = require('./valid-text');
 
-
-
-
 module.exports = function validateLoginInput(data) {
     let errors = {};
 
@@ -22,17 +19,6 @@ module.exports = function validateLoginInput(data) {
         errors.password = 'Password field is required';
     }
 
-    if (Validator.isEmpty(data.zip_code)) {
-        errors.password = 'zip_code field is required';
-    }
-
-    if (Validator.isEmpty(data.f_name)) {
-        errors.password = 'first name field is required';
-    }
-
-    if (Validator.isEmpty(data.l_name)) {
-        errors.password = 'Last name name field is required';
-    }
 
     return {
         errors,

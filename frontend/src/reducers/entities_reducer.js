@@ -6,7 +6,7 @@ import matches from './matches_reducer';
 
 export default combineReducers({
   users
-  // onePages,
   // resumes,
+  // onePages,
   // matches
 });

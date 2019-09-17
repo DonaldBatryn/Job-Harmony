@@ -120,4 +120,6 @@ router.get("/:id", (req, res) => {
     );
 })
 
+// router.get("/:id/resume")
+
 module.exports = router;

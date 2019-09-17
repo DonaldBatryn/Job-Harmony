@@ -6,9 +6,12 @@ class SignupForm extends React.Component {
     super(props);
     this.state = {
       email: '',
-      handle: '',
+      f_name: '',
+      l_name: '',
       password: '',
       password2: '',
+      zip_code: '',
+      role: '',
       errors: {}
     };
 
@@ -34,25 +37,33 @@ class SignupForm extends React.Component {
     e.preventDefault();
     let user = {
       email: this.state.email,
-      handle: this.state.handle,
+      f_name: this.state.f_name,
+      l_name: this.state.l_name,
       password: this.state.password,
-      password2: this.state.password2
+      password2: this.state.password2,
+      zip_code: this.state.zip_code,
+      role: this.state.role
     };
 
     this.props.signup(user, this.props.history);
   }
 
   renderErrors() {
+    let err = Object.values(this.state.errors);
     return (
       <ul>
-        {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>
-            {this.state.errors[error]}
-          </li>
-        ))}
+        {err}
       </ul>
     );
   }
+
+// {
+//   Object.keys(this.state.errors).map((error, i) => (
+//     <li key={`error-${i}`}>
+//       {this.state.errors[error]}
+//     </li>
+//   ))
+// }
 
   render() {
     return (
@@ -64,12 +75,6 @@ class SignupForm extends React.Component {
               value={this.state.email}
               onChange={this.update('email')}
               placeholder="Email"
-            />
-            <br />
-            <input type="text"
-              value={this.state.handle}
-              onChange={this.update('handle')}
-              placeholder="Handle"
             />
             <br />
             <input type="password"
@@ -84,6 +89,30 @@ class SignupForm extends React.Component {
               placeholder="Confirm Password"
             />
             <br />
+            <input type="text"
+              value={this.state.f_name}
+              onChange={this.update('f_name')}
+              placeholder="First Name"
+            />
+            <br />
+            <input type="text"
+              value={this.state.l_name}
+              onChange={this.update('l_name')}
+              placeholder="Last Name"
+            />
+            <br />
+            <input type="text"
+              value={this.state.zip_code}
+              onChange={this.update('zip_code')}
+              placeholder="Zip Code"
+            />
+            <br />
+            <label>Please select a Role:</label>
+            <select>
+              <option selected disabled value="">Please select a role</option>
+              <option onChange={this.update('role')} value="Job-Seeker">Job-Seeker</option>
+              <option onChange={this.update('role')} value="Employer">Employer</option>
+            </select>
             <input type="submit" value="Submit" />
             {this.renderErrors()}
           </div>

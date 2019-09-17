@@ -117,7 +117,7 @@ router.get("/:id", (req, res) => {
     .then(user => res.json(user))
     .catch(err =>
       res.status(404).json({ noUserFound: 'No user found with that ID' })
-    );;
+    );
 })
 
 module.exports = router;

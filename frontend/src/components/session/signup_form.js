@@ -11,10 +11,10 @@ class SignupForm extends React.Component {
       password: '',
       password2: '',
       zip_code: '',
-      role: '',
+      role: 'Please select a role',
       errors: {}
     };
-
+    
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearedErrors = false;
   }
@@ -44,6 +44,7 @@ class SignupForm extends React.Component {
       zip_code: this.state.zip_code,
       role: this.state.role
     };
+    
 
     this.props.signup(user, this.props.history);
   }
@@ -108,10 +109,10 @@ class SignupForm extends React.Component {
             />
             <br />
             <label>Please select a Role:</label>
-            <select>
-              <option selected disabled value="">Please select a role</option>
-              <option onChange={this.update('role')} value="Job-Seeker">Job-Seeker</option>
-              <option onChange={this.update('role')} value="Employer">Employer</option>
+            <select value={this.state.role} onChange={this.update('role')}>
+              <option value="Please select a role" disabled>Please select a role</option>
+              <option value="Job-Seeker">Job-Seeker</option>
+              <option value="Employer">Employer</option>
             </select>
             <input type="submit" value="Submit" />
             {this.renderErrors()}

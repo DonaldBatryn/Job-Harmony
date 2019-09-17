@@ -18,4 +18,6 @@ const ResumeSchema = new Schema({
     required: true
   }
 });
+
 module.exports = Resume = mongoose.model('resumes', ResumeSchema);
+

@@ -121,5 +121,6 @@ router.get("/:id", (req, res) => {
 })
 
 // router.get("/:id/resume")
+// router.patch("/:id/resume/edit")
 
 module.exports = router;

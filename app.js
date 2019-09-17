@@ -4,9 +4,9 @@ const express = require("express");
 const app = express();
 const db = require('./config/keys').mongoURI;
 
-const users = require('./routes/api/users')
+const users = require('./routes/api/users');
 const passport = require('passport');
-
+const resume = require('./routes/api/resumes');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -20,6 +20,7 @@ require('./config/passport')(passport);
 const port = process.env.PORT || 5000;
 
 app.use("/api/users", users);
+app.use("/api/resumes", resume);
 
 
 

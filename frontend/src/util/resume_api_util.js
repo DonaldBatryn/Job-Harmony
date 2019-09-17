@@ -5,7 +5,7 @@ export const fetchResume = userId => {
 }
 
 export const createResume = resume => {
-    return axios.post('/api/resumes', resume)
+    return axios.post('/api/resumes/new', resume)
 }
 
 export const updateResume = resume => {

@@ -20,7 +20,7 @@ app.use(passport.initialize());
 require('./config/passport')(passport);
 const port = process.env.PORT || 5000;
 app.use("/api/resumes", resumes);
-app.use("api/onePages", onePages);
+app.use("/api/onePages", onePages);
 app.use("/api/users", users);
 app.use("/api/matches", matches);
 app.use("/api/likes", likes);

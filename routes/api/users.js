@@ -10,17 +10,16 @@ const OnePage = require('../../models/OnePage');
 // router.get("/users", (req, res) => res.json({
 //   msg: "this is the users route"
 // }));
-
 const validateLoginInput = require('../../validations/login_input');
 const validateSignupInput = require('../../validations/signup_input');
-
 router.post("/login", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
-
-  const { errors, isValid } = validateLoginInput(req.body);
-
-  if (!isValid){
+  const {
+    errors,
+    isValid
+  } = validateLoginInput(req.body);
+  if (!isValid) {
     return res.status(400).json(errors)
   }
   User.findOne({
@@ -47,7 +46,6 @@ router.post("/login", (req, res) => {
                 token: "Bearer " + token
               });
             });
-
           } else {
             // errors.password = "Incorrect Password"
             return res.status(400).json({
@@ -57,10 +55,11 @@ router.post("/login", (req, res) => {
         })
     })
 })
-
 router.post("/register", (req, res) => {
-
-  const { errors, isValid } = validateSignupInput(req.body);
+  const {
+    errors,
+    isValid
+  } = validateSignupInput(req.body);
   if (!isValid) {
     return res.status(400).json(errors);
   }
@@ -78,7 +77,6 @@ router.post("/register", (req, res) => {
         password: req.body.password,
         zip_code: req.body.zip_code,
         role: req.body.role
-
       });
       bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
@@ -91,7 +89,6 @@ router.post("/register", (req, res) => {
                 id: user.id,
                 email: user.email
               };
-
               jwt.sign(payload, keys.secretOrKey, {
                 expiresIn: 3600
               }, (err, token) => {
@@ -107,52 +104,22 @@ router.post("/register", (req, res) => {
     }
   })
 })
-
 router.get("/all", (req, res) => {
   return User.find().then(users => res.json(users));
 })
-
 router.get("/:id", (req, res) => {
   return User.findById(req.params.id)
     .then(user => res.json(user))
     .catch(err =>
-      res.status(404).json({ noUserFound: 'No user found with that ID' })
+      res.status(404).json({
+        noUserFound: 'No user found with that ID'
+      })
     );
 })
-router.get('/:id/resume', (req, res) => {
-      Resume.find({
-          user_id: req.params.id
-        })
-        .then(resume => res.json(resume))
-        .catch(err =>
-          res.status(404).json({
-            noResumeFound: "No resume found from that User"
-          })
-        );
-});
-router.patch('/:id/resume/edit', (req, res) => {
-  const resume = Resume.findOne({
-    user_id: req.params.id
-  });
-      
-    // if (req.body._id){
-    //   delete req.body._id;
-    // }
-    resume.job_history = req.body.job_history;
-    resume.job_field = req.body.job_field;
-    resume.job_skills = req.body.job_skills;
-    res.json({message: "Updated"});
-      // .catch(err =>
-      //   res.status(404).json({
-      //     noResumeFound: "No resume found from that User"
-      //   })
-      // );
-});
 router.patch('/:id/OnePage/edit', (req, res) => {
   const OnePage = OnePage.findOne({
     user_id: req.params.id
   });
-
   // if (req.body._id){
   //   delete req.body._id;
   // }
@@ -168,7 +135,4 @@ router.patch('/:id/OnePage/edit', (req, res) => {
   //   })
   // );
 });
-// router.get("/:id/OnePage")
-// router.patch("/:id/OnePage/edit")
-
 module.exports = router;

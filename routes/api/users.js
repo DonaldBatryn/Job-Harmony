@@ -132,7 +132,7 @@ router.get('/:id/resume', (req, res) => {
 });
 router.patch('/:id/resume/edit', (req, res) => {
   const resume = Resume.find({
-    user_id: res.params.id
+    user_id: req.params.id
   });
       
     // if (req.body._id){

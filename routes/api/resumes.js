@@ -1,24 +1,27 @@
 const express = require('express');
 const router = express.Router();
 const Resume = require('../../models/Resume');
-
+const validatesResumeInput = require('../../validations/resume_input')
 //validations
 
 router.post('/new', (req, res) => {
-  
+
+  const {errors, isValid } = validatesResumeInput(req.body)
+  if (!isValid) {
+    return res.status(400).json(errors)
+  }
 
   const user_id = req.body.user_id;
   const job_history = req.body.job_history;
   const job_field = req.body.job_field;
   const job_skills = req.body.job_skills;
-  const resume = Resume.find({
-    user_id: req.body.id
-  })
-  if (resume) {
-    return res.status(400).json({
-      existingResume: "User already has a resume"
-    })
-  }
+  // const resume = Resume.findOne({
+  //   user_id: req.body.id
+  // })
+  // if (resume) {
+  //   errors.resume = "User already has a resume"
+  //   return res.status(400).json(errors)
+  // }
 
   //check isValid
 

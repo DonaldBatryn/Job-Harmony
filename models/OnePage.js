@@ -31,4 +31,4 @@ const OnePageSchema = new Schema({
   }
 });
 
-module.exports = OnePage = mongoose.model('OnePages', OnePageSchema);
+module.exports = OnePage = mongoose.model('onePages', OnePageSchema);

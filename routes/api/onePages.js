@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const Resume = require('../../models/Resume');
+const OnePage = require('../../models/OnePage');
+const validatesOnePageInput = require('../../validations/onePage_inputs');
 
 //validations
 
 router.post('/new', (req, res) => {
+  const {errors, isValid } = validatesOnePageInput(req.body);
   const user_id = req.body.user_id;
   const company_name = req.body.company_name;
   const description = req.body.description;
@@ -13,7 +15,11 @@ router.post('/new', (req, res) => {
   const benefits = req.bodybenefits;
   const starting_pay = req.body.starting_pay;
   //check isValid
+  if (!isValid) {
+    return res.status(400).json(errors)
+  }
 
+  
   const newOnePage = new OnePage({
     user_id,
     company_name,

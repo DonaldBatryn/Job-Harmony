@@ -22,6 +22,7 @@ class NavBar extends React.Component {
           <Link to={'/home'}>All Results/Feed</Link>
           <Link to={'/profile'}>Profile</Link>
           <Link to={'/preferences'}>Update your preferences</Link>
+          <Link to={'/resumes/new'}>Create A Resume</Link>
           <button onClick={this.logoutUser}>Logout</button>
         </div>
       );

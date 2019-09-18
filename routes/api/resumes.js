@@ -11,14 +11,15 @@ router.post('/new', (req, res) => {
   const job_history = req.body.job_history;
   const job_field = req.body.job_field;
   const job_skills = req.body.job_skills;
-  const resume = Resume.find({
-    user_id: req.body.id
-  })
-  if (resume) {
-    return res.status(400).json({
-      existingResume: "User already has a resume"
-    })
-  }
+  // const resume = Resume.findOne({
+  //   user_id: req.body.user_id
+  // })
+
+  // if (resume) {
+  //   return res.status(400).json({
+  //     existingResume: "User already has a resume"
+  //   })
+  // }
 
   //check isValid
 
@@ -32,6 +33,16 @@ router.post('/new', (req, res) => {
     .then(resume => res.json(resume))
     .catch(err => res.json(err));
 })
+
+router.get('/:id', (req, res) => {
+  Resume.findById({id: req.params.id })
+    .then(resume => res.json(resume))
+    .catch(err =>
+      res.status(404).json({
+        noResumeFound: "No resume found from that User"
+      })
+    );
+});
 
 // router.get("/user/:user_id", (req,res) => {
 //   Resume.find({user: req.params.user_id})

@@ -37,8 +37,6 @@ router.get("/matches/:resume_id", (req, res) => {
     if (resumeMatches.length){
         res.status(404).json({noMatchesFound: "No matches found for that resume"})
     }
-    const userRes = resumeMatches.each |match|
-        const employerId = match.employerId
 })
  
 

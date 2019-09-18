@@ -28,7 +28,9 @@ const OnePageSchema = new Schema({
   starting_pay: {
     type: Number,
     required: true
-  }
+  },
+  resumes: [{ type: mongoose.Schema.ObjectId, ref: 'Resume'}],
+
 });
 
 module.exports = OnePage = mongoose.model('onePages', OnePageSchema);

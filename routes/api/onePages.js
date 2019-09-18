@@ -18,6 +18,7 @@ router.post('/new', (req, res) => {
     user_id,
     company_name,
     description,
+    job_title,
     type,
     remote,
     benefits,

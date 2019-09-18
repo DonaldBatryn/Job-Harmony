@@ -6,6 +6,7 @@ module.exports = function validatesOnePageInput(data) {
   data.user_id = validText(data.user_id) ? data.user_id : '';
   data.company_name = validText(data.company_name) ? data.company_name : '';
   data.description = validText(data.description) ? data.description : '';
+  data.job_title = validText(data.job_title) ? data.job_title : '';
   data.type = validText(data.type) ? data.type : '';
   data.remote = validText(data.remote) ? data.remote : '';
   data.benefits = validText(data.benefits) ? data.benefits : '';
@@ -19,6 +20,9 @@ module.exports = function validatesOnePageInput(data) {
   }
   if (Validator.isEmpty(data.type)) {
     errors.type = "Job type is required";
+  }
+  if (Validator.isEmpty(data.job_title)) {
+    errors.job_title = "Job title is required";
   }
   if (Validator.isEmpty(data.remote)) {
     errors.remote = "Job must be full-time, part-time or freelance";

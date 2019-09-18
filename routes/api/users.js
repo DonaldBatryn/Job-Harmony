@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs')
 const keys = require('../../config/keys');
 const passport = require('passport');
 const Resume = require('../../models/Resume');
-
+const OnePage = require('../../models/OnePage');
 // router.get("/users", (req, res) => res.json({
 //   msg: "this is the users route"
 // }));
@@ -131,8 +131,8 @@ router.get('/:id/resume', (req, res) => {
         );
 });
 router.patch('/:id/resume/edit', (req, res) => {
-  const resume = Resume.find({
-    user_id: res.params.id
+  const resume = Resume.findOne({
+    user_id: req.params.id
   });
       
     // if (req.body._id){
@@ -148,7 +148,27 @@ router.patch('/:id/resume/edit', (req, res) => {
       //   })
       // );
 });
-// router.get("/:id/resume")
-// router.patch("/:id/resume/edit")
+router.patch('/:id/OnePage/edit', (req, res) => {
+  const OnePage = OnePage.findOne({
+    user_id: req.params.id
+  });
+
+  // if (req.body._id){
+  //   delete req.body._id;
+  // }
+  OnePage.job_history = req.body.job_history;
+  OnePage.job_field = req.body.job_field;
+  OnePage.job_skills = req.body.job_skills;
+  res.json({
+    message: "Updated"
+  });
+  // .catch(err =>
+  //   res.status(404).json({
+  //     noOnePageFound: "No OnePage found from that User"
+  //   })
+  // );
+});
+// router.get("/:id/OnePage")
+// router.patch("/:id/OnePage/edit")
 
 module.exports = router;

@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs')
 const keys = require('../../config/keys');
 const passport = require('passport');
-
+const Resume = require('../../models/Resume');
 
 // router.get("/users", (req, res) => res.json({
 //   msg: "this is the users route"
@@ -119,7 +119,35 @@ router.get("/:id", (req, res) => {
       res.status(404).json({ noUserFound: 'No user found with that ID' })
     );
 })
-
+router.get('/:id/resume', (req, res) => {
+      Resume.find({
+          user_id: req.params.id
+        })
+        .then(resume => res.json(resume))
+        .catch(err =>
+          res.status(404).json({
+            noResumeFound: "No resume found from that User"
+          })
+        );
+});
+router.patch('/:id/resume/edit', (req, res) => {
+  const resume = Resume.find({
+    user_id: res.params.id
+  });
+      
+    // if (req.body._id){
+    //   delete req.body._id;
+    // }
+    resume.job_history = req.body.job_history;
+    resume.job_field = req.body.job_field;
+    resume.job_skills = req.body.job_skills;
+    res.json({message: "Updated"});
+      // .catch(err =>
+      //   res.status(404).json({
+      //     noResumeFound: "No resume found from that User"
+      //   })
+      // );
+});
 // router.get("/:id/resume")
 // router.patch("/:id/resume/edit")
 

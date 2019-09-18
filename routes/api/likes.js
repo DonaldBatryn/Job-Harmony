@@ -6,7 +6,6 @@ const OnePage = require("../../models/OnePage")
 const passport = require("passport");
 const Resume = require("../../models/Resume")
 
-
 router.post("/:onePage_id/likes", 
     // so we have the id of the jobseeker that is liking the one page 
     passport.authenticate("jwt", {session: false}),

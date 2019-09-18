@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Resume = require('../../models/resume');
+const Resume = require("../../models/Resume");
 const validatesResumeInput = require('../../validations/resume_input');
 //validations
 

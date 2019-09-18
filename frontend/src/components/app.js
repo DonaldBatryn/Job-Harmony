@@ -5,6 +5,11 @@ import NavBarContainer from './nav/navbar_container';
 import MainPage from './main/main_page';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container.js';
+import CreateResumeFormContainer from './resume/create_resume_form_container'
+import ResumeShowContainer from './resume/resume_show_container';
+import EditResumeFormContainer from './resume/edit_resume_form_container'
+
+
 
 const App = () => (
   <div>
@@ -14,6 +19,9 @@ const App = () => (
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
     </Switch>
+    <ProtectedRoute exact path="/resumes/new" component={CreateResumeFormContainer}/>
+    <ProtectedRoute exact path="/resumes/:resumeId" component={ResumeShowContainer}/>
+    <ProtectedRoute exact path="/resumes/:resumeId/edit" component={EditResumeFormContainer}/>
   </div>
 );
 

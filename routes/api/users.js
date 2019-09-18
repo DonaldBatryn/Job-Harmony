@@ -131,23 +131,27 @@ router.get('/:id/resume', (req, res) => {
         );
 });
 router.patch('/:id/resume/edit', (req, res) => {
-  const resume = Resume.findOne({
-    user_id: req.params.id
-  });
+  Resume.updateOne({ user_id: req.params.id }, {
+    job_history: req.body.job_history,
+    job_field: req.body.job_field,
+    job_skills: req.body.job_skills
+  }).then((resume) => res.json(resume))
       
     // if (req.body._id){
     //   delete req.body._id;
     // }
-    resume.job_history = req.body.job_history;
-    resume.job_field = req.body.job_field;
-    resume.job_skills = req.body.job_skills;
-    res.json({message: "Updated"});
+    // resume.job_history = req.body.job_history;
+    // resume.job_field = req.body.job_field;
+    // resume.job_skills = req.body.job_skills;
+   
+    // res.json(resume.data);
       // .catch(err =>
       //   res.status(404).json({
       //     noResumeFound: "No resume found from that User"
       //   })
       // );
 });
+
 router.patch('/:id/OnePage/edit', (req, res) => {
   const OnePage = OnePage.findOne({
     user_id: req.params.id

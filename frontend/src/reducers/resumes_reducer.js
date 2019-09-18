@@ -4,7 +4,8 @@ export default function (state = {}, action) {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_RESUME:
-      return Object.assign({}, state, { [action.resume._id]: action.resume } );
+      debugger
+      return Object.assign({}, { [action.resume._id]: action.resume } );
     default:
       return state;
   }

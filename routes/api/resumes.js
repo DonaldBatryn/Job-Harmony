@@ -23,8 +23,12 @@ router.post('/new', (req, res) => {
     .catch(err => res.json(err));
 })
 
-// router.get("/:id", req,res => {
-//   Resume.findBy(user_id: currentUser.id)
-// })
+router.get("/user/:user_id", (req,res) => {
+  Resume.find({user: req.params.user_id})
+  .then(resume => res.json(resume))
+  .catch(err => 
+    res.status(404).json({noResumeFound: "No resume found from that User"})
+  );
+});
 
 module.exports = router;

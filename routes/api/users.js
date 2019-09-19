@@ -15,6 +15,7 @@ router.post("/login", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
   const { errors, isValid } = validateLoginInput(req.body);
+
   if (!isValid) {
     return res.status(400).json(errors)
   }
@@ -52,7 +53,14 @@ router.post("/login", (req, res) => {
     })
 })
 router.post("/register", (req, res) => {
+
+  const {
+    errors,
+    isValid
+  } = validateSignupInput(req.body);
+
   const { errors, isValid } = validateSignupInput(req.body);
+
   if (!isValid) {
     return res.status(400).json(errors);
   }
@@ -104,7 +112,9 @@ router.get("/:id", (req, res) => {
   return User.findById(req.params.id)
     .then(user => res.json(user))
     .catch(err =>
-      res.status(404).json({ noUserFound: 'No user found with that ID' })
+      res.status(404).json({
+        noUserFound: 'No user found with that ID'
+      })
     );
 })
 module.exports = router;

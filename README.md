@@ -52,19 +52,30 @@ marking their interest and opening up a dialogue in an instant"
 
 
 # `Schema`
-    + Employee
+    + User
         - email: String
         - password: String
         - f_name: String
         - l_name: String
         - zip_code: Int
+        - role: String
 
-    + Employer
-        - email: String
-        - password: String
-        - f_name: String
-        - l_name: String
-        - zip_code: Int
+    + matches
+        - employerId: Int
+        - resumeId: Int 
+        
+
+    + jobSeekerLikes 
+        - emplyeeId: int
+        - OnepageId: Int 
+
+    | emplyeeId | OnepageId |
+    |-----------|-----------|
+    | 1         | 1         |
+    | 1         | 5         |
+    | 6         | 1         |
+
+
 
     + Resume 
         -employee_id: Int

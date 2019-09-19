@@ -4,9 +4,9 @@ const OnePage = require('../../models/OnePage');
 const validatesOnePageInput = require('../../validations/onePage_inputs')
 const passport = require('passport')
 
-
 router.post('/new', (req, res) => {
   let { errors, isValid } = validatesOnePageInput(req.body)
+
   if (!isValid) {
     return res.status(400).json(errors)
   }
@@ -41,11 +41,13 @@ router.get('/:id', (req, res) => {
     );
 });
 router.patch('/:id/edit',
+
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
     OnePage.findById(req.params.id)
       .then(onePage => {
         const { errors, isValid } = validatesOnePageInput(req.body);
+
         if (!isValid) {
           return res.status(400).json(errors);
         }
@@ -59,7 +61,9 @@ router.patch('/:id/edit',
         onePage.save().then(onePage => res.json(onePage));
       })
       .catch(err =>
+
         res.status(404).json({ noOnePageFound: 'No onePage found with that ID' })
+
       );
   })
 module.exports = router;

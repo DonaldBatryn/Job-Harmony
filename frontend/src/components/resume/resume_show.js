@@ -13,12 +13,6 @@ class ResumeShow extends React.Component{
    
     }
 
-    // componentDidUpdate(prevProps, nextProps){
-    //     if (prevProps !== nextProps){
-    //         let resumeId = this.props.match.params.resumeId;
-    //         this.props.fetchResume(resumeId);
-    //     }
-    // }
 
     render(){
         if (!this.props.resume){

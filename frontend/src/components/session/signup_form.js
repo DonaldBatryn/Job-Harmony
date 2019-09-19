@@ -15,6 +15,8 @@ class SignupForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoEmployer = this.handleDemoEmployer.bind(this);
+    this.handleDemoEmployee = this.handleDemoEmployee.bind(this);
     this.clearedErrors = false;
   }
   // componentWillReceiveProps(nextProps) {
@@ -27,6 +29,14 @@ class SignupForm extends React.Component {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
+  }
+  handleDemoEmployee(e) {
+    e.preventDefault();
+    this.props.signup(this.props.demoUser('Employee'), this.props.history);
+  }
+  handleDemoEmployer(e) {
+    e.preventDefault();
+    this.props.signup(this.props.demoUser('Employer'), this.props.history);
   }
   handleSubmit(e) {
     e.preventDefault();
@@ -103,6 +113,8 @@ class SignupForm extends React.Component {
               <option value="Employer">Employer</option>
             </select>
             <input type="submit" value="Submit" />
+            <button onClick={this.handleDemoEmployee}>Create Demo Employee</button>
+            <button onClick={this.handleDemoEmployer}>Create Demo Employer</button>
             {this.renderErrors()}
           </div>
         </form>

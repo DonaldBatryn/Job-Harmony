@@ -10,9 +10,17 @@ const mapStateToProps = state => {
   } else {
     resume = null
   }
+  let onePage;
+  if (state.session.onePage){
+    onePage = state.session.onePage
+  } else {
+    onePage = null
+  }
   return ({
     loggedIn: state.session.isAuthenticated,
-    resume: resume
+    resume: resume,
+    onePage: onePage,
+    user: state.session.user
 
   })
 };

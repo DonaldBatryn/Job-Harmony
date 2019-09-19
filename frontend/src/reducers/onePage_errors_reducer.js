@@ -1,4 +1,5 @@
 import { RECEIVE_ONEPAGE_ERRORS } from "../actions/onePage_actions";
+
 export default function (state = [], action) {
     Object.freeze(state);
     switch (action.type) {
@@ -7,3 +8,4 @@ export default function (state = [], action) {
         default:
             return state;
     }
+}

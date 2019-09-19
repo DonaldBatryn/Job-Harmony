@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-
 class SignupForm extends React.Component {
   constructor(props) {
     super(props);
@@ -14,25 +13,21 @@ class SignupForm extends React.Component {
       role: 'Please select a role',
       errors: {}
     };
-    
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearedErrors = false;
   }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.signedIn === true) {
-      this.props.history.push('/login');
-    }
-
-    this.setState({ errors: nextProps.errors })
-  }
-
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.signedIn === true) {
+  //     this.props.history.push('/login');
+  //   }
+  //   this.setState({ errors: nextProps.errors })
+  // }
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
   }
-
   handleSubmit(e) {
     e.preventDefault();
     let user = {
@@ -46,7 +41,6 @@ class SignupForm extends React.Component {
     };
     this.props.signup(user, this.props.history);
   }
-
   renderErrors() {
     return (
       <ul>
@@ -60,8 +54,6 @@ class SignupForm extends React.Component {
       </ul>
     );
   }
-
-
   render() {
     return (
       <div className="login-form-container">
@@ -118,5 +110,4 @@ class SignupForm extends React.Component {
     );
   }
 }
-
 export default withRouter(SignupForm);

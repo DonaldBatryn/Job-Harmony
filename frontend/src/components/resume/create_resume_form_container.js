@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
 import ResumeForm from './resume_form';
-import {createResume} from '../../actions/resume_actions';
-import { withRouter } from 'react-router'
-
+import { createResume } from '../../actions/resume_actions';
+import { withRouter } from 'react-router-dom'
 const mapStateToProps = (state) => ({
   resume: {
     user_id: state.session.user.id,
@@ -12,10 +11,8 @@ const mapStateToProps = (state) => ({
   },
   formType: 'Create Resume'
 })
-
 const mapDispatchToProps = dispatch => ({
   action: resume => dispatch(createResume(resume))
-  
-})
 
+})
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ResumeForm));

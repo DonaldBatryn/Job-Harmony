@@ -1,0 +1,57 @@
+
+
+.resume-form-container{
+    padding-top: 25px;
+    width: 75%;
+    height: 650px;
+    margin: 0 auto;
+    /* background-color: pink; */
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.resume-form{
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: lightblue; */
+    width: 90%;
+    height: 90%;
+    border: 1px solid gray;
+    border-radius: 3px;
+}
+
+.resume-form-text{
+
+}
+
+.job-field-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    /* background-color: green; */
+    width: 98%;
+    height: 21%;
+    margin: 15px 0;
+}
+
+.job-field-txt{
+    font-size: 30px;
+}
+
+.job-field-input{
+    width: 60%;
+    height: 98%;
+}
+
+.resume-submit-button{
+    height: 40px;
+    width: 140px;
+    border-radius: 6px;
+    padding: 3px 8px;
+    font-size: 15px
+}

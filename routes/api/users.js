@@ -34,7 +34,9 @@ router.post("/login", (req, res) => {
             const payload = {
               id: user.id,
               email: user.email,
-              role: user.role
+              role: user.role,
+              f_name: user.f_name,
+              l_name: user.l_name
             };
             jwt.sign(payload, keys.secretOrKey, {
               expiresIn: 3600
@@ -87,7 +89,9 @@ router.post("/register", (req, res) => {
               const payload = {
                 id: user.id,
                 email: user.email,
-                role: user.role
+                role: user.role,
+                f_name: user.f_name,
+                l_name: user.l_name
               };
               jwt.sign(payload, keys.secretOrKey, {
                 expiresIn: 3600

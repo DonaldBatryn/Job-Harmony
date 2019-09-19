@@ -21,12 +21,14 @@ class ResumeShow extends React.Component{
 
         let { resume, currentUser } = this.props;
         return (
-        <div>
-            <h2>{currentUser.f_name}{currentUser.l_name}</h2>
-            <h3>{resume.job_field}</h3>
-            <h3>{resume.job_history}</h3>
-            <h3>{resume.job_skills}</h3>
-            <Link to={`/resumes/${resume._id}/edit`}>Edit Resume</Link>
+        <div className="resume-show-container">
+            <div className="resume">
+            <h2 className="candidate-show">-Candidate #{currentUser.id.slice(4,8)}-</h2>
+            <h3 className="job-field-show">Field:&nbsp;{resume.job_field}</h3>
+            <h3 className="job-history-show">Work History:&nbsp;{resume.job_history}</h3>
+            <h3 className="job-skills-show">Skills:&nbsp;{resume.job_skills}</h3>
+            <Link to={`/resumes/${resume._id}/edit`}><button className="edit-button-show">Edit Resume</button></Link>
+            </div>
         </div>
         )
     }

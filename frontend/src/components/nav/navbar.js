@@ -39,8 +39,8 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div className="nav-bar-user">
-          <button className="button-1">My Profile</button>
-          <button className="button-2">My Matches</button>
+          <button className="my-profile">My Profile</button>
+          <button className="my-matches">My Matches</button>
           <Link to={'/home'}>All Results/Feed</Link>
           <Link to={'/profile'}>Profile</Link>
           <Link to={'/preferences'}>Update your preferences</Link>

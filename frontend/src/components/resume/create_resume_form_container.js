@@ -11,7 +11,8 @@ const mapStateToProps = (state) => ({
     job_field: "",
     job_skills: "",
   },
-  formType: 'Create Resume'
+  formType: 'Create Resume',
+  user: state.session.user
 })
 
 const mapDispatchToProps = dispatch => ({

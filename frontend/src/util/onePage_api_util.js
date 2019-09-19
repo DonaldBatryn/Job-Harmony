@@ -7,4 +7,6 @@ export const createOnePage = onePage => {
 }
 export const updateOnePage = onePage => {
     return axios.patch(`/api/onePages/${onePage._id}/edit`, onePage)
+
 }
+

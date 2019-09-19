@@ -24,15 +24,6 @@ class NavBar extends React.Component {
     }
     this.setState({ dropdown: 'dropdown-hidden' })
   }
-  handleKeyUp(e) {
-    if (e.keyCode === 13) {
-      if (this.state.dropdown === 'dropdown-hidden') {
-        this.setState({ dropdown: 'dropdown-visible' });
-      } else {
-        this.setState({ dropdown: 'dropdown-hidden' });
-      }
-    }
-  }
   logoutUser(e) {
     e.preventDefault();
     this.props.logout();
@@ -59,16 +50,17 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div className="nav-bar-user">
-
           <Link to={`/users/${this.props.user.id}/profile`}>
             <button className="session-btn my-profile-btn">My Profile</button>
           </Link>
           <button className="session-btn my-matches-btn">My Matches</button>
-          <i className="down" 
-            onClick={this.toggleDropdown} 
-            onKeyUp={this.handleKeyUp}></i>
+          <div className="user-name-bar" 
+            onClick={this.toggleDropdown}>
+            <span>{this.props.user.f_name}</span>
+            <i className="down"></i>
+          </div>
           <ul id='dropdown' className={this.state.dropdown}>
-            <span className="dropdown-items">
+            <span onClick={this.toggleDropdown} className="dropdown-items">
               <li className="drop-list-item">
                 <Link to={'/home'}>All Results/Feed</Link></li>
               <li className="drop-list-item">
@@ -99,7 +91,6 @@ class NavBar extends React.Component {
   render() {
     return (
       <div>
-        <h1>Job Harmony</h1>
         {this.getLinks()}
       </div>
     );

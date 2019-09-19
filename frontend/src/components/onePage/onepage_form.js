@@ -38,6 +38,7 @@ class OnePageForm extends React.Component {
             <option value="Part Time">Part Time</option>
             <option value="Freelance">Freelance</option>
           </select>
+          <label>Remote?:</label>
           <select value={this.state.remote} onChange={this.update('remote')} >
             <option value="Is this job remote?" disabled>Is this job remote?</option>
             <option value={true}>True</option>

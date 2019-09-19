@@ -36,7 +36,7 @@ class OnePageShow extends React.Component {
                 <h3>Benefits:&nbsp;{onePage.benefits}</h3>
                 <h3>Starting Salary:&nbsp;${onePage.starting_pay}</h3>
              
-                <Link to={`/resumes/${onePage._id}/edit`}>Edit this Page</Link>
+                <Link to={`/onePages/${onePage._id}/edit`}>Edit this Page</Link>
             </div>
         )
     }

@@ -3,14 +3,17 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Switch } from 'react-router-dom';
 import NavBarContainer from './nav/navbar_container';
 import MainPage from './main/main_page';
+
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container.js';
-import CreateResumeFormContainer from './resume/create_resume_form_container'
-import ResumeShowContainer from './resume/resume_show_container';
-import EditResumeFormContainer from './resume/edit_resume_form_container';
-import CreateOnePageFormContainer from './onePage/create_onepage_form_container';
-import OnePageShowContainer from './onePage/onepage_show_container';
 
+import CreateResumeFormContainer from './resume/create_resume_form_container'
+import EditResumeFormContainer from './resume/edit_resume_form_container';
+import ResumeShowContainer from './resume/resume_show_container';
+
+import CreateOnePageFormContainer from './onePage/create_onepage_form_container';
+import EditOnePageFormContainer from './onePage/edit_onepage_form_container';
+import OnePageShowContainer from './onePage/onepage_show_container';
 
 
 const App = () => (
@@ -25,9 +28,11 @@ const App = () => (
       <ProtectedRoute exact path="/resumes/new" component={CreateResumeFormContainer}/>
       <ProtectedRoute exact path="/resumes/:resumeId" component={ResumeShowContainer}/>
       <ProtectedRoute exact path="/resumes/:resumeId/edit" component={EditResumeFormContainer}/>
+    </Switch>
+    <Switch>
       <ProtectedRoute exact path="/onePages/new" component={CreateOnePageFormContainer} />
       <ProtectedRoute exact path="/onePages/:onePageId" component={OnePageShowContainer} />
-      {/* <ProtectedRoute exact path="/onePages/:onePageId/edit" component={EditOnePageFormContainer} /> */}
+      <ProtectedRoute exact path="/onePages/:onePageId/edit" component={EditOnePageFormContainer} />
     </Switch>
   </div>
 );

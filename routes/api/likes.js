@@ -24,8 +24,10 @@ router.post("/:onePageId",
 
         OnePage.findById(onePageId).then((onepage) =>{
             Resume.findOne({user_id: userId}).then((resume) => {
+                // console.log(resume)
                 onepage.resumes.push(resume)
                 onepage.save()
+                console.log(onepage)
                 const a = onepage.user_id
                 User.findById(a).then((employer) => {
                     const employerEmail = employer.email
@@ -48,22 +50,21 @@ router.get("/:onePage_id", (req, res) => {
    // job seeker
    const onePage_id = req.params.onePage_id
 
-        OnePage.find({
-           id: onePage_id
-            }).populate( "resumes" )
-            .then((onepage => {
-                res.json({
-                    success: true,
-                    onepage
-            })
-            .catch(err =>
+        OnePage.findById(onePage_id)
+            .select("resumes")
+            .populate('resumes')
+            .exec()
+            .then((onepage) => {
+                console.log(onepage)
+                res.json(onepage)
+            }).catch(err =>
                 res.status(404).json({
                     noResumeFound: "No resume found from that User"
                 })
             );
-            }));
-
 });
+
+
 
 
 module.exports = router;

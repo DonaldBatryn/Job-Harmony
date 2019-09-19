@@ -3,11 +3,12 @@ const router = express.Router();
 const Resume = require('../../models/Resume');
 const validatesResumeInput = require('../../validations/resume_input')
 const passport = require('passport')
+
+
+
 router.post('/new', (req, res) => {
-  let {
-    errors,
-    isValid
-  } = validatesResumeInput(req.body)
+  let { errors, isValid } = validatesResumeInput(req.body)
+
   if (!isValid) {
     return res.status(400).json(errors)
   }
@@ -15,6 +16,8 @@ router.post('/new', (req, res) => {
   const job_history = req.body.job_history;
   const job_field = req.body.job_field;
   const job_skills = req.body.job_skills;
+
+
   const newResume = new Resume({
     user_id,
     job_history,
@@ -38,16 +41,13 @@ router.get('/:id', (req, res) => {
     );
 });
 router.patch('/:id/edit',
-  passport.authenticate('jwt', {
-    session: false
-  }),
+
+  passport.authenticate('jwt', { session: false }),
   (req, res) => {
     Resume.findById(req.params.id)
       .then(resume => {
-        const {
-          errors,
-          isValid
-        } = validatesResumeInput(req.body);
+        const { errors, isValid } = validatesResumeInput(req.body);
+
         if (!isValid) {
           return res.status(400).json(errors);
         }
@@ -57,9 +57,9 @@ router.patch('/:id/edit',
         resume.save().then(resume => res.json(resume));
       })
       .catch(err =>
-        res.status(404).json({
-          noresumefound: 'No resume found with that ID'
-        })
+
+        res.status(404).json({ noresumefound: 'No resume found with that ID' })
       );
   })
 module.exports = router;
+

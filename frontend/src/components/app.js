@@ -15,12 +15,15 @@ import CreateOnePageFormContainer from './onePage/create_onepage_form_container'
 import EditOnePageFormContainer from './onePage/edit_onepage_form_container';
 import OnePageShowContainer from './onePage/onepage_show_container';
 
+import Splash from './splash/splash'
+
 
 const App = () => (
   <div>
     <NavBarContainer />
+      <AuthRoute exact path="/" component={Splash} />
+
     <Switch>
-      <AuthRoute exact path="/" component={MainPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
     </Switch>

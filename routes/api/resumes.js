@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Resume = require('../../models/Resume');
+const User = require('../../models/User');
 const validatesResumeInput = require('../../validations/resume_input')
 const passport = require('passport')
 

@@ -19,7 +19,7 @@ const OnePageSchema = new Schema({
   },
   remote: {
     type: Boolean,
-    required: true
+    default: "false"
   },
   benefits: {
     type: String,

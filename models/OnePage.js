@@ -13,6 +13,7 @@ const OnePageSchema = new Schema({
     type: String,
     required: true
   },
+  // job type parttime ect
   type: {
     type: String,
     required: true

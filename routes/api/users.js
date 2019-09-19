@@ -7,9 +7,6 @@ const keys = require('../../config/keys');
 const passport = require('passport');
 const Resume = require('../../models/Resume');
 const OnePage = require('../../models/OnePage');
-// router.get("/users", (req, res) => res.json({
-//   msg: "this is the users route"
-// }));
 const validateLoginInput = require('../../validations/login_input');
 const validateSignupInput = require('../../validations/signup_input');
 router.post("/login", (req, res) => {
@@ -116,23 +113,4 @@ router.get("/:id", (req, res) => {
       })
     );
 })
-router.patch('/:id/OnePage/edit', (req, res) => {
-  const OnePage = OnePage.findOne({
-    user_id: req.params.id
-  });
-  // if (req.body._id){
-  //   delete req.body._id;
-  // }
-  OnePage.job_history = req.body.job_history;
-  OnePage.job_field = req.body.job_field;
-  OnePage.job_skills = req.body.job_skills;
-  res.json({
-    message: "Updated"
-  });
-  // .catch(err =>
-  //   res.status(404).json({
-  //     noOnePageFound: "No OnePage found from that User"
-  //   })
-  // );
-});
 module.exports = router;

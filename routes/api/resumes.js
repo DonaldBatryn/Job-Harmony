@@ -3,7 +3,6 @@ const router = express.Router();
 const Resume = require('../../models/Resume');
 const validatesResumeInput = require('../../validations/resume_input')
 const passport = require('passport')
-//validations
 router.post('/new', (req, res) => {
   let {
     errors,
@@ -16,15 +15,6 @@ router.post('/new', (req, res) => {
   const job_history = req.body.job_history;
   const job_field = req.body.job_field;
   const job_skills = req.body.job_skills;
-  // const resume = Resume.findOne({
-  //   user_id: req.body.user_id
-  // })
-  // if (resume) {
-  //   return res.status(400).json({
-  //     existingResume: "User already has a resume"
-  //   })
-  // }
-  //check isValid
   const newResume = new Resume({
     user_id,
     job_history,
@@ -32,7 +22,10 @@ router.post('/new', (req, res) => {
     job_skills,
   });
   newResume.save()
-    .then(resume => res.json(resume))
+    .then(resume => {
+      User.findById(user_id).then(user => user.resume_id = resume.id)
+      res.json(resume)
+    })
     .catch(err => res.json(err));
 })
 router.get('/:id', (req, res) => {

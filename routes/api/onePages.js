@@ -12,10 +12,11 @@ router.post('/new', (req, res) => {
   }
   const user_id = req.body.user_id;
   const company_name = req.body.company_name;
+  const job_title = req.body.job_title;
   const description = req.body.description;
   const type = req.body.type;
   const remote = req.body.remote;
-  const benefits = req.bodybenefits;
+  const benefits = req.body.benefits;
   const starting_pay = req.body.starting_pay;
   const newOnePage = new OnePage({
     user_id,

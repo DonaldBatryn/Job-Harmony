@@ -17,11 +17,25 @@ class NavBar extends React.Component {
 
   // Selectively render links dependent on whether the user is logged in
   getLinks() {
+    let createLink;
+
+    let onePageLink = this.props.onePage ? (
+      <Link to={`/onePages/${this.props.onePage._id}`}>Your One-Page</Link>
+    ) : (
+      <Link to={`/onePages/new`}>Create a One-Page</Link>
+    )
+    
     let resumeLink = this.props.resume ? (
       <Link to={`/resumes/${this.props.resume._id}`}>Your Resume</Link>
-    ) : (
+      ) : (
         <Link to={'/resumes/new'}>Create A Resume</Link>
-      )
+        )
+
+    if (this.props.user && this.props.user.role === "Employer"){
+      createLink = onePageLink;
+    } else {
+      createLink = resumeLink;
+    }
     if (this.props.loggedIn) {
       return (
         <div>
@@ -29,7 +43,7 @@ class NavBar extends React.Component {
           <Link to={'/profile'}>Profile</Link>
           <Link to={'/preferences'}>Update your preferences</Link>
           {/* <Link to={'/resumes/new'}>Create A Resume</Link> */}
-          {resumeLink}
+          {createLink}
           <button onClick={this.logoutUser}>Logout</button>
         </div>
       );

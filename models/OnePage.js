@@ -9,6 +9,10 @@ const OnePageSchema = new Schema({
     type: String,
     required: true
   },
+  job_title: {
+    type: String,
+    required: true
+  },
   description: {
     type: String,
     required: true

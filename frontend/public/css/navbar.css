@@ -3,7 +3,7 @@
 }
 .nav-bar-user {
   border: 1px solid green;
-  position: fixed;
+  /* position: fixed; */
   height: 50px;
   width: 100%;
   display: flex;

@@ -3,6 +3,7 @@
 @import "resume-form.css";
 @import "resume-show.css";
 @import "onepage-form.css";
+@import "onepage-show.css";
 
 * {
   box-sizing: border-box;

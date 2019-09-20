@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { Route } from 'react-router';
 // import './navbar.css'
 
@@ -35,7 +35,9 @@ class NavBar extends React.Component {
   }
   logoutUser(e) {
     e.preventDefault();
-    this.props.logout();
+    this.props.logout()
+    this.props.history.push("/")
+    
   }
 
   // Selectively render links dependent on whether the user is logged in
@@ -99,11 +101,10 @@ class NavBar extends React.Component {
   render() {
     return (
       <div>
-        <h1>Job Harmony</h1>
         {this.getLinks()}
       </div>
     );
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);

@@ -21,7 +21,7 @@ import Splash from './splash/splash'
 const App = () => (
   <div>
     <NavBarContainer />
-      <AuthRoute exact path="/" component={Splash} />
+      <AuthRoute path="/" component={Splash} />
 
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />

@@ -1,5 +1,6 @@
 
 .resume-show-container{
+    
     /* padding-top: 25px; */
     width: 455px;
     height: 500px;
@@ -12,6 +13,7 @@
 }
 
 .resume{
+    margin-top: 60px;
     height: 98%;
     width: 98%;
     display: flex;
@@ -66,13 +68,19 @@
 
 .edit-button-show{
     /* background-color: lightblue; */
-    width: 110px;
+    width: 130px;
     height: 40px;
     border-radius: 7px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     margin: auto;
+    font-size: 16px;
+    
+}
+a.edit-button{
+    text-decoration: none;
+
 }
 
 .edit-button-show:hover{

@@ -1,0 +1,53 @@
+
+.onepage-form-container{
+    padding-top: 25px;
+    width: 75%;
+    height: 700px;
+    margin: 0 auto;
+    background-color: pink;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.onepage-form{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: lightblue;
+    width: 70%;
+    height: 91%;
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding-bottom: 15px;
+}
+
+.company-name-div{
+
+}
+
+.job-title-div{
+
+}
+
+.job-description-div{
+
+}
+
+.job-type-div{
+
+}
+
+.job-remote-div{
+
+}
+
+.job-benefits-div{
+
+}
+
+.starting-pay-div{
+
+}

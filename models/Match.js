@@ -1,13 +1,17 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const MatchSchema = new Schema({
-  employer_id: {
-    type: Number,
+  employerId: {
+    type: String,
     required: true
   },
-  resume_id: {
-    type: Number,
+  resumeId: {
+    type: String,
     required: true
+  },
+  date: {
+    type: Date,
+    default: Date.now
   }
 });
 module.exports = Match = mongoose.model('matches', MatchSchema);

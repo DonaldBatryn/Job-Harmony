@@ -19,28 +19,41 @@ router.post('/new', (req, res) => {
   const job_skills = req.body.job_skills;
 
 
-  const newResume = new Resume({
-    user_id,
-    job_history,
-    job_field,
-    job_skills,
+    const newResume = new Resume({
+      user_id,
+      job_history,
+      job_field,
+      job_skills,
+    });
+    newResume.save().then(resume => {
+        User.findById(user_id).then((user) => {
+          user.resume.push(resume)
+          user.save()
+          res.json(resume)
+        }).catch(err => {
+          res.status(404).json(err)
+        });
+  }).catch(err => {
+    res.status(404).json(err)
   });
-  newResume.save()
-    .then(resume => {
-      User.findById(user_id).then(user => user.resume_id = resume.id)
-      res.json(resume)
-    })
-    .catch(err => res.json(err));
 })
+
+
+
+
+
+
+
 router.get('/:id', (req, res) => {
   Resume.findById(req.params.id)
-    .then(resume => res.json(resume))
+.then(resume => res.json(resume))
     .catch(err =>
       res.status(404).json({
         noResumeFound: "No resume found from that User"
       })
     );
 });
+
 router.patch('/:id/edit',
 
   passport.authenticate('jwt', { session: false }),
@@ -63,4 +76,3 @@ router.patch('/:id/edit',
       );
   })
 module.exports = router;
-

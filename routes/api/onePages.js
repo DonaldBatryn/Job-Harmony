@@ -14,6 +14,7 @@ router.post('/new', (req, res) => {
   const company_name = req.body.company_name;
   const job_title = req.body.job_title;
   const description = req.body.description;
+  const job_title = req.body.job_title;
   const type = req.body.type;
   const remote = req.body.remote;
   const benefits = req.body.benefits;

@@ -13,7 +13,7 @@ const mapStateToProps = (state) => ({
     type: "Select type of work",
     remote: "Is this job remote?",
     benefits: "",
-    starting_pay: 0,
+    starting_pay: "",
   },
   formType: 'Create OnePage'
 })

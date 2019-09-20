@@ -4,7 +4,8 @@
     top: 50px;
     bottom: 0;
     width: 100%;
-    background-color: pink;
+    /* background-color: pink; */
+    border: 1px solid black;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -15,7 +16,8 @@
 .pending-index-container{
     height: 99%;
     width: 25%;
-    background-color: lightblue;
+    /* background-color: lightblue; */
+    border: 1px solid black;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -25,7 +27,8 @@
 .browse-buttons-container{
     height: 99%;
     width: 73%;
-    background-color: lightblue;
+    /* background-color: lightblue; */
+    border: 1px solid black;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -38,7 +41,8 @@
     
     width: 98%;
     height: 84%;
-    background-color: lightgreen;
+    /* background-color: lightgreen; */
+    border: 1px solid black;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -48,7 +52,8 @@
 .browse-header-text{
     width: 98%;
     height: 6%;
-    background-color: yellow;
+    /* background-color: yellow; */
+    border: 1px solid black;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -58,7 +63,8 @@
 .browse-window{
     width: 98%;
     height: 98%;
-    background-color: gray;
+    /* background-color: gray; */
+    border: 1px solid black;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -72,7 +78,8 @@
 .pending-header-text{
     width: 98%;
     height: 10%;
-    background-color: yellow;
+    /* background-color: yellow; */
+    border: 1px solid black;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -82,7 +89,8 @@
 .pending-index-rows{
     width: 98%;
     height: 87%;
-    background-color: yellow;
+    /* background-color: yellow; */
+    border: 1px solid black;
     display: flex;
     flex-direction: column;
     justify-content: space-around;

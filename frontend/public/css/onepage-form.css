@@ -11,7 +11,7 @@
 }
 
 .onepage-form{
-    margin-top: 60px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -21,33 +21,138 @@
     height: 91%;
     border: 1px solid gray;
     border-radius: 3px;
-    padding-bottom: 15px;
+    padding: 15px;
 }
 
 .company-name-div{
+    width: 90%;
+    height: 10%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.company-name-text{
+    font-size: 20px;
+}
+
+.company-name-input{
+    width: 250px;
+    height: 30px;
 }
 
 .job-title-div{
+    width: 90%;
+    height: 10%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.job-title-text{
+    font-size: 20px;
+}
+
+.job-title-input{
+    width: 250px;
+    height: 30px;
 }
 
 .job-description-div{
+    width: 90%;
+    height: 10%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.job-description-text{
+    font-size: 20px;
+}
+
+.job-description-input{
+    width: 250px;
+    height: 30px;
 }
 
 .job-type-div{
+    width: 90%;
+    height: 10%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.job-type-text{
+    font-size: 20px;
+}
+
+.job-type-input{
+    width: 250px;
+    height: 30px;
 }
 
 .job-remote-div{
+    width: 90%;
+    height: 10%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.job-remote-text{
+    font-size: 20px;
+}
+
+.job-remote-input{
+    width: 250px;
+    height: 30px;
 }
 
 .job-benefits-div{
+    width: 90%;
+    height: 10%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.job-benefits-text{
+    font-size: 20px;
+}
+
+.job-benefits-input{
+    width: 250px;
+    height: 30px;
 }
 
 .starting-pay-div{
+    width: 90%;
+    height: 10%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.starting-pay-text{
+    font-size: 20px;
+}
+
+.starting-pay-input{
+    width: 250px;
+    height: 30px;
 }

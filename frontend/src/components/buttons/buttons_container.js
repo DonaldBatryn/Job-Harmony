@@ -10,12 +10,12 @@ const msp = (state, ownProps) => {
     })
 }
 
-const mdp = (dispatch, ownProps) => {
+const mdp = (dispatch) => {
     
-    return ({
+    return {
         fetchUsers: () => dispatch(fetchUsers()),
         fetchUser: (userId) => dispatch(fetchUser(userId))
-    })
+    }
 }
 
 export default withRouter(connect(msp, mdp)(Buttons));

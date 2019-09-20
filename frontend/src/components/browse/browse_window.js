@@ -1,6 +1,7 @@
 import React from 'react';
 import BrowseShow from './browse_show';
 
+
 class BrowseWindow extends React.Component{
 
     render(){

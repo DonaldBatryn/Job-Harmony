@@ -4,6 +4,8 @@ import {
   RECEIVE_USER_SIGN_IN
 } from '../actions/session_actions';
 import { RECEIVE_RESUME } from '../actions/resume_actions'
+import { RECEIVE_ONEPAGE } from '../actions/onePage_actions'
+
 const initialState = {
   isAuthenticated: false,
   user: {}
@@ -28,6 +30,8 @@ export default function (state = initialState, action) {
       }
     case RECEIVE_RESUME:
       return Object.assign({}, state, { resume: action.resume })
+    case RECEIVE_ONEPAGE:
+      return Object.assign({}, state, { onePage: action.onePage })
     default:
       return state;
   }

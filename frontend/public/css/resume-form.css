@@ -1,0 +1,117 @@
+
+
+.resume-form-container{
+    padding-top: 25px;
+    width: 75%;
+    height: 700px;
+    margin: 0 auto;
+    /* background-color: pink; */
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.resume-form{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: lightblue; */
+    width: 70%;
+    height: 91%;
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding-bottom: 15px;
+}
+
+.resume-form-text{
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.job-field-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* background-color: green; */
+    width: 98%;
+    height: 10%;
+    margin: 15px 0;
+    padding: 0 15px;
+}
+
+.job-field-txt{
+    font-size: 22px;
+}
+
+.job-field-input{
+    width: 60%;
+    height: 60%;
+    font-size: 15px;
+    padding: 5px;
+
+}
+
+.job-history-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* background-color: green; */
+    width: 98%;
+    height: 21%;
+    margin: 15px 0;
+    padding: 0 15px;
+}
+
+.job-history-txt{
+    font-size: 22px;
+}
+
+.job-history-input{
+    width: 60%;
+    height: 80%;
+    font-size: 15px;
+    padding: 5px;
+}
+
+.job-skills-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* background-color: green; */
+    width: 98%;
+    height: 21%;
+    margin: 15px 0;
+    padding: 0 15px;
+}
+
+.job-skills-txt{
+    font-size: 22px;
+}
+
+.job-skills-input{
+    width: 60%;
+    height: 80%;
+    font-size: 15px;
+    padding: 5px;
+}
+
+.resume-submit-button{
+    height: 40px;
+    width: 140px;
+    border-radius: 6px;
+    padding: 3px 8px;
+    font-size: 15px
+    
+}
+
+.resume-submit-button:hover{
+    background-color: whitesmoke;
+}

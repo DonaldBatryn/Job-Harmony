@@ -1,0 +1,14 @@
+@import "navbar.css";
+@import "splash.css";
+@import "resume-form.css";
+@import "resume-show.css";
+@import "onepage-form.css";
+
+* {
+  box-sizing: border-box;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+}
+

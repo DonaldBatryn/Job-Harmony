@@ -17,8 +17,6 @@ router.post('/new', (req, res) => {
   const job_history = req.body.job_history;
   const job_field = req.body.job_field;
   const job_skills = req.body.job_skills;
-
-
   const newResume = new Resume({
     user_id,
     job_history,

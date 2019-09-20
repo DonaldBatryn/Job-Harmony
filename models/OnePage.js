@@ -9,7 +9,7 @@ const OnePageSchema = new Schema({
     type: String,
     required: true
   },
-  job_title: {
+  jobTitle: {
     type: String,
     required: true
   },
@@ -17,7 +17,7 @@ const OnePageSchema = new Schema({
     type: String,
     required: true
   },
-  // job type parttime 
+  // job type parttime, fulltime, freelance
   type: {
     type: String,
     required: true
@@ -32,6 +32,10 @@ const OnePageSchema = new Schema({
   },
   starting_pay: {
     type: Number,
+    required: true
+  },
+  jobField: {
+    type: String,
     required: true
   },
   resumes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'resumes'}]

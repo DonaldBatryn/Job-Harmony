@@ -39,6 +39,7 @@ router.post("/login", (req, res) => {
               l_name: user.l_name,
               resume: user.resume
             };
+            // console.log(user.resume)
             jwt.sign(payload, keys.secretOrKey, {
               expiresIn: 3600
             }, (err, token) => {
@@ -57,12 +58,6 @@ router.post("/login", (req, res) => {
     })
 })
 router.post("/register", (req, res) => {
-
-<<<<<<< HEAD
-=======
- 
->>>>>>> 1cd8bbe25c02b60f1bab623db050b02b2fedd7dd
-
   const { errors, isValid } = validateSignupInput(req.body);
 
   if (!isValid) {

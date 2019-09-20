@@ -8,7 +8,12 @@ const users = require('./routes/api/users');
 const passport = require('passport');
 const resumes = require('./routes/api/resumes');
 const matches = require('./routes/api/matches');
+const seeds = require('./routes/api/seeds');
+
+const matchers = require('./routes/api/matchers');
+
 const onePages = require('./routes/api/onePages');
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 mongoose
@@ -24,6 +29,8 @@ app.use("/api/onePages", onePages);
 app.use("/api/users", users);
 app.use("/api/matches", matches);
 app.use("/api/likes", likes);
+app.use("/api/matchers", matchers);
+app.use("/api/seeds", seeds);
 
 
 

@@ -8,8 +8,9 @@ const passport = require('passport')
 
 
 router.post('/new', (req, res) => {
-  let { errors, isValid } = validatesResumeInput(req.body)
 
+  let { errors, isValid } = validatesResumeInput(req.body)
+  console.log(1)
   if (!isValid) {
     return res.status(400).json(errors)
   }
@@ -17,19 +18,21 @@ router.post('/new', (req, res) => {
   const job_history = req.body.job_history;
   const job_field = req.body.job_field;
   const job_skills = req.body.job_skills;
-
-
-    const newResume = new Resume({
-      user_id,
-      job_history,
-      job_field,
-      job_skills,
-    });
-    newResume.save().then(resume => {
-        User.findById(user_id).then((user) => {
-          user.resumes.push(resume)
-          user.save()
-          res.json(resume)
+  console.log(2)
+  
+  
+  const newResume = new Resume({
+    user_id,
+    job_history,
+    job_field,
+    job_skills,
+  });
+  newResume.save().then(resume => {
+    debugger
+    User.findById(user_id).then((user) => {
+      user.resume.push(resume)
+      user.save()
+      res.json(resume)
         }).catch(err => {
           res.status(404).json(err)
         });

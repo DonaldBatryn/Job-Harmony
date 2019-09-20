@@ -32,11 +32,13 @@ class SignupForm extends React.Component {
   }
   handleDemoEmployee(e) {
     e.preventDefault();
-    this.props.signup(this.props.demoUser('Employee'), this.props.history);
+    this.props.signup(this.props.demoUser('Employee'), this.props.history)
+      .then(() => this.props.closeModal());;
   }
   handleDemoEmployer(e) {
     e.preventDefault();
-    this.props.signup(this.props.demoUser('Employer'), this.props.history);
+    this.props.signup(this.props.demoUser('Employer'), this.props.history)
+      .then(() => this.props.closeModal());;
   }
   handleSubmit(e) {
     e.preventDefault();
@@ -49,7 +51,8 @@ class SignupForm extends React.Component {
       zip_code: this.state.zip_code,
       role: this.state.role
     };
-    this.props.signup(user, this.props.history);
+    this.props.signup(user, this.props.history)
+      .then(() => this.props.closeModal());;
   }
   renderErrors() {
     return (
@@ -66,9 +69,9 @@ class SignupForm extends React.Component {
   }
   render() {
     return (
-      <div className="login-form-container">
+      <div className="signup-form-container">
         <form onSubmit={this.handleSubmit}>
-          <div className="login-form">
+          <div className="signup-form">
             <br />
             <input type="text"
               value={this.state.email}
@@ -113,8 +116,10 @@ class SignupForm extends React.Component {
               <option value="Employer">Employer</option>
             </select>
             <input type="submit" value="Submit" />
-            <button onClick={this.handleDemoEmployee}>Create Demo Employee</button>
-            <button onClick={this.handleDemoEmployer}>Create Demo Employer</button>
+            <div className="session-button-div">
+              <button className="session-button" onClick={this.handleDemoEmployee}>Create Demo Employee</button>
+              <button className="session-button" onClick={this.handleDemoEmployer}>Create Demo Employer</button>
+            </div>
             {this.renderErrors()}
           </div>
         </form>

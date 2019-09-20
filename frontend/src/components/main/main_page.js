@@ -1,5 +1,5 @@
 import React from 'react';
-import BrowseWindow from '../browse/browse_window'
+import BrowseWindowContainer from '../browse/browse_window_container'
 import PendingBar from '../pending/pending_index'
 import ButtonsContainer from '../buttons/buttons_container'
 
@@ -12,8 +12,8 @@ class MainPage extends React.Component {
       <div className="home-page-container">
         <PendingBar />
         <div className="browse-buttons-container">
-        <BrowseWindow />
-        <ButtonsContainer />
+        <BrowseWindowContainer />
+        {/* <ButtonsContainer /> */}
         </div>
       </div>
     );

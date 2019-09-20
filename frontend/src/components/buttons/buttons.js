@@ -1,9 +1,11 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom'
 
+
 class Buttons extends React.Component{
     constructor(props){
         super(props);
+       
     }
 
     componentDidMount(){
@@ -13,6 +15,7 @@ class Buttons extends React.Component{
         // this.props.fetchUser(userId);
     }
 
+   
 
     render(){
         if (!this.props.user){
@@ -22,11 +25,11 @@ class Buttons extends React.Component{
         let button1;
         let button2;
         if (this.props.user.role === 'Employer'){
-            button1 = <button>Decline</button>
-            button2 = <button>Contact</button>
+            button1 = <button onClick={this.handleNext}>Decline</button>
+            button2 = <button onClick={this.handleNext}>Contact</button>
         } else {
-            button1 = <button>Not Interested</button>
-            button2 = <button>Interested</button>
+            button1 = <button onClick={this.handleNext}>Not Interested</button>
+            button2 = <button onClick={this.handleNext}>Interested</button>
         }
 
         return (

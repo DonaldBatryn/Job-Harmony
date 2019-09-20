@@ -4,6 +4,11 @@ const OnePage = require('../../models/OnePage');
 const validatesOnePageInput = require('../../validations/onePage_inputs')
 const passport = require('passport')
 
+router.get("/all", (req, res) => {
+  return OnePage.find().then(onePages => res.json(onePages))
+          .catch(err => res.status(404).json(err))
+});
+
 router.post('/new', (req, res) => {
   let { errors, isValid } = validatesOnePageInput(req.body)
 
@@ -67,4 +72,8 @@ router.patch('/:id/edit',
 
       );
   })
+
+
+
+
 module.exports = router;

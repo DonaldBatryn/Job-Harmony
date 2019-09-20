@@ -2,6 +2,9 @@ import axios from 'axios';
 export const fetchOnePage = id => {
     return axios.get(`/api/onePages/${id}`)
 }
+export const fetchAllOnePages = () => {
+    return axios.get('/api/onePages/all')
+}
 export const createOnePage = onePage => {
     return axios.post('/api/onePages/new', onePage)
 }

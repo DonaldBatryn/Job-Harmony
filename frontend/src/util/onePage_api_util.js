@@ -7,10 +7,5 @@ export const createOnePage = onePage => {
 }
 export const updateOnePage = onePage => {
     return axios.patch(`/api/onePages/${onePage._id}/edit`, onePage)
-<<<<<<< HEAD
-
 }
 
-=======
-}
->>>>>>> 1cd8bbe25c02b60f1bab623db050b02b2fedd7dd

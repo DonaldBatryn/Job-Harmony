@@ -26,7 +26,7 @@ class OnePageShow extends React.Component {
             roleValue = 'No'
         }
         return (
-            <div>
+            <div className="onepage-show">
                 {/* <h2>{currentUser.f_name}{currentUser.l_name}</h2> */}
                 <h3>Job Title:&nbsp;{onePage.job_title}</h3>
                 <h3>Company:&nbsp;{onePage.company_name}</h3>

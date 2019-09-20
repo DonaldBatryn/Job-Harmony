@@ -23,12 +23,13 @@ router.post('/new', (req, res) => {
     job_field,
     job_skills,
   });
-  newResume.save()
-    .then(resume => {
-      User.findById(user_id).then(user => user.resume_id = resume.id)
+  newResume.save().then(resume => {
+    User.findById(user_id).then((user) => {
+      user.resume.push(resume)
+      user.save()
       res.json(resume)
-    })
-    .catch(err => res.json(err));
+    }).catch(err => {res.status(404).json(err)});
+  }).catch(err => {res.status(404).json(err)});
 })
 router.get('/:id', (req, res) => {
   Resume.findById(req.params.id)

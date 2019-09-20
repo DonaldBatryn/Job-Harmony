@@ -4,6 +4,8 @@
 @import "resume-show.css";
 @import "onepage-form.css";
 @import "onepage-show.css";
+@import "modal.css";
+@import "session-form.css";
 
 * {
   box-sizing: border-box;

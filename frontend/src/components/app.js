@@ -5,10 +5,10 @@ import NavBarContainer from './nav/navbar_container';
 import ModalContainer from './modal/modal_container';
 
 import MainPage from './main/main_page';
+import UserShowContainer from './users/user_show_container';
 
-
-import LoginFormContainer from './session/login_form_container';
-import SignupFormContainer from './session/signup_form_container.js';
+// import LoginFormContainer from './session/login_form_container';
+// import SignupFormContainer from './session/signup_form_container.js';
 
 import CreateResumeFormContainer from './resume/create_resume_form_container'
 import EditResumeFormContainer from './resume/edit_resume_form_container';
@@ -26,12 +26,12 @@ const App = () => (
     <NavBarContainer />
     <ModalContainer />
     <AuthRoute path="/" component={Splash} />
-
-    <Switch>
+    {/* <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-    </Switch>
+    </Switch> */}
     <Switch>
+    <ProtectedRoute path="/users/:userId/profile" component={UserShowContainer}/>
       <ProtectedRoute exact path="/home" component={MainPage}/>
       <ProtectedRoute exact path="/resumes/new" component={CreateResumeFormContainer}/>
       <ProtectedRoute exact path="/resumes/:resumeId" component={ResumeShowContainer}/>

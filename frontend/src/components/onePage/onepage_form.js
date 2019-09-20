@@ -30,20 +30,20 @@ class OnePageForm extends React.Component {
             <h4>Tell potential candidates about your open position</h4>
           </div>
           <div className="company-name-div">
-            <label>Company Name:</label>
-            <textarea onChange={this.update('company_name')} value={this.state.company_name} />
+            <label className="company-name-text">Company Name:</label>
+            <textarea className="company-name-input" onChange={this.update('company_name')} value={this.state.company_name} />
           </div>
           <div className="job-title-div">
-            <label>Job Title:</label>
-            <textarea onChange={this.update('job_title')} value={this.state.job_title} />
+            <label className="job-title-text">Job Title:</label>
+            <textarea className="job-title-input" onChange={this.update('job_title')} value={this.state.job_title} />
           </div>
           <div className="job-description-div">
-            <label>Description:</label>
-            <textarea onChange={this.update('description')} value={this.state.description} />
+            <label className="job-description-text">Description:</label>
+            <textarea className="job-description-input" onChange={this.update('description')} value={this.state.description} />
           </div>
           <div className="job-type-div">
-            <label>Type:</label>
-            <select value={this.state.type} onChange={this.update('type')} >
+            <label className="job-type-text">Type:</label>
+            <select className="job-type-input" value={this.state.type} onChange={this.update('type')} >
               <option value="Select type of work" disabled>Select type of work</option>
               <option value="Full Time">Full Time</option>
               <option value="Part Time">Part Time</option>
@@ -51,20 +51,20 @@ class OnePageForm extends React.Component {
             </select>
           </div>
           <div className="job-remote-div">
-            <label>Remote?:</label>
-            <select value={this.state.remote} onChange={this.update('remote')} >
+            <label className="job-remote-text">Remote?:</label>
+            <select className="job-remote-input" value={this.state.remote} onChange={this.update('remote')} >
               <option value="Is this job remote?" disabled>Is this job remote?</option>
               <option value={true}>True</option>
               <option value={false}>False</option>
             </select>
           </div>
           <div className="job-benefits-div">
-            <label>Benefits:</label>
-            <textarea onChange={this.update('benefits')} value={this.state.benefits} />
+            <label className="job-benefits-text">Benefits:</label>
+            <textarea className="job-benefits-input" onChange={this.update('benefits')} value={this.state.benefits} />
           </div>
           <div className="starting-pay-div">
-            <label>Starting Pay:</label>
-            <textarea onChange={this.update('starting_pay')} value={this.state.starting_pay} />
+            <label className="starting-pay-text">Starting Pay:</label>
+            <textarea className="starting-pay-input" onChange={this.update('starting_pay')} value={this.state.starting_pay} />
           </div>
           <input type="submit" value={this.props.formType} />
         </form>

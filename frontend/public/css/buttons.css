@@ -2,7 +2,8 @@
 .buttons-container{
     width: 98%;
     height: 14%;
-    background-color: green;
+    /* background-color: green; */
+    border: 1px solid black;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;

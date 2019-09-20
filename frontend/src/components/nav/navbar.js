@@ -83,8 +83,12 @@ class NavBar extends React.Component {
     } else {
       return (
         <div className="nav-bar-user">
-          <Link onClick={this.openModalFor('signup')} to={'/signup'}>Signup</Link>
-          <Link onClick={this.openModalFor('login')} to={'/login'}>Login</Link>
+          <button className="session-btn" onClick={this.openModalFor('signup')}>
+            <Link to={'/signup'}>Signup</Link>
+          </button>
+          <button className="session-btn" onClick={this.openModalFor('login')}>
+            <Link to={'/login'}>Login</Link>
+          </button>
         </div>
       );
     }

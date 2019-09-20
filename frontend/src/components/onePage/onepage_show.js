@@ -5,19 +5,18 @@ import { Link, withRouter } from 'react-router-dom';
 class OnePageShow extends React.Component {
     constructor(props) {
         super(props);
-        this.showCoords = this.showCoords.bind(this);
+        // this.showCoords = this.showCoords.bind(this);
     }
 
     componentDidMount() {
         let onePageId = this.props.match.params.onePageId;
         this.props.fetchOnePage(onePageId);
-
     }
-    showCoords(e){
-        const mouseX = Math.floor(e.clientX);
-        const mouseY = Math.floor(e.clientY);
-        console.log("MouseX: " + mouseX + "MouseY: " + mouseY);
-    }
+    // showCoords(e){
+    //     const mouseX = Math.floor(e.clientX);
+    //     const mouseY = Math.floor(e.clientY);
+    //     console.log("MouseX: " + mouseX + "MouseY: " + mouseY);
+    // }
     render() {
         if (!this.props.onePage) {
             return <div>Loading...</div>

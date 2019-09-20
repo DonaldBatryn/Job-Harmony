@@ -52,7 +52,7 @@ router.get("/:onePage_id", (req, res) => {
 
         OnePage.findById(onePage_id)
             .select("resumes")
-            .populate('resumes')
+            .populate('resumes', "igg benefits starting_pay")
             .exec()
             .then((onepage) => {
                 console.log(onepage)

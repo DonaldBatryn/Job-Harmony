@@ -113,8 +113,10 @@ class SignupForm extends React.Component {
               <option value="Employer">Employer</option>
             </select>
             <input type="submit" value="Submit" />
-            <button onClick={this.handleDemoEmployee}>Create Demo Employee</button>
-            <button onClick={this.handleDemoEmployer}>Create Demo Employer</button>
+            <div className="session-button-div">
+              <button className="session-button" onClick={this.handleDemoEmployee}>Create Demo Employee</button>
+              <button className="session-button" onClick={this.handleDemoEmployer}>Create Demo Employer</button>
+            </div>
             {this.renderErrors()}
           </div>
         </form>

@@ -1,6 +1,61 @@
-.signup-form-container {
-  color: red
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 310px;
+  border: 2px solid rgba(0, 0, 0, 1);
+  background-color: white;
 }
-.login-form-container {
-  color: red
+.login-form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 310px;
+  border: 2px solid rgba(0, 0, 0, 1);
+  background-color: white;
+}
+input {
+  display: block;
+  font-size: 14px;
+  margin: 0px;
+  padding: 10px;
+  width: 280px;
+}
+select {
+  display: block;
+  padding: 2px;
+  font-size: 14px;
+  margin: 2px;
+}
+input[type=submit] {
+  margin: 5px 0px;
+  padding: 5px;
+  color: rgb(179, 188, 197);
+  background: #96858F;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  width: 100%;
+}
+input[type=submit]:hover {
+  background-color: red;
+}
+.session-button-div {
+  display: flex;
+  justify-content: space-between;
+}
+.session-button {
+  background-color: #96858F;
+  color: rgb(179, 188, 197);
+  width: 138px;
+  height: 28px;
+  margin: 2px 0px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+.session-button:hover {
+  background-color: #49274A;
+}
+#demo {
+  width: 100%;
 }

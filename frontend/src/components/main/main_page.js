@@ -1,15 +1,19 @@
-
 import React from 'react';
+import BrowseWindow from '../browse/browse_window'
+import PendingBar from '../pending/pending_index'
+import Buttons from '../buttons/buttons'
 
 class MainPage extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>A Tinder Job Match</h1>
-        <footer>
-          Copyright &copy; 2019 DDCL
-        </footer>
+      
+      <div className="home-page-container">
+        <PendingBar />
+        <div className="browse-buttons-container">
+        <BrowseWindow />
+        <Buttons />
+        </div>
       </div>
     );
   }

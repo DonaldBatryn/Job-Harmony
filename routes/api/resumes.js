@@ -27,7 +27,7 @@ router.post('/new', (req, res) => {
     });
     newResume.save().then(resume => {
         User.findById(user_id).then((user) => {
-          user.resumes.push(resume)
+          user.resume.push(resume)
           user.save()
           res.json(resume)
         }).catch(err => {

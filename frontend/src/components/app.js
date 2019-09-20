@@ -6,6 +6,7 @@ import ModalContainer from './modal/modal_container';
 
 import MainPage from './main/main_page';
 
+
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container.js';
 
@@ -31,6 +32,7 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
     </Switch>
     <Switch>
+      <ProtectedRoute exact path="/home" component={MainPage}/>
       <ProtectedRoute exact path="/resumes/new" component={CreateResumeFormContainer}/>
       <ProtectedRoute exact path="/resumes/:resumeId" component={ResumeShowContainer}/>
       <ProtectedRoute exact path="/resumes/:resumeId/edit" component={EditResumeFormContainer}/>

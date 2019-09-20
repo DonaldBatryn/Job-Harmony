@@ -17,6 +17,7 @@ router.post('/new', (req, res) => {
   const job_history = req.body.job_history;
   const job_field = req.body.job_field;
   const job_skills = req.body.job_skills;
+<<<<<<< HEAD
   const newResume = new Resume({
     user_id,
     job_history,
@@ -30,16 +31,45 @@ router.post('/new', (req, res) => {
       res.json(resume)
     }).catch(err => {res.status(404).json(err)});
   }).catch(err => {res.status(404).json(err)});
+=======
+
+
+    const newResume = new Resume({
+      user_id,
+      job_history,
+      job_field,
+      job_skills,
+    });
+    newResume.save().then(resume => {
+        User.findById(user_id).then((user) => {
+          user.resume.push(resume)
+          user.save()
+          res.json(resume)
+        }).catch(err => {
+          res.status(404).json(err)
+        });
+  }).catch(err => {
+    res.status(404).json(err)
+  });
+>>>>>>> master
 })
+
+
+
+
+
+
+
 router.get('/:id', (req, res) => {
   Resume.findById(req.params.id)
-    .then(resume => res.json(resume))
+.then(resume => res.json(resume))
     .catch(err =>
       res.status(404).json({
         noResumeFound: "No resume found from that User"
       })
     );
 });
+
 router.patch('/:id/edit',
 
   passport.authenticate('jwt', { session: false }),
@@ -62,4 +92,3 @@ router.patch('/:id/edit',
       );
   })
 module.exports = router;
-

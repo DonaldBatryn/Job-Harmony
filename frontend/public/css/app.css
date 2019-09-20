@@ -6,6 +6,9 @@
 @import "onepage-show.css";
 @import "modal.css";
 @import "session-form.css";
+@import "mainpage.css";
+@import "buttons.css";
+@import "browse-show.css";
 
 * {
   box-sizing: border-box;

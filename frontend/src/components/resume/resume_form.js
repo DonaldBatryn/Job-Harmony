@@ -1,5 +1,6 @@
 import React from 'react'
-import { Redirect, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
+
 class ResumeForm extends React.Component {
   constructor(props) {
     super(props);

@@ -1,0 +1,20 @@
+
+.buttons-container{
+    width: 98%;
+    height: 14%;
+    background-color: green;
+}
+
+.button-1{
+    width: 150px;
+    height: 70px;
+    border: 1px solid black;
+    border-radius: 7px;
+}
+
+.button-2{
+    width: 150px;
+    height: 70px;
+    border: 1px solid black;
+    border-radius: 7px;
+}

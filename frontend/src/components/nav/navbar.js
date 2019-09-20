@@ -1,6 +1,11 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom'
+<<<<<<< HEAD
 import { Route } from 'react-router';
+=======
+// import { Route } from 'react-router';
+// import './navbar.css'
+>>>>>>> master
 
 class NavBar extends React.Component {
   constructor(props) {

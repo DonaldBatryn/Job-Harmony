@@ -21,3 +21,19 @@ const ResumeSchema = new Schema({
 
 module.exports = Resume = mongoose.model('resumes', ResumeSchema);
 
+
+/*
+{
+  "user_id": "5d83ade24f458a13abe6d572",
+
+  "job_history": "jh1",
+
+  "job_field": "jf1",
+
+  "job_skills": "js1"
+
+}
+
+
+*/
+

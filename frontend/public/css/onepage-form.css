@@ -4,7 +4,7 @@
     width: 75%;
     height: 700px;
     margin: 0 auto;
-    background-color: pink;
+    /* background-color: pink; */
     display: flex;
     justify-content: space-around;
     align-content: center;
@@ -16,7 +16,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: lightblue;
+    /* background-color: lightblue; */
     width: 70%;
     height: 91%;
     border: 1px solid gray;

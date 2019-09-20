@@ -17,13 +17,14 @@ const OnePageSchema = new Schema({
     type: String,
     required: true
   },
+  // job type parttime 
   type: {
     type: String,
     required: true
   },
   remote: {
     type: Boolean,
-    required: true
+    default: "false"
   },
   benefits: {
     type: String,
@@ -33,7 +34,7 @@ const OnePageSchema = new Schema({
     type: Number,
     required: true
   },
-  resumes: [{ type: mongoose.Schema.ObjectId, ref: 'Resume'}],
+  resumes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'resumes'}]
 
 });
 

@@ -1,11 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom'
-<<<<<<< HEAD
 import { Route } from 'react-router';
-=======
 // import { Route } from 'react-router';
 // import './navbar.css'
->>>>>>> master
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -85,7 +82,7 @@ class NavBar extends React.Component {
       );
     } else {
       return (
-        <div className="nav-bar">
+        <div className="nav-bar-user">
           <Link onClick={this.openModalFor('signup')} to={'/signup'}>Signup</Link>
           <Link onClick={this.openModalFor('login')} to={'/login'}>Login</Link>
         </div>

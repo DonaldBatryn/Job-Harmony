@@ -17,21 +17,6 @@ router.post('/new', (req, res) => {
   const job_history = req.body.job_history;
   const job_field = req.body.job_field;
   const job_skills = req.body.job_skills;
-<<<<<<< HEAD
-  const newResume = new Resume({
-    user_id,
-    job_history,
-    job_field,
-    job_skills,
-  });
-  newResume.save().then(resume => {
-    User.findById(user_id).then((user) => {
-      user.resume.push(resume)
-      user.save()
-      res.json(resume)
-    }).catch(err => {res.status(404).json(err)});
-  }).catch(err => {res.status(404).json(err)});
-=======
 
 
     const newResume = new Resume({
@@ -51,7 +36,6 @@ router.post('/new', (req, res) => {
   }).catch(err => {
     res.status(404).json(err)
   });
->>>>>>> master
 })
 
 

@@ -3,18 +3,22 @@
     width: 98%;
     height: 14%;
     background-color: green;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-.button-1{
+.button-1 button{
     width: 150px;
-    height: 70px;
+    height: 50px;
     border: 1px solid black;
     border-radius: 7px;
 }
 
-.button-2{
+.button-2 button{
     width: 150px;
-    height: 70px;
+    height: 50px;
     border: 1px solid black;
     border-radius: 7px;
 }

@@ -57,7 +57,7 @@ i {
 .dropdown-items {
   position: absolute;
   margin-top: 15px;
-  z-index: 1;
+  z-index: 3;
   overflow: visible;
   width: 232px;
   right: 10px;
@@ -71,6 +71,7 @@ i {
   padding: 12.8px 16px;
   font-size: 16px;
   text-decoration: none;
+  
 }
 #dropdown li:hover {
   background-color: gray;

@@ -4,9 +4,9 @@ import Buttons from './buttons';
 import { fetchUser, fetchUsers } from '../../actions/user_actions';
 
 const msp = (state, ownProps) => {
-    let user = state.entities.users[ownProps.match.params.userId]
+    // let user = 
     return ({
-        user: user
+        user: state.session.user
     })
 }
 

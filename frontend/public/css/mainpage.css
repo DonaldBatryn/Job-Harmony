@@ -9,6 +9,7 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    z-index: -1;
 }
 
 .pending-index-container{

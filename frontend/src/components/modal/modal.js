@@ -1,6 +1,6 @@
 import React from 'react';
-import LoginFormContainer from './session/login_container';
-import SignupFormContainer from './session/signup_container';
+import LoginFormContainer from '../session/login_form_container';
+import SignupFormContainer from '../session/signup_form_container';
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -19,7 +19,7 @@ function Modal({ modal, closeModal }) {
   }
   return (
     <div className="modal-background" onClick={closeModal}>
-      <div className="modal-child" onClick={e => e.stopPropagation()}>
+      <div className="modal-content" onClick={e => e.stopPropagation()}>
         {component}
       </div>
     </div>

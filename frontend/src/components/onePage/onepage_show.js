@@ -5,6 +5,7 @@ import { Link, withRouter } from 'react-router-dom';
 class OnePageShow extends React.Component {
     constructor(props) {
         super(props);
+        this.showCoords = this.showCoords.bind(this);
     }
 
     componentDidMount() {
@@ -12,7 +13,11 @@ class OnePageShow extends React.Component {
         this.props.fetchOnePage(onePageId);
 
     }
-
+    showCoords(e){
+        const mouseX = Math.floor(e.clientX);
+        const mouseY = Math.floor(e.clientY);
+        console.log("MouseX: " + mouseX + "MouseY: " + mouseY);
+    }
     render() {
         if (!this.props.onePage) {
             return <div>Loading...</div>
@@ -26,7 +31,7 @@ class OnePageShow extends React.Component {
             roleValue = 'No'
         }
         return (
-            <div>
+            <div onPointerMove={this.showCoords} className="onepage-show">
                 {/* <h2>{currentUser.f_name}{currentUser.l_name}</h2> */}
                 <h3>Job Title:&nbsp;{onePage.job_title}</h3>
                 <h3>Company:&nbsp;{onePage.company_name}</h3>
@@ -37,6 +42,9 @@ class OnePageShow extends React.Component {
                 <h3>Starting Salary:&nbsp;${onePage.starting_pay}</h3>
              
                 <Link to={`/onePages/${onePage._id}/edit`}>Edit this Page</Link>
+                <label>Just Testing Buttons</label>
+                <button>Dislike</button>
+                <button>Like</button>
             </div>
         )
     }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom'
+import { Route } from 'react-router';
 // import { Route } from 'react-router';
 // import './navbar.css'
 
@@ -10,6 +11,7 @@ class NavBar extends React.Component {
     this.getLinks = this.getLinks.bind(this);
     this.state = { dropdown: 'dropdown-hidden' }
     this.toggleDropdown = this.toggleDropdown.bind(this);
+    this.openModalFor = this.openModalFor.bind(this);
   }
   toggleDropdown() {
     if (this.state.dropdown === 'dropdown-hidden') {
@@ -18,11 +20,10 @@ class NavBar extends React.Component {
       this.setState({ dropdown: 'dropdown-hidden' });
     }
   }
-  handleClick(e) {
-    if (this.dropdownRef && (this.dropdownRef.contains(e.target) || this.iconRef.contains(e.target))) {
-      return
+  openModalFor(form) {
+    return e => {
+      this.props.openModal(form)
     }
-    this.setState({ dropdown: 'dropdown-hidden' })
   }
   logoutUser(e) {
     e.preventDefault();
@@ -30,7 +31,6 @@ class NavBar extends React.Component {
     this.props.history.push("/")
     
   }
-
   // Selectively render links dependent on whether the user is logged in
   getLinks() {
     let createLink;
@@ -82,9 +82,9 @@ class NavBar extends React.Component {
       );
     } else {
       return (
-        <div className="nav-bar">
-          <Link to={'/signup'}>Signup</Link>
-          <Link to={'/login'}>Login</Link>
+        <div className="nav-bar-user">
+          <Link onClick={this.openModalFor('signup')} to={'/signup'}>Signup</Link>
+          <Link onClick={this.openModalFor('login')} to={'/login'}>Login</Link>
         </div>
       );
     }

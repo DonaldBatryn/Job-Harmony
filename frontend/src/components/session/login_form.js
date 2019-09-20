@@ -41,18 +41,17 @@ class LoginForm extends React.Component {
       email: this.state.email,
       password: this.state.password
     };
-
-    this.props.login(user);
+    this.props.login(user)
+      .then(() => this.props.closeModal());
   }
   handleDemo(e) {
     e.preventDefault();
-
     let user = {
       email: "donnie@donnie.donnie",
       password: "123456"
     };
-
-    this.props.login(user);
+    this.props.login(user)
+      .then(() => this.props.closeModal());;
   }
 
   // Render the session errors if there are any

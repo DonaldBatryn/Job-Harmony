@@ -32,11 +32,13 @@ class SignupForm extends React.Component {
   }
   handleDemoEmployee(e) {
     e.preventDefault();
-    this.props.signup(this.props.demoUser('Employee'), this.props.history);
+    this.props.signup(this.props.demoUser('Employee'), this.props.history)
+      .then(() => this.props.closeModal());;
   }
   handleDemoEmployer(e) {
     e.preventDefault();
-    this.props.signup(this.props.demoUser('Employer'), this.props.history);
+    this.props.signup(this.props.demoUser('Employer'), this.props.history)
+      .then(() => this.props.closeModal());;
   }
   handleSubmit(e) {
     e.preventDefault();
@@ -49,7 +51,8 @@ class SignupForm extends React.Component {
       zip_code: this.state.zip_code,
       role: this.state.role
     };
-    this.props.signup(user, this.props.history);
+    this.props.signup(user, this.props.history)
+      .then(() => this.props.closeModal());;
   }
   renderErrors() {
     return (

@@ -29,9 +29,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 50px;
-  width: 150px;
+  height: 30px;
+  width: 100px;
   background-color: blue;
+  color: white;
+  padding-left: 15px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 400;
 }
 .user-name-bar:hover{
   background-color: darkblue;
@@ -51,7 +56,7 @@ i {
   border-width: 0px 5px 5px 0px;
   display: inline-block;
   padding: 4px;
-  margin: 3px 10px;
+  margin: 10px 10px 16px 10px;
 }
 .down {
   transform: rotate(45deg);
@@ -80,5 +85,5 @@ i {
   background-color: gray;
 }
 #dropdown button {
-  background-color: lightblue;
+  /* background-color: lightblue; */
 }

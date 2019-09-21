@@ -22,6 +22,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    
 }
 
 .browse-buttons-container{
@@ -40,7 +41,7 @@
 .browse-window-container{
     
     width: 98%;
-    height: 84%;
+    height: 94%;
     /* background-color: lightgreen; */
     border: 1px solid black;
     display: flex;
@@ -93,6 +94,61 @@
     border: 1px solid black;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.pending-index-item{
+    height: 10%;
+    width: 99%;
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid lightgray;
+}
+
+.like-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 83%;
+    height: 99%;
+    /* background-color: lightblue; */
+}
+
+.remove-like{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 16%;
+    height: 99%;
+    color: red;
+    /* background-color: lightblue; */
+}
+
+.pending-job-title{
+    padding-left: 15px;
+    width: 99%;
+    height: 55%;
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.pending-company-name{
+    padding-left: 15px;
+    width: 99%;
+    height: 35%;
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
 }

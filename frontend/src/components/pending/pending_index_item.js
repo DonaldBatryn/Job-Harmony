@@ -22,8 +22,8 @@ class PendingIndexItem extends React.Component{
         return (
             <div className="pending-index-item">
                 <div className="like-info" onClick={this.handleView}>
-                    <h3 className="pending-job-title">{onePage[0].job_title}</h3>
-                    <h5 className="pending-company-name">{onePage[0].company_name}</h5>
+                    <h3 className="pending-job-title">{onePage[0].jobTitle}</h3>
+                    <h5 className="pending-company-name">{onePage[0].companyName}</h5>
                 </div>
                 <div className="remove-like" >&times;</div>
             </div>

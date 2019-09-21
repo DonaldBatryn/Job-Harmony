@@ -57,7 +57,11 @@ router.post('/new',
 
 router.get('/:id', (req, res) => {
   Resume.findById(req.params.id)
-.then(resume => res.json(resume))
+  .then(resume => {
+    console.log(resume)
+    res.json(resume)
+  })
+
     .catch(err =>
       res.status(404).json({
         noResumeFound: "No resume found from that User"

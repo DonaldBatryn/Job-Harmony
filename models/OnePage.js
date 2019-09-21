@@ -5,7 +5,7 @@ const OnePageSchema = new Schema({
     type: String,
     required: true
   },
-  company_name: {
+  companyName: {
     type: String,
     required: true
   },
@@ -30,7 +30,7 @@ const OnePageSchema = new Schema({
     type: String,
     required: true
   },
-  starting_pay: {
+  startingPay: {
     type: Number,
     required: true
   },

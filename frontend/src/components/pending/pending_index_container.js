@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import PendingIndex from './pending_index';
 import { withRouter } from 'react-router-dom';
 
+
 const msp = state => {
     let allLikes = Object.keys(state.entities.likes).map(id => {
         return Object.values(state.entities.onePages).filter(onePage => {
@@ -17,7 +18,7 @@ const msp = state => {
 
 const mdp = dispatch => {
     return ({
-
+        
     })
 }
 

@@ -4,16 +4,17 @@ class PendingIndexItem extends React.Component{
     constructor(props){
         super(props)
         this.handleView = this.handleView.bind(this);
-        this.handleDelete = this.handleDelete.bind(this);
+        // this.handleDelete = this.handleDelete.bind(this);
     }
 
     handleView(){
         // open onePage show page
     }
 
-    handleDelete(){
+    // handleDelete(){
         // when delete route is done lets throw it here
-    }
+        // this.props.deleteLike(this.props.onePage._id)
+    // }
 
     render(){
         let { onePage } = this.props;
@@ -24,7 +25,7 @@ class PendingIndexItem extends React.Component{
                     <h3 className="pending-job-title">{onePage[0].job_title}</h3>
                     <h5 className="pending-company-name">{onePage[0].company_name}</h5>
                 </div>
-                <div className="remove-like" onClick={this.handleDelete}>&times;</div>
+                <div className="remove-like" >&times;</div>
             </div>
         )
     }

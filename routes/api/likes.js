@@ -70,7 +70,7 @@ router.get("/:onePage_id", (req, res) => {
             );
 });
 
-router.delete("/:likeId")
+
 
 
 module.exports = router;

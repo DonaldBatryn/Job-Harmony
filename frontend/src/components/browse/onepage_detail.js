@@ -1,7 +1,7 @@
 import React from 'react';
 
 const OnePageDetail = ({ onePage}) => {
-  let job_title;
+  let job_title = "no job title";
   if (onePage.job_title){
     job_title = onePage.job_title
   }

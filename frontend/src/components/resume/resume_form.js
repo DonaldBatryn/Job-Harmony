@@ -25,7 +25,7 @@ class ResumeForm extends React.Component {
   }
   render() {
     let { user } = this.props
-    let userName = this.props.formType === 'Create Resume' ? `,  ${user.f_name}` : ""
+    let userName = this.props.formType === 'Create Resume' ? `,  ${user.fName}` : ""
     return (
       <div className="resume-form-container">
         <form className="resume-form" onSubmit={this.handleSubmit}>

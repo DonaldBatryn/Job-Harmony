@@ -23,8 +23,8 @@ router.post('/newEmployers', (req, res) => {
     const emmployers  = names.map((name, i) => ({
         'email': `employer${i}@employer${i}.com`,
         'password': '$2a$10$rblxBXsOBY7/5i8DSVX9n.Qd14WyLHWy3BlVijm.v68OrfGp.6WCe',
-        'f_name': name ,
-        'l_name': 'employer',
+        'fName': name ,
+        'lName': 'employer',
         'zip_code': 61920 ,
         'role': "employer"
         }
@@ -66,8 +66,8 @@ router.post('/newEmployees', (req, res) => {
     const emmployes = names.map((name, i) => ({
         'email': `employee${i}@employee${i}.com`,
         'password': '$2a$10$rblxBXsOBY7/5i8DSVX9n.Qd14WyLHWy3BlVijm.v68OrfGp.6WCe',
-        'f_name': name ,
-        'l_name': "employee",
+        'fName': name ,
+        'lName': "employee",
         'zip_code': 61920 ,
         'role': "employee",
         "resume":[]
@@ -102,8 +102,8 @@ router.post('/newEmployeesDemo', (req, res) => {
     const emmployes = names.map((name, i) => ({
         'email': `employee${i *15625 }@employee${i * 15625 }.com`,
         'password': '$2a$10$rblxBXsOBY7/5i8DSVX9n.Qd14WyLHWy3BlVijm.v68OrfGp.6WCe',
-        'f_name': name ,
-        'l_name': "employee",
+        'fName': name ,
+        'lName': "employee",
         'zip_code': 61920 ,
         'role': "employee",
         "resume":[]

@@ -5,8 +5,8 @@ class SignupForm extends React.Component {
     super(props);
     this.state = {
       email: '',
-      f_name: '',
-      l_name: '',
+      fName: '',
+      lName: '',
       password: '',
       password2: '',
       zip_code: '',
@@ -44,8 +44,8 @@ class SignupForm extends React.Component {
     e.preventDefault();
     let user = {
       email: this.state.email,
-      f_name: this.state.f_name,
-      l_name: this.state.l_name,
+      fName: this.state.fName,
+      lName: this.state.lName,
       password: this.state.password,
       password2: this.state.password2,
       zip_code: this.state.zip_code,
@@ -92,14 +92,14 @@ class SignupForm extends React.Component {
             />
             <br />
             <input type="text"
-              value={this.state.f_name}
-              onChange={this.update('f_name')}
+              value={this.state.fName}
+              onChange={this.update('fName')}
               placeholder="First Name"
             />
             <br />
             <input type="text"
-              value={this.state.l_name}
-              onChange={this.update('l_name')}
+              value={this.state.lName}
+              onChange={this.update('lName')}
               placeholder="Last Name"
             />
             <br />

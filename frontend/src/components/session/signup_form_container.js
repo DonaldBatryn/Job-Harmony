@@ -6,8 +6,8 @@ import { closeModal } from '../../actions/modal_actions';
 const mapStateToProps = (state) => {
   const demoUser = (role) => ({
     email: Math.floor(Math.random() * 100000).toString() + "@gmail.com",
-    f_name: "Demo",
-    l_name: "User",
+    fName: "Demo",
+    lName: "User",
     password: 'hunter12',
     password2: 'hunter12',
     zip_code: '12345',

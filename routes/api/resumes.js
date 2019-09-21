@@ -7,34 +7,45 @@ const passport = require('passport')
 
 
 
-router.post('/new', (req, res) => {
+router.post('/new',
+    passport.authenticate('jwt', {
+      session: false
+    }), (req, res) => {
+
   let { errors, isValid } = validatesResumeInput(req.body)
 
   if (!isValid) {
+
     return res.status(400).json(errors)
   }
-  const user_id = req.body.user_id;
+  const userId = req.user.id;
   const job_history = req.body.job_history;
-  const job_field = req.body.job_field;
-  const job_skills = req.body.job_skills;
+  const jobField = req.body.jobField;
+  const jobSkills = req.body.jobSkills;
+  const jobTitle = req.body.jobTitle;
 
-
-    const newResume = new Resume({
-      user_id,
-      job_history,
-      job_field,
-      job_skills,
-    });
-    newResume.save().then(resume => {
-        User.findById(user_id).then((user) => {
-          user.resume.push(resume)
-          user.save()
-          res.json(resume)
+  
+  
+  const newResume = new Resume({
+    userId,
+    job_history,
+    jobField,
+    jobSkills,
+    jobTitle
+  });
+  newResume.save().then(resume => {
+    debugger
+    User.findById(userId).then((user) => {
+      user.resume.push(resume)
+      user.save()
+      res.json(resume)
         }).catch(err => {
           res.status(404).json(err)
         });
   }).catch(err => {
+    console.log(err)
     res.status(404).json(err)
+
   });
 })
 

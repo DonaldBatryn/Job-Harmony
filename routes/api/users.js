@@ -39,6 +39,7 @@ router.post("/login", (req, res) => {
               l_name: user.l_name,
               resume: user.resume
             };
+            // console.log(user.resume)
             jwt.sign(payload, keys.secretOrKey, {
               expiresIn: 3600
             }, (err, token) => {

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const OnePageSchema = new Schema({
-  user_id: {
+  userId: {
     type: String,
     required: true
   },

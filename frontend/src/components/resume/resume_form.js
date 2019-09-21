@@ -17,7 +17,8 @@ class ResumeForm extends React.Component {
     let that = this;
     this.props.action(this.state)
       .then((payload) => {
-        that.props.history.push(`/resumes/${payload.resume._id}`)
+        debugger
+        that.props.history.push(`/resumes/${that.props.resume.id}`)
       })
       .catch(err => console.log(err))
 
@@ -34,15 +35,15 @@ class ResumeForm extends React.Component {
           </div>
           <div className="job-field-div">
             <label className="job-field-txt">Field</label>
-            <textarea className="job-field-input" onChange={this.update('job_field')} value={this.state.job_field} />
+            <textarea className="job-field-input" onChange={this.update('jobField')} value={this.state.jobField} />
           </div>
           <div className="job-history-div">
             <label className="job-history-txt">Job History</label>
-            <textarea className="job-history-input" onChange={this.update('job_history')} value={this.state.job_history} />
+            <textarea className="job-history-input" onChange={this.update('jobHistory')} value={this.state.jobHistory} />
           </div>
           <div className="job-skills-div">
             <label className="job-skills-txt">Skills</label>
-            <textarea className="job-skills-input" onChange={this.update('job_skills')} value={this.state.job_skills} />
+            <textarea className="job-skills-input" onChange={this.update('jobSkills')} value={this.state.jobSkills} />
           </div>
           <input className="resume-submit-button" type="submit" value={this.props.formType} />
         </form>

@@ -32,13 +32,13 @@ class OnePageShow extends React.Component {
         return (
             <div onPointerMove={this.showCoords} className="onepage-show">
                 {/* <h2>{currentUser.f_name}{currentUser.l_name}</h2> */}
-                <h3>Job Title:&nbsp;{onePage.job_title}</h3>
-                <h3>Company:&nbsp;{onePage.company_name}</h3>
+                <h3>Job Title:&nbsp;{onePage.jobTitle}</h3>
+                <h3>Company:&nbsp;{onePage.companyName}</h3>
                 <h3>Description:&nbsp;{onePage.description}</h3>
                 <h3>Position is:&nbsp;{onePage.type}</h3>
                 <h3>Remote:&nbsp;{roleValue}</h3>
                 <h3>Benefits:&nbsp;{onePage.benefits}</h3>
-                <h3>Starting Salary:&nbsp;${onePage.starting_pay}</h3>
+                <h3>Starting Salary:&nbsp;${onePage.startingPay}</h3>
              
                 <Link to={`/onePages/${onePage._id}/edit`}>Edit this Page</Link>
                 <label>Just Testing Buttons</label>

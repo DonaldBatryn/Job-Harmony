@@ -19,19 +19,19 @@ router.post('/new',
     return res.status(400).json(errors)
   }
   const userId = req.user.id;
-  const job_history = req.body.job_history;
+  const jobHistory = req.body.jobHistory;
   const jobField = req.body.jobField;
   const jobSkills = req.body.jobSkills;
-  const jobTitle = req.body.jobTitle;
+  
 
   
   
   const newResume = new Resume({
     userId,
-    job_history,
+    jobHistory,
     jobField,
-    jobSkills,
-    jobTitle
+    jobSkills
+   
   });
   newResume.save().then(resume => {
     debugger
@@ -58,7 +58,7 @@ router.post('/new',
 router.get('/:id', (req, res) => {
   Resume.findById(req.params.id)
   .then(resume => {
-    console.log(resume)
+    
     res.json(resume)
   })
 
@@ -80,9 +80,9 @@ router.patch('/:id/edit',
         if (!isValid) {
           return res.status(400).json(errors);
         }
-        resume.job_history = req.body.job_history
-        resume.job_field = req.body.job_field
-        resume.job_skills = req.body.job_skills
+        resume.jobHistory = req.body.jobHistory
+        resume.jobField = req.body.jobField
+        resume.jobSkills = req.body.jobSkills
         resume.save().then(resume => res.json(resume));
       })
       .catch(err =>

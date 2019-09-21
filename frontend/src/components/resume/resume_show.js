@@ -24,9 +24,9 @@ class ResumeShow extends React.Component {
       <div className="resume-show-container">
         <div className="resume">
           <h2 className="candidate-show">Candidate {currentUser.id.slice(4, 10)}</h2>
-          <h3 className="job-field-show">Field:&nbsp;&nbsp;{resume.job_field}</h3>
-          <h3 className="job-history-show">Work History:&nbsp;&nbsp;{resume.job_history}</h3>
-          <h3 className="job-skills-show">Skills:&nbsp;&nbsp;{resume.job_skills}</h3>
+          <h3 className="job-field-show">Field:&nbsp;&nbsp;{resume.jobField}</h3>
+          <h3 className="job-history-show">Work History:&nbsp;&nbsp;{resume.jobHistory}</h3>
+          <h3 className="job-skills-show">Skills:&nbsp;&nbsp;{resume.jobSkills}</h3>
           <Link classname="edit-button" to={`/resumes/${resume._id}/edit`}><button className="edit-button-show">Edit Resume</button></Link>
         </div>
       </div>

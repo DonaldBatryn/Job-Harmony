@@ -31,11 +31,11 @@ class OnePageForm extends React.Component {
           </div>
           <div className="company-name-div">
             <label className="company-name-text">Company Name:</label>
-            <textarea className="company-name-input" onChange={this.update('company_name')} value={this.state.company_name} />
+            <textarea className="company-name-input" onChange={this.update('companyName')} value={this.state.company_name} />
           </div>
           <div className="job-title-div">
             <label className="job-title-text">Job Title:</label>
-            <textarea className="job-title-input" onChange={this.update('job_title')} value={this.state.job_title} />
+            <textarea className="job-title-input" onChange={this.update('jobTitle')} value={this.state.jobTitle} />
           </div>
           <div className="job-description-div">
             <label className="job-description-text">Description:</label>

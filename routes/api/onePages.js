@@ -15,7 +15,7 @@ router.post('/new', (req, res) => {
   if (!isValid) {
     return res.status(400).json(errors)
   }
-  const user_id = req.body.user_id;
+  const userId = req.body.userId;
   const companyName = req.body.companyName;
   const description = req.body.description;
   const type = req.body.type;
@@ -26,7 +26,7 @@ router.post('/new', (req, res) => {
   const jobField = req.body.jobField;
   const jobSkills = req.body.jobSkills;
   const newOnePage = new OnePage({
-    user_id,
+    userId,
     companyName,
     description,
     jobTitle,

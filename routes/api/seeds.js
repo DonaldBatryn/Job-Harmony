@@ -34,7 +34,7 @@ router.post('/newEmployers', (req, res) => {
     
           User.insertMany(emmployers).then(new_employers => {
             const onepages = new_employers.map((employer, i) => ({
-                'user_id': employer.id,
+                'userId': employer.id,
                 'companyName': `companyName${i}`,
                 'description': `description${i}`,
                 'jobTitle': `jobTitle${i}`,
@@ -77,7 +77,7 @@ router.post('/newEmployees', (req, res) => {
           User.insertMany(emmployes).then(newEmmployes => {
             const resumes = newEmmployes.map((employee, i) => ({
                 'userId': employee.id,
-                'job_history': `job_history${i}`,
+                'jobHistory': `jobHistory${i}`,
                 'jobField': `jobField${i}`,
                 'jobSkills': `jobSkills${i}`,
                 'jobTitle': `jobTitle${i}`
@@ -141,7 +141,7 @@ const seed = (emmploye , num) => {
                 .then(user => {
                     const resume = {
                         'userId': newUser.id,
-                        'job_history': `job_history${num}`,
+                        'jobHistory': `jobHistory${num}`,
                         'jobField': `jobField${num}`,
                         'jobSkills': `jobSkills${num}`,
                         'jobTitle': `jobTitle${num}`

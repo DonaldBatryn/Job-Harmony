@@ -35,6 +35,7 @@ router.get("/:userId",
                     res.json(onePages)
                 }).catch(err => {
                 console.log("what the fuck!!!!!!!")
+                console.log("my dude this gotta stop")
                     res.status(404).json(err)
                 });
             }).catch(err => {

@@ -3,7 +3,7 @@ const validText = require('./valid-text');
 
 module.exports = function validatesOnePageInput(data) {
   let errors = {};
-  data.user_id = validText(data.user_id) ? data.user_id : '';
+  data.userId = validText(data.userId) ? data.userId : '';
   data.companyName = validText(data.companyName) ? data.companyName : '';
   data.description = validText(data.description) ? data.description : '';
   data.jobTitle = validText(data.jobTitle) ? data.jobTitle : '';

@@ -1,11 +1,16 @@
 import * as onePageAPIUtil from '../util/onePage_api_util';
 
 export const RECEIVE_ONEPAGE = 'RECEIVE_ONEPAGE';
+export const RECEIVE_ALL_ONEPAGES = 'RECEIVE_ALL_ONEPAGES';
 export const RECEIVE_ONEPAGE_ERRORS = 'RECEIVE_ONEPAGE_ERRORS';
 
 const receiveOnePage = onePage => ({
     type: RECEIVE_ONEPAGE,
     onePage: onePage.data
+})
+const receiveAllOnePages = onePages => ({
+    type: RECEIVE_ALL_ONEPAGES,
+    onePages: onePages.data
 })
 
 const receiveOnePageErrors = errors => ({
@@ -17,6 +22,11 @@ export const fetchOnePage = id => dispatch => (
     onePageAPIUtil.fetchOnePage(id)
         .then(onePage => dispatch(receiveOnePage(onePage)))
         .catch(err => dispatch(receiveOnePageErrors(err.response.data)))
+)
+
+export const fetchAllOnePages = () => dispatch => (
+    onePageAPIUtil.fetchAllOnePages()
+        .then(onePages => dispatch(receiveAllOnePages(onePages)))
 )
 
 export const createOnePage = onePage => dispatch => (

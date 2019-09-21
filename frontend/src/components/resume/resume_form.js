@@ -1,5 +1,6 @@
 import React from 'react'
-import { Redirect, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
+
 class ResumeForm extends React.Component {
   constructor(props) {
     super(props);
@@ -16,7 +17,6 @@ class ResumeForm extends React.Component {
     let that = this;
     this.props.action(this.state)
       .then((payload) => {
-
         that.props.history.push(`/resumes/${payload.resume._id}`)
       })
       .catch(err => console.log(err))

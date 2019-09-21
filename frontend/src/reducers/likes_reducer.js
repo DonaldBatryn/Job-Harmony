@@ -6,7 +6,7 @@ export default function (state = {}, action) {
     // case RECEIVE_ALL_LIKES:
     //   return action.likes;
     case RECEIVE_LIKE:
-      return Object.assign({}, state, { [action.like._id]: action.like });
+      return Object.assign({}, state, { [action.like.onePageId]: action.like });
     default:
       return state;
   }

@@ -51,6 +51,41 @@ router.post("/:onePageId",
 });
 
 
+router.delete("/:onePageId",
+    // so we have the id of the jobseeker that is liking the one page 
+    passport.authenticate("jwt", {session: false}),
+    // async (req, res) => {
+    (req, res) => {
+
+        // id of the one page that is being liked 
+        const onePageId = req.params.onePageId
+        
+        // the jobseekers id 
+        const userId = req.user.id
+
+        // console.log(onePageId);
+        // console.log(userId);
+
+        OnePage.findById(onePageId).then((onepage) =>{
+            Resume.findOne({user_id: userId}).then((resume) => {
+                // console.log(resume)
+                console.log(onepage)
+                onepage.resumes.unset(resume)
+                onepage.save()
+                console.log(onepage)
+                    const employerEmail = employer.email
+                    res.json(onepage)
+            }).catch(err => {
+                res.status(404).json(err)
+            });
+        }).catch(err => {
+            res.status(404).json(err)
+        });
+
+
+});
+
+
 router.get("/:onePage_id", (req, res) => {
    // id of the one page that is being used to send back an array of  
    // job seeker

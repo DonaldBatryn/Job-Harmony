@@ -33,6 +33,7 @@ router.post('/newEmployers', (req, res) => {
                 'description': `description${i}`,
                 'jobTitle': `jobTitle${i}`,
                 'jobField': `jobField${i}`,
+                'jobSkills': `jobSkills${i}`,
                 'type': 'type',
                 'benefits': `benefits${i}`,
                 'starting_pay': i
@@ -69,82 +70,23 @@ router.post('/newEmployees', (req, res) => {
     
           User.insertMany(emmployes).then(newEmmployes => {
             const resumes = newEmmployes.map((employee, i) => ({
-                'user_id': employee.id,
-                'company_name': `company_name${i}`,
-                'description': `description${i}`,
-                'jobTitle': `jobTitle${i}`,
+                'userId': employee.id,
+                'job_history': `job_history${i}`,
                 'jobField': `jobField${i}`,
-                'type': 'type',
-                'benefits': `benefits${i}`,
-                'starting_pay': i
+                'jobSkills': `jobSkills${i}`,
+                'jobTitle': `jobTitle${i}`
+                
             }))
-            Resume.insertMany(resumes).then(allOnepages => {
-                res.json(allOnepages)
+            Resume.insertMany(resumes).then(allResumes => {
+                res.json(allResumes)
             }).catch()
 
           }).catch()
 
 
-    })
-//     const onepages = user_id.map((user_id, i) => ({
-//         'user_id': user_id,
-//         'company_name': `company_name${i}` ,
-//         'description': `description${i}` ,
-//         'jobTitle': ,
-//         'jobField':,
-//         'type': 'type',
-//         'benefits': `benefits${i}`,
-//         'starting_pay': i 
-//         }
-//     ))
-    
-//         new OnePage({
-
-//         });
-//         newOnePage.save()
-//             .then(OnePage => res.json(OnePage))
-//             .catch(err => res.json(err));
-
-// });
+})
 
 
 module.exports = router;
 
 
-//   user_id: {
-//           type: String,
-//           required: true
-//       },
-//       company_name: {
-//           type: String,
-//           required: true
-//       },
-//       jobTitle: {
-//           type: String,
-//           required: true
-//       },
-//       description: {
-//           type: String,
-//           required: true
-//       },
-//       // job type parttime 
-//       type: {
-//           type: String,
-//           required: true
-//       },
-//       remote: {
-//           type: Boolean,
-//           default: "false"
-//       },
-//       benefits: {
-//           type: String,
-//           required: true
-//       },
-//       starting_pay: {
-//           type: Number,
-//           required: true
-//       },
-//       jobField: {
-//           type: String,
-//           required: true
-//       },

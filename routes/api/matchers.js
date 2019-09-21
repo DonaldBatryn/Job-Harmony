@@ -6,7 +6,7 @@ const Resume = require("../../models/Resume")
 
 
 
-router.get("/:userId",
+router.get("/",
     // so we have the id of the jobseeker that looking for onepages 
     passport.authenticate("jwt", {
         session: false
@@ -19,6 +19,8 @@ router.get("/:userId",
         // console.log(userId);
 
         Resume.findOne({userId}).then((resume) => {
+            console.log(resume.jobField)
+            console.log(resume.jobTitle)
             OnePage.find({
                     jobField: resume.jobField,
                     jobTitle: resume.jobTitle 

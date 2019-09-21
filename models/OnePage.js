@@ -37,6 +37,10 @@ const OnePageSchema = new Schema({
   jobField: {
     type: String,
     required: true
+  }, 
+  jobSkills: {
+    type: String,
+    required: true
   },
   resumes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'resumes'}]
 

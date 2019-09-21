@@ -16,6 +16,10 @@ const ResumeSchema = new Schema({
   jobSkills: {
     type: String,
     required: true
+  },
+  jobTitle: {
+    type: String,
+    required: true
   }
 });
 

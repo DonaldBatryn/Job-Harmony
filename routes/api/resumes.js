@@ -34,7 +34,7 @@ router.post('/new',
    
   });
   newResume.save().then(resume => {
-    debugger
+
     User.findById(userId).then((user) => {
       user.resume.push(resume)
       user.save()

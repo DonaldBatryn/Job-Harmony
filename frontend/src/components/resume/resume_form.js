@@ -18,7 +18,7 @@ class ResumeForm extends React.Component {
     this.props.action(this.state)
       .then((payload) => {
         debugger
-        that.props.history.push(`/resumes/${that.props.resume.id}`)
+        that.props.history.push(`/resumes/${payload.resume._id}`)
       })
       .catch(err => console.log(err))
 

@@ -4,6 +4,7 @@ import * as LikeAPIUtil from '../util/like_api_util';
 export const RECEIVE_LIKE = 'RECEIVE_LIKE';
 
 
+
 // const receiveAllLikes = likes => ({
 //     type: RECEIVE_ALL_LIKES,
 //     likes: likes.data
@@ -13,6 +14,7 @@ const receiveLike = like => ({
     type: RECEIVE_LIKE,
     like: like.data
 })
+
 
 // export const fetchLikes = () => dispatch => (
 //     LikeAPIUtil.fetchLikes().then(likes => dispatch(receiveAllLikes(likes)))
@@ -26,3 +28,4 @@ export const createLike = like => dispatch => (
     LikeAPIUtil.createLike(like).then(like => dispatch(receiveLike(like)))
 
 )
+

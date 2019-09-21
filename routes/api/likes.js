@@ -27,11 +27,17 @@ router.post("/:onePageId",
                 // console.log(resume)
                 onepage.resumes.push(resume)
                 onepage.save()
-                console.log(onepage)
+                // console.log(onepage)
                 const a = onepage.user_id
                 User.findById(a).then((employer) => {
-                    const employerEmail = employer.email
-                    res.json(employerEmail)
+                    // const employerEmail = employer.email
+                    // res.json(employerEmail)
+                    const payload = {
+                        employerId: employer.id,
+                        onePageId: onepage._id,
+                        
+                    }
+                    res.json(payload)
                 }).catch(err => {
                     res.status(404).json(err)
                 });

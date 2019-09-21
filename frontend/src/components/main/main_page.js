@@ -8,7 +8,6 @@ class MainPage extends React.Component {
 
   render() {
     return (
-      
       <div className="home-page-container">
         <PendingBar />
         <div className="browse-buttons-container">

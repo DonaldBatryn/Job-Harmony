@@ -12,6 +12,7 @@ class BrowseWindow extends React.Component{
             i: 0
         }
         this.handleNext = this.handleNext.bind(this)
+        this.handleLike = this.handleLike.bind(this)
     }
 
     componentDidMount(){
@@ -19,6 +20,16 @@ class BrowseWindow extends React.Component{
     }
 
     handleNext(){
+        this.setState({
+            i: (this.state.i) + 1
+        }) 
+    }
+
+    handleLike(){
+        this.props.createLike({
+            employeeId: this.props.user.id,
+            OnepageId: this.props.onePages[this.state.i]._id
+        })
         this.setState({
             i: (this.state.i) + 1
         }) 
@@ -39,7 +50,7 @@ class BrowseWindow extends React.Component{
             button2 = <button onClick={this.handleNext}>Contact</button>
         } else {
             button1 = <button onClick={this.handleNext}>Not Interested</button>
-            button2 = <button onClick={this.handleNext}>Interested</button>
+            button2 = <button onClick={this.handleLike}>Interested</button>
         }
         return (
             <div className="browse-window-container">
@@ -47,7 +58,7 @@ class BrowseWindow extends React.Component{
                     <h3>Recommended For You</h3>
                 </div>
                 <div className="browse-window">
-                    {/* <BrowseShow onePage={[this.props.onePages[0]]} /> */}
+                   
                     {currentOnePage[this.state.i]}
                 </div>
                 <div className="buttons-container">

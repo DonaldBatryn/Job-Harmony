@@ -45,7 +45,7 @@ class LoginForm extends React.Component {
       .then(() => this.props.closeModal());
   }
   handleDemo(e) {
-    e.preventDefault();
+    // e.preventDefault();
     let user = {
       email: "donnie@donnie.donnie",
       password: "123456"
@@ -85,7 +85,7 @@ class LoginForm extends React.Component {
             />
             <br />
             <input type="submit" value="Submit" />
-            <button id="demo" className="session-button" onClick={this.handleDemo}>Demo User</button>
+            <button id="demo" className="session-button" onClick={() => this.handleDemo()}>Demo User</button>
             {this.renderErrors()}
           </div>
         </form>

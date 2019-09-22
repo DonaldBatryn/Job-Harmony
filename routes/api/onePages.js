@@ -16,22 +16,22 @@ router.post('/new', (req, res) => {
     return res.status(400).json(errors)
   }
   const userId = req.body.userId;
+  const jobField = req.body.jobField;
+  const jobSkills = req.body.jobSkills;
   const companyName = req.body.companyName;
+  const jobTitle = req.body.jobTitle;
   const description = req.body.description;
   const type = req.body.type;
   const remote = req.body.remote;
   const benefits = req.body.benefits;
   const startingPay = req.body.startingPay;
-  const jobTitle = req.body.jobTitle;
-  const jobField = req.body.jobField;
-  const jobSkills = req.body.jobSkills;
   const newOnePage = new OnePage({
     userId,
+    jobField,
+    jobSkills,
     companyName,
     description,
     jobTitle,
-    jobField,
-    jobSkills,
     type,
     remote,
     benefits,
@@ -54,6 +54,7 @@ router.patch('/:id/edit',
 
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
+    console.log(req.params.id)
     OnePage.findById(req.params.id)
       .then(onePage => {
         const { errors, isValid } = validatesOnePageInput(req.body);
@@ -61,13 +62,15 @@ router.patch('/:id/edit',
         if (!isValid) {
           return res.status(400).json(errors);
         }
-        onePage.companyName = req.body.companyName
-        onePage.description = req.body.description
-        onePage.jobTitle = req.body.jobTitle
-        onePage.type = req.body.type
-        onePage.remote = req.body.remote
-        onePage.benefits = req.body.benefits
-        onePage.startingPay = req.body.startingPay
+        onePage.jobField = req.body.jobField;
+        onePage.jobSkills = req.body.jobSkills;
+        onePage.companyName = req.body.companyName;
+        onePage.jobTitle = req.body.jobTitle;
+        onePage.description = req.body.description;
+        onePage.type = req.body.type;
+        onePage.remote = req.body.remote;
+        onePage.benefits = req.body.benefits;
+        onePage.startingPay = req.body.startingPay;
         onePage.save().then(onePage => res.json(onePage));
       })
       .catch(err =>

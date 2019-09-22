@@ -55,9 +55,9 @@ marking their interest and opening up a dialogue in an instant"
     + User
         - email: String
         - password: String
-        - f_name: String
-        - l_name: String
-        - zip_code: Int
+        - fName: String
+        - lName: String
+        - zipCode: Int
         - role: String
 
     + matches
@@ -78,24 +78,24 @@ marking their interest and opening up a dialogue in an instant"
 
 
     + Resume 
-        -employee_id: Int
-        -job_history: textarea
-        -job_field: string
-        -job_skills: textarea
+        -employeeId: Int
+        -jobHistory: textarea
+        -jobField: string
+        -jobSkills: textarea
         
 
     +OnePage
-        -employer_id: Int
-        -company_name: String
+        -employeeId: Int
+        -companyName: String
         -description: Text
         -type: inclusion in: [full-time, part-time, freelance]
         -remote?: Boolean
         -benefits: Text
-        -starting_pay: Int
+        -startingPay: Int
 
     + Matches
-        -employee_id: Int
-        -employer_id: Int
+        -employeeId: Int
+        -employerId: Int
         -date: Date
 
 

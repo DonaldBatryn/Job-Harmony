@@ -9,7 +9,7 @@ module.exports = function validateSignupInput(data) {
     data.password2 = validText(data.password2) ? data.password2 : '';
     data.fName = validText(data.fName) ? data.fName : '';
     data.lName = validText(data.lName) ? data.lName : '';
-    data.zip_code = validText(data.zip_code) ? data.zip_code : '';
+    data.zipCode = validText(data.zipCode) ? data.zipCode : '';
     data.role = validText(data.role) ? data.role : '';
 
     if (!Validator.isEmail(data.email)) {
@@ -36,12 +36,12 @@ module.exports = function validateSignupInput(data) {
         errors.password2 = 'Passwords must match';
     }
 
-    if (Validator.isEmpty(data.zip_code)) {
-        errors.zip_code = 'zip_code field is required';
+    if (Validator.isEmpty(data.zipCode)) {
+        errors.zipCode = 'zipCode field is required';
     }
 
-    if (data.zip_code.length !== 5) {
-        errors.zip_code = 'Please enter a valid zipcode';
+    if (data.zipCode.length !== 5) {
+        errors.zipCode = 'Please enter a valid zipcode';
     }
 
     if (Validator.isEmpty(data.fName)) {

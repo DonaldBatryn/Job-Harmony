@@ -117,12 +117,12 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width: 83%;
+    width: 95%;
     height: 99%;
     /* background-color: lightblue; */
 }
 
-.remove-like{
+/* .remove-like{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -130,11 +130,11 @@
     width: 16%;
     height: 99%;
     color: red;
-    /* background-color: lightblue; */
-}
+    background-color: lightblue;
+} */
 
 .pending-job-title{
-    padding-left: 15px;
+    padding-left: 25px;
     width: 99%;
     height: 55%;
     /* background-color: yellow; */
@@ -145,7 +145,7 @@
 }
 
 .pending-company-name{
-    padding-left: 15px;
+    padding-left: 25px;
     width: 99%;
     height: 35%;
     /* background-color: yellow; */

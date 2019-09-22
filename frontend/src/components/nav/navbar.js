@@ -66,17 +66,15 @@ class NavBar extends React.Component {
           <ul id='dropdown' className={this.state.dropdown}>
             <span onClick={this.toggleDropdown} className="dropdown-items">
               <li className="drop-list-item">
-                <Link to={'/home'}>All Results/Feed</Link></li>
+                <button className="logout-btn"><Link to={'/home'}>All Results/Feed</Link></button></li>
               <li className="drop-list-item">
-                <Link to={'/profile'}>Profile</Link></li>
+                <button className="logout-btn"><Link to={'/profile'}>Profile</Link></button></li>
               <li className="drop-list-item">
-                <Link to={'/preferences'}>Update your preferences</Link></li>
+                <button className="logout-btn"><Link to={'/preferences'}>Update your preferences</Link></button></li>
               <li className="drop-list-item">
-                {createLink}</li>
+                <button className="logout-btn">{createLink}</button></li>
               <li className="drop-list-item">
-                <button className="btn">Empty Button</button></li>
-              <li className="drop-list-item">
-                <button onClick={this.logoutUser}>Logout</button></li>
+                <button className="logout-btn" onClick={this.logoutUser}>Logout</button></li>
             </span>
           </ul>
 

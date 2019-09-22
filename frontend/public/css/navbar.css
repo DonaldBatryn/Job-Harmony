@@ -1,6 +1,11 @@
 .nav-bar {
   border: 1px solid black;
 }
+
+.nav-bar > a {
+  color: white;
+
+}
 .nav-bar-user {
   border: 1px solid green;
   /* position: fixed; */
@@ -23,7 +28,7 @@
   cursor: pointer;
 }
 .session-btn:hover{
-  background-color: darkblue;
+  background-color: gray;
 }
 .user-name-bar {
   display: flex;
@@ -50,6 +55,7 @@
   right: 100px;
   top: 35px;
   z-index: 1;
+  
 }
 i {
   border: solid white;
@@ -72,6 +78,7 @@ i {
   height: 272px;
   border-radius: 3px;
   border: 5px solid rgba(0, 0, 0, 0.12);
+  border: 2px solid lightgray;
 }
 
 #dropdown li {
@@ -82,7 +89,7 @@ i {
   
 }
 #dropdown li:hover {
-  background-color: gray;
+  background-color: lightgray;
 }
 #dropdown button {
   /* background-color: lightblue; */
@@ -91,4 +98,17 @@ i {
 .nav-image{
   height: 100%;
   width: auto;
+}
+
+.logout-btn{
+  background-color: white;
+  width: 100%;
+  margin: auto;
+  font-size: 15px;
+  color: black;
+}
+
+.logout-btn > a{
+  background-color: none;
+  color: black
 }

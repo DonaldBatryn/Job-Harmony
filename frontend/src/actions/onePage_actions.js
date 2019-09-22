@@ -35,11 +35,15 @@ export const createOnePage = onePage => dispatch => (
         .catch(err => dispatch(receiveOnePageErrors(err.response.data)))
 )
 
-export const updateOnePage = onePage => dispatch => (
-    onePageAPIUtil.updateOnePage(onePage)
+export const updateOnePage = onePage => dispatch => {
+    debugger
+    // onepage has alot of errors and i think it is becaue reseeding needa to be done rfq
+    return (
+        onePageAPIUtil.updateOnePage(onePage)
         .then(onePage => dispatch(receiveOnePage(onePage)))
         .catch(err => dispatch(receiveOnePageErrors(err.response.data)))
-)
+    )
+}
 
 window.fetchOnePage = fetchOnePage;
 window.createOnePage = createOnePage;

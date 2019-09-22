@@ -9,7 +9,7 @@ class SignupForm extends React.Component {
       lName: '',
       password: '',
       password2: '',
-      zip_code: '',
+      zipCode: '',
       role: 'Please select a role',
       errors: {}
     };
@@ -48,7 +48,7 @@ class SignupForm extends React.Component {
       lName: this.state.lName,
       password: this.state.password,
       password2: this.state.password2,
-      zip_code: this.state.zip_code,
+      zipCode: this.state.zipCode,
       role: this.state.role
     };
     this.props.signup(user, this.props.history)
@@ -104,8 +104,8 @@ class SignupForm extends React.Component {
             />
             <br />
             <input type="text"
-              value={this.state.zip_code}
-              onChange={this.update('zip_code')}
+              value={this.state.zipCode}
+              onChange={this.update('zipCode')}
               placeholder="Zip Code"
             />
             <br />

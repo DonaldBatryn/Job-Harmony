@@ -7,13 +7,15 @@ import { withRouter } from 'react-router-dom'
 const mapStateToProps = (state) => ({
   onePage: {
     userId: state.session.user.id,
-    company_name: "",
+    jobField: "",
+    jobSkills: "",
+    companyName: "",
     jobTitle: "",
     description: "",
-    type: "Select type of work",
-    remote: "Is this job remote?",
     benefits: "",
     startingPay: "",
+    type: "Select type of work",
+    remote: "Is this job remote?",
   },
   formType: 'Create OnePage'
 })

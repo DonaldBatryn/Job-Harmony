@@ -17,7 +17,7 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
-  zip_code: {
+  zipCode: {
     type: String,
     required: true
   },
@@ -34,3 +34,4 @@ const UserSchema = new Schema({
 
 });
 module.exports = User = mongoose.model('users', UserSchema);
+// {"email":"", "fName":"", "lName":"", "password":"", "zipCode":"", "role": ""}

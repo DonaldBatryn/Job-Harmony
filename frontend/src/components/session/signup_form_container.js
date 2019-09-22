@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
     lName: "User",
     password: 'hunter12',
     password2: 'hunter12',
-    zip_code: '12345',
+    zipCode: '12345',
     role: role,
   })
   return {

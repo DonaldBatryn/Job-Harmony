@@ -5,87 +5,126 @@ const OnePage = require("../../models/OnePage")
 const Resume = require("../../models/Resume")
 
 
-router.post('/newEmployers', (req, res) => {
-
-    const names = ["John", "Joanne", "Bob", "Will", "Chris", "Mike", "Anna", "Jack", "Peter", "Paul",
-                "John", "Joanne", "Bob", "Will", "Chris", "Mike", "Anna", "Jack", "Peter", "Paul", 
-                "John", "Joanne", "Bob", "Will", "Chris", "Mike", "Anna", "Jack", "Peter", "Paul", 
-                "John", "Joanne", "Bob", "Will", "Chris", "Mike", "Anna", "Jack", "Peter", "Paul", 
-                "John", "Joanne", "Bob", "Will", "Chris", "Mike", "Anna", "Jack", "Peter", "Paul"];
-
-
-    const emmployers  = names.map((name, i) => ({
-        'email': `employer${i}@employer${i}.com`,
-        'password': 'hunter2' ,
-        'f_name': name ,
-        'l_name': 'employer',
-        'zip_code': 61920 ,
-        'role': "employer"
-        }
-    ))
-
-    
-          User.insertMany(emmployers).then(new_employers => {
-            const onepages = new_employers.map((employer, i) => ({
-                'userId': employer.id,
-                'companyName': `companyName${i}`,
-                'description': `description${i}`,
-                'jobTitle': `jobTitle${i}`,
-                'jobField': `jobField${i}`,
-                'jobSkills': `jobSkills${i}`,
-                'type': 'type',
-                'benefits': `benefits${i}`,
-                'startingPay': i
-            }))
-            OnePage.insertMany(onepages).then(allOnepages => {
-                res.json(allOnepages)
-            }).catch()
-
-          }).catch()
-
-
-    })
-
 router.post('/newEmployees', (req, res) => {
 
     const names = ["John", "Joanne", "Bob", "Will", "Chris", "Mike", "Anna", "Jack", "Peter", "Paul",
-                "John", "Joanne", "Bob", "Will", "Chris", "Mike", "Anna", "Jack", "Peter", "Paul", 
-                "John", "Joanne", "Bob", "Will", "Chris", "Mike", "Anna", "Jack", "Peter", "Paul", 
-                "John", "Joanne", "Bob", "Will", "Chris", "Mike", "Anna", "Jack", "Peter", "Paul", 
-                "John", "Joanne", "Bob", "Will", "Chris", "Mike", "Anna", "Jack", "Peter", "Paul"];
-
-
+        "John", "Joanne", "Bob", "Will", "Chris", "Mike", "Anna", "Jack", "Peter", "Paul",
+        "John", "Joanne", "Bob", "Will", "Chris", "Mike", "Anna", "Jack", "Peter", "Paul",
+        "John", "Joanne", "Bob", "Will", "Chris", "Mike", "Anna", "Jack", "Peter", "Paul",
+        "John", "Joanne", "Bob", "Will", "Chris", "Mike", "Anna", "Jack", "Peter", "Paul"
+    ];
 
     const emmployes = names.map((name, i) => ({
-        'email': `employee${i}@employee${i}.com`,
-        'password': 'hunter2' ,
-        'f_name': name ,
-        'l_name': "employee",
-        'zip_code': 61920 ,
+        'email': `employee${i *156205 }@employee${i * 156205 }.com`,
+        'password': '$2a$10$rblxBXsOBY7/5i8DSVX9n.Qd14WyLHWy3BlVijm.v68OrfGp.6WCe',
+        'fName': name,
+        'lName': "employee",
+        'zip_code': 61920,
         'role': "employee",
-        "resume":[]
-        }
-    ))
-    
-          User.insertMany(emmployes).then(newEmmployes => {
-            const resumes = newEmmployes.map((employee, i) => ({
-                'userId': employee.id,
-                'jobHistory': `jobHistory${i}`,
-                'jobField': `jobField${i}`,
-                'jobSkills': `jobSkills${i}`,
-                'jobTitle': `jobTitle${i}`
-                
-            }))
-            Resume.insertMany(resumes).then(allResumes => {
-                res.json(allResumes)
-            }).catch()
+        "resume": []
+    }))
 
-          }).catch()
+    const send = emmployes.map((emmploye, i) => {
+        signupEmployees(emmploye, i * 156205)
+
+    })
+
+    res.json({
+        "send": send
+    })
 
 
 })
 
-// make a demo user
+
+const signupEmployees = (emmploye, num) => {
+
+    const newUser = new User(emmploye);
+    bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(newUser.password, salt, (err, hash) => {
+            if (err) throw err;
+            newUser.password = hash;
+            newUser.save().then(user => {
+                const resume = {
+                    'userId': newUser.id,
+                    'jobHistory': `jobHistory${num}`,
+                    'jobField': `jobField${num}`,
+                    'jobSkills': `jobSkills${num}`,
+                    'jobTitle': `jobTitle${num}`
+
+                }
+                const newResume = new Resume(resume)
+                console.log(newResume)
+                // console.log(newUser)
+                const iddd = newResume.id
+                return iddd
+            }).catch(err => console.log(err))
+        })
+    })
+}
+
+
+
+router.post('/newEmployers', (req, res) => {
+
+    const names = ["John", "Joanne", "Bob", "Will", "Chris", "Mike", "Anna", "Jack", "Peter", "Paul",
+        "John", "Joanne", "Bob", "Will", "Chris", "Mike", "Anna", "Jack", "Peter", "Paul",
+        "John", "Joanne", "Bob", "Will", "Chris", "Mike", "Anna", "Jack", "Peter", "Paul",
+        "John", "Joanne", "Bob", "Will", "Chris", "Mike", "Anna", "Jack", "Peter", "Paul",
+        "John", "Joanne", "Bob", "Will", "Chris", "Mike", "Anna", "Jack", "Peter", "Paul"
+    ];
+
+
+    const emmployers = names.map((name, i) => ({
+        'email': `employer${i * 156205}@employer${i * 156205}.com`,
+        'password': 'hunter2',
+        'f_name': name,
+        'l_name': 'employer',
+        'zip_code': 61920,
+        'role': "employer"
+    }))
+
+    const send = emmployers.map((emmploye, i) => {
+        signupEmployers(emmploye, i * 156205)
+
+    })
+
+    res.json({
+        "send": send
+    })
+
+
+})
+
+const signupEmployers = (emmployer, num) => {
+
+    const newUser = new User(emmployer);
+    bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(newUser.password, salt, (err, hash) => {
+            if (err) throw err;
+            newUser.password = hash;
+            newUser.save()
+            .then(user => {
+                const onepage = {
+                    'userId': newUser.id,
+                    'companyName': `companyName${num}`,
+                    'description': `description${num}`,
+                    'jobTitle': `jobTitle${num}`,
+                    'jobField': `jobField${num}`,
+                    'jobSkills': `jobSkills${num}`,
+                    'type': 'type',
+                    'benefits': `benefits${num}`,
+                    'startingPay': num
+                }
+                const newResume = new Resume(resume)
+                console.log(newResume)
+
+                return (newResume)
+            })
+            .catch(err => console.log(err))
+    })
+    })
+}
 
 
 module.exports = router;

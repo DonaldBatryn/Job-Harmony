@@ -9,15 +9,15 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
-  f_name: {
+  fName: {
     type: String,
     required: true
   },
-  l_name: {
+  lName: {
     type: String,
     required: true
   },
-  zip_code: {
+  zipCode: {
     type: String,
     required: true
   },
@@ -34,4 +34,4 @@ const UserSchema = new Schema({
 
 });
 module.exports = User = mongoose.model('users', UserSchema);
-// {"email":"", "f_name":"", "l_name":"", "password":"", "zip_code":"", "role": ""}
+// {"email":"", "fName":"", "lName":"", "password":"", "zipCode":"", "role": ""}

@@ -3,7 +3,7 @@ const validText = require('./valid-text');
 
 module.exports = function validatesResumeInput(data) {
   let errors = {};
-  data.user_id = validText(data.user_id) ? data.user_id : '';
+  data.userId = validText(data.userId) ? data.userId : '';
   data.jobHistory = validText(data.jobHistory) ? data.jobHistory : '';
   data.jobField =  validText(data.jobField) ? data.jobField : '';
   data.jobSkills = validText(data.jobSkills) ? data.jobSkills : '';

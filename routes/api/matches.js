@@ -7,18 +7,18 @@ const Match = require("../../models/Match")
 
 router.post("/:resumeId" ,passport.authenticate("jwt", {session: false}), (req, res) => {
     
-    resume_id =   req.params.resumeId 
+    resumeId =   req.params.resumeId 
     userId =   req.user.id
-    // resume_id =  parseInt (req.params.resumeId) 
+    // resumeId =  parseInt (req.params.resumeId) 
     // userId =  parseInt (req.user.id)
     console.log("weeeeee made it ")
     console.log(typeof userId  )
-    console.log(typeof resume_id  )
+    console.log(typeof resumeId  )
 
-    const newMatch = new Match({employerId:userId, resumeId: resume_id})
+    const newMatch = new Match({employerId:userId, resumeId: resumeId})
     // const employee = User.findById(resume.userId)
     // const employeeEmail = employee.email
-    // const resume = Resume.findById(resume_id)
+    // const resume = Resume.findById(resumeId)
     newMatch.save().then(match => {
             // const payload = {
             //     employeeEmail

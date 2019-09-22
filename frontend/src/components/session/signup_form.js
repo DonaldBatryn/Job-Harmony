@@ -5,11 +5,11 @@ class SignupForm extends React.Component {
     super(props);
     this.state = {
       email: '',
-      f_name: '',
-      l_name: '',
+      fName: '',
+      lName: '',
       password: '',
       password2: '',
-      zip_code: '',
+      zipCode: '',
       role: 'Please select a role',
       errors: {}
     };
@@ -44,11 +44,11 @@ class SignupForm extends React.Component {
     e.preventDefault();
     let user = {
       email: this.state.email,
-      f_name: this.state.f_name,
-      l_name: this.state.l_name,
+      fName: this.state.fName,
+      lName: this.state.lName,
       password: this.state.password,
       password2: this.state.password2,
-      zip_code: this.state.zip_code,
+      zipCode: this.state.zipCode,
       role: this.state.role
     };
     this.props.signup(user, this.props.history)
@@ -92,20 +92,20 @@ class SignupForm extends React.Component {
             />
             <br />
             <input type="text"
-              value={this.state.f_name}
-              onChange={this.update('f_name')}
+              value={this.state.fName}
+              onChange={this.update('fName')}
               placeholder="First Name"
             />
             <br />
             <input type="text"
-              value={this.state.l_name}
-              onChange={this.update('l_name')}
+              value={this.state.lName}
+              onChange={this.update('lName')}
               placeholder="Last Name"
             />
             <br />
             <input type="text"
-              value={this.state.zip_code}
-              onChange={this.update('zip_code')}
+              value={this.state.zipCode}
+              onChange={this.update('zipCode')}
               placeholder="Zip Code"
             />
             <br />

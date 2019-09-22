@@ -25,14 +25,14 @@ router.post("/:onePageId",
         // console.log(userId);
 
         OnePage.findById(onePageId).then((onepage) =>{
-            Resume.findOne({user_id: userId}).then((resume) => {
+            Resume.findOne({userId: userId}).then((resume) => {
                 // console.log(resume)
                 onepage.resumes.push(resume)
                 onepage.save()
                 console.log(onepage)
-                const a = onepage.user_id
+                const a = onepage.userId
                 console.log(a)
-                // rfq Come back after reseed this is braking becuse the onepage.user_id is null 
+                // rfq Come back after reseed this is braking becuse the onepage.userId is null 
                 // reseeding mightnot fix anything but going to finish onepage stuff before messing with seeds and user
                 // User.findById(a).then((employer) => {
                     // const employerEmail = employer.email
@@ -56,14 +56,16 @@ router.post("/:onePageId",
 });
 
 
-router.get("/:onePage_id", (req, res) => {
+router.get("/:OnepageId", (req, res) => {
    // id of the one page that is being used to send back an array of  
    // job seeker
-   const onePage_id = req.params.onePage_id
+   const OnepageId = req.params.OnepageId
 
-        OnePage.findById(onePage_id)
+        OnePage.findById(OnepageId)
             .select("resumes")
-            .populate('resumes', "igg benefits starting_pay")
+            .populate('resumes', "benefits startingPay")
+            console.log("take me out if the populate is working ok if it is not then replace the line above with the line below ")
+            // .populate('resumes', "igg benefits startingPay")
             .exec()
             .then((onepage) => {
                 console.log(onepage)
@@ -90,19 +92,19 @@ module.exports = router;
 // const Resume = require("../../models/Resume")
 
 
-// router.post("/:onePage_id/likes", 
+// router.post("/:OnepageId/likes", 
 //     // so we have the id of the jobseeker that is liking the one page 
 //     passport.authenticate("jwt", {session: false}),
 //     (req, res) => {
 
 //         // id of the one page that is being liked 
-//         onePage_id = req.params.onePage_id
+//         OnepageId = req.params.OnepageId
         
 //         // the jobseekers id 
 //         userId = req.user.id
 
 //         // creates the new like with the Like model (models/Like.js)
-//         // const newLike = new Like( {employeeId:userId, OnepageId:onePage_id})
+//         // const newLike = new Like( {employeeId:userId, OnepageId:OnepageId})
 
 //         // dose a query to find the onepage that is being liked
         
@@ -111,7 +113,7 @@ module.exports = router;
 
 
 //         // // uses the one pages user-id (/models/OnePage.js line 4) to find the employer that it belongs to
-//         // const employer = User.findById(onePage.user_id)
+//         // const employer = User.findById(onePage.userId)
 
 //         // // pulls out the email from the employer to be used in the .then in the one page component (/frontend/src/components/onePage/onepage.js)
 //         // const employerEmail = employer.email
@@ -139,13 +141,13 @@ module.exports = router;
 //             //         payload
 //             //     });
 //             // });
-//         OnePage.findById(onePage_id).then((onepage) =>{
+//         OnePage.findById(OnepageId).then((onepage) =>{
             
-//             Resume.findOne({ user_id: userId}).then((res) => {
+//             Resume.findOne({ userId: userId}).then((res) => {
 
 //                 onepage.resumes.push(res).save().then((onepage) => {
 //                     // uses the one pages user-id (/models/OnePage.js line 4) to find the employer that it belongs to
-//                     User.findById(onePage.user_id).then((employer) => {
+//                     User.findById(onePage.userId).then((employer) => {
 //                         // pulls out the email from the employer to be used in the .then in the one page component (/frontend/src/components/onePage/onepage.js)
 //                         const employerEmail = employer.email
 
@@ -170,17 +172,17 @@ module.exports = router;
 // });
 
 
-// router.get(":onePage_id/likes", (req, res) => {
+// router.get(":OnepageId/likes", (req, res) => {
 //    // id of the one page that is being used to send back an array of  
 //    // job seeker
-//    const onePage_id = req.params.onePage_id
+//    const OnepageId = req.params.OnepageId
 
 // //    const onePageLikes = Like.find({
-// //            OnepageId: onePage_id
+// //            OnepageId: OnepageId
 // //        }) 
 
 //         OnePage.find({
-//            OnepageId: onePage_id
+//            OnepageId: OnepageId
 //             }).populate( "resumes" ).then((onepage => {
 //             res.json({
 //                 success: true,
@@ -188,15 +190,15 @@ module.exports = router;
 //             });
 
 //        }));
-//     //        OnepageId: onePage_id
+//     //        OnepageId: OnepageId
 //     //    }).map(function (u) {
 //     //        const employee_id = u.employeeId
-//     //        const res = Resume.find({user_id: employee_Id})
+//     //        const res = Resume.find({userId: employee_Id})
 //     //    });
 
 
 // //    const onePageLikes = OnePage.find({
-// //            id: onePage_id
+// //            id: OnepageId
 // //        }) 
 
 
@@ -209,7 +211,7 @@ module.exports = router;
 //     // const userRes = onePageLikes.each |like|
 //     //        // (/ models / Resume.js)
 //     //        const employee_id = like.employeeId
-//     //        const res = Resume.find({user_id: like.employeeId})
+//     //        const res = Resume.find({userId: like.employeeId})
 //     // end
 
 
@@ -261,9 +263,9 @@ module.exports = router;
 //         // the jobseekers id 
 //         const userId = req.user.id
 
-//         // async (userId, onePage_id) => {
+//         // async (userId, OnepageId) => {
 //         // try {
-//         //     const onepage = await OnePage.findById(onePage_id)
+//         //     const onepage = await OnePage.findById(OnepageId)
 //         //     Console.log(onepage)
 
 //         //     const ress = await Resume.findById(userId)
@@ -288,7 +290,7 @@ module.exports = router;
 
 
 //         // let promise = new Promise(function (resolve, reject) {
-//         //     OnePage.findById(onePage_id)
+//         //     OnePage.findById(OnepageId)
 //         // });
 
 //         OnePage.findById(onePageId)
@@ -305,7 +307,7 @@ module.exports = router;
 //                             //     onepage.resumes.push(res)
 //                             .then((onePage) => {
 //                                 // uses the one pages user-id (/models/OnePage.js line 4) to find the employer that it belongs to
-//                                 User.findById(onePage.user_id)
+//                                 User.findById(onePage.userId)
 //                                     .then((employer) => {
 //                                         // pulls out the email from the employer to be used in the .then in the one page component (/frontend/src/components/onePage/onepage.js)
 //                                         const employerEmail = employer.email

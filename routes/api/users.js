@@ -38,8 +38,8 @@ router.post("/login", (req, res) => {
               id: user.id,
               email: user.email,
               role: user.role,
-              f_name: user.f_name,
-              l_name: user.l_name,
+              fName: user.fName,
+              lName: user.lName,
               resume: user.resume
             };
             // console.log(user.resume)
@@ -78,10 +78,10 @@ router.post("/register", (req, res) => {
     } else {
       const newUser = new User({
         email: req.body.email,
-        f_name: req.body.f_name,
-        l_name: req.body.l_name,
+        fName: req.body.fName,
+        lName: req.body.lName,
         password: req.body.password,
-        zip_code: req.body.zip_code,
+        zipCode: req.body.zipCode,
         role: req.body.role
       });
       bcrypt.genSalt(10, (err, salt) => {
@@ -95,8 +95,8 @@ router.post("/register", (req, res) => {
                 id: user.id,
                 email: user.email,
                 role: user.role,
-                f_name: user.f_name,
-                l_name: user.l_name
+                fName: user.fName,
+                lName: user.lName
               };
               jwt.sign(payload, keys.secretOrKey, {
                 expiresIn: 3600

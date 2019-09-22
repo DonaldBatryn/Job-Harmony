@@ -32,7 +32,7 @@ class OnePageShow extends React.Component {
         }
         return (
             <div onPointerMove={this.showCoords} className="onepage-show">
-                {/* <h2>{currentUser.f_name}{currentUser.l_name}</h2> */}
+                {/* <h2>{currentUser.fName}{currentUser.lName}</h2> */}
 
                 <h3>Job Field :&nbsp;{onePage.jobField}</h3>
 

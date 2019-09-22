@@ -3,7 +3,7 @@ import React from 'react';
 const OnePageDetail = ({ onePage}) => {
   //!!!!  comminted out because need to reseed (After reseed commint backin )   !!!!
   // let jobTitle = "no job title";
-  // if (onePage.job_title){
+  // if (onePage.jobTitle){
     //   jobTitle = onePage.jobTitle
     // }
   let jobTitle = "DEMO DEMO DEMO";

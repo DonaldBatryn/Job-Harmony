@@ -19,7 +19,7 @@ router.post('/newEmployees', (req, res) => {
         'password': '$2a$10$rblxBXsOBY7/5i8DSVX9n.Qd14WyLHWy3BlVijm.v68OrfGp.6WCe',
         'fName': name,
         'lName': "employee",
-        'zip_code': 61920,
+        'zipCode': 61920,
         'role': "employee",
         "resume": []
     }))
@@ -78,9 +78,9 @@ router.post('/newEmployers', (req, res) => {
     const emmployers = names.map((name, i) => ({
         'email': `employer${i * 156205}@employer${i * 156205}.com`,
         'password': 'hunter2',
-        'f_name': name,
-        'l_name': 'employer',
-        'zip_code': 61920,
+        'fName': name,
+        'lName': 'employer',
+        'zipCode': 61920,
         'role': "employer"
     }))
 
@@ -135,9 +135,9 @@ router.post('/newDemoUser', (req, res) => {
     const demoUser = {
         'email': `donnie@donnie.donnie`,
         'password': '123456',
-        'f_name': 'demo',
-        'l_name': 'demo',
-        'zip_code': 61920,
+        'fName': 'demo',
+        'lName': 'demo',
+        'zipCode': 61920,
         'role': 'demo'
     }
 

@@ -58,7 +58,7 @@ class NavBar extends React.Component {
           <button className="session-btn my-matches-btn">My Matches</button>
           <div className="user-name-bar" 
             onClick={this.toggleDropdown}>
-            <span>{this.props.user.f_name}</span>
+            <span>{this.props.user.fName}</span>
             <i className="down"></i>
           </div>
           <ul id='dropdown' className={this.state.dropdown}>

@@ -18,6 +18,8 @@ router.post("/:onePageId",
         
         // the jobseekers id 
         const userId = req.user.id
+        
+        console.log("made it")
 
         // console.log(onePageId);
         // console.log(userId);
@@ -27,20 +29,23 @@ router.post("/:onePageId",
                 // console.log(resume)
                 onepage.resumes.push(resume)
                 onepage.save()
-                // console.log(onepage)
+                console.log(onepage)
                 const a = onepage.user_id
-                User.findById(a).then((employer) => {
+                console.log(a)
+                // rfq Come back after reseed this is braking becuse the onepage.user_id is null 
+                // reseeding mightnot fix anything but going to finish onepage stuff before messing with seeds and user
+                // User.findById(a).then((employer) => {
                     // const employerEmail = employer.email
                     // res.json(employerEmail)
                     const payload = {
-                        employerId: employer.id,
+                        employerId: "WHERE DO I END UP?",
                         onePageId: onepage._id,
                         
                     }
                     res.json(payload)
-                }).catch(err => {
-                    res.status(404).json(err)
-                });
+                // }).catch(err => {
+                //     res.status(404).json(err)
+                // });
             }).catch(err => {
                 res.status(404).json(err)
             });

@@ -15,23 +15,27 @@ router.post('/new', (req, res) => {
   if (!isValid) {
     return res.status(400).json(errors)
   }
-  const user_id = req.body.user_id;
-  const company_name = req.body.company_name;
-  const job_title = req.body.job_title;
+  const userId = req.body.userId;
+  const jobField = req.body.jobField;
+  const jobSkills = req.body.jobSkills;
+  const companyName = req.body.companyName;
+  const jobTitle = req.body.jobTitle;
   const description = req.body.description;
   const type = req.body.type;
   const remote = req.body.remote;
   const benefits = req.body.benefits;
-  const starting_pay = req.body.starting_pay;
+  const startingPay = req.body.startingPay;
   const newOnePage = new OnePage({
-    user_id,
-    company_name,
+    userId,
+    jobField,
+    jobSkills,
+    companyName,
     description,
-    job_title,
+    jobTitle,
     type,
     remote,
     benefits,
-    starting_pay
+    startingPay
   });
   newOnePage.save()
     .then(OnePage => res.json(OnePage))
@@ -57,13 +61,15 @@ router.patch('/:id/edit',
         if (!isValid) {
           return res.status(400).json(errors);
         }
-        onePage.company_name = req.body.company_name
-        onePage.description = req.body.description
-        onePage.job_title = req.body.job_title
-        onePage.type = req.body.type
-        onePage.remote = req.body.remote
-        onePage.benefits = req.body.benefits
-        onePage.starting_pay = req.body.starting_pay
+        onePage.jobField = req.body.jobField;
+        onePage.jobSkills = req.body.jobSkills;
+        onePage.companyName = req.body.companyName;
+        onePage.jobTitle = req.body.jobTitle;
+        onePage.description = req.body.description;
+        onePage.type = req.body.type;
+        onePage.remote = req.body.remote;
+        onePage.benefits = req.body.benefits;
+        onePage.startingPay = req.body.startingPay;
         onePage.save().then(onePage => res.json(onePage));
       })
       .catch(err =>

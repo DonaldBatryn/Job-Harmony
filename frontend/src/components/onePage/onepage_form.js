@@ -29,18 +29,34 @@ class OnePageForm extends React.Component {
             <h2>Create Your Job Listing</h2>
             <h4>Tell potential candidates about your open position</h4>
           </div>
+
           <div className="company-name-div">
             <label className="company-name-text">Company Name:</label>
-            <textarea className="company-name-input" onChange={this.update('company_name')} value={this.state.company_name} />
+            <textarea className="company-name-input" onChange={this.update('companyName')} value={this.state.companyName} />
           </div>
+
           <div className="job-title-div">
             <label className="job-title-text">Job Title:</label>
-            <textarea className="job-title-input" onChange={this.update('job_title')} value={this.state.job_title} />
+            <textarea className="job-title-input" onChange={this.update('jobTitle')} value={this.state.jobTitle} />
           </div>
+
+          <div className="job-title-div">
+            {/* Change the class names and add css to the class names */}
+            <label className="job-title-text">Job Field:</label>
+            <textarea className="job-title-input" onChange={this.update('jobField')} value={this.state.jobField} />
+          </div>
+
+          <div className="job-title-div">
+            {/* Change the class names and add css to the class names */}
+            <label className="job-title-text">Required Job Skills:</label>
+            <textarea className="job-title-input" onChange={this.update('jobSkills')} value={this.state.jobSkills} />
+          </div>
+
           <div className="job-description-div">
             <label className="job-description-text">Description:</label>
             <textarea className="job-description-input" onChange={this.update('description')} value={this.state.description} />
           </div>
+
           <div className="job-type-div">
             <label className="job-type-text">Type:</label>
             <select className="job-type-input" value={this.state.type} onChange={this.update('type')} >
@@ -50,6 +66,7 @@ class OnePageForm extends React.Component {
               <option value="Freelance">Freelance</option>
             </select>
           </div>
+
           <div className="job-remote-div">
             <label className="job-remote-text">Remote?:</label>
             <select className="job-remote-input" value={this.state.remote} onChange={this.update('remote')} >
@@ -58,14 +75,17 @@ class OnePageForm extends React.Component {
               <option value={false}>False</option>
             </select>
           </div>
+
           <div className="job-benefits-div">
             <label className="job-benefits-text">Benefits:</label>
             <textarea className="job-benefits-input" onChange={this.update('benefits')} value={this.state.benefits} />
           </div>
+
           <div className="starting-pay-div">
             <label className="starting-pay-text">Starting Pay:</label>
-            <textarea className="starting-pay-input" onChange={this.update('starting_pay')} value={this.state.starting_pay} />
+            <textarea className="starting-pay-input" onChange={this.update('startingPay')} value={this.state.startingPay} />
           </div>
+
           <input type="submit" value={this.props.formType} />
         </form>
       </div>

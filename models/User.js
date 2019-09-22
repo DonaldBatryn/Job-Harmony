@@ -34,3 +34,4 @@ const UserSchema = new Schema({
 
 });
 module.exports = User = mongoose.model('users', UserSchema);
+// {"email":"", "f_name":"", "l_name":"", "password":"", "zip_code":"", "role": ""}

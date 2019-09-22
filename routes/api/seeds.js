@@ -24,19 +24,18 @@ router.post('/newEmployers', (req, res) => {
         }
     ))
 
-
     
           User.insertMany(emmployers).then(new_employers => {
             const onepages = new_employers.map((employer, i) => ({
-                'user_id': employer.id,
-                'company_name': `company_name${i}`,
+                'userId': employer.id,
+                'companyName': `companyName${i}`,
                 'description': `description${i}`,
                 'jobTitle': `jobTitle${i}`,
                 'jobField': `jobField${i}`,
                 'jobSkills': `jobSkills${i}`,
                 'type': 'type',
                 'benefits': `benefits${i}`,
-                'starting_pay': i
+                'startingPay': i
             }))
             OnePage.insertMany(onepages).then(allOnepages => {
                 res.json(allOnepages)
@@ -71,7 +70,7 @@ router.post('/newEmployees', (req, res) => {
           User.insertMany(emmployes).then(newEmmployes => {
             const resumes = newEmmployes.map((employee, i) => ({
                 'userId': employee.id,
-                'job_history': `job_history${i}`,
+                'jobHistory': `jobHistory${i}`,
                 'jobField': `jobField${i}`,
                 'jobSkills': `jobSkills${i}`,
                 'jobTitle': `jobTitle${i}`
@@ -85,6 +84,8 @@ router.post('/newEmployees', (req, res) => {
 
 
 })
+
+// make a demo user
 
 
 module.exports = router;

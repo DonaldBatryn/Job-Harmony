@@ -108,6 +108,7 @@
     justify-content: flex-start;
     align-items: center;
     border: 1px solid lightgray;
+    min-height: 10vh;
 }
 
 .like-info{

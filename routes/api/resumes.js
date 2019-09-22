@@ -19,7 +19,7 @@ router.post('/new',
     return res.status(400).json(errors)
   }
   const userId = req.user.id;
-  const job_history = req.body.job_history;
+  const jobHistory = req.body.jobHistory;
   const jobField = req.body.jobField;
   const jobSkills = req.body.jobSkills;
   const jobTitle = req.body.jobTitle;
@@ -28,7 +28,7 @@ router.post('/new',
   
   const newResume = new Resume({
     userId,
-    job_history,
+    jobHistory,
     jobField,
     jobSkills,
     jobTitle
@@ -76,9 +76,10 @@ router.patch('/:id/edit',
         if (!isValid) {
           return res.status(400).json(errors);
         }
-        resume.job_history = req.body.job_history
-        resume.job_field = req.body.job_field
-        resume.job_skills = req.body.job_skills
+        resume.jobHistory = req.body.jobHistory;
+        resume.jobField = req.body.jobField;
+        resume.jobSkills = req.body.jobSkills;
+        resume.jobTitle = req.body.jobTitle;
         resume.save().then(resume => res.json(resume));
       })
       .catch(err =>

@@ -5,7 +5,7 @@ const ResumeSchema = new Schema({
     type: String,
     required: true
   },
-  job_history: {
+  jobHistory: {
     type: String,
     required: true
   },

@@ -14,6 +14,9 @@ const validateSignupInput = require('../../validations/signup_input');
 router.post("/login", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
+  console.log(req.body)
+  console.log(email)
+  console.log(password)
   const { errors, isValid } = validateLoginInput(req.body);
 
   if (!isValid) {

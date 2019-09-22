@@ -1,5 +1,5 @@
 .nav-bar {
-  border: 1px solid salmon;
+  border: 1px solid black;
 }
 .nav-bar-user {
   border: 1px solid green;
@@ -9,10 +9,10 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: rgb(91, 91, 251);
+  background-color: black
 }
 .session-btn {
-  background-color: blue;
+  background-color: black;
   width: 100px;
   padding: 8.5px;
   font-size: 12px;
@@ -31,7 +31,7 @@
   align-items: center;
   height: 30px;
   width: 100px;
-  background-color: blue;
+  background-color: black;
   color: white;
   padding-left: 15px;
   border-radius: 3px;
@@ -39,7 +39,7 @@
   font-weight: 400;
 }
 .user-name-bar:hover{
-  background-color: darkblue;
+  background-color: gray;
 }
 .dropdown-hidden {
   display: none;
@@ -86,4 +86,9 @@ i {
 }
 #dropdown button {
   /* background-color: lightblue; */
+}
+
+.nav-image{
+  height: 100%;
+  width: auto;
 }

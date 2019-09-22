@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom'
 import { Route } from 'react-router';
+import logo from '../../images/jobHarmonyLogo.png'
 // import { Route } from 'react-router';
 // import './navbar.css'
 
@@ -52,6 +53,7 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div className="nav-bar-user">
+          <img className="nav-image" src={logo} />
           <Link to={`/users/${this.props.user.id}/profile`}>
             <button className="session-btn my-profile-btn">My Profile</button>
           </Link>

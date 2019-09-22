@@ -31,7 +31,7 @@ app.use("/api/matches", matches);
 app.use("/api/likes", likes);
 app.use("/api/matchers", matchers);
 app.use("/api/seeds", seeds);
-
+app.use(express.static('public'))
 
 
 

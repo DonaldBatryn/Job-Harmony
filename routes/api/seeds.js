@@ -116,9 +116,58 @@ const signupEmployers = (emmployer, num) => {
                     'benefits': `benefits${num}`,
                     'startingPay': num
                 }
-                const newResume = new Resume(resume)
-                console.log(newResume)
+                const newonepage = new OnePage(onepage)
+                console.log(newonepage)
 
+                return (newonepage)
+            })
+            .catch(err => console.log(err))
+    })
+    })
+}
+
+
+
+
+//Used to signup the demo user the will be used on the modle
+router.post('/newDemoUser', (req, res) => {
+
+    const demoUser = {
+        'email': `donnie@donnie.donnie`,
+        'password': '123456',
+        'f_name': 'demo',
+        'l_name': 'demo',
+        'zip_code': 61920,
+        'role': 'demo'
+    }
+
+    const send = signupDemoUser(demoUser, i * 156205)
+
+    res.json({
+        "send": send
+    })
+
+
+})
+
+const signupDemoUser = (demo, num) => {
+
+    const newUser = new User(demo);
+    bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(newUser.password, salt, (err, hash) => {
+            if (err) throw err;
+            newUser.password = hash;
+            newUser.save()
+            .then(user => {
+                const resume = {
+                    'userId': newUser.id,
+                    'jobHistory': `jobHistory${num}`,
+                    'jobField': `jobField${num}`,
+                    'jobSkills': `jobSkills${num}`,
+                    'jobTitle': `jobTitle${num}`
+
+                }
+                const newResume = new Resume(resume)
                 return (newResume)
             })
             .catch(err => console.log(err))

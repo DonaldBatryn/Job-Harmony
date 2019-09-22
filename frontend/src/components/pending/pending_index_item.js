@@ -25,7 +25,7 @@ class PendingIndexItem extends React.Component{
                     <h5 className="pending-company-name">{onePage[0].companyName}</h5>
                    
                 </div>
-                <div className="remove-like" >&times;</div>
+             
             </div>
         )
     }

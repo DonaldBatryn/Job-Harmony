@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom'
 import { Route } from 'react-router';
+import logo from '../../images/jobHarmonyLogo.png'
 // import { Route } from 'react-router';
 // import './navbar.css'
 
@@ -52,6 +53,7 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div className="nav-bar-user">
+          <img className="nav-image" src={logo} />
           <Link to={`/users/${this.props.user.id}/profile`}>
             <button className="session-btn my-profile-btn">My Profile</button>
           </Link>
@@ -64,17 +66,15 @@ class NavBar extends React.Component {
           <ul id='dropdown' className={this.state.dropdown}>
             <span onClick={this.toggleDropdown} className="dropdown-items">
               <li className="drop-list-item">
-                <Link to={'/home'}>All Results/Feed</Link></li>
+                <button className="logout-btn"><Link to={'/home'}>All Results/Feed</Link></button></li>
               <li className="drop-list-item">
-                <Link to={'/profile'}>Profile</Link></li>
+                <button className="logout-btn"><Link to={'/profile'}>Profile</Link></button></li>
               <li className="drop-list-item">
-                <Link to={'/preferences'}>Update your preferences</Link></li>
+                <button className="logout-btn"><Link to={'/preferences'}>Update your preferences</Link></button></li>
               <li className="drop-list-item">
-                {createLink}</li>
+                <button className="logout-btn">{createLink}</button></li>
               <li className="drop-list-item">
-                <button className="btn">Empty Button</button></li>
-              <li className="drop-list-item">
-                <button onClick={this.logoutUser}>Logout</button></li>
+                <button className="logout-btn" onClick={this.logoutUser}>Logout</button></li>
             </span>
           </ul>
 

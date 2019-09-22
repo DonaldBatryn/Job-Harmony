@@ -40,7 +40,7 @@ class BrowseWindow extends React.Component{
             return <div className="browse-window-container">Loading...</div>
         }
         let currentOnePage = this.props.onePages.map(onePage => {
-            return <div key={onePage._id}><OnePageDetail onePage={onePage}/></div>
+            return <div className="onepage-detail-container" key={onePage._id}><OnePageDetail onePage={onePage}/></div>
         });
 
         let button1;

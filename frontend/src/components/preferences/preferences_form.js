@@ -44,11 +44,11 @@ class PreferencesForm extends React.Component{
                     <label>Proximity:&nbsp;all jobs&nbsp;</label>
                     <select className="prefs-input" value={this.state.proximity} onChange={this.update('proximity')}>
                         <option value="Select proximity" disabled>Select proximity</option>
-                        <option value="1-5">less than 5 miles</option>
-                        <option value="5-10">between 5 and 10 miles</option>
-                        <option value="10-25">between 10 and 25 miles</option>
-                        <option value="25-50">between 25 and 50 miles</option>
-                        <option value="50-1000">over 50 miles</option>
+                        <option value="5">less than 5 miles</option>
+                        <option value="10">between 5 and 10 miles</option>
+                        <option value="25">between 10 and 25 miles</option>
+                        <option value="50">between 25 and 50 miles</option>
+                        <option value="1000">over 50 miles</option>
                     </select><br/>
                     <label>Type of employment:&nbsp;</label>
                     <select className="prefs-input" value={this.state.type} onChange={this.update('type')}>

@@ -18,7 +18,7 @@ class ResumeShow extends React.Component {
     if (!this.props.resume) {
       return <div>Loading...</div>
     }
-    debugger
+ 
     let { resume, currentUser } = this.props;
     return (
       <div className="resume-show-container">

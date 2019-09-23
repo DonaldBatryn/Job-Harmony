@@ -1,5 +1,6 @@
 .nav-bar {
   border: 1px solid black;
+  
 }
 
 .nav-bar > a {
@@ -14,7 +15,10 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: black
+  background-color: black;
+  position: fixed;
+  top: 0;
+  z-index: 2;
 }
 .session-btn {
   background-color: black;

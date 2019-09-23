@@ -1,6 +1,6 @@
 import React from 'react';
-import BrowseShow from './browse_show';
-import { withRouter } from 'react-router-dom';
+// import BrowseShow from './browse_show';
+// import { withRouter } from 'react-router-dom';
 import OnePageDetail from './onepage_detail'
 
 

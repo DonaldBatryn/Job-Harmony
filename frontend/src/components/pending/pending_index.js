@@ -3,9 +3,9 @@ import { withRouter } from 'react-router-dom';
 import PendingIndexItem from './pending_index_item';
 
 class PendingIndex extends React.Component{
-    constructor(props){
-        super(props)
-    }
+    // constructor(props){
+    //     super(props)
+    // }
 
     render(){
         let allLikes = this.props.likedOnePages.map(onePage => {

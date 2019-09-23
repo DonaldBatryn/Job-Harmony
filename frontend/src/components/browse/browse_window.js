@@ -41,6 +41,7 @@ class BrowseWindow extends React.Component{
         if (!this.props.onePages){
             return <div className="browse-window-container">Loading...</div>
         }
+        
         let currentOnePage = this.props.onePages.map(onePage => {
             return <div className="onepage-detail-container swipe" key={onePage._id}><OnePageDetail onePage={onePage}/></div>
         });

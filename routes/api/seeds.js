@@ -14,6 +14,8 @@ const  randomEmail = faker.internet.email();
 const randomZipCode = faker.address.zipCode();
 const randomParagraph = faker.lorem.paragraph();
 const randomCompanyLogo = faker.image.business();
+const randomCompanyCatchPhrase = faker.company.catchPhrase();
+const randomCompanyName = faker.company.companyName();
 const randomEmployerImage = faker.image.avatar();
 const randomEmployerJobTitle = faker.name.jobTitle();
 const randomEmployerJobDescriptor = faker.name.jobDescriptor();
@@ -22,7 +24,7 @@ const randomEmployerJobPay = faker.random.number();
 
 
 
-
+    const types = ['part time', 'full time', 'freelance']
     const jobFields = [
         "Finance",
         "SoftwareEngineering",
@@ -228,8 +230,7 @@ router.post('/newEmployers', (req, res) => {
             'lName': `${allLastNames[index]}`,
             'zipCode': `${allZipCodes}`,
             'role': "employer",
-            "resume": [], 
-            "image": randomCompanyLogo
+            "resume": []
         })
     }
 
@@ -259,17 +260,20 @@ const signupEmployers = (emmployer,num) => {
                 const jobField = jobFields[num % jobFields.length]
                 const onepage = {
                     'userId': newUser.id,
-                    'companyName': `companyName${num}`,
+                    'companyName': randomCompanyName,
                     'description': `${randomEmployerJobDescriptor}`,
                     'jobTitle': `${randomEmployerJobTitle}`,
                     'jobField': `${jobField}`,
                     'jobSkills': `${jobSkills[jobField]}`,
-                    'type': 'type',
+                    'type': types[num % 3],
                     'benefits': `${randomParagraph}`,
-                    'startingPay': randomEmployerJobPay
+                    'startingPay': randomEmployerJobPay,
+                    'image': randomCompanyLogo,
+                    'catchPhrase': randomCompanyCatchPhrase
                 }
                 const newonepage = new OnePage(onepage)
                 newonepage.save()
+                console.log(newonepage.image)
                 return newonepage
             })
             .catch(err => console.log(err))

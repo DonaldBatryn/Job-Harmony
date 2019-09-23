@@ -25,6 +25,8 @@ router.post('/new', (req, res) => {
   const remote = req.body.remote;
   const benefits = req.body.benefits;
   const startingPay = req.body.startingPay;
+  const image = req.body.image;
+  const catchPhrase = req.body.catchPhrase;
   const newOnePage = new OnePage({
     userId,
     jobField,
@@ -35,7 +37,9 @@ router.post('/new', (req, res) => {
     type,
     remote,
     benefits,
-    startingPay
+    image,
+    startingPay,
+    catchPhrase
   });
   newOnePage.save()
     .then(OnePage => res.json(OnePage))

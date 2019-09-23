@@ -7,6 +7,7 @@ const likes = require('./routes/api/likes');
 const users = require('./routes/api/users');
 const passport = require('passport');
 const resumes = require('./routes/api/resumes');
+const preferences = require('./routes/api/preferences');
 const matches = require('./routes/api/matches');
 const seeds = require('./routes/api/seeds');
 
@@ -25,6 +26,7 @@ app.use(passport.initialize());
 require('./config/passport')(passport);
 const port = process.env.PORT || 5000;
 app.use("/api/resumes", resumes);
+app.use("/api/preferences", preferences);
 app.use("/api/onePages", onePages);
 app.use("/api/users", users);
 app.use("/api/matches", matches);

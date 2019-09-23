@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const OnePage = require("../../models/OnePage")
 const passport = require("passport");
-const Resume = require("../../models/Resume")
+const Preference = require("../../models/Preference")
 
 
 
@@ -20,12 +20,15 @@ router.get("/",
         console.log(userId)
         // console.log(Id)
 
-        Resume.findOne({userId: userId}).then(resume => {
-            const aa = resume.jobField
-            console.log(aa)
-            console.log(resume)
+        Preference.findOne({userId}).then(preference => {
+            console.log(preference)
             OnePage.find({
-                    jobField: resume.jobField,
+                    jobField: preference.jobField,
+                    // jobField: preference.proximity,
+                    type: preference.type,
+                    startingPay: { $gte: preference.salaryRangeLow, $lte: preference.salaryRangeHigh  }
+                    // startingPay: { $gte: 0, $lte: 1000000 }
+
                 
                 }).then(onePages => {
                     

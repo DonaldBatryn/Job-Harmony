@@ -8,18 +8,18 @@ const mongoose = require('mongoose');
 const db = require('../../config/keys').mongoURI;
 const faker = require('faker');
 
-const randomFirstName = faker.name.firstName(); // Rowan
-const  randomLastName = faker.name.lastName(); // Nikolaus
-const  randomEmail = faker.internet.email(); 
-const randomZipCode = faker.address.zipCode();
-const randomParagraph = faker.lorem.paragraph();
-const randomCompanyLogo = faker.image.business();
-const randomCompanyCatchPhrase = faker.company.catchPhrase();
-const randomCompanyName = faker.company.companyName();
-const randomEmployerImage = faker.image.avatar();
-const randomEmployerJobTitle = faker.name.jobTitle();
-const randomEmployerJobDescriptor = faker.name.jobDescriptor();
-const randomEmployerJobPay = faker.random.number();
+const randomFirstName = faker.name.firstName; // Rowan
+const  randomLastName = faker.name.lastName; // Nikolaus
+const  randomEmail = faker.internet.email; 
+const randomZipCode = faker.address.zipCode;
+const randomParagraph = faker.lorem.paragraph;
+const randomCompanyLogo = faker.image.business;
+const randomCompanyCatchPhrase = faker.company.catchPhrase;
+const randomCompanyName = faker.company.companyName;
+const randomEmployerImage = faker.image.avatar;
+const randomEmployerJobTitle = faker.name.jobTitle;
+const randomEmployerJobDescriptor = faker.name.jobDescriptor;
+const randomEmployerJobPay = faker.random.number;
 
 
 
@@ -141,10 +141,10 @@ router.post('/newEmployees', (req, res) => {
     const allZipCodes= [];
 
     for (let index = 0; index < 100; index++) {
-        const firstName = randomFirstName;
-        const lastName = randomLastName;
-        const email = randomEmail;
-        const zipcode = randomZipCode;
+        const firstName = randomFirstName();
+        const lastName = randomLastName();
+        const email = randomEmail();
+        const zipcode = randomZipCode();
         allFirstNames.push(firstName);
         allLastNames.push(lastName);
         allEmails.push(email);
@@ -190,7 +190,7 @@ const signupEmployees = (emmploye, num) => {
                 const jobField = jobFields[num % jobFields.length]
                 const resume = {
                     'userId': newUser.id,
-                    'jobHistory': `${randomParagraph}`,
+                    'jobHistory': `${randomParagraph()}`,
                     'jobField': `${jobField}`,
                     'jobSkills': `${jobSkills[jobField]}`
 
@@ -212,10 +212,10 @@ router.post('/newEmployers', (req, res) => {
     const allZipCodes = [];
 
     for (let index = 0; index < 100; index++) {
-        const firstName = randomFirstName;
-        const lastName = randomLastName;
-        const email = randomEmail;
-        const zipcode = randomZipCode;
+        const firstName = randomFirstName();
+        const lastName = randomLastName();
+        const email = randomEmail();
+        const zipcode = randomZipCode();
         allFirstNames.push(firstName);
         allLastNames.push(lastName);
         allEmails.push(email);
@@ -260,20 +260,20 @@ const signupEmployers = (emmployer,num) => {
                 const jobField = jobFields[num % jobFields.length]
                 const onepage = {
                     'userId': newUser.id,
-                    'companyName': randomCompanyName,
-                    'description': `${randomEmployerJobDescriptor}`,
-                    'jobTitle': `${randomEmployerJobTitle}`,
+                    'companyName': randomCompanyName(),
+                    'description': `${randomEmployerJobDescriptor()}`,
+                    'jobTitle': randomEmployerJobTitle(),
                     'jobField': `${jobField}`,
                     'jobSkills': `${jobSkills[jobField]}`,
-                    'type': types[num % 3],
-                    'benefits': `${randomParagraph}`,
-                    'startingPay': randomEmployerJobPay,
-                    'image': randomCompanyLogo,
-                    'catchPhrase': randomCompanyCatchPhrase
+                    'type': `${types[num % 3]}`,
+                    'benefits': randomParagraph(),
+                    'startingPay': randomEmployerJobPay(),
+                    'image': randomCompanyLogo(),
+                    'catchPhrase': randomCompanyCatchPhrase()
                 }
                 const newonepage = new OnePage(onepage)
                 newonepage.save()
-                console.log(newonepage.image)
+                console.log(newonepage.description)
                 return newonepage
             })
             .catch(err => console.log(err))
@@ -288,12 +288,12 @@ const signupEmployers = (emmployer,num) => {
 router.post('/newDemoUser', (req, res) => {
 
     const demoUser = {
-        'email': `donnie@donnie.donnie`,
+        'email': `demo@demo.demo`,
         'password': '123456',
-        'fName': 'demo',
+        'fName': 'guest',
         'lName': 'demo',
         'zipCode': 61920,
-        'role': 'demo'
+        'role': 'Job-Seeker'
     }
 
     const send = signupDemoUser(demoUser, 1)
@@ -316,7 +316,7 @@ const signupDemoUser = (demo, num) => {
                 const jobField = jobFields[num % jobFields.length]
                 const resume = {
                     'userId': newUser.id,
-                    'jobHistory': `${randomParagraph}`,
+                    'jobHistory': `${randomParagraph()}`,
                     'jobField': `${jobField}`,
                     'jobSkills': `${jobSkills[jobField]}`
 

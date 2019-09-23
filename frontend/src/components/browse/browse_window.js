@@ -42,6 +42,7 @@ class BrowseWindow extends React.Component{
         if (!this.props.onePages){
             return <div className="browse-window-container">Loading...</div>
         }
+        
         let currentOnePage = this.props.onePages.map(onePage => {
             return <div className="onepage-detail-container swipe" key={onePage._id}><OnePageDetail onePage={onePage}/></div>
         });
@@ -51,7 +52,7 @@ class BrowseWindow extends React.Component{
         if (this.props.user.role === 'Employer') {
             button1 = <button onClick={this.handleNext}>Decline</button>
             button2 = <button onClick={this.handleNext}>Contact</button>
-        } else if (this.props.user.role === 'Employee' && this.props.onePages.length > 0){
+        } else if (this.props.user.role === 'Job-Seeker' && this.props.onePages.length > 0) {
             button1 = <button onClick={this.handleNext}>Not Interested</button>
             button2 = <button onClick={this.handleLike}>Interested</button>
         } else {

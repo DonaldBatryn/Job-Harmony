@@ -25,6 +25,7 @@ router.get("/",
             OnePage.find({
                     jobField: preference.jobField,
                     // jobField: preference.proximity,
+                    // rfq add when google api
                     type: preference.type,
                     startingPay: { $gte: preference.salaryRangeLow, $lte: preference.salaryRangeHigh  }
                     // startingPay: { $gte: 0, $lte: 1000000 }

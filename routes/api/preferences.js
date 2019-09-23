@@ -25,8 +25,9 @@ router.post('/new',
         const jobField = req.body.jobField;
         const proximity = req.body.proximity;
         const type = req.body.type;
-        const salaryRangeHigh = req.body.salaryRangeHigh;
-        const salaryRangeLow = req.body.salaryRangeLow;
+        const salaryRange = req.body.salaryRange.split("-")
+        const salaryRangeHigh = salaryRange[1];
+        const salaryRangeLow = salaryRange[0];
 
         const newPreference = new Preference({
             userId,
@@ -54,7 +55,7 @@ router.post('/new',
     })
 
 
-router.patch('/:id/edit',
+router.patch('/',
 
     passport.authenticate('jwt', {
         session: false

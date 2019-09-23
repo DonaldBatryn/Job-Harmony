@@ -1,0 +1,140 @@
+.icon {
+  width: 60px;
+  height: 60px;
+  border: solid rgb(161, 153, 153, .5);
+}
+.icon-collection {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.Accounting-1 {
+  background: url(https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/JobHarmony/Accounting/1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.Accounting-2 {
+  background: url(https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/JobHarmony/Accounting/2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.Accounting-3 {
+  background: url(https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/JobHarmony/Accounting/3.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.Culinary-1 {
+  background: url(https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/JobHarmony/Culinary/1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.Culinary-2 {
+  background: url(https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/JobHarmony/Culinary/2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.Culinary-3 {
+  background: url(https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/JobHarmony/Culinary/3.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.Finance-1 {
+  background: url(https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/JobHarmony/Finance/1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.Finance-2 {
+  background: url(https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/JobHarmony/Finance/2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.Finance-3 {
+  background: url(https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/JobHarmony/Finance/3.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.Healthcare-1 {
+  background: url(https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/JobHarmony/Healthcare/1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.Healthcare-2 {
+  background: url(https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/JobHarmony/Healthcare/2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.Healthcare-3 {
+  background: url(https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/JobHarmony/Healthcare/3.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.Insurance-1 {
+  background: url(https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/JobHarmony/Insurance/1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.Insurance-2 {
+  background: url(https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/JobHarmony/Insurance/2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.Insurance-3 {
+  background: url(https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/JobHarmony/Insurance/3.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.Marketing-1 {
+  background: url(https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/JobHarmony/Marketing/1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.Marketing-2 {
+  background: url(https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/JobHarmony/Marketing/2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.Marketing-3 {
+  background: url(https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/JobHarmony/Marketing/3.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.Software-1 {
+  background: url(https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/JobHarmony/Software/1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.Software-2 {
+  background: url(https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/JobHarmony/Software/2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.Software-3 {
+  background: url(https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/JobHarmony/Software/3.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.Transportation-1 {
+  background: url(https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/JobHarmony/Transportation/1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.Transportation-2 {
+  background: url(https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/JobHarmony/Transportation/2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.Transportation-3 {
+  background: url(https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/JobHarmony/Transportation/3.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}

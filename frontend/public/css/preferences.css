@@ -1,0 +1,36 @@
+
+.preference-form-container{
+    padding: 40px;
+    z-index:0;
+    top: 50px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(34, 34, 34, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+}
+
+.prefs-header-box{
+    margin-bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.prefs-form{
+    padding: 15px;
+    z-index: 2;
+    top: 70px;
+    border: 1px solid white;
+    width: 300px;
+}
+
+.prefs-input{
+    background-color: lightgray;
+    margin-top: 15px;
+    width: 80%;
+}

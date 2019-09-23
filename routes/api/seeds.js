@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const OnePage = require("../../models/OnePage")
 const Resume = require("../../models/Resume")
+const bcrypt = require('bcryptjs')
 
 
 router.post('/newEmployees', (req, res) => {

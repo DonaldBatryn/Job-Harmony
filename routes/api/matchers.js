@@ -29,6 +29,7 @@ router.get("/",
                     type: preference.type,
                     startingPay: { $gte: preference.salaryRangeLow, $lte: preference.salaryRangeHigh  }
                     // startingPay: { $gte: 0, $lte: 1000000 }
+
                 
                 }).then(onePages => {
                     

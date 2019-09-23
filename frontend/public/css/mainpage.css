@@ -5,7 +5,7 @@
     bottom: 0;
     width: 100%;
     /* background-color: pink; */
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -17,7 +17,7 @@
     height: 99%;
     width: 25%;
     /* background-color: lightblue; */
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -29,7 +29,7 @@
     height: 99%;
     width: 73%;
     /* background-color: lightblue; */
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -43,7 +43,7 @@
     width: 98%;
     height: 94%;
     /* background-color: lightgreen; */
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -54,7 +54,7 @@
     width: 98%;
     height: 6%;
     /* background-color: yellow; */
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -65,7 +65,7 @@
     width: 98%;
     height: 98%;
     /* background-color: gray; */
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -80,7 +80,7 @@
     width: 98%;
     height: 10%;
     /* background-color: yellow; */
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -91,7 +91,7 @@
     width: 98%;
     height: 87%;
     /* background-color: yellow; */
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

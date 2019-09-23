@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom'
-import { Route } from 'react-router';
+// import { Route } from 'react-router';
 import logo from '../../images/jobHarmonyLogo.png'
 // import { Route } from 'react-router';
 // import './navbar.css'
@@ -53,7 +53,7 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div className="nav-bar-user">
-          <Link className="nav-image" to="/home"><img className="nav-image" src={logo} /></Link>
+          <Link className="nav-image" to="/home"><img className="nav-image" src={logo} alt=""/></Link>
           <Link to={`/users/${this.props.user.id}/profile`}>
             <button className="session-btn my-profile-btn">My Profile</button>
           </Link>
@@ -83,7 +83,7 @@ class NavBar extends React.Component {
     } else {
       return (
         <div className="nav-bar-user">
-          <Link className="nav-image" to="/home"><img className="nav-image" src={logo} /></Link>
+          <Link className="nav-image" to="/home"><img className="nav-image" src={logo} alt=""/></Link>
           <button className="session-btn" onClick={this.openModalFor('signup')}>
             <Link className="my-profile-btn" to={'/signup'}>Signup</Link>
           </button>

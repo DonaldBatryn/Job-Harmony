@@ -1,7 +1,35 @@
 .splash-container{
     display: flex;
     width: 100%;
-    height: 600px;
+    height: 2600px;
     margin-top: 50px;
-    background-color: pink;
+    /* background-color: pink; */
+}
+
+.splash-title{
+    position: absolute;
+    z-index: 1;
+    color: bisque;
+    font-weight: 700;
+    font-size: 70px;
+    margin-left: 40px;
+}
+
+.hero{
+    top: 0px;
+    width: 100vw;
+    height: 70vw;
+    position: fixed;
+    z-index: -1;
+}
+
+.intro-text{
+    position: absolute;
+    z-index: 1;
+    color: bisque;
+    font-weight: 700;
+    font-size: 20px;
+    margin-left: 40px;
+    top: 170px;
+    text-decoration: underline;
 }

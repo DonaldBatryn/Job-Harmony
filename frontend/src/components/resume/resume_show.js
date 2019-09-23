@@ -3,9 +3,9 @@ import React from 'react';
 
 
 class ResumeShow extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   componentDidMount() {
     let resumeId = this.props.match.params.resumeId;

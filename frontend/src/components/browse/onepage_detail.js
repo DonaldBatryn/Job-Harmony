@@ -20,7 +20,7 @@ const OnePageDetail = ({ onePage}) => {
     <div className="onepage-detail-container">
       <div className="op-detail-header">
         <div className="op-header-pic">
-          <img  src={logo}/>
+          <img src={logo} alt=""/>
         </div>
         <div className="op-header-text">
         <h1>{jobTitle}</h1>

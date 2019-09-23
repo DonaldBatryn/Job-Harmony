@@ -1,24 +1,24 @@
 .icon {
-  width: 60px;
+  width: 80px;
   height: 60px;
-  border: solid rgb(161, 153, 153, .5);
+  /* border: solid rgb(161, 153, 153, .5); */
 }
 .icon-collection {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-.Accounting-1 {
+.Business-1 {
   background: url(https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/JobHarmony/Accounting/1.png);
   background-size: contain;
   background-repeat: no-repeat;
 }
-.Accounting-2 {
+.Business-2 {
   background: url(https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/JobHarmony/Accounting/2.png);
   background-size: contain;
   background-repeat: no-repeat;
 }
-.Accounting-3 {
+.Business-3 {
   background: url(https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/JobHarmony/Accounting/3.png);
   background-size: contain;
   background-repeat: no-repeat;

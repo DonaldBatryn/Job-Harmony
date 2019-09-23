@@ -87,8 +87,8 @@ class NavBar extends React.Component {
           <button className="session-btn" onClick={this.openModalFor('signup')}>
             <Link className="my-profile-btn" to={'/signup'}>Signup</Link>
           </button>
-          <button className="session-btn" onClick={this.openModalFor('login')}>
-            <Link className="my-profile-btn" to={'/login'}>Login</Link>
+          <button className="session-btn log-in-nav" onClick={this.openModalFor('login')}>
+            Login
           </button>
         </div>
       );

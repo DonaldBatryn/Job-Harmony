@@ -37,7 +37,7 @@ class PreferencesForm extends React.Component{
                         <option value="Healthcare/Medical">Healthcare</option>
                         <option value="Marketing">Marketing</option>
                         <option value="Transportation">Transportation</option>
-                        <option value="Culinary">Culinary</option>
+                        <option value="Culinary Arts">Culinary</option>
                         <option value="Business/Accounting">Accounting</option>
                         <option value="Insurance">Insurance</option>
                     </select><br/>

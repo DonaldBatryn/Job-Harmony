@@ -27,7 +27,6 @@ class BrowseWindow extends React.Component{
     }
 
     handleLike(){
-        debugger
         this.props.createLike({
             employeeId: this.props.user.id,
             OnepageId: this.props.onePages[this.state.i]._id

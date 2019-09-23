@@ -15,6 +15,14 @@
   position: relative;
 }
 
+.no-more-results{
+  margin-top: 100px;
+  display: flex;
+  height: 80px;
+  flex-direction: column;
+  align-items: center;
+}
+
 .op-detail-header{
   width: 95%;
   height: 600px;
@@ -62,8 +70,7 @@
 }
 
 .op-header-pic img{
-  width: auto;
-  height: 100%;
+  width: 30vw;
 }
 
 .op-header-text{
@@ -74,7 +81,7 @@
 
 .swipe {
   /* position: absolute; */
-  right: -200px;
+  right: -300px;
   /* width: 55%;
   height: 55%; */
   /* width: inherit;

@@ -25,10 +25,8 @@ router.get("/:userId",
             console.log(resume)
             // console.log(2222211111111111111111111111222222222111111111111111111111)
             // console.log(resume.jobField)
-            // console.log(resume.jobTitle)
             OnePage.find({
                     jobField: resume.jobField,
-                    jobTitle: resume.jobTitle 
                 }).then(onePages => {
                     
                 // console.log(onePages)

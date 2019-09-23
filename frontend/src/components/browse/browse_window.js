@@ -1,7 +1,8 @@
 import React from 'react';
 // import BrowseShow from './browse_show';
 // import { withRouter } from 'react-router-dom';
-import OnePageDetail from './onepage_detail'
+import OnePageDetail from './onepage_detail';
+import EndOfResults from './end_of_results';
 
 
 
@@ -30,6 +31,7 @@ class BrowseWindow extends React.Component{
             employeeId: this.props.user.id,
             OnepageId: this.props.onePages[this.state.i]._id
         })
+
         this.setState({
             i: (this.state.i) + 1
         }) 
@@ -48,18 +50,29 @@ class BrowseWindow extends React.Component{
         if (this.props.user.role === 'Employer') {
             button1 = <button onClick={this.handleNext}>Decline</button>
             button2 = <button onClick={this.handleNext}>Contact</button>
-        } else {
+        } else if (this.props.user.role === 'Job-Seeker' && this.props.onePages.length > 0){
             button1 = <button onClick={this.handleNext}>Not Interested</button>
             button2 = <button onClick={this.handleLike}>Interested</button>
+        } else {
+            button1 = ""
+            button2 = ""
         }
+        let renderedResult;
+        if (this.state.i < this.props.onePages.length){
+            renderedResult = currentOnePage[this.state.i]
+        } else {
+            renderedResult = (
+                <EndOfResults />
+            )
+        }
+        
         return (
             <div className="browse-window-container">
                 <div className="browse-header-text">
                     <h3>Recommended For You</h3>
                 </div>
                 <div className="browse-window ">
-                   
-                    {currentOnePage[this.state.i]}
+                    {renderedResult}
                 </div>
                 <div className="buttons-container">
                     <div className="button-1">

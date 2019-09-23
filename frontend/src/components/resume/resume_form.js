@@ -40,11 +40,6 @@ class ResumeForm extends React.Component {
             <input className="job-field-input" onChange={this.update('jobField')} value={this.state.jobField} />
           </div>
 
-          <div className="job-field-div">
-            <label className="job-field-txt">Desired Job Title</label>
-            <input className="job-field-input" onChange={this.update('jobTitle')} value={this.state.jobTitle} />
-          </div>
-          {/* add a buttion to add another Desired Job Title*/}
           <div className="job-history-div">
             <label className="job-history-txt">Job History</label>
             <textarea className="job-history-input" onChange={this.update('jobHistory')} value={this.state.jobHistory} />

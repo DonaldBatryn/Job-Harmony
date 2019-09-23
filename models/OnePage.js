@@ -17,7 +17,7 @@ const OnePageSchema = new Schema({
     type: String,
     required: true
   },
-  // job type parttime, fulltime, freelance
+  // job type part time, full time, freelance
   type: {
     type: String,
     required: true
@@ -41,6 +41,14 @@ const OnePageSchema = new Schema({
   jobSkills: {
     type: String,
     required: true
+  }, // rfq takeout if no employer img
+  image: {
+    type: String,
+    required: false
+  },
+  catchPhrase: {
+    type: String,
+    required: false
   },
   resumes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'resumes'}]
 

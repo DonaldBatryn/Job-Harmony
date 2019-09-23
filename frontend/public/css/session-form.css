@@ -28,24 +28,25 @@ select {
   margin: 2px;
 }
 input[type=submit] {
-  margin: 5px 0px;
+  margin: 25px 0px;
   padding: 5px;
-  color: rgb(179, 188, 197);
-  background: #96858F;
+  background-color: red;
   cursor: pointer;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   width: 100%;
 }
 input[type=submit]:hover {
-  background-color: red;
+  color: rgb(179, 188, 197);
+  background: #96858F;
+  
 }
 .session-button-div {
   display: flex;
   justify-content: space-between;
 }
 .session-button {
-  background-color: #96858F;
+  background-color: rgb(219, 136, 184);
   color: rgb(179, 188, 197);
   width: 138px;
   height: 28px;

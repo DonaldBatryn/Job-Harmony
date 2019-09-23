@@ -66,11 +66,11 @@ class NavBar extends React.Component {
           <ul id='dropdown' className={this.state.dropdown}>
             <span onClick={this.toggleDropdown} className="dropdown-items">
               <li className="drop-list-item">
-                <button className="logout-btn"><Link to={'/home'}>All Results/Feed</Link></button></li>
+                <button className="logout-btn"><Link to={'/home'}>Browse Jobs</Link></button></li>
               <li className="drop-list-item">
                 <button className="logout-btn"><Link to={'/profile'}>Profile</Link></button></li>
               <li className="drop-list-item">
-                <button className="logout-btn"><Link to={'/preferences'}>Update your preferences</Link></button></li>
+                <button className="logout-btn"><Link to={'/preferences'}>Preferences</Link></button></li>
               <li className="drop-list-item">
                 <button className="logout-btn">{createLink}</button></li>
               <li className="drop-list-item">
@@ -87,8 +87,8 @@ class NavBar extends React.Component {
           <button className="session-btn" onClick={this.openModalFor('signup')}>
             <Link className="my-profile-btn" to={'/signup'}>Signup</Link>
           </button>
-          <button className="session-btn" onClick={this.openModalFor('login')}>
-            <Link className="my-profile-btn" to={'/login'}>Login</Link>
+          <button className="session-btn log-in-nav" onClick={this.openModalFor('login')}>
+            Login
           </button>
         </div>
       );

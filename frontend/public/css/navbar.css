@@ -112,3 +112,17 @@ i {
   background-color: none;
   color: black
 }
+
+.my-profile-btn {
+  /* background-color: black; */
+  border: 1px solid lightgray;
+  /* width: 160px; */
+  width: 100%;
+  padding: 8.5px;
+  font-size: 16px;
+  color: #f0e9e9;
+  font-weight: 400;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+}

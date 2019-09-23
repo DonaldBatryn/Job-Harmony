@@ -53,7 +53,7 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div className="nav-bar-user">
-          <img className="nav-image" src={logo} />
+          <Link className="nav-image" to="/home"><img className="nav-image" src={logo} /></Link>
           <Link to={`/users/${this.props.user.id}/profile`}>
             <button className="session-btn my-profile-btn">My Profile</button>
           </Link>
@@ -83,11 +83,12 @@ class NavBar extends React.Component {
     } else {
       return (
         <div className="nav-bar-user">
+          <Link className="nav-image" to="/home"><img className="nav-image" src={logo} /></Link>
           <button className="session-btn" onClick={this.openModalFor('signup')}>
-            <Link to={'/signup'}>Signup</Link>
+            <Link className="my-profile-btn" to={'/signup'}>Signup</Link>
           </button>
           <button className="session-btn" onClick={this.openModalFor('login')}>
-            <Link to={'/login'}>Login</Link>
+            <Link className="my-profile-btn" to={'/login'}>Login</Link>
           </button>
         </div>
       );

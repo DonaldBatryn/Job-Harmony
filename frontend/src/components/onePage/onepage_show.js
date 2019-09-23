@@ -23,7 +23,7 @@ class OnePageShow extends React.Component {
             return <div>Loading...</div>
         }
         
-        let { onePage, currentUser } = this.props;
+        let { onePage } = this.props;
         let roleValue;
         if (onePage.role === true){
             roleValue = 'Yes'

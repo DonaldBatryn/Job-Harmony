@@ -1,7 +1,7 @@
 import React from 'react';
 import BrowseWindowContainer from '../browse/browse_window_container'
 import PendingIndexContainer from '../pending/pending_index_container'
-import ButtonsContainer from '../buttons/buttons_container'
+// import ButtonsContainer from '../buttons/buttons_container'
 
 
 class MainPage extends React.Component {

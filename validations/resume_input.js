@@ -7,7 +7,7 @@ module.exports = function validatesResumeInput(data) {
   data.jobHistory = validText(data.jobHistory) ? data.jobHistory : '';
   data.jobField =  validText(data.jobField) ? data.jobField : '';
   data.jobSkills = validText(data.jobSkills) ? data.jobSkills : '';
-  data.jobTitle = validText(data.jobTitle) ? data.jobTitle : '';
+
 
   
   if (Validator.isEmpty(data.jobHistory)) {
@@ -22,9 +22,9 @@ module.exports = function validatesResumeInput(data) {
     errors.jobSkills = "Job Skills is required";
   }
   
-  if (Validator.isEmpty(data.jobTitle)) {
-    errors.jobTitle = "Job Title is required";
-  }
+  // if (Validator.isEmpty(data.jobTitle)) {
+  //   errors.jobTitle = "Job Title is required";
+  // }
   
   return {
     errors,

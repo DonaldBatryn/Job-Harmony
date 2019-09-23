@@ -6,7 +6,7 @@ const Resume = require("../../models/Resume")
 
 
 
-router.get("/",
+router.get("/:userId",
     // so we have the id of the jobseeker that looking for onepages 
     passport.authenticate("jwt", {
         session: false
@@ -14,23 +14,32 @@ router.get("/",
     // async (req, res) => {
     (req, res) => {
         // the jobseekers id 
-        const userId = req.user.id
+        const userId = req.params.userId
+        const Id = req.params.aa
         // console.log(onePageId);
         // console.log(userId);
+        console.log(userId)
+        console.log(Id)
 
-        Resume.findOne({userId}).then((resume) => {
-            console.log(resume.jobField)
-            console.log(resume.jobTitle)
+        Resume.find({userId: userId}).then(resume => {
+            console.log(resume)
+            // console.log(2222211111111111111111111111222222222111111111111111111111)
+            // console.log(resume.jobField)
+            // console.log(resume.jobTitle)
             OnePage.find({
                     jobField: resume.jobField,
                     jobTitle: resume.jobTitle 
-                }).then((onePages) => {
-                console.log(onePages)
-                    res.json(employerEmail)
+                }).then(onePages => {
+                    
+                // console.log(onePages)
+                    res.json(onePages)
                 }).catch(err => {
+                console.log("what the fuck!!!!!!!")
+                console.log("my dude this gotta stop")
                     res.status(404).json(err)
                 });
             }).catch(err => {
+
                 res.status(404).json(err)
             });
 

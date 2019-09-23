@@ -22,7 +22,7 @@ router.post('/new',
   const jobHistory = req.body.jobHistory;
   const jobField = req.body.jobField;
   const jobSkills = req.body.jobSkills;
-  const jobTitle = req.body.jobTitle;
+  
 
   
   
@@ -30,11 +30,11 @@ router.post('/new',
     userId,
     jobHistory,
     jobField,
-    jobSkills,
-    jobTitle
+    jobSkills
+   
   });
   newResume.save().then(resume => {
-    debugger
+
     User.findById(userId).then((user) => {
       user.resume.push(resume)
       user.save()
@@ -57,7 +57,11 @@ router.post('/new',
 
 router.get('/:id', (req, res) => {
   Resume.findById(req.params.id)
-.then(resume => res.json(resume))
+  .then(resume => {
+    
+    res.json(resume)
+  })
+
     .catch(err =>
       res.status(404).json({
         noResumeFound: "No resume found from that User"

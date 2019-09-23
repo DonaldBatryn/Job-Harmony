@@ -4,6 +4,8 @@ const router = express.Router();
 const OnePage = require("../../models/OnePage")
 const Resume = require("../../models/Resume")
 const bcrypt = require('bcryptjs')
+const mongoose = require('mongoose');
+const db = require('../../config/keys').mongoURI;
 
 
 router.post('/newEmployees', (req, res) => {
@@ -123,7 +125,7 @@ const signupEmployers = (emmployer, num) => {
                 return (newonepage)
             })
             .catch(err => console.log(err))
-    })
+        })
     })
 }
 
@@ -148,7 +150,29 @@ router.post('/newDemoUser', (req, res) => {
         "send": send
     })
 
+})
 
+router.post('/newEmployeesDemo', (req, res) => {
+
+    const names = ["John", "Joanne", "Bob", "Will", "Chris", "Mike", "Anna", "Jack", "Peter", "Paul",
+                "John", "Joanne", "Bob", "Will", "Chris", "Mike", "Anna", "Jack", "Peter", "Paul", 
+                "John", "Joanne", "Bob", "Will", "Chris", "Mike", "Anna", "Jack", "Peter", "Paul", 
+                "John", "Joanne", "Bob", "Will", "Chris", "Mike", "Anna", "Jack", "Peter", "Paul", 
+                "John", "Joanne", "Bob", "Will", "Chris", "Mike", "Anna", "Jack", "Peter", "Paul"];
+
+    const emmployes = names.map((name, i) => ({
+        'email': `employee${i *15625 }@employee${i * 15625 }.com`,
+        'password': '$2a$10$rblxBXsOBY7/5i8DSVX9n.Qd14WyLHWy3BlVijm.v68OrfGp.6WCe',
+        'fName': name ,
+        'lName': "employee",
+        'zip_code': 61920 ,
+        'role': "employee",
+        "resume":[]
+    }))
+    
+    const send = emmployes.map((emmploye, i)=> {
+        seed(emmploye, i * 15625)
+    })
 })
 
 const signupDemoUser = (demo, num) => {
@@ -172,11 +196,54 @@ const signupDemoUser = (demo, num) => {
                 return (newResume)
             })
             .catch(err => console.log(err))
-    })
+        })
     })
 }
 
 
+
+
+const seed = (emmploye , num) => {
+
+
+    // const emmploye ={
+    //     'email': `employee${1000000}@employee${1000000}.com`,
+    //     'password': 'hunter2' ,
+    //     'f_name': "John",
+    //     'l_name': "employee",
+    //     'zip_code': 61920 ,
+    //     'role': "employee",
+    //     "resume":[]
+    //     }
+
+    const newUser = new User(emmploye);
+    bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(newUser.password, salt, (err, hash) => {
+            if (err) throw err;
+            newUser.password = hash;
+            newUser
+                .save()
+                .then(user => {
+                    const resume = {
+                        'userId': newUser.id,
+                        'jobHistory': `jobHistory${num}`,
+                        'jobField': `jobField${num}`,
+                        'jobSkills': `jobSkills${num}`,
+                        'jobTitle': `jobTitle${num}`
+
+                    }
+                    const newResume = new Resume(resume)
+                    console.log(newResume)
+                    // console.log(newUser)
+                    const iddd = newResume.id
+                    return iddd
+                })
+                .catch(err => console.log(err))
+        })
+    })
+
+    
+
+}
+
 module.exports = router;
-
-

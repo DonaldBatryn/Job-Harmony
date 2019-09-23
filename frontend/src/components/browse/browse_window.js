@@ -1,6 +1,6 @@
 import React from 'react';
-import BrowseShow from './browse_show';
-import { withRouter } from 'react-router-dom';
+// import BrowseShow from './browse_show';
+// import { withRouter } from 'react-router-dom';
 import OnePageDetail from './onepage_detail'
 
 
@@ -40,7 +40,7 @@ class BrowseWindow extends React.Component{
             return <div className="browse-window-container">Loading...</div>
         }
         let currentOnePage = this.props.onePages.map(onePage => {
-            return <div key={onePage._id}><OnePageDetail onePage={onePage}/></div>
+            return <div className="onepage-detail-container swipe" key={onePage._id}><OnePageDetail onePage={onePage}/></div>
         });
 
         let button1;
@@ -57,7 +57,7 @@ class BrowseWindow extends React.Component{
                 <div className="browse-header-text">
                     <h3>Recommended For You</h3>
                 </div>
-                <div className="browse-window">
+                <div className="browse-window ">
                    
                     {currentOnePage[this.state.i]}
                 </div>

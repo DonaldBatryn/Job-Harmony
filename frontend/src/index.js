@@ -40,7 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
 
   window.dispatch = store.dispatch;
-
+  const body = document.getElementsByClassName("fade-out")[0];
+  body.classList.remove("fade-out");
 
   ReactDOM.render(<Root store={store} />, root);
 });

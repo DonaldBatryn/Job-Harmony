@@ -6,24 +6,22 @@ const OnePage = require("../../models/OnePage")
 const passport = require("passport");
 const Resume = require("../../models/Resume")
 
-// debugger;
+
 router.post("/:onePageId",
-    // so we have the id of the jobseeker that is liking the one page 
+ 
     passport.authenticate("jwt", {session: false}),
-    // async (req, res) => {
+   
     (req, res) => {
 
-        // id of the one page that is being liked 
+     
         const onePageId = req.params.onePageId
         
-        // the jobseekers id 
+    
         const userId = req.user.id
         
         console.log("made it")
 
-        // console.log(onePageId);
-        // console.log(userId);
-
+      
         OnePage.findById(onePageId).then((onepage) =>{
             Resume.findOne({userId: userId}).then((resume) => {
                 // console.log(resume)

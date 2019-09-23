@@ -11,11 +11,21 @@
 @import "browse-show.css";
 @import "user.css";
 
-* {
-  box-sizing: border-box;
-  list-style: none;
-  margin: 0;
-  padding: 0;
 
+
+* {
+    box-sizing: border-box;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: 'Mallanna', sans-serif;
 }
 
+body {
+    opacity: 1;
+    transition: 1s opacity;
+}
+body.fade-out {
+    opacity: 0;
+    transition: none;
+}

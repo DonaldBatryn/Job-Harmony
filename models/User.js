@@ -29,10 +29,11 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
-  // image: {
-  //   type: String,
-  //   required: false
-  // },
+  // rfq takeout if no employer img
+  image: {
+    type: String,
+    required: false
+  },
   resume: [{ type: mongoose.Schema.Types.ObjectId, ref: 'resumes'}]
   
 

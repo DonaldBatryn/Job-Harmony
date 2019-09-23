@@ -5,6 +5,7 @@ class PendingIndexItem extends React.Component{
         super(props)
         this.handleView = this.handleView.bind(this);
         // this.handleDelete = this.handleDelete.bind(this);
+        this.getRandomIcon();
     }
 
     handleView(){
@@ -15,12 +16,18 @@ class PendingIndexItem extends React.Component{
         // when delete route is done lets throw it here
         // this.props.deleteLike(this.props.onePage._id)
     // }
+    getRandomIcon() {
+        let randomNum = Math.floor(Math.random() * 3) + 1;
+        let jobField = this.props.onePage[0].jobField;
+        let iconClassName = jobField + "-" + randomNum;
+        this.props.onePage[0].iconClassName = iconClassName;
+    }
 
     render(){
         let { onePage } = this.props;
         return (
             <div className="pending-index-item">
-                <div className={`icon ${onePage[0].jobField}-1`}></div>
+                <div className={`icon ${onePage.iconClassName}`}></div>
                 <div className="like-info" onClick={this.handleView}>
                     <h3 className="pending-job-title">{onePage[0].jobTitle}</h3>
                     <h5 className="pending-company-name">{onePage[0].companyName}</h5>

@@ -20,6 +20,7 @@ import OnePageShowContainer from './onePage/onepage_show_container';
 
 import Splash from './splash/splash'
 
+import PreferencesFormContainer from './preferences/preferences_form_container';
 
 const App = () => (
   <div>
@@ -31,6 +32,7 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
     </Switch> */}
     <Switch>
+      <ProtectedRoute exact path="/preferences" component={PreferencesFormContainer}/>
     <ProtectedRoute path="/users/:userId/profile" component={UserShowContainer}/>
       <ProtectedRoute exact path="/home" component={MainPage}/>
       <ProtectedRoute exact path="/resumes/new" component={CreateResumeFormContainer}/>

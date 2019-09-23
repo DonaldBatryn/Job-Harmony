@@ -7,9 +7,9 @@ import { withRouter } from 'react-router-dom'
 const mapStateToProps = (state) => ({
   resume: {
     userId: state.session.user.id,
-    jobHistory: "jobHistory",
-    jobField: "jobField",
-    jobSkills: "jobSkills",
+    jobHistory: "",
+    jobField: "",
+    jobSkills: "",
   },
   formType: 'Create Resume',
   user: state.session.user

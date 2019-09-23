@@ -27,7 +27,6 @@ class BrowseWindow extends React.Component{
     }
 
     handleLike(){
-        debugger
         this.props.createLike({
             employeeId: this.props.user.id,
             OnepageId: this.props.onePages[this.state.i]._id
@@ -52,7 +51,7 @@ class BrowseWindow extends React.Component{
         if (this.props.user.role === 'Employer') {
             button1 = <button onClick={this.handleNext}>Decline</button>
             button2 = <button onClick={this.handleNext}>Contact</button>
-        } else if (this.props.user.role === 'Job-Seeker' && this.props.onePages.length > 0) {
+        } else if (this.props.user.role === 'Job-Seeker' && this.props.onePages.length > 0){
             button1 = <button onClick={this.handleNext}>Not Interested</button>
             button2 = <button onClick={this.handleLike}>Interested</button>
         } else {

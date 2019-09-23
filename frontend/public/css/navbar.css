@@ -34,6 +34,12 @@
 .session-btn:hover{
   background-color: gray;
 }
+
+.log-in-nav{
+  font-size: 16px;
+  text-decoration: underline;
+}
+
 .user-name-bar {
   display: flex;
   justify-content: space-between;

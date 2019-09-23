@@ -17,7 +17,11 @@ const PreferenceSchema = new Schema({
         type: String,
         required: true
     },
-    salaryRange: {
+    salaryRangeHigh: {
+        type: Number,
+        required: true
+    },
+    salaryRangeLow: {
         type: Number,
         required: true
     }

@@ -197,7 +197,22 @@ const signupEmployees = (emmploye, num) => {
                 }
                 const newResume = new Resume(resume)
                 newResume.save()
-                return newResume 
+                    .then((resume) => {
+                        const proximity = Math.floor(Math.random() * 101);
+                        const salaryRangeLow = Math.floor(Math.random() * 11);
+                        const salaryRangeHigh = Math.floor(Math.random() * 101) + salaryRangeLow;
+                        const preference = {
+                            'userId': newUser.id,
+                            'jobField': `${jobField}`,
+                            'proximity': proximity,
+                            'type': `${types[num % 3]}`,
+                            'salaryRangeHigh': salaryRangeHigh,
+                            'salaryRangeLow': salaryRangeLow
+                        }
+                        const newPreference = new Preference(preference)
+                        newPreference.save()
+                        return newPreference
+                    }).catch(err => console.log(err))
             }).catch(err => console.log(err))
         })
     })
@@ -319,13 +334,29 @@ const signupDemoUser = (demo, num) => {
                     'jobHistory': `${randomParagraph()}`,
                     'jobField': `${jobField}`,
                     'jobSkills': `${jobSkills[jobField]}`
-
                 }
                 const newResume = new Resume(resume)
                 newResume.save()
-                return (newResume)
-            })
-            .catch(err => console.log(err))
+                .then((resume) => {
+                    const proximity =  Math.floor(Math.random() * 101);
+                    const salaryRangeLow =  Math.floor(Math.random() * 11);
+                    const salaryRangeHigh = Math.floor(Math.random() * 101) + salaryRangeLow;
+                    const preference = {
+                        'userId': newUser.id,
+                        'jobField': `${jobField}`,
+                        'proximity': proximity,
+                        'type': `${types[num % 3]}`,
+                        'salaryRangeHigh': salaryRangeHigh,
+                        'salaryRangeLow': salaryRangeLow
+                    }
+                        const newPreference = new Preference(preference)
+                        newPreference.save()
+                        console.log(newUser)
+                        console.log(newResume)
+                        console.log(newPreference)
+                        return newPreference
+                }).catch(err => console.log(err))
+            }).catch(err => console.log(err))
         })
     })
 }

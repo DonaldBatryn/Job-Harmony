@@ -6,7 +6,8 @@ module.exports = function validatesPreferenceInput(data) {
     data.jobField = validText(data.jobField) ? data.jobField : '';
     data.proximity = validText(data.proximity) ? data.proximity : '';
     data.type = validText(data.type) ? data.type : '';
-    data.salaryRange = validText(data.salaryRange) ? data.salaryRange : '';
+    data.salaryRangeHigh = validText(data.salaryRangeHigh) ? data.salaryRangeHigh : '';
+    data.salaryRangeLow = validText(data.salaryRangeLow) ? data.salaryRangeLow : '';
 
 
 
@@ -21,8 +22,11 @@ module.exports = function validatesPreferenceInput(data) {
     if (Validator.isEmpty(data.type)) {
         errors.type = "Job type is required";
     }
-    if (Validator.isEmpty(data.salaryRange)) {
-        errors.salaryRange = "Job salaryRange is required";
+    if (Validator.isEmpty(data.salaryRangeHigh)) {
+        errors.salaryRangeHigh = "Job salaryRangeHigh is required";
+    }
+    if (Validator.isEmpty(data.salaryRangeLow)) {
+        errors.salaryRangeLow = "Job salaryRangeLow is required";
     }
 
 

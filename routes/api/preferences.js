@@ -25,14 +25,16 @@ router.post('/new',
         const jobField = req.body.jobField;
         const proximity = req.body.proximity;
         const type = req.body.type;
-        const salaryRange = req.body.salaryRange;
+        const salaryRangeHigh = req.body.salaryRangeHigh;
+        const salaryRangeLow = req.body.salaryRangeLow;
 
         const newPreference = new Preference({
             userId,
             jobField,
             proximity,
             type,
-            salaryRange
+            salaryRangeHigh,
+            salaryRangeLow
 
         });
         newPreference.save().then(preference => {
@@ -71,7 +73,8 @@ router.patch('/:id/edit',
                 preference.jobField = req.body.jobField;
                 preference.proximity = req.body.proximity;
                 preference.type = req.body.type;
-                preference.salaryRange = req.body.salaryRange;
+                preference.salaryRangeHigh = req.body.salaryRangeHigh;
+                preference.salaryRangeLow = req.body.salaryRangeLow;
                 preference.save().then(preference => res.json(preference));
             })
             .catch(err =>

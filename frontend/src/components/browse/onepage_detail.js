@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../images/jobHarmonyLogo.png'
+
 
 const OnePageDetail = ({ onePage}) => {
   //!!!!  comminted out because need to reseed (After reseed commint backin )   !!!!

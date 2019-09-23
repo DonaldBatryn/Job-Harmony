@@ -32,7 +32,7 @@ class SignupForm extends React.Component {
   }
   handleDemoEmployee(e) {
     e.preventDefault();
-    this.props.signup(this.props.demoUser('Employee'), this.props.history)
+    this.props.signup(this.props.demoUser('Job-Seeker'), this.props.history)
       .then(() => this.props.closeModal());;
   }
   handleDemoEmployer(e) {

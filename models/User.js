@@ -29,7 +29,8 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
-  resume: [{ type: mongoose.Schema.Types.ObjectId, ref: 'resumes'}]
+  resume: [{ type: mongoose.Schema.Types.ObjectId, ref: 'resumes'}],
+  preference: [{ type: mongoose.Schema.Types.ObjectId, ref: 'preferences'}]
   
 
 });

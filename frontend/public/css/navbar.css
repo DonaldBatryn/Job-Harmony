@@ -136,3 +136,7 @@ i {
   border: none;
   cursor: pointer;
 }
+
+.my-matches-btn, .username-btn{
+  font-size: 16px;
+}

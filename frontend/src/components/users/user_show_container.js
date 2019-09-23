@@ -5,7 +5,7 @@ import UserShow from './user_show'
 const msp = state => {
     return {
         user: state.session.user,
-        resume: state.session.user.resume
+        resume: state.session.resume
     }
 }
 

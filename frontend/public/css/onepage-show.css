@@ -70,3 +70,26 @@
   width: 45%;
   height: 100%;
 }
+
+
+.swipe {
+  /* position: absolute; */
+  right: -200px;
+  /* width: 55%;
+  height: 55%; */
+  /* width: inherit;
+  height: inherit; */
+  /* background: blue; */
+  -webkit-animation: slide 0.5s forwards;
+  /* -webkit-animation-delay: 1s; */
+  animation: slide 0.5s forwards;
+  animation-delay: 0s;
+}
+
+/* @-webkit-keyframes slide {
+    100% { right: 100; }
+} */
+
+@keyframes slide {
+    100% { right: 0; }
+}

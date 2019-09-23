@@ -3,8 +3,8 @@ const express = require('express');
 const router = express.Router();
 const OnePage = require("../../models/OnePage")
 const Resume = require("../../models/Resume")
-const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs')
+const mongoose = require('mongoose');
 const db = require('../../config/keys').mongoURI;
 
 

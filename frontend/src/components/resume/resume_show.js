@@ -26,8 +26,6 @@ class ResumeShow extends React.Component {
           <h2 className="candidate-show">Candidate {currentUser.id.slice(4, 10)}</h2>
 
           <h3 className="job-field-show">Field:&nbsp;&nbsp;{resume.jobField}</h3>
-          {/* fix the class name rfq */}
-          {/* <h3 className="job-field-show">Title:&nbsp;&nbsp;{resume.jobTitle}</h3> */}
           <h3 className="job-history-show">Work History:&nbsp;&nbsp;{resume.jobHistory}</h3>
           <h3 className="job-skills-show">Skills:&nbsp;&nbsp;{resume.jobSkills}</h3>
 

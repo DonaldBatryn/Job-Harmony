@@ -22,10 +22,7 @@ router.post('/new',
   const jobHistory = req.body.jobHistory;
   const jobField = req.body.jobField;
   const jobSkills = req.body.jobSkills;
-  
 
-  
-  
   const newResume = new Resume({
     userId,
     jobHistory,
@@ -83,7 +80,6 @@ router.patch('/:id/edit',
         resume.jobHistory = req.body.jobHistory;
         resume.jobField = req.body.jobField;
         resume.jobSkills = req.body.jobSkills;
-        resume.jobTitle = req.body.jobTitle;
         resume.save().then(resume => res.json(resume));
       })
       .catch(err =>

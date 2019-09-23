@@ -7,9 +7,10 @@ const OnePageDetail = ({ onePage}) => {
   // if (onePage.jobTitle){
     //   jobTitle = onePage.jobTitle
     // }
-  let jobTitle = "DEMO DEMO DEMO";
-  let jobField = "DEMO DEMO DEMO";
-  let jobSkills = "DEMO DEMO DEMO";
+  let jobTitle = onePage.jobTitle;
+  let jobField = onePage.jobField;
+  let jobSkills = onePage.jobSkills;
+  let catchPhrase = onePage.catchPhrase;
   let remoteValue;
   if (onePage.remote === "true"){
     remoteValue = "Yes"
@@ -20,7 +21,8 @@ const OnePageDetail = ({ onePage}) => {
     <div className="onepage-detail-container">
       <div className="op-detail-header">
         <div className="op-header-pic">
-          <img src={logo} alt=""/>
+          <img src={onePage.image} alt=""/>
+          <h3>{catchPhrase}</h3>
         </div>
         <div className="op-header-text">
         <h1>{jobTitle}</h1>

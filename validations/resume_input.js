@@ -22,9 +22,6 @@ module.exports = function validatesResumeInput(data) {
     errors.jobSkills = "Job Skills is required";
   }
   
-  // if (Validator.isEmpty(data.jobTitle)) {
-  //   errors.jobTitle = "Job Title is required";
-  // }
   
   return {
     errors,

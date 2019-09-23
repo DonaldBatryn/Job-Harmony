@@ -52,8 +52,7 @@ const signupEmployees = (emmploye, num) => {
                     'userId': newUser.id,
                     'jobHistory': `jobHistory${num}`,
                     'jobField': `jobField${num}`,
-                    'jobSkills': `jobSkills${num}`,
-                    'jobTitle': `jobTitle${num}`
+                    'jobSkills': `jobSkills${num}`
 
                 }
                 const newResume = new Resume(resume)
@@ -69,6 +68,7 @@ const signupEmployees = (emmploye, num) => {
 
 
 router.post('/newEmployers', (req, res) => {
+    const jobFields = [ "Finance", "Software Engineering", "Healthcare", "Marketing", "Transportation", "Culinary", "Business", "Insurance"]
 
     const names = ["John", "Joanne", "Bob", "Will", "Chris", "Mike", "Anna", "Jack", "Peter", "Paul",
         "John", "Joanne", "Bob", "Will", "Chris", "Mike", "Anna", "Jack", "Peter", "Paul",
@@ -87,10 +87,14 @@ router.post('/newEmployers', (req, res) => {
         'role': "employer"
     }))
 
-    const send = emmployers.map((emmploye, i) => {
-        signupEmployers(emmploye, i * 156205)
+    const send = jobFields.map((jobField) => {
+        emmployers.map((emmploye) => {
+            signupEmployers(emmploye, jobField)
+
+        })
 
     })
+
 
     res.json({
         "send": send
@@ -99,7 +103,7 @@ router.post('/newEmployers', (req, res) => {
 
 })
 
-const signupEmployers = (emmployer, num) => {
+const signupEmployers = (emmployer, jobField) => {
 
     const newUser = new User(emmployer);
     bcrypt.genSalt(10, (err, salt) => {
@@ -113,7 +117,7 @@ const signupEmployers = (emmployer, num) => {
                     'companyName': `companyName${num}`,
                     'description': `description${num}`,
                     'jobTitle': `jobTitle${num}`,
-                    'jobField': `jobField${num}`,
+                    'jobField': jobField,
                     'jobSkills': `jobSkills${num}`,
                     'type': 'type',
                     'benefits': `benefits${num}`,
@@ -188,8 +192,7 @@ const signupDemoUser = (demo, num) => {
                     'userId': newUser.id,
                     'jobHistory': `jobHistory${num}`,
                     'jobField': `jobField${num}`,
-                    'jobSkills': `jobSkills${num}`,
-                    'jobTitle': `jobTitle${num}`
+                    'jobSkills': `jobSkills${num}`
 
                 }
                 const newResume = new Resume(resume)
@@ -204,18 +207,6 @@ const signupDemoUser = (demo, num) => {
 
 
 const seed = (emmploye , num) => {
-
-
-    // const emmploye ={
-    //     'email': `employee${1000000}@employee${1000000}.com`,
-    //     'password': 'hunter2' ,
-    //     'f_name': "John",
-    //     'l_name': "employee",
-    //     'zip_code': 61920 ,
-    //     'role': "employee",
-    //     "resume":[]
-    //     }
-
     const newUser = new User(emmploye);
     bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
@@ -228,13 +219,11 @@ const seed = (emmploye , num) => {
                         'userId': newUser.id,
                         'jobHistory': `jobHistory${num}`,
                         'jobField': `jobField${num}`,
-                        'jobSkills': `jobSkills${num}`,
-                        'jobTitle': `jobTitle${num}`
+                        'jobSkills': `jobSkills${num}`
 
                     }
                     const newResume = new Resume(resume)
                     console.log(newResume)
-                    // console.log(newUser)
                     const iddd = newResume.id
                     return iddd
                 })

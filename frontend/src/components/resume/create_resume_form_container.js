@@ -10,7 +10,6 @@ const mapStateToProps = (state) => ({
     jobHistory: "jobHistory",
     jobField: "jobField",
     jobSkills: "jobSkills",
-    jobTitle: "jobTitle"
   },
   formType: 'Create Resume',
   user: state.session.user

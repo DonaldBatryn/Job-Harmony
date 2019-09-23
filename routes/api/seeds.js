@@ -166,7 +166,8 @@ router.post('/newEmployees', (req, res) => {
         
     }
     const send = employes.map((employe, i) => {
-        signupEmployees(employe, i )
+        const resume = signupEmployees(employe, i)
+        resume
 
     })
     res.json({
@@ -193,7 +194,8 @@ const signupEmployees = (emmploye, num) => {
 
                 }
                 const newResume = new Resume(resume)
-                return newResume
+                newResume.save()
+                return newResume 
             }).catch(err => console.log(err))
         })
     })
@@ -219,7 +221,7 @@ router.post('/newEmployers', (req, res) => {
     }
     const employers = [];
     for (let index = 0; index < 100; index++) {
-        employes.push({
+        employers.push({
             'email': `${allEmails[index]}`,
             'password': 'hunter2',
             'fName': `${allFirstNames[index]}`,
@@ -267,7 +269,8 @@ const signupEmployers = (emmployer,num) => {
                     'startingPay': randomEmployerJobPay
                 }
                 const newonepage = new OnePage(onepage)
-                return (newonepage)
+                newonepage.save()
+                return newonepage
             })
             .catch(err => console.log(err))
         })
@@ -289,7 +292,7 @@ router.post('/newDemoUser', (req, res) => {
         'role': 'demo'
     }
 
-    const send = signupDemoUser(demoUser, num)
+    const send = signupDemoUser(demoUser, 1)
 
     res.json({
         "send": send
@@ -315,6 +318,7 @@ const signupDemoUser = (demo, num) => {
 
                 }
                 const newResume = new Resume(resume)
+                newResume.save()
                 return (newResume)
             })
             .catch(err => console.log(err))

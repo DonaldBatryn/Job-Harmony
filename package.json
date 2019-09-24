@@ -9,7 +9,8 @@
     "start": "node app.js",
     "frontend-install": "npm install --prefix frontend",
     "frontend": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run frontend\""
+    "dev": "concurrently \"npm run server\" \"npm run frontend\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "repository": {
     "type": "git",
@@ -31,9 +32,14 @@
     "mongoose": "^5.7.1",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
+    "redux-responsive": "^4.3.8",
     "validator": "^11.1.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.2"
+  },
+  "engines": {
+    "node": "12.7.0",
+    "npm": "6.10.0"
   }
 }

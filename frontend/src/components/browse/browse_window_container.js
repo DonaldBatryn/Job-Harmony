@@ -9,7 +9,8 @@ const msp = state => ({
   onePages: Object.keys(state.entities.onePages).map(id => {
       return state.entities.onePages[id]
   }),
-  user: state.session.user
+  user: state.session.user,
+  currentMain: state.ui.currentMain
 })
 
 const mdp = dispatch => {

@@ -25,7 +25,7 @@
 
 .op-detail-header{
   width: 95%;
-  height: 600px;
+  height: 40vh;
   /* background-color: pink; */
   display: flex;
   flex-direction: row;
@@ -65,9 +65,13 @@
 }
 
 .op-header-pic{
+  display: flex;
   width: 45%;
   height: 100%;
   overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .op-header-pic img{

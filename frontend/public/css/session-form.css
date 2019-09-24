@@ -54,7 +54,7 @@ input[type=submit]:hover {
   background-color: rgba(0, 220, 0, 0.3);
   color: black;
   width: 138px;
-  height: 28px;
+  height: 38px;
   margin: 2px 0px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -65,4 +65,5 @@ input[type=submit]:hover {
 }
 #demo {
   width: 100%;
+  height: 38px;
 }

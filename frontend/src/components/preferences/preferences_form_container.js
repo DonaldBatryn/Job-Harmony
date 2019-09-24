@@ -13,6 +13,12 @@ const msp = state => {
     }else{
         preference = "no preference"
     }
+    let errors;
+    if (state.errors.session) {
+        errors = state.errors.session
+    } else {
+        errors= []
+    }
     return ({
         user: state.session.user,
         preferences: {
@@ -24,7 +30,7 @@ const msp = state => {
         },
         preference,
         formType: "Set Preferences",
-        errors: state.errors.session
+        errors
     })
 }
 

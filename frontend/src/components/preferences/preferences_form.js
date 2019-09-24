@@ -23,7 +23,7 @@ class PreferencesForm extends React.Component{
             this.props.createPreference(this.state).then(
                 this.props.history.push('home'))
         }else {
-            // this.state.id = this.props.user.id
+            this.state.id = this.props.preference._id
             // debugger
             this.props.updatePreference(this.state).then(
                 this.props.history.push('home')
@@ -35,7 +35,7 @@ class PreferencesForm extends React.Component{
         return ( <ul> {Object.keys(this.props.errors).map((error, i) => {
             return <li 
                     key={`error-${i}`}> 
-                    {this.state.errors[error]} 
+                    {this.props.errors[error]} 
                    </li>})} 
                    
                 </ul>

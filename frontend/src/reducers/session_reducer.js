@@ -12,6 +12,7 @@ const initialState = {
   user: {}
 };
 export default function (state = initialState, action) {
+  let newState;
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
       return {
@@ -30,14 +31,14 @@ export default function (state = initialState, action) {
         isSignedIn: true
       }
     case RECEIVE_RESUME:
+       newState = Object.assign({}, state)
+      newState.user.preference = action.preference
+      return newState
       return Object.assign({}, state, { resume: action.resume })
     case RECEIVE_PREFERENCES:
-            return {
-              ...state,
-              isAuthenticated: !!action.currentUser,
-              user: action.preference
-            };
-      // return Object.assign({}, state, { preferences: action.preference })
+       newState = Object.assign({}, state)
+      newState.user.preference = action.preference
+      return newState
     case RECEIVE_ONEPAGE:
       return Object.assign({}, state, { onePage: action.onePage })
     default:

@@ -9,6 +9,6 @@ export const createPreference = preference => {
 }
 export const updatePreference = preference => {
 
-    return axios.patch(`/api/preferences/`, preference)
+    return axios.patch(`/api/preferences/${preference.id}`, preference)
 
 }

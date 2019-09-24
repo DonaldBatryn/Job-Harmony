@@ -1,16 +1,20 @@
 .signup-form {
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  width: 310px;
+  padding: 20px 30px;
+  width: 350px;
+  
   border: 2px solid rgba(0, 0, 0, 1);
   background-color: white;
 }
 .login-form {
+  padding: 60px 30px;
   display: flex;
   flex-direction: column;
-  padding: 10px;
-  width: 310px;
+  
+  width: 350px;
+  height: 350px;
   border: 2px solid rgba(0, 0, 0, 1);
   background-color: white;
 }
@@ -18,8 +22,9 @@ input {
   display: block;
   font-size: 14px;
   margin: 0px;
-  padding: 10px;
+  padding: 5px;
   width: 280px;
+  height: 40px;
 }
 select {
   display: block;
@@ -30,15 +35,15 @@ select {
 input[type=submit] {
   margin: 25px 0px;
   padding: 5px;
-  background-color: red;
+  background-color: rgba(0, 220, 0, 0.3);
   cursor: pointer;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   width: 100%;
 }
 input[type=submit]:hover {
-  color: rgb(179, 188, 197);
-  background: #96858F;
+  color: gray;
+  background: whitesmoke
   
 }
 .session-button-div {
@@ -46,8 +51,8 @@ input[type=submit]:hover {
   justify-content: space-between;
 }
 .session-button {
-  background-color: rgb(219, 136, 184);
-  color: rgb(179, 188, 197);
+  background-color: rgba(0, 220, 0, 0.3);
+  color: black;
   width: 138px;
   height: 28px;
   margin: 2px 0px;
@@ -55,7 +60,8 @@ input[type=submit]:hover {
   border-radius: 5px;
 }
 .session-button:hover {
-  background-color: #49274A;
+  color: gray;
+  background: whitesmoke
 }
 #demo {
   width: 100%;

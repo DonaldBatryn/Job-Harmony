@@ -8,8 +8,9 @@
   z-index: 10;
 }
 .modal-content {
+  
   position: absolute;
-  top: 300px;
+  top: 400px;
   left: 50%;
   transform: translate(-50%, -50%);
 }

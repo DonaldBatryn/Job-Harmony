@@ -60,8 +60,13 @@ class BrowseWindow extends React.Component{
             button1 = <button onClick={this.handleNext}>Decline</button>
             button2 = <button onClick={this.handleNext}>Contact</button>
         } else if (this.props.user.role === 'Job-Seeker' && this.props.onePages.length > 0){
-            button1 = <button onClick={this.handleNext}>Not Interested</button>
-            button2 = <button onClick={this.handleLike}>Interested</button>
+            if (this.state.i < this.props.onePages.length){
+                button1 = <button onClick={this.handleNext}>Not Interested</button>
+                button2 = <button onClick={this.handleLike}>Interested</button>
+            } else {
+                button1 = ""
+                button2 = ""
+            }
         } else {
             button1 = ""
             button2 = ""

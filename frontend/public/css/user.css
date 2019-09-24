@@ -74,6 +74,10 @@
     /* position: absolute; */
 }
 
+.user-show-liked-pages::-webkit-scrollbar { 
+    width: 0 !important 
+}
+
 .user-show-matches{
     display: flex;
     flex-direction: column;
@@ -86,13 +90,17 @@
     /* position: absolute; */
 }
 
+.user-show-matches::-webkit-scrollbar { 
+    width: 0 !important 
+}
+
 .user-show-subheader{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    height: 20%;
+    height: 14%;
 }
 
 .user-show-list{
@@ -104,6 +112,11 @@
     width: 100%;
     height: 80%;
     padding-left: 15px;
+    overflow-y: scroll;
+}
+
+.user-show-list::-webkit-scrollbar { 
+    width: 0 !important 
 }
 
 .user-show-list li{
@@ -111,18 +124,26 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 50px;
+    height: 35px;
     width: 99%;
+    
 }
 
 
 .user-show-li-btn{
     width: 120px;
     height: 75%;
-    padding: 5px 10px;
+    padding: 0 10px;
     font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .user-show-li-btn:hover{
     background-color: rgba(50, 255, 50, 0.5)
+}
+
+.user-show-li{
+    min-height: 6vh;
 }

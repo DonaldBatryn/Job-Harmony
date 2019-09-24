@@ -57,7 +57,9 @@ class NavBar extends React.Component {
           <Link to={`/users/${this.props.user.id}/profile`}>
             <button className="session-btn my-profile-btn">My Profile</button>
           </Link>
-          <button className="session-btn my-matches-btn">My Matches</button>
+          <Link to="/matches">
+            <button className="session-btn my-matches-btn">My Matches</button>
+          </Link>
           <div className="user-name-bar" 
             onClick={this.toggleDropdown}>
             <span className="username-btn">{this.props.user.fName}</span>
@@ -68,7 +70,7 @@ class NavBar extends React.Component {
               <li className="drop-list-item">
                 <button className="logout-btn"><Link to={'/home'}>Browse Jobs</Link></button></li>
               <li className="drop-list-item">
-                <button className="logout-btn"><Link to={'/profile'}>Profile</Link></button></li>
+                <button className="logout-btn"><Link to={`/users/${this.props.user.id}`}>Profile</Link></button></li>
               <li className="drop-list-item">
                 <button className="logout-btn"><Link to={'/preferences'}>Preferences</Link></button></li>
               <li className="drop-list-item">

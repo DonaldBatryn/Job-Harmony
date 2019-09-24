@@ -199,8 +199,8 @@ const signupEmployees = (emmploye, num) => {
                 newResume.save()
                     .then((resume) => {
                         const proximity = Math.floor(Math.random() * 101);
-                        const salaryRangeLow = Math.floor(Math.random() * 11);
-                        const salaryRangeHigh = Math.floor(Math.random() * 101) + salaryRangeLow;
+                        const salaryRangeLow = Math.floor(Math.random() * 100000)+ 10000;
+                        const salaryRangeHigh = Math.floor(Math.random() * 500000) + salaryRangeLow;
                         const preference = {
                             'userId': newUser.id,
                             'jobField': `${jobField}`,
@@ -339,15 +339,13 @@ const signupDemoUser = (demo, num) => {
                 newResume.save()
                 .then((resume) => {
                     const proximity =  Math.floor(Math.random() * 101);
-                    const salaryRangeLow =  Math.floor(Math.random() * 11);
-                    const salaryRangeHigh = Math.floor(Math.random() * 101) + salaryRangeLow;
                     const preference = {
                         'userId': newUser.id,
                         'jobField': `${jobField}`,
                         'proximity': proximity,
                         'type': `${types[num % 3]}`,
-                        'salaryRangeHigh': salaryRangeHigh,
-                        'salaryRangeLow': salaryRangeLow
+                        'salaryRangeHigh': 1000000,
+                        'salaryRangeLow': 0
                     }
                         const newPreference = new Preference(preference)
                         newPreference.save()

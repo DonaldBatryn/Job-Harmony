@@ -12,47 +12,62 @@ router.post('/new',
         session: false
     }), (req, res) => {
 
-        let {
-            errors,
-            isValid
-        } = validatesPreferenceInput(req.body)
+        User.findById(req.user.id).then(user => {
+            if (user.preference.length > 0 ) {
+                errors.preference = "preference already exists";
+                return res.status(400).json(errors);
+            } else {
+                let {
+                    errors,
+                    isValid
+                } = validatesPreferenceInput(req.body)
 
-        if (!isValid) {
+                if (!isValid) {
 
-            return res.status(400).json(errors)
-        }
-        const userId = req.user.id;
-        const jobField = req.body.jobField;
-        const proximity = req.body.proximity;
-        const type = req.body.type;
-        const salaryRange = req.body.salaryRange.split("-")
-        const salaryRangeHigh = salaryRange[1];
-        const salaryRangeLow = salaryRange[0];
+                    return res.status(400).json(errors)
+                }
+                const userId = req.user.id;
+                const jobField = req.body.jobField;
+                const proximity = req.body.proximity;
+                const type = req.body.type;
+                const salaryRange = req.body.salaryRange.split("-")
+                const salaryRangeHigh = salaryRange[1];
+                const salaryRangeLow = salaryRange[0];
+                // Preference.findOne
 
-        const newPreference = new Preference({
-            userId,
-            jobField,
-            proximity,
-            type,
-            salaryRangeHigh,
-            salaryRangeLow
+                const newPreference = new Preference({
+                    userId,
+                    jobField,
+                    proximity,
+                    type,
+                    salaryRangeHigh,
+                    salaryRangeLow
 
-        });
-        newPreference.save().then(preference => {
+                });
+                newPreference.save().then(preference => {
 
-            User.findById(userId).then((user) => {
-                user.preference.push(preference)
-                user.save()
-                res.json(preference)
-            }).catch(err => {
-                res.status(404).json(err)
-            });
+                    User.findById(userId).then((user) => {
+                        user.preference.push(preference)
+                        // console.log(user)
+                        user.save()
+                        res.json(user)
+                    }).catch(err => {
+                        res.status(404).json(err)
+                    });
+                }).catch(err => {
+                    console.log(err)
+                    res.status(404).json(err)
+
+                });
+        
+            }
+        
         }).catch(err => {
-            console.log(err)
-            res.status(404).json(err)
+    console.log(err)
+    res.status(404).json(err)
 
-        });
-    })
+});
+})
 
 
 router.patch('/',

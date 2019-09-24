@@ -2,8 +2,8 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import BrowseWindow from './browse_window'
 import {
-    fetchAllOnePages,
-    fetchrm
+    // fetchAllOnePages,
+    fetchRelevantOnePages
 } from '../../actions/onePage_actions'
 import { createLike } from '../../actions/like_actions'
 
@@ -18,8 +18,8 @@ const msp = state => ({
 
 const mdp = dispatch => {
     return {
-        fetchAllOnePages: () => dispatch(fetchAllOnePages()),
-        fetchrm: () => dispatch(fetchrm()),
+        // fetchAllOnePages: () => dispatch(fetchAllOnePages()),
+        fetchRelevantOnePages: () => dispatch(fetchRelevantOnePages()),
         createLike: like => dispatch(createLike(like))
     }
 }

@@ -6,9 +6,10 @@ import PreferencesForm from './preferences_form';
 
 const msp = state => {
     let preference;
-    if (state.session.user.preferences.length){
+    debugger
+    if (state.session.user.preference.length){
         
-        preference = state.session.user.preferences[0]
+        preference = state.session.user.preference[0]
     }else{
         preference = "no preference"
     }
@@ -18,7 +19,8 @@ const msp = state => {
             jobField: "",
             proximity: "",
             type: "",
-            salaryRange: ""
+            salaryRange: "",
+            id: state.session.user.id
         },
         preference,
         formType: "Set Preferences",

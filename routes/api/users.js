@@ -36,10 +36,11 @@ router.post("/login", (req, res) => {
         .then(isMatch => {
           if (isMatch) {
             let preferences;
-            if (!user.preferences){
-              preferences = []
+            console.log(user.preference)
+            if (!user.preference) {
+              preference = []
             }else{
-              preferences = user.preference
+              preference = user.preference
             }
 
             const payload = {
@@ -49,7 +50,7 @@ router.post("/login", (req, res) => {
               fName: user.fName,
               lName: user.lName,
               resume: user.resume,
-              preferences
+              preference
 
             };
             // console.log(user.resume)
@@ -101,14 +102,14 @@ router.post("/register", (req, res) => {
           newUser
             .save()
             .then(user => {
-              let preferences = []
+              let preference = []
               const payload = {
                 id: user.id,
                 email: user.email,
                 role: user.role,
                 fName: user.fName,
                 lName: user.lName,
-                preferences
+                preference
               };
               jwt.sign(payload, keys.secretOrKey, {
                 expiresIn: 3600

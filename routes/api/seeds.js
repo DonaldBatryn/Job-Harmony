@@ -272,6 +272,7 @@ const signupEmployers = (emmployer,num) => {
             newUser.password = hash;
             newUser.save()
             .then(user => {
+                const salary = Math.floor(Math.random() * 100000) + 40000;
                 const jobField = jobFields[num % jobFields.length]
                 const onepage = {
                     'userId': newUser.id,
@@ -282,7 +283,7 @@ const signupEmployers = (emmployer,num) => {
                     'jobSkills': `${jobSkills[jobField]}`,
                     'type': `${types[num % 3]}`,
                     'benefits': randomParagraph(),
-                    'startingPay': randomEmployerJobPay(),
+                    'startingPay': salary,
                     'image': randomCompanyLogo(),
                     'catchPhrase': randomCompanyCatchPhrase()
                 }

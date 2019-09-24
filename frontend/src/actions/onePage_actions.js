@@ -33,8 +33,8 @@ export const fetchAllOnePages = () => dispatch => (
     onePageAPIUtil.fetchAllOnePages()
         .then(onePages => dispatch(receiveAllOnePages(onePages)))
 )
-export const fetchrm = () => dispatch => (
-    onePageAPIUtil.fetchrm()
+export const fetchRelevantOnePages = () => dispatch => (
+    onePageAPIUtil.fetchRelevantOnePages()
         .then(onePages => dispatch(receiveAllOnePages(onePages)))
 )
 

@@ -32,7 +32,12 @@ export default function (state = initialState, action) {
     case RECEIVE_RESUME:
       return Object.assign({}, state, { resume: action.resume })
     case RECEIVE_PREFERENCES:
-      return Object.assign({}, state, { preferences: action.preference })
+            return {
+              ...state,
+              isAuthenticated: !!action.currentUser,
+              user: action.preference
+            };
+      // return Object.assign({}, state, { preferences: action.preference })
     case RECEIVE_ONEPAGE:
       return Object.assign({}, state, { onePage: action.onePage })
     default:

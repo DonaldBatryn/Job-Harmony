@@ -26,7 +26,7 @@ class PendingIndexItem extends React.Component{
         // this.props.deleteLike(this.props.onePage._id)
     // }
     getRandomIcon(){
-        let randomNum = Math.floor(Math.random() * 3) + 1;
+        let randomNum = (this.props.onePage[0].jobTitle.length % 3) + 1;
         let jobField = this.props.onePage[0].jobField;
         let iconClassName = jobField + "-" + randomNum;
         return iconClassName;

@@ -28,6 +28,10 @@ export const fetchAllOnePages = () => dispatch => (
     onePageAPIUtil.fetchAllOnePages()
         .then(onePages => dispatch(receiveAllOnePages(onePages)))
 )
+export const fetchrm = () => dispatch => (
+    onePageAPIUtil.fetchrm()
+        .then(onePages => dispatch(receiveAllOnePages(onePages)))
+)
 
 export const createOnePage = onePage => dispatch => (
     onePageAPIUtil.createOnePage(onePage)

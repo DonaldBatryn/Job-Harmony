@@ -3,11 +3,14 @@ const validText = require('./valid-text');
 
 module.exports = function validatesPreferenceInput(data) {
     let errors = {};
+    const salaryRange = req.body.salaryRange.split("-")
+    const salaryRangeHigh = salaryRange[1];
+    const salaryRangeLow = salaryRange[0];
     data.jobField = validText(data.jobField) ? data.jobField : '';
     data.proximity = validText(data.proximity) ? data.proximity : '';
     data.type = validText(data.type) ? data.type : '';
-    data.salaryRangeHigh = validText(data.salaryRangeHigh) ? data.salaryRangeHigh : '';
-    data.salaryRangeLow = validText(data.salaryRangeLow) ? data.salaryRangeLow : '';
+    data.salaryRangeHigh = validText(salaryRangeHigh.toString()) ? salaryRangeHigh.toString() : '';
+    data.salaryRangeLow = validText(salaryRangeLow.toString()) ? salaryRangeLow.toString() : '';
 
 
 

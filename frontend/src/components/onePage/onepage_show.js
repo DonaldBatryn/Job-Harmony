@@ -54,7 +54,7 @@ class OnePageShow extends React.Component {
                         </div>
                         <div className="onepage-show-lr">
                             <div className="op-group-1">
-                                <h2>About this job:&nbsp;</h2>
+                                <h3>About this job:&nbsp;</h3>
                                 <h3>{onePage.description}</h3>
                             </div>
                             <div className="op-group-2">

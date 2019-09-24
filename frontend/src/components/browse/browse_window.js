@@ -18,8 +18,8 @@ class BrowseWindow extends React.Component{
     
       }    
     componentDidMount(){
-        // this.props.fetchAllOnePages()
-        this.props.fetchrm()
+        this.props.fetchAllOnePages()
+        // this.props.fetchrm()
     }
 
     handleNext(){

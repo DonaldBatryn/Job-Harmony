@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const Preference = require('../../models/Preference');
 const User = require('../../models/User');
-const validatesPreferenceInput = require('../../validations/preference_input')
-const passport = require('passport')
+const validatesPreferenceInput = require('../../validations/preference_input');
+const passport = require('passport');
 
 
 
@@ -11,7 +11,9 @@ router.post('/new',
     passport.authenticate('jwt', {
         session: false
     }), (req, res) => {
-
+        console.log("TESTING TESTING");
+        console.log("TESTING TESTING");
+        console.log("TESTING TESTING");
         let {
             errors,
             isValid

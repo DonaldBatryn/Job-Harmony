@@ -3,7 +3,7 @@ const validText = require('./valid-text');
 
 module.exports = function validatesPreferenceInput(data) {
     let errors = {};
-    const salaryRange = req.body.salaryRange.split("-")
+    const salaryRange = data.salaryRange.split("-")
     const salaryRangeHigh = salaryRange[1];
     const salaryRangeLow = salaryRange[0];
     data.jobField = validText(data.jobField) ? data.jobField : '';

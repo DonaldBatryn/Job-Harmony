@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 class PreferencesForm extends React.Component{
     constructor(props){
         super(props);
-        // this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
         this.state = this.props.preferences;
     }
 
@@ -14,12 +14,12 @@ class PreferencesForm extends React.Component{
         }
     }
 
-    // handleSubmit(e){
-    //     e.preventDefault();
-    //     this.props.action(this.state).then(
-    //         this.props.history.push('home')
-    //     )
-    // }
+    handleSubmit(e){
+        e.preventDefault();
+        this.props.action(this.state)
+            .then(this.props.history.push('home')
+        )
+    }
 
     render(){
         return (

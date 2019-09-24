@@ -23,6 +23,7 @@
 .session-btn {
   background-color: black;
   width: 100px;
+  
   padding: 8.5px;
   font-size: 12px;
   color: #f0e9e9;
@@ -30,6 +31,9 @@
   border-radius: 3px;
   border: none;
   cursor: pointer;
+  -webkit-transition-property: background;
+  -webkit-transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-in-out;
 }
 .session-btn:hover{
   background-color: gray;
@@ -44,7 +48,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 30px;
+  height: 46px;
   width: 100px;
   background-color: black;
   color: white;
@@ -52,6 +56,9 @@
   border-radius: 3px;
   font-size: 14px;
   font-weight: 400;
+  -webkit-transition-property: background;
+  -webkit-transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-in-out;
 }
 .user-name-bar:hover{
   background-color: gray;
@@ -64,8 +71,8 @@
   position: absolute;
   right: 100px;
   top: 35px;
-  z-index: 1;
   
+  z-index: 1;
 }
 i {
   border: solid white;
@@ -85,19 +92,23 @@ i {
   overflow: visible;
   width: 232px;
   right: 10px;
-  height: 272px;
+  height: 315px;
   border-radius: 3px;
   border: 5px solid rgba(0, 0, 0, 0.12);
   border: 2px solid lightgray;
+  overflow: hidden;
 }
 
 #dropdown li {
   background-color: white;
-  padding: 12.8px 16px;
+  padding: 16px;
   font-size: 16px;
   text-decoration: none;
-  
+  -webkit-transition-property: background;
+  -webkit-transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-in-out;
 }
+
 #dropdown li:hover {
   background-color: lightgray;
 }
@@ -120,7 +131,8 @@ i {
 
 .logout-btn > a{
   background-color: none;
-  color: black
+  color: black;
+  text-decoration: none;
 }
 
 .my-profile-btn {
@@ -139,4 +151,5 @@ i {
 
 .my-matches-btn, .username-btn{
   font-size: 16px;
+  
 }

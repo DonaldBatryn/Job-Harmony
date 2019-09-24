@@ -35,14 +35,22 @@
     
     border: 1px solid whitesmoke;
     border-radius: 5px;
-    padding: 0 15px; 
-    padding: 15px;
+    padding: 0 35px; 
+    
     z-index: 2;
     top: 70px;
-    border: 1px solid white;
+    
     width: 400px;
     height: 600px;
-    background-color: lightgray;
+    background-color: whitesmoke;
+}
+
+.candidate-show-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
 }
 
 .candidate-show{
@@ -52,7 +60,7 @@
     align-items: center;
     justify-content: space-around;
     /* margin: 0 10px; */
-
+    color: rgba(0, 70, 200, 0.4)
 }
 
 .job-field-show{
@@ -60,7 +68,7 @@
     width: 95%;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     /* margin: 0 10px; */
 
 }
@@ -70,7 +78,7 @@
     width: 95%;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     /* margin: 0 10px; */
 
 }
@@ -80,9 +88,13 @@
     width: 95%;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     /* margin: 0 10px; */
 
+}
+
+.resume-info{
+    margin-right: 45px;
 }
 
 .edit-button-show{
@@ -103,7 +115,7 @@ a.edit-button{
 }
 
 .edit-button-show:hover{
-    background-color: rgba(255, 0, 0, 0.5);
+    background-color: rgba(0, 220, 0, 0.3);
 
   
 }

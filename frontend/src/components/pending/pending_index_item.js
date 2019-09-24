@@ -35,16 +35,13 @@ class PendingIndexItem extends React.Component{
     render(){
         let { onePage } = this.props;
         return (
-          
-            <div className="pending-index-item">
-              <div onClick={(e) => this.handleClick()}>
+            <div className="pending-index-item" onClick={(e) => this.handleClick()}>
                 <div className={`icon ${this.state.iconName}`}></div>
                 <div className="like-info" onClick={this.handleView}>
                     <h3 className="pending-job-title">{onePage[0].jobTitle}</h3>
                     <h5 className="pending-company-name">{onePage[0].companyName}</h5>
                 </div>
                 </div>
-            </div>
         )
     }
 }

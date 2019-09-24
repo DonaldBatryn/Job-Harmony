@@ -61,6 +61,7 @@ router.patch('/',
         session: false
     }),
     (req, res) => {
+        console.log(req.user.id)
         Preference.findOne({userId: req.user.id})
             .then(preference => {
                 const {
@@ -81,7 +82,8 @@ router.patch('/',
             .catch(err =>
 
                 res.status(404).json({
-                    nopreferencefound: 'No preference found with that ID'
+                    nopreferencefound: 'No preference found with that ID',
+                    err
                 })
             );
     })

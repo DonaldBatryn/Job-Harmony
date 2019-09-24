@@ -17,11 +17,12 @@ router.get("/",
         const userId = req.user.id
         // const Id = req.params.aa
 
-        console.log(userId)
+        // console.log(userId)
         // console.log(Id)
 
         Preference.findOne({userId}).then(preference => {
-            console.log(preference)
+            // console.log(preference)
+            console.log("sgrtfhgdrthges")
             OnePage.find({
                     jobField: preference.jobField,
                     // jobField: preference.proximity,

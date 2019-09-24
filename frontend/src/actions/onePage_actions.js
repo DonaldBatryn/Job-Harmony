@@ -45,7 +45,6 @@ export const createOnePage = onePage => dispatch => (
 )
  
 export const updateOnePage = onePage => dispatch => {
-    debugger
     // onepage has alot of errors and i think it is becaue reseeding needa to be done rfq
     return (
         onePageAPIUtil.updateOnePage(onePage)

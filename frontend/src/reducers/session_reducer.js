@@ -3,6 +3,7 @@ import {
   RECEIVE_USER_LOGOUT,
   RECEIVE_USER_SIGN_IN
 } from '../actions/session_actions';
+import {RECEIVE_PREFERENCES} from "../actions/preferences_actions"
 import { RECEIVE_RESUME } from '../actions/resume_actions'
 import { RECEIVE_ONEPAGE } from '../actions/onePage_actions'
 
@@ -30,6 +31,8 @@ export default function (state = initialState, action) {
       }
     case RECEIVE_RESUME:
       return Object.assign({}, state, { resume: action.resume })
+    case RECEIVE_PREFERENCES:
+      return Object.assign({}, state, { preferences: action.preference })
     case RECEIVE_ONEPAGE:
       return Object.assign({}, state, { onePage: action.onePage })
     default:

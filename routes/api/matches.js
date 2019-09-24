@@ -11,9 +11,9 @@ router.post("/:resumeId" ,passport.authenticate("jwt", {session: false}), (req, 
     userId =   req.user.id
     // resumeId =  parseInt (req.params.resumeId) 
     // userId =  parseInt (req.user.id)
-    console.log("weeeeee made it ")
-    console.log(typeof userId  )
-    console.log(typeof resumeId  )
+    // console.log("weeeeee made it ")
+    // console.log(typeof userId  )
+    // console.log(typeof resumeId  )
 
     const newMatch = new Match({employerId:userId, resumeId: resumeId})
     // const employee = User.findById(resume.userId)

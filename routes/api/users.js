@@ -14,9 +14,7 @@ const validateSignupInput = require('../../validations/signup_input');
 router.post("/login", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
-  console.log(req.body)
-  console.log(email)
-  console.log(password)
+
   const { errors, isValid } = validateLoginInput(req.body);
 
   if (!isValid) {
@@ -24,7 +22,7 @@ router.post("/login", (req, res) => {
   }
   User.findOne({
     email
-  })
+  })  
     .populate('preference')
     .populate('resume')
     .exec()
@@ -37,6 +35,12 @@ router.post("/login", (req, res) => {
       bcrypt.compare(password, user.password)
         .then(isMatch => {
           if (isMatch) {
+            let preferences;
+            if (!user.preferences){
+              preferences = []
+            }else{
+              preferences = user.preference
+            }
 
             const payload = {
               id: user.id,
@@ -45,7 +49,7 @@ router.post("/login", (req, res) => {
               fName: user.fName,
               lName: user.lName,
               resume: user.resume,
-              preferences: user.preference
+              preferences
 
             };
             // console.log(user.resume)
@@ -97,12 +101,14 @@ router.post("/register", (req, res) => {
           newUser
             .save()
             .then(user => {
+              let preferences = []
               const payload = {
                 id: user.id,
                 email: user.email,
                 role: user.role,
                 fName: user.fName,
-                lName: user.lName
+                lName: user.lName,
+                preferences
               };
               jwt.sign(payload, keys.secretOrKey, {
                 expiresIn: 3600

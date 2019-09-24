@@ -5,6 +5,13 @@ import PreferencesForm from './preferences_form';
 
 
 const msp = state => {
+    let preference;
+    if (state.session.user.preferences.length){
+        
+        preference = state.session.user.preferences[0]
+    }else{
+        preference = "no preference"
+    }
     return ({
         user: state.session.user,
         preferences: {
@@ -13,14 +20,15 @@ const msp = state => {
             type: "",
             salaryRange: ""
         },
-        formType: "Set Preferences"
+        preference,
+        formType: "Set Preferences",
+        errors: state.errors.session
     })
 }
 
 const mdp = (dispatch,ownProps) => {
 
     return({
-            fetchPreference: (id) => dispatch(fetchPreference(id)),
             createPreference: (preference) => dispatch(createPreference(preference)), 
             updatePreference: (preference) => dispatch(updatePreference(preference))
     })

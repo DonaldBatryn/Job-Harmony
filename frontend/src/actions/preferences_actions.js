@@ -13,11 +13,6 @@ const receivePreferenceErrors = errors => ({
     errors
 })
 
-export const fetchPreference = (userId) => dispatch => (
-    PreferenceAPIUtil.fetchPreference(userId)
-    .then(preference => dispatch(receivePreference(preference)))
-    .catch(err => dispatch(receivePreferenceErrors(err.response.data)))
-)
 
 export const createPreference = (preference) => dispatch => (
     PreferenceAPIUtil.createPreference(preference)

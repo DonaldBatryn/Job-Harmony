@@ -2,10 +2,12 @@ const Validator = require('validator');
 const validText = require('./valid-text');
 
 module.exports = function validatesPreferenceInput(data) {
-    let errors = {};
+    let errors = {};    
     const salaryRange = data.salaryRange.split("-")
     const salaryRangeHigh = salaryRange[1];
     const salaryRangeLow = salaryRange[0];
+    console.log(data)
+
     data.jobField = validText(data.jobField) ? data.jobField : '';
     data.proximity = validText(data.proximity) ? data.proximity : '';
     data.type = validText(data.type) ? data.type : '';

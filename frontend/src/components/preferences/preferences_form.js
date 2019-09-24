@@ -4,16 +4,11 @@ import { withRouter } from 'react-router-dom';
 class PreferencesForm extends React.Component{
     constructor(props){
         super(props);
-        // this.handleSubmit = this.handleSubmit.bind(this);
-        this.user = this.props.user
+        this.renderErrors = this.renderErrors.bind(this)
         this.state = this.props.preferences;
         this.handleSubmit = this.handleSubmit.bind(this)
     }
-    componentDidMount(){
-        this.fetchpreference(this.user)
-        this.createPreference()
-        this.updatePreference()
-    }
+
 
     update(field){
         return (e) => {
@@ -23,11 +18,29 @@ class PreferencesForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        // if this.
-        this.props.action(this.state).then(
-            this.props.history.push('home')
-        )
+        if (this.props.preference === "no preference"){
+            this.props.createPreference(this.state).then(
+                this.props.history.push('home'))
+        }else {
+            // this.state.id = this.props.user.id
+            // debugger
+            this.props.updatePreference(this.state).then(
+                this.props.history.push('home')
+            )}
     }
+    
+
+        renderErrors() {
+        return ( <ul> {Object.keys(this.props.errors).map((error, i) => {
+            return <li 
+                    key={`error-${i}`}> 
+                    {this.state.errors[error]} 
+                   </li>})} 
+                   
+                </ul>
+            );
+        } 
+
 
     render(){
         return (
@@ -75,6 +88,7 @@ class PreferencesForm extends React.Component{
                         <option value="120000-140000">between $120,000 to $140,000</option>
                         <option value="140000-500000">over $140,000</option>
                     </select>
+                    {this.renderErrors()}
                     <input className="prefs-submit" type="submit" value={this.props.formType}/>
                 </form>
             </div>

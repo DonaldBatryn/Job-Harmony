@@ -5,12 +5,12 @@
   right: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.7);
-  z-index: 10;
+  z-index: 11;
 }
 .modal-content {
   
   position: absolute;
-  top: 400px;
+  top: 360px;
   left: 50%;
   transform: translate(-50%, -50%);
 }

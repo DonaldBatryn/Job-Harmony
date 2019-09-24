@@ -10,11 +10,17 @@ const resumes = require('./routes/api/resumes');
 const preferences = require('./routes/api/preferences');
 const matches = require('./routes/api/matches');
 const seeds = require('./routes/api/seeds');
-
+const path = require('path');
 const matchers = require('./routes/api/matchers');
 
 const onePages = require('./routes/api/onePages');
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('frontend/build'));
+  app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  })
+}
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 mongoose

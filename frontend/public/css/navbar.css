@@ -61,6 +61,7 @@
   -webkit-transition-timing-function: ease-in-out;
 }
 .user-name-bar:hover{
+  
   background-color: gray;
 }
 .dropdown-hidden {
@@ -110,7 +111,7 @@ i {
 }
 
 #dropdown li:hover {
-  background-color: lightgray;
+  background-image: linear-gradient(to bottom right, white, whitesmoke, lightgray);
 }
 #dropdown button {
   /* background-color: lightblue; */

@@ -113,6 +113,7 @@
   20% {
     left: 150px;
     bottom: 15px;
+    transform: scale(.9);
   }
   25% {
     left: 150px;

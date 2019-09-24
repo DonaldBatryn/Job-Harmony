@@ -50,19 +50,20 @@ class OnePageShow extends React.Component {
                             <h3>Position is:&nbsp;{onePage.type.toUpperCase()}</h3>
                             <h3>Remote:&nbsp;{remoteValue}</h3>
                             <h3>Salary:&nbsp;${onePage.startingPay}</h3>
+                            <button className="follow-up-button">Follow up with {onePage.companyName}</button>
                         </div>
                         <div className="onepage-show-lr">
-                            <div>
-                            <h2>About this job:&nbsp;</h2>
-                            <h3>{onePage.description}</h3>
+                            <div className="op-group-1">
+                                <h3>About this job:&nbsp;</h3>
+                                <h3>{onePage.description}</h3>
                             </div>
-                            <div>
-                            <h2>Skills Required:&nbsp;</h2>
+                            <div className="op-group-2">
+                                <h4>Skills Required:&nbsp;</h4>
                                 <ul>{skillLis}</ul>
                             </div>
-                            <div>
-                            <h2>Benefits include:&nbsp;</h2>
-                            <h3>{onePage.benefits}</h3>
+                            <div className="op-group-3">
+                                <h4>Benefits include:&nbsp;</h4>
+                                <h3>{onePage.benefits}</h3>
                             </div>
                         </div>
                         {/* <Link to={`/onePages/${this.onePageId}/edit`}>Edit this Page</Link> */}

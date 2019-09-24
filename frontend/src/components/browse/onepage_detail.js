@@ -9,7 +9,10 @@ const OnePageDetail = ({ onePage}) => {
     // }
   let jobTitle = onePage.jobTitle;
   let jobField = onePage.jobField;
-  let jobSkills = onePage.jobSkills;
+  let jobSkills = onePage.jobSkills.split(",");
+  let goodJobSkills = jobSkills.map( (skill)=> {
+    return <li>{skill}</li>
+  })
   let catchPhrase = onePage.catchPhrase;
   let remoteValue;
   if (onePage.remote === "true"){
@@ -43,7 +46,7 @@ const OnePageDetail = ({ onePage}) => {
         </div>
         <div className="op-detail-right">
           <h4>Skills Required:&nbsp;</h4>
-          <p>{jobSkills}</p>
+          <ul>{goodJobSkills}</ul>
           {/* this will need to be changed when we reseed if you are showing "DEMO DEMO DEMO" this is why  */}
           
           <h5>Position is:&nbsp;{onePage.type}</h5>

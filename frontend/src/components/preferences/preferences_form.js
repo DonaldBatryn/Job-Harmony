@@ -6,6 +6,7 @@ class PreferencesForm extends React.Component{
         super(props);
         // this.handleSubmit = this.handleSubmit.bind(this);
         this.state = this.props.preferences;
+        this.handleSubmit = this.handleSubmit()
     }
 
     update(field){
@@ -14,12 +15,12 @@ class PreferencesForm extends React.Component{
         }
     }
 
-    // handleSubmit(e){
-    //     e.preventDefault();
-    //     this.props.action(this.state).then(
-    //         this.props.history.push('home')
-    //     )
-    // }
+    handleSubmit(e){
+        e.preventDefault();
+        this.props.action(this.state).then(
+            this.props.history.push('home')
+        )
+    }
 
     render(){
         return (

@@ -25,7 +25,7 @@
 
 .op-detail-header{
   width: 95%;
-  height: 600px;
+  height: 40vh;
   /* background-color: pink; */
   display: flex;
   flex-direction: row;
@@ -65,9 +65,13 @@
 }
 
 .op-header-pic{
+  display: flex;
   width: 45%;
   height: 100%;
   overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .op-header-pic img{
@@ -79,25 +83,83 @@
   height: 100%;
 }
 
-
-.swipe {
-  /* position: absolute; */
-  right: -300px;
-  /* width: 55%;
-  height: 55%; */
-  /* width: inherit;
-  height: inherit; */
-  /* background: blue; */
-  -webkit-animation: slide 0.5s forwards;
-  /* -webkit-animation-delay: 1s; */
-  animation: slide 0.5s forwards;
+/* .swipe-left {
+  right: -800px;
+  -webkit-animation: slide 1s;
+  animation: slide 1s;
+  animation-direction: alternate-reverse;
   animation-delay: 0s;
+} */
+.swipe-left {
+  position: relative;
+  animation-name: not-interested;
+  animation-duration: 1.0s;
+  }
+.swipe-right {
+  position: relative;
+  animation-name: interested;
+  animation-duration: 1.5s;
 }
 
-/* @-webkit-keyframes slide {
-    100% { right: 100; }
-} */
+@keyframes interested {
+  0% {
+    left: 0px;
+    bottom: 0px;
+  }
+  15% {
+    left: 150px;
+    bottom: 50px;
+  }
+  20% {
+    left: 150px;
+    bottom: 15px;
+  }
+  25% {
+    left: 150px;
+    bottom: 50px;
+  }
+  75% {
+    left: 1000px;
+    bottom: 350px;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
 
-@keyframes slide {
-    100% { right: 0; }
+  76% {
+    transform: matrix(0, 0, 0, 0, 0, 0);
+  }
+
+  77% {
+    right: 1000px;
+    bottom: 250px;
+    transform: rotate(30deg);
+  }
+
+  100% {
+    right: 0px;
+    bottom: 0px;
+  }
+}
+
+@keyframes not-interested {
+  0% {
+    right: 0px;
+    bottom: 0px;
+  }
+  75% {
+    right: 1300px;
+    bottom: 350px;
+    transform: matrix(0.3, 0, -.25, 0.3, 0, 0);
+  }
+  76% {
+    transform: matrix(0, 0, 0, 0, 0, 0);
+  }
+  77% {
+    left: 1000px;
+    bottom: 250px;
+    transform: rotate(-30deg);
+  }
+  100% {
+    left: 0px;
+    bottom: 0px;
+  }
 }

@@ -1,0 +1,27 @@
+.swipe-left {
+  right: -600px;
+  -webkit-animation: slide 0.5s forwards;
+  animation: slide 0.5s forwards;
+  animation-delay: 0s;
+}
+
+.swipe-right {
+  /* position: absolute; */
+  right: 600px;
+  /* width: 55%;
+  height: 55%; */
+  /* width: inherit;
+  height: inherit; */
+  /* background: blue; */
+  -webkit-animation: slide 0.5s forwards;
+  /* -webkit-animation-delay: 1s; */
+  animation: slide 0.5s forwards;
+  animation-delay: 0s;
+}
+
+
+@keyframes slide {
+  100% {
+    right: 0;
+  }
+}

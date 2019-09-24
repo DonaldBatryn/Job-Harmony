@@ -9,8 +9,8 @@ const db = require('../../config/keys').mongoURI;
 const faker = require('faker');
 
 const randomFirstName = faker.name.firstName; // Rowan
-const  randomLastName = faker.name.lastName; // Nikolaus
-const  randomEmail = faker.internet.email; 
+const randomLastName = faker.name.lastName; // Nikolaus
+const randomEmail = faker.internet.email; 
 const randomZipCode = faker.address.zipCode;
 const randomParagraph = faker.lorem.paragraph;
 const randomCompanyLogo = faker.image.business;

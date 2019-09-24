@@ -23,6 +23,7 @@ const OnePageDetail = ({ onePage}) => {
       <div className="op-detail-header">
         <div className="op-header-pic">
           <div className={`banner ${jobField}-${randomNum}`}>
+            
           </div>
           <h3>{catchPhrase}</h3>
           {/* <img src={onePage.image} alt=""/> */}

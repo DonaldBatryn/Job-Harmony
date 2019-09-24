@@ -74,6 +74,10 @@
     /* position: absolute; */
 }
 
+.user-show-liked-pages::-webkit-scrollbar { 
+    width: 0 !important 
+}
+
 .user-show-matches{
     display: flex;
     flex-direction: column;
@@ -84,6 +88,10 @@
     /* background-color: lightgreen; */
     overflow-y: scroll;
     /* position: absolute; */
+}
+
+.user-show-matches::-webkit-scrollbar { 
+    width: 0 !important 
 }
 
 .user-show-subheader{

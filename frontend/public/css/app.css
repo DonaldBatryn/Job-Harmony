@@ -31,3 +31,6 @@ body.fade-out {
     opacity: 0;
     transition: none;
 }
+button:focus {
+    outline: none;
+}

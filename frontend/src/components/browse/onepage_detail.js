@@ -11,6 +11,7 @@ const OnePageDetail = ({ onePage}) => {
   let jobField = onePage.jobField;
   let jobSkills = onePage.jobSkills;
   let catchPhrase = onePage.catchPhrase;
+  let randomNum = (jobTitle.length % 3) + 1;
   let remoteValue;
   if (onePage.remote === "true"){
     remoteValue = "Yes"
@@ -21,7 +22,7 @@ const OnePageDetail = ({ onePage}) => {
     <div className="onepage-detail-container">
       <div className="op-detail-header">
         <div className="op-header-pic">
-          <div className="banner Business-1">
+          <div className={`banner ${jobField}-${randomNum}`}>
           </div>
           <h3>{catchPhrase}</h3>
           {/* <img src={onePage.image} alt=""/> */}

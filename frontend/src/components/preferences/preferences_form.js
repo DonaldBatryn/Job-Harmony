@@ -25,7 +25,7 @@ class PreferencesForm extends React.Component{
         }else {
             this.state.id = this.props.preference._id
             // debugger
-            this.props.updatePreference(this.state).then(
+            this.props.updatePreference(this.state).then(this.props.fetchRelevantOnePages()).then(
                 this.props.history.push('home')
             )}
     }
@@ -55,12 +55,12 @@ class PreferencesForm extends React.Component{
                     <select className="prefs-input" value={this.state.jobField} onChange={this.update('jobField')}>
                         <option value = "" selected disabled hidden>Select a field of work</option>
                         <option value="Finance">Finance</option>
-                        <option value="Software Engineering">Software Engineering</option>
-                        <option value="Healthcare/Medical">Healthcare</option>
+                        <option value="SoftwareEngineering">Software Engineering</option>
+                        <option value="Healthcare">Healthcare</option>
                         <option value="Marketing">Marketing</option>
                         <option value="Transportation">Transportation</option>
-                        <option value="Culinary Arts">Culinary</option>
-                        <option value="Business/Accounting">Accounting</option>
+                        <option value="Culinary">Culinary</option>
+                        <option value="Business">Business</option>
                         <option value="Insurance">Insurance</option>
                     </select><br/>
                     <label>Proximity:&nbsp;all jobs&nbsp;</label>

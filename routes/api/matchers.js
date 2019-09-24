@@ -22,26 +22,26 @@ router.get("/",
 
         Preference.find({userId}).then(preference => {
             
-            console.log(preference)
+            console.log(preference[0])
             // console.log("sgrtfhgdrthges")
             OnePage.find({
                     // jobField: preference.jobField,
-                    jobField: preference[preference.length - 1].jobField,
+                    jobField: preference[0].jobField,
                     // jobField: preference.proximity,
                     // rfq add when google api
-                    type: preference[preference.length - 1].type,
+                    // type: preference[0].type,
                     // type: preference.type,
                     // startingPay: { $gte: preference.salaryRangeLow, $lte: preference.salaryRangeHigh  }
-                    startingPay: {
-                        $gte: preference[preference.length - 1].salaryRangeLow,
-                        $lte: preference[preference.length - 1].salaryRangeHigh
-                    }
+                    // startingPay: {
+                    //     $gte: preference[0].salaryRangeLow,
+                    //     $lte: preference[0].salaryRangeHigh
+                    // }
                     // startingPay: { $gte: 0, $lte: 1000000 }
 
                 
                 }).then(onePages => {
                     
-                // console.log(onePages)
+                console.log(onePages)
                     res.json(onePages)
                 }).catch(err => {
                     res.status(404).json(err)

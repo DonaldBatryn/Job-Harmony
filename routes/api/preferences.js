@@ -13,6 +13,7 @@ router.post('/new',
     }), (req, res) => {
 
         User.findById(req.user.id).then(user => {
+            console.log(user)
             if (user.preference.length > 0 ) {
                 let preferenceErrors = "preference already exists";
                 return res.status(400).json(preferenceErrors);

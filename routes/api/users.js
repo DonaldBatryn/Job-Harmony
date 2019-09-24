@@ -35,12 +35,12 @@ router.post("/login", (req, res) => {
       bcrypt.compare(password, user.password)
         .then(isMatch => {
           if (isMatch) {
-            let preferences;
+            let preference;
             console.log(user.preference)
             if (!user.preference) {
-              preference = []
+              preference = "no"
             }else{
-              preference = user.preference
+              preference = user.preference[0]
             }
 
             const payload = {
@@ -102,7 +102,7 @@ router.post("/register", (req, res) => {
           newUser
             .save()
             .then(user => {
-              let preference = []
+              let preference = "no"
               const payload = {
                 id: user.id,
                 email: user.email,

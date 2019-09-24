@@ -70,7 +70,7 @@ class NavBar extends React.Component {
               <li className="drop-list-item">
                 <button className="logout-btn"><Link to={'/home'}>Browse Jobs</Link></button></li>
               <li className="drop-list-item">
-                <button className="logout-btn"><Link to={`/users/${this.props.user.id}`}>Profile</Link></button></li>
+                <button className="logout-btn"><Link to={`/users/${this.props.user.id}/profile`}>Profile</Link></button></li>
               <li className="drop-list-item">
                 <button className="logout-btn"><Link to={'/preferences'}>Preferences</Link></button></li>
               <li className="drop-list-item">

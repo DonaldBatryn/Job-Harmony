@@ -5,17 +5,18 @@ import OnePageDetail from './onepage_detail';
 import EndOfResults from './end_of_results';
 
 
-
 class BrowseWindow extends React.Component{
     constructor(props){
         super(props);
         this.state = {
             i: 0
         }
+    
+        this.handleReset = this.handleReset.bind(this)
         this.handleNext = this.handleNext.bind(this)
         this.handleLike = this.handleLike.bind(this)
-    }
-
+    
+      }    
     componentDidMount(){
         // this.props.fetchAllOnePages()
         this.props.fetchrm()
@@ -26,7 +27,7 @@ class BrowseWindow extends React.Component{
             i: (this.state.i) + 1
         }) 
     }
-
+  
     handleLike(){
         this.props.createLike({
             employeeId: this.props.user.id,
@@ -37,8 +38,14 @@ class BrowseWindow extends React.Component{
             i: (this.state.i) + 1
         }) 
     }
+    handleReset(){
+      this.props.currentMain.currentMain = null;
+      this.handleNext()
 
-    render(){
+    }
+
+    render() {
+        let button3 = <button onClick={this.handleReset}>Go Back</button>
         if (!this.props.onePages){
             return <div className="browse-window-container">Loading...</div>
         }
@@ -60,14 +67,35 @@ class BrowseWindow extends React.Component{
             button2 = ""
         }
         let renderedResult;
-        if (this.state.i < this.props.onePages.length){
-            renderedResult = currentOnePage[this.state.i]
-        } else {
+
+        if (this.props.currentMain.currentMain !== null) {
+         renderedResult = (
+           <OnePageDetail onePage={this.props.currentMain.currentMain} />
+         )
+        } else if (this.state.i < this.props.onePages.length) {
             renderedResult = (
-                <EndOfResults />
+              currentOnePage[this.state.i]
+            )
+        } else {
+        renderedResult = (
+            <EndOfResults />
+        )
+        }
+        if (this.props.currentMain.currentMain !== null) {
+          return (
+          <div className = "browse-window-container">
+            <div className = "browse-header-text">
+            <h3> {renderedResult.jobTitle} </h3> 
+            </div> 
+            <div className = "browse-window"> 
+                {renderedResult} 
+            </div> 
+            <div className = "buttons-container">
+            <div className = "button-3"> {button3} </div> 
+            </div> 
+            </div>
             )
         }
-        
         return (
             <div className="browse-window-container">
                 <div className="browse-header-text">

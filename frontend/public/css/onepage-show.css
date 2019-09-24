@@ -67,6 +67,7 @@
 .op-header-pic{
   width: 45%;
   height: 100%;
+  overflow: hidden;
 }
 
 .op-header-pic img{

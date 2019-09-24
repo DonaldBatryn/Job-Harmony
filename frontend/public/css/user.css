@@ -100,7 +100,7 @@
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    height: 20%;
+    height: 14%;
 }
 
 .user-show-list{
@@ -124,7 +124,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 50px;
+    height: 35px;
     width: 99%;
     
 }
@@ -133,8 +133,11 @@
 .user-show-li-btn{
     width: 120px;
     height: 75%;
-    padding: 5px 10px;
+    padding: 0 10px;
     font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .user-show-li-btn:hover{
@@ -142,5 +145,5 @@
 }
 
 .user-show-li{
-    min-height: 8vh;
+    min-height: 6vh;
 }

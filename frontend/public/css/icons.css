@@ -1,12 +1,29 @@
 .icon {
-  width: 80px;
-  height: 60px;
+  width: 70px;
+  height: 50px;
+  margin: 0;
+  padding: 0;
   /* border: solid rgb(161, 153, 153, .5); */
 }
 .icon-collection {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+.banner {
+  display: flex;
+  width: 20vh;
+  height: 20vh;
+  justify-content: center;
+}
+.browse-window-container {
+  background-image: linear-gradient(135deg, rgb(90, 87, 87), rgb(115, 112, 112), rgb(161, 156, 156), rgb(115, 112, 112));
+}
+.onepage-detail-container {
+  background-image: linear-gradient(135deg, rgb(90, 87, 87), rgb(115, 112, 112), rgb(161, 156, 156), rgb(115, 112, 112) );
+}
+.onepage-detail-container::-webkit-scrollbar {
+  width: 0 !important
 }
 .Business-1 {
   background: url(https://full-stacks-lp-aa-dev.s3.us-east-2.amazonaws.com/JobHarmony/Accounting/1.png);

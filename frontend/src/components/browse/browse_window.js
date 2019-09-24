@@ -9,7 +9,8 @@ class BrowseWindow extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            i: 0
+            i: 0,
+            swipe: ''
         }
     
         this.handleReset = this.handleReset.bind(this)
@@ -24,7 +25,8 @@ class BrowseWindow extends React.Component{
 
     handleNext(){
         this.setState({
-            i: (this.state.i) + 1
+            i: (this.state.i) + 1,
+            swipe: "swipe-left"
         }) 
     }
   
@@ -35,7 +37,8 @@ class BrowseWindow extends React.Component{
         })
 
         this.setState({
-            i: (this.state.i) + 1
+            i: (this.state.i) + 1,
+            swipe: "swipe-right"
         }) 
     }
     handleReset(){
@@ -51,7 +54,7 @@ class BrowseWindow extends React.Component{
         }
         
         let currentOnePage = this.props.onePages.map(onePage => {
-            return <div className="onepage-detail-container swipe" key={onePage._id}><OnePageDetail onePage={onePage}/></div>
+            return <div className={`onepage-detail-container ${this.state.swipe}`} key={onePage._id}><OnePageDetail onePage={onePage}/></div>
         });
 
         let button1;

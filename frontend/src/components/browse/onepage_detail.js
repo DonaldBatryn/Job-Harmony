@@ -11,6 +11,7 @@ const OnePageDetail = ({ onePage}) => {
   let jobField = onePage.jobField;
   let jobSkills = onePage.jobSkills;
   let catchPhrase = onePage.catchPhrase;
+  let randomNum = (jobTitle.length % 3) + 1;
   let remoteValue;
   if (onePage.remote === "true"){
     remoteValue = "Yes"
@@ -21,16 +22,18 @@ const OnePageDetail = ({ onePage}) => {
     <div className="onepage-detail-container">
       <div className="op-detail-header">
         <div className="op-header-pic">
-          <img src={onePage.image} alt=""/>
+          <div className={`banner ${jobField}-${randomNum}`}>
+          </div>
           <h3>{catchPhrase}</h3>
+          {/* <img src={onePage.image} alt=""/> */}
         </div>
+      </div>
+      <div className="op-detail-bottom-box">
         <div className="op-header-text">
         <h1>{jobTitle}</h1>
           {/* this will need to be changed when we reseed if you are showing "DEMO DEMO DEMO" this is why  */}
           <h2>at&nbsp;{onePage.companyName}</h2>
         </div>
-      </div>
-      <div className="op-detail-bottom-box">
         <div className="op-detail-left">
           <h3>Starting Salary:&nbsp;${onePage.startingPay}</h3>
           <h3>Job Description:&nbsp;</h3>

@@ -1,11 +1,21 @@
 import React from 'react'
 import avatar from '../../images/avatar.png'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
 class UserShow extends React.Component{
+    constructor(props){
+        super(props);
+        this.handleView = this.handleView.bind(this);
+    }
 
+    handleView(id){
+        this.props.history.push(`/onePages/${id}`)
+    }
 
     render(){
+        if (!this.props.likes){
+            return <div className="user-show-container">Loading</div>
+        }
         let { user, resume } = this.props;
         let resumeLink;
         if (!resume){
@@ -13,6 +23,16 @@ class UserShow extends React.Component{
         } else {
             resumeLink = <Link className="user-show-resume-link" to={`/resumes/${resume._id}`}>Your Resume</Link>
         }
+        let allLikes = this.props.likes.map(onePage => {
+            let randomNum = (onePage[0].jobTitle.length % 3) + 1;
+            return (
+                <li key={onePage[0]._id} className="user-show-li">
+                    <div className={`icon ${onePage[0].jobField}-${randomNum}`}/>
+                    <h4>{onePage[0].jobTitle}</h4>
+                    <button className="user-show-li-btn" onClick={() => this.handleView(onePage[0]._id)}>View Job</button>
+                </li>
+            )
+        })
         return (
             <div className="user-show-container">
                 <div className="user-show-top">
@@ -31,7 +51,7 @@ class UserShow extends React.Component{
                          <h2 >Jobs You've Liked</h2>
                         </div>
                         <ul className="user-show-list">
-                            <li>
+                            {/* <li>
                                 <h4>Liked onePage Show Link</h4>
                                 <button className="user-show-li-btn">View Listing</button>
                             </li>
@@ -46,7 +66,8 @@ class UserShow extends React.Component{
                             <li>
                                 <h4>Liked onePage Show Link</h4>
                                 <button className="user-show-li-btn">View Listing</button>
-                            </li>
+                            </li> */}
+                            {allLikes}
                         </ul>
                     </div>
                     <div className="user-show-matches">
@@ -78,4 +99,4 @@ class UserShow extends React.Component{
     }
 }
 
-export default UserShow;
+export default withRouter(UserShow);

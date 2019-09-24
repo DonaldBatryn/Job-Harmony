@@ -32,7 +32,12 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
     </Switch> */}
     <Switch>
-      <ProtectedRoute exact path="/preferences" component={PreferencesFormContainer}/>
+      {/* <ProtectedRoute exact path="/preferences" component={PreferencesFormContainer}/> */}
+      < ProtectedRoute exact path = "/preferences"
+      component = {
+        MainPage
+      }
+      />
     <ProtectedRoute path="/users/:userId/profile" component={UserShowContainer}/>
       <ProtectedRoute exact path="/home" component={MainPage}/>
       <ProtectedRoute exact path="/resumes/new" component={CreateResumeFormContainer}/>

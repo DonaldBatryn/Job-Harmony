@@ -25,6 +25,9 @@ router.post("/login", (req, res) => {
   User.findOne({
     email
   })
+    .populate('preference')
+    .populate('resume')
+    .exec()
     .then(user => {
       if (!user) {
         return res.status(404).json({
@@ -34,13 +37,16 @@ router.post("/login", (req, res) => {
       bcrypt.compare(password, user.password)
         .then(isMatch => {
           if (isMatch) {
+
             const payload = {
               id: user.id,
               email: user.email,
               role: user.role,
               fName: user.fName,
               lName: user.lName,
-              resume: user.resume
+              resume: user.resume,
+              preferences: user.preference
+
             };
             // console.log(user.resume)
             jwt.sign(payload, keys.secretOrKey, {

@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { fetchPreference, createPreference, updatePreference } from '../../actions/preferences_actions';
 import PreferencesForm from './preferences_form';
 
 
@@ -16,9 +17,12 @@ const msp = state => {
     })
 }
 
-const mdp = dispatch => {
-    return({
+const mdp = (dispatch,ownProps) => {
 
+    return({
+            fetchPreference: (id) => dispatch(fetchPreference(id)),
+            createPreference: (preference) => dispatch(createPreference(preference)), 
+            updatePreference: (preference) => dispatch(updatePreference(preference))
     })
 }
 

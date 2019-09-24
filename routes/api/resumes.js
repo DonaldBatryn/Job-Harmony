@@ -11,7 +11,6 @@ router.post('/new',
     passport.authenticate('jwt', {
       session: false
     }), (req, res) => {
-
   let { errors, isValid } = validatesResumeInput(req.body)
 
   if (!isValid) {

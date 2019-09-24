@@ -6,7 +6,6 @@ import {
 import { fetchPreference, createPreference, updatePreference } from '../../actions/preferences_actions';
 import PreferencesForm from './preferences_form';
 
-
 const msp = state => {
     let preference;
     debugger

@@ -5,6 +5,7 @@ class PreferencesForm extends React.Component{
     constructor(props){
         super(props);
         this.renderErrors = this.renderErrors.bind(this)
+        // this.handleSubmit = this.handleSubmit.bind(this);
         this.state = this.props.preferences;
         this.handleSubmit = this.handleSubmit.bind(this)
     }

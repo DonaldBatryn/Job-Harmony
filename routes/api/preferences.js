@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const Preference = require("../../models/Preference")
 const User = require('../../models/User');
-const validatesPreferenceInput = require('../../validations/preference_input')
-const passport = require('passport')
+const validatesPreferenceInput = require('../../validations/preference_input');
+const passport = require('passport');
 
 
 
@@ -23,10 +23,17 @@ router.post('/new',
                     isValid
                 } = validatesPreferenceInput(req.body)
 
-                if (!isValid) {
+        //         if (!isValid) {
+        // console.log("TESTING TESTING");
+        // console.log("TESTING TESTING");
+        // console.log("TESTING TESTING");
+        // let {
+        //     errors,
+        //     isValid
+        // } = validatesPreferenceInput(req.body)
 
-                    return res.status(400).json(errors)
-                }
+        //             return res.status(400).json(errors)
+        //         }
                 const userId = req.user.id;
                 const jobField = req.body.jobField;
                 const proximity = req.body.proximity;

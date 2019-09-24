@@ -33,6 +33,22 @@ class UserShow extends React.Component{
                 </li>
             )
         })
+
+        let randomMatches = this.props.likes.map((onePage, i) => {
+            let randomNum = (onePage[0].jobTitle.length % 3) + 1;
+            if ((i % 2 === 0) && (i !== 0)){
+                return (
+                    <li key={onePage[0]._id} className="user-show-li">
+                        <div className={`icon ${onePage[0].jobField}-${randomNum}`} />
+                        <h4>{onePage[0].jobTitle}</h4>
+                        <button className="user-show-li-btn" onClick={() => this.handleView(onePage[0]._id)}>View Match</button>
+                    </li>
+                )
+            } else {
+                return ""
+            }
+        })
+
         return (
             <div className="user-show-container">
                 <div className="user-show-top">
@@ -75,7 +91,7 @@ class UserShow extends React.Component{
                          <h2>Your Matches</h2>
                         </div>
                         <ul className="user-show-list">
-                            <li>
+                            {/* <li>
                                 <h4>Matched onePage Show Link</h4>
                                 <button className="user-show-li-btn">View Match</button>
                             </li>
@@ -90,7 +106,8 @@ class UserShow extends React.Component{
                             <li>
                                 <h4>Matched onePage Show Link</h4>
                                 <button className="user-show-li-btn">View Match</button>
-                            </li>
+                            </li> */}
+                            {randomMatches}
                         </ul>
                     </div>
                 </div>

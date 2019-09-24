@@ -1,24 +1,31 @@
 import React from 'react'
+import OnePageShowContainer from '../../components/onePage/onepage_show_container';
+import {Link} from 'react-router-dom'
+import BrowseWindowContainer from '../browse/browse_window_container';
 
 class PendingIndexItem extends React.Component{
     constructor(props){
         super(props)
-        this.handleView = this.handleView.bind(this);
+      
+      this.handleClick = this.handleClick.bind(this);
+      this.handleView = this.handleView.bind(this);
         // this.handleDelete = this.handleDelete.bind(this);
-        this.state = {
-            iconName: this.getRandomIcon()
+        this.state = { 
+          iconName: this.getRandomIcon()
         }
+      }
+    handleClick() {
+      this.props.receiveNewMain(this.props.onePage)
     }
-
     handleView(){
-        // open onePage show page
+      let onePage = this.props;
+      return this.props.onePage._id
     }
-
     // handleDelete(){
         // when delete route is done lets throw it here
         // this.props.deleteLike(this.props.onePage._id)
     // }
-    getRandomIcon() {
+    getRandomIcon(){
         let randomNum = Math.floor(Math.random() * 3) + 1;
         let jobField = this.props.onePage[0].jobField;
         let iconClassName = jobField + "-" + randomNum;
@@ -28,13 +35,15 @@ class PendingIndexItem extends React.Component{
     render(){
         let { onePage } = this.props;
         return (
+          
             <div className="pending-index-item">
+              <div onClick={(e) => this.handleClick()}>
                 <div className={`icon ${this.state.iconName}`}></div>
                 <div className="like-info" onClick={this.handleView}>
                     <h3 className="pending-job-title">{onePage[0].jobTitle}</h3>
                     <h5 className="pending-company-name">{onePage[0].companyName}</h5>
                 </div>
-             
+                </div>
             </div>
         )
     }

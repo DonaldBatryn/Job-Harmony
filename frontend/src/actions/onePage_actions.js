@@ -1,8 +1,13 @@
 import * as onePageAPIUtil from '../util/onePage_api_util';
-
+export const RECEIVE_NEW_MAIN = "RECEIVE_NEW_MAIN";
 export const RECEIVE_ONEPAGE = 'RECEIVE_ONEPAGE';
 export const RECEIVE_ALL_ONEPAGES = 'RECEIVE_ALL_ONEPAGES';
 export const RECEIVE_ONEPAGE_ERRORS = 'RECEIVE_ONEPAGE_ERRORS';
+
+export const receiveNewMain = onePage => ({
+  type: RECEIVE_NEW_MAIN,
+  onePage: onePage
+})
 
 const receiveOnePage = onePage => ({
     type: RECEIVE_ONEPAGE,
@@ -38,7 +43,7 @@ export const createOnePage = onePage => dispatch => (
         .then(onePage => dispatch(receiveOnePage(onePage)))
         .catch(err => dispatch(receiveOnePageErrors(err.response.data)))
 )
-
+ 
 export const updateOnePage = onePage => dispatch => {
     debugger
     // onepage has alot of errors and i think it is becaue reseeding needa to be done rfq
@@ -48,6 +53,7 @@ export const updateOnePage = onePage => dispatch => {
         .catch(err => dispatch(receiveOnePageErrors(err.response.data)))
     )
 }
+ 
 
 window.fetchOnePage = fetchOnePage;
 window.createOnePage = createOnePage;

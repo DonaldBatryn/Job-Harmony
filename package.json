@@ -32,6 +32,7 @@
     "mongoose": "^5.7.1",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
+    "redux-responsive": "^4.3.8",
     "validator": "^11.1.0"
   },
   "devDependencies": {

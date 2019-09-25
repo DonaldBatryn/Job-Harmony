@@ -1,3 +1,7 @@
+/* #root {
+    width: 100vw;
+    height: 100vh;
+} */
 .splash-container{
     display: flex;
     width: 100%;
@@ -17,8 +21,8 @@
 
 .hero{
     top: 0px;
-    width: 100vw;
-    height: 70vw;
+    width: 0vw;
+    height: 0vw;
     position: fixed;
     z-index: -1;
 }
@@ -32,4 +36,85 @@
     margin-left: 40px;
     top: 170px;
     text-decoration: underline;
+}
+.splash-1 {
+    position: absolute;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(https://harmonyd.com/wp-content/uploads/2018/05/18-HD-Perfect-Harmony-Dark-Flip.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    /* background-color: grey; */
+}
+.splash-2 {
+    position: absolute;
+    z-index: 9;
+    width: 100vw;
+    height: 100vh;
+    background-color: aqua;
+}
+.splash-3 {
+    position: absolute;
+    z-index: 8;
+    width: 100vw;
+    height: 100vh;
+    background-color: red;
+}
+.splash-4 {
+    position: absolute;
+    z-index: 7;
+    width: 100vw;
+    height: 100vh;
+    background-color: cornflowerblue;
+}
+.scroll-down {
+    /* transform: translate(0); */
+    animation-name: down;
+    animation-duration: 1s;
+    animation-direction: reverse;
+    animation-fill-mode: reverse;
+}
+.scroll-one {
+    position: absolute;
+    animation-name: up;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    /* transform: translate(1000px); */
+}
+.scroll-two {
+    position: absolute;
+    animation-name: up;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    /* transform: translate(1000px); */
+}
+.scroll-three {
+    position: absolute;
+    animation-name: up;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    /* transform: translate(1000px); */
+}
+.scroll-four {
+    position: absolute;
+    /* animation-name: up;
+    animation-duration: 100s; */
+    /* transform: translate(1000px); */
+}
+@keyframes up {
+    0% {
+        bottom: 0px;
+    }
+    100% {
+        bottom: 1000px;
+    }
+}
+@keyframes down {
+    0% {
+        top: 0px;
+    }
+    100% {
+        top: -1000px;
+    }
 }

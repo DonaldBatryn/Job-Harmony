@@ -26,7 +26,7 @@ const receiveOnePageErrors = errors => ({
 export const fetchOnePage = id => dispatch => (
     onePageAPIUtil.fetchOnePage(id)
         .then(onePage => dispatch(receiveOnePage(onePage)))
-        .catch(err => dispatch(receiveOnePageErrors(err.response.data)))
+        // .catch(err => dispatch(receiveOnePageErrors(err.response.data)))
 )
 
 export const fetchAllOnePages = () => dispatch => (

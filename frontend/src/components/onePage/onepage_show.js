@@ -24,38 +24,51 @@ class OnePageShow extends React.Component {
         }
         
         let { onePage } = this.props;
-        let roleValue;
-        if (onePage.role === true){
-            roleValue = 'Yes'
+        let remoteValue;
+        if (onePage.remote === true){
+            remoteValue = 'Yes'
         } else {
-            roleValue = 'No'
+            remoteValue = 'No'
         }
+
+        let skillsList = onePage.jobSkills.split(",");
+        let skillLis = skillsList.map(skill => <li>{skill}</li>)
+        let randomNum = (onePage.jobTitle.length % 3) + 1;
         return (
-            <div onPointerMove={this.showCoords} className="onepage-show">
-                {/* <h2>{currentUser.fName}{currentUser.lName}</h2> */}
-
-                <h3>Job Field :&nbsp;{onePage.jobField}</h3>
-
-                <h3>Job Skills:&nbsp;{onePage.jobSkills}</h3>
-
-                <h3>Company Name:&nbsp;{onePage.companyName}</h3>
-
-                <h3>Job Title :&nbsp;{onePage.jobTitle}</h3>
-
-                <h3>Description:&nbsp;{roleValue}</h3>
-
-                <h3>type:&nbsp;{onePage.type}</h3>
-
-                <h3>Remote:&nbsp;${onePage.remote}</h3>
-
-                <h3>Benefits:&nbsp;${onePage.benefits}</h3>
-
-                <h3>Salary:&nbsp;${onePage.startingPay}</h3>
-             
-                <Link to={`/onePages/${this.onePageId}/edit`}>Edit this Page</Link>
-                <label>Just Testing Buttons</label>
-                <button>Dislike</button>
-                <button>Like</button>
+            <div onPointerMove={this.showCoords} className="onepage-show-container">
+                <div className="onepage-show">
+                    <div className="onepage-show-top">
+                        <div className={`icon ${onePage.jobField}-${randomNum} `} id="op-show-img" />
+                        <div className="onepage-show-ur">
+                            <h2>{onePage.jobTitle}</h2>
+                            <h4>at&nbsp;{onePage.companyName}</h4>
+                            <h4>Field:&nbsp;{onePage.jobField}</h4>
+                        </div>
+                    </div>
+                    <div className="onepage-show-bottom">
+                        <div className="onepage-show-ll">
+                            <h3>Position is:&nbsp;{onePage.type.toUpperCase()}</h3>
+                            <h3>Remote:&nbsp;{remoteValue}</h3>
+                            <h3>Salary:&nbsp;${onePage.startingPay}</h3>
+                            <button className="follow-up-button">Follow up with {onePage.companyName}</button>
+                        </div>
+                        <div className="onepage-show-lr">
+                            <div className="op-group-1">
+                                <h3>About this job:&nbsp;</h3>
+                                <h3>{onePage.description}</h3>
+                            </div>
+                            <div className="op-group-2">
+                                <h4>Skills Required:&nbsp;</h4>
+                                <ul>{skillLis}</ul>
+                            </div>
+                            <div className="op-group-3">
+                                <h4>Benefits include:&nbsp;</h4>
+                                <h3>{onePage.benefits}</h3>
+                            </div>
+                        </div>
+                        {/* <Link to={`/onePages/${this.onePageId}/edit`}>Edit this Page</Link> */}
+                    </div>
+                </div>
             </div>
         )
     }

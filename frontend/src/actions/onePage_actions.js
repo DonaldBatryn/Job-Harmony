@@ -33,8 +33,8 @@ export const fetchAllOnePages = () => dispatch => (
     onePageAPIUtil.fetchAllOnePages()
         .then(onePages => dispatch(receiveAllOnePages(onePages)))
 )
-export const fetchrm = () => dispatch => (
-    onePageAPIUtil.fetchrm()
+export const fetchRelevantOnePages = () => dispatch => (
+    onePageAPIUtil.fetchRelevantOnePages()
         .then(onePages => dispatch(receiveAllOnePages(onePages)))
 )
 
@@ -45,7 +45,6 @@ export const createOnePage = onePage => dispatch => (
 )
  
 export const updateOnePage = onePage => dispatch => {
-    debugger
     // onepage has alot of errors and i think it is becaue reseeding needa to be done rfq
     return (
         onePageAPIUtil.updateOnePage(onePage)

@@ -13,7 +13,7 @@ class SignupForm extends React.Component {
       role: 'Please select a role',
       errors: {}
     };
-
+    this.renderErrors = this.renderErrors.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoEmployer = this.handleDemoEmployer.bind(this);
     this.handleDemoEmployee = this.handleDemoEmployee.bind(this);
@@ -54,6 +54,7 @@ class SignupForm extends React.Component {
     this.props.signup(user, this.props.history)
       .then(() => this.props.closeModal());;
   }
+
   renderErrors() {
     return (
       <ul>

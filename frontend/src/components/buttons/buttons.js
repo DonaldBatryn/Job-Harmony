@@ -11,7 +11,6 @@ class Buttons extends React.Component{
     componentDidMount(){
         // this.props.fetchUsers();
         // let userId = this.props.match.params.userId
-        // debugger
         // this.props.fetchUser(userId);
     }
 

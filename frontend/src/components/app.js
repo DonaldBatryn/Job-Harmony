@@ -33,7 +33,7 @@ const App = () => (
     </Switch> */}
     <Switch>
       <ProtectedRoute exact path="/preferences" component={PreferencesFormContainer}/>
-    <ProtectedRoute path="/users/:userId/profile" component={UserShowContainer}/>
+      <ProtectedRoute path="/users/:userId/profile" component={UserShowContainer}/>
       <ProtectedRoute exact path="/home" component={MainPage}/>
       <ProtectedRoute exact path="/resumes/new" component={CreateResumeFormContainer}/>
       <ProtectedRoute exact path="/resumes/:resumeId" component={ResumeShowContainer}/>

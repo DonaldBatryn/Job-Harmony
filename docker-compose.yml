@@ -1,0 +1,114 @@
+# version: "3"
+# services:
+#   db:
+#     image: mongo:4.0.4
+#     # set up a volume so our database info persists
+#     ports:
+#       - '27017:27017'
+#     volumes:
+#       - mongo-db:/data/db
+#   web:
+#     # name our image
+      # build: .
+#     image: donaldbatryn/node:11-alpine
+#       - .:/myapp
+#     ports:
+#       - "3000:3000"
+#     depends_on:
+#       # setting up a dependency on our database container
+#       - db
+#     environment:
+#       DATABASE_URL: postgres://postgres@db 
+
+# volumes:
+#   mongo-db:
+  
+
+
+
+
+
+# services:
+
+#   app:
+#     build: .
+#     image: nodeapp
+#     ports: 
+#       - 81:3000
+#     environment:
+#       - MONGO_URI=mongodb://db/nodeapp
+
+
+#   db:
+#     image: "mongo:3.0.15"
+#     ports:
+#       - '27017:27017'
+#     volumes:
+#       - mongo-db:/data/db
+
+# volumes:
+#   mongo-db:
+
+# networks:
+#   nodemernapp:
+#     driver: bridge\
+
+
+#     version: '3.3'
+# services: 
+#   app:
+#     image: nodeapp
+#     build: .
+#     ports:
+#       - '9000:3000'
+#     environment:
+#       - MONGO_URI=mongodb://mongo_db/nodeapp
+#     networks:
+#       - nodemernapp
+#     healthcheck:
+#       test: ["CMD", "curl", "-f", "http://localhost"]
+#       interval: 1m30s
+#       timeout: 10s
+#       retries: 3
+     
+
+#   db:
+#     image: mongo:3.0.15
+#     volumes:
+#       - mongo-db:/data/db
+#     networks:
+#       nodemernapp:
+#         aliases:
+#           - "mongo_db"
+# networks:
+#   nodemernapp:
+#     driver: bridge
+# volumes:
+#   mongo-db:
+version: "3"
+services:
+  mongo:
+    image: mongo
+    ports:
+    - "27017:27017"
+    volumes:
+      - mongo-db:/data/db
+    networks:
+      nodemernapp:
+        aliases:
+          - "mongo_db"
+    environment:
+      - MONGO_URI=mongodb+srv://dev:kbYpsWJo72EZj2Kh@cluster0-l03rz.mongodb.net/test?retryWrites=true&w=majority
+  web:
+    image: donaldbatryn/jobharmony
+    ports:
+      - "3000:8080"
+    depends_on:
+      - mongo
+    networks:
+      - nodemernapp
+volumes:
+  mongo-db:
+networks:
+  nodemernapp:
+    driver: bridge

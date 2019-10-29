@@ -7,6 +7,7 @@ class OnePageShow extends React.Component {
         super(props);
         this.onePageId = this.props.match.params.onePageId;
         // this.showCoords = this.showCoords.bind(this);
+        this.handleBack = this.handleBack.bind(this);
     }
 
     handleBack(){
@@ -33,7 +34,7 @@ class OnePageShow extends React.Component {
         }
 
         let skillsList = onePage.jobSkills.split(",");
-        let skillLis = skillsList.map(skill => <li>{skill}</li>)
+        let skillLis = skillsList.map((skill, i) => <li key={i}>{skill}</li>)
         let randomNum = (onePage.jobTitle.length % 3) + 1;
         return (
             <div onPointerMove={this.showCoords} className="onepage-show-container">
@@ -52,7 +53,7 @@ class OnePageShow extends React.Component {
                             <h3>Remote:&nbsp;{remoteValue}</h3>
                             <h3>Salary:&nbsp;${onePage.startingPay}</h3>
                             <button className="follow-up-button">Follow up with {onePage.companyName}</button>
-                            <button className="follow-up-button" onCLick={() => this.handleBack}>Back to Profile</button>
+                            <button className="follow-up-button" onClick={() => this.handleBack}>Back to Profile</button>
                         </div>
                         <div className="onepage-show-lr">
                             <div className="op-group-1">

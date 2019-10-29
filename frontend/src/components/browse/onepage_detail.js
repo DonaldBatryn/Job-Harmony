@@ -2,16 +2,12 @@ import React from 'react';
 
 
 const OnePageDetail = ({ onePage}) => {
-  //!!!!  comminted out because need to reseed (After reseed commint backin )   !!!!
-  // let jobTitle = "no job title";
-  // if (onePage.jobTitle){
-    //   jobTitle = onePage.jobTitle
-    // }
+
   let jobTitle = onePage.jobTitle;
   let jobField = onePage.jobField;
   let jobSkills = onePage.jobSkills.split(",");
-  let goodJobSkills = jobSkills.map( (skill)=> {
-    return <li>{skill}</li>
+  let goodJobSkills = jobSkills.map( (skill, i)=> {
+    return <li key={i}>{skill}</li>
   })
   let catchPhrase = onePage.catchPhrase;
   let randomNum = (jobTitle.length % 3) + 1;
@@ -34,7 +30,7 @@ const OnePageDetail = ({ onePage}) => {
       <div className="op-detail-bottom-box">
         <div className="op-header-text">
         <h1>{jobTitle}</h1>
-          {/* this will need to be changed when we reseed if you are showing "DEMO DEMO DEMO" this is why  */}
+
           <h2>at&nbsp;{onePage.companyName}</h2>
         </div>
         <div className="op-detail-left">
@@ -44,13 +40,13 @@ const OnePageDetail = ({ onePage}) => {
           
           
           <h4>Field:&nbsp;{jobField}</h4>
-          {/* this will need to be changed when we reseed if you are showing "DEMO DEMO DEMO" this is why  */}
+          
         
         </div>
         <div className="op-detail-right">
           <h4>Skills Required:&nbsp;</h4>
           <ul>{goodJobSkills}</ul>
-          {/* this will need to be changed when we reseed if you are showing "DEMO DEMO DEMO" this is why  */}
+          
           
           <h5>Position is:&nbsp;{onePage.type}</h5>
           <h5>Remote?:&nbsp;{remoteValue}</h5>

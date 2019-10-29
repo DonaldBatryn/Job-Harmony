@@ -11,7 +11,6 @@ class OnePageShow extends React.Component {
     }
 
     handleBack(){
-      debugger;
         this.props.history.push(`/users/${this.props.currentUser.id}/profile`)
     }
 

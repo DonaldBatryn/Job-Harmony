@@ -7,13 +7,12 @@ import { fetchPreference, createPreference, updatePreference } from '../../actio
 import PreferencesForm from './preferences_form';
 
 const msp = state => {
-    let preference;
-    debugger
+    let preference;   
     if (state.session.user.preference !== "no"){
         
         preference = state.session.user.preference
     }else{
-        debugger
+   
         preference = "no preference"
     }
     let errors;

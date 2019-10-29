@@ -20,12 +20,12 @@ class PreferencesForm extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         if (this.props.preference === "no preference"){
-            debugger
+          
             this.props.createPreference(this.state).then(
                 this.props.history.push('home'))
         }else {
             this.state.id = this.props.preference._id
-            // debugger
+        
             this.props.updatePreference(this.state).then(this.props.fetchRelevantOnePages()).then(
                 this.props.history.push('home')
             )}

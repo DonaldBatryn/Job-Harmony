@@ -10,6 +10,7 @@ class OnePageShow extends React.Component {
     }
 
     handleBack(){
+      debugger;
         this.props.history.push(`/users/${this.props.currentUser.id}/profile`)
     }
 
@@ -17,11 +18,7 @@ class OnePageShow extends React.Component {
         let onePageId = this.props.match.params.onePageId;
         this.props.fetchOnePage(onePageId);
     }
-    // showCoords(e){
-    //     const mouseX = Math.floor(e.clientX);
-    //     const mouseY = Math.floor(e.clientY);
-    //     console.log("MouseX: " + mouseX + "MouseY: " + mouseY);
-    // }
+    
     render() {
         if (!this.props.onePage) {
             return <div>Loading...</div>

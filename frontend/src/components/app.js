@@ -7,9 +7,6 @@ import ModalContainer from './modal/modal_container';
 import MainPage from './main/main_page';
 import UserShowContainer from './users/user_show_container';
 
-// import LoginFormContainer from './session/login_form_container';
-// import SignupFormContainer from './session/signup_form_container.js';
-
 import CreateResumeFormContainer from './resume/create_resume_form_container'
 import EditResumeFormContainer from './resume/edit_resume_form_container';
 import ResumeShowContainer from './resume/resume_show_container';

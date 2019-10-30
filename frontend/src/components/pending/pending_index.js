@@ -8,8 +8,8 @@ class PendingIndex extends React.Component{
     // }
 
     render(){
-        let allLikes = this.props.likedOnePages.map(onePage => {
-            return <PendingIndexItem key={onePage._id} onePage={onePage} receiveNewMain={this.props.receiveNewMain} />
+        let allLikes = this.props.likedOnePages.map((onePage, i) => {
+            return <PendingIndexItem key={i} onePage={onePage} receiveNewMain={this.props.receiveNewMain} />
         })
         return (
             <div className="pending-index-container">

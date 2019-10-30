@@ -13,7 +13,6 @@ const msp = state => {
         
         preference = state.session.user.preference
     }else{
-        debugger
         preference = "no preference"
     }
     let errors;

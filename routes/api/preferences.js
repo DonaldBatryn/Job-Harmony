@@ -13,10 +13,22 @@ router.post('/new',
     }), (req, res) => {
 
         User.findById(req.user.id).then(user => {
-            console.log(user)
+            // console.log(user)
             if (user.preference.length > 0 ) {
-                let preferenceErrors = "preference already exists";
-                return res.status(400).json(preferenceErrors);
+                console.log(user.preference);
+                Preference.findById(user.preference).then(preference => {
+                    console.log(preference)
+                    const salaryRange = req.body.salaryRange.split("-")
+                    const salaryRangeHigh = salaryRange[1];
+                    const salaryRangeLow = salaryRange[0];
+                    preference.jobField = req.body.jobField;
+                    preference.proximity = req.body.proximity;
+                    preference.type = req.body.type;
+                    preference.salaryRangeHigh = salaryRangeHigh;
+                    preference.salaryRangeLow = salaryRangeLow;
+                    console.log(preference)
+                    preference.save().then(preference => res.json(preference));
+                })
             } else {
                 let {
                     errors,
@@ -84,8 +96,15 @@ router.patch('/:id',
         session: false
     }),
     (req, res) => {
+        console.log("Remove logs bc it is hard to see what is going on ")
+        console.log("Remove logs bc it is hard to see what is going on ")
+        console.log(req.user)
+        console.log("Remove logs bc it is hard to see what is going on ")
+        console.log("Remove logs bc it is hard to see what is going on ")
         Preference.findById(req.params.id).then(preference => {
+            console.log(11111111111)
             console.log(preference)
+            console.log(11111111111)
             const salaryRange = req.body.salaryRange.split("-")
             const salaryRangeHigh = salaryRange[1];
             const salaryRangeLow = salaryRange[0];
@@ -94,7 +113,12 @@ router.patch('/:id',
             preference.type = req.body.type;
             preference.salaryRangeHigh = salaryRangeHigh;
             preference.salaryRangeLow = salaryRangeLow;
-            preference.save().then(preference => res.json(preference));
+            preference.save()
+            console.log(2222222222)
+            console.log(preference)
+            console.log(2222222222)
+            
+            .then(preference => res.json(preference));
         })
         .catch(err =>
 

@@ -7,12 +7,16 @@ const receivePreference = pref => ({
   preference: pref.data
 })
 
-export const createPreference = pref => dispatch => (
-  preferenceAPIUtil.createPreference(pref)
-    .then(pref => dispatch(receivePreference(pref)))
-)
+export const createPreference = pref => dispatch => {
+  debugger
+  return (
+        preferenceAPIUtil.createPreference(pref)
+          .then(pref => dispatch(receivePreference(pref)))
+      )
+}
 
 export const updatePreference = pref => dispatch => {
+  debugger
   return (
     preferenceAPIUtil.updatePreference(pref)
       .then(pref => dispatch(receivePreference(pref)))

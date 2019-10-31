@@ -19,6 +19,7 @@ class PreferencesForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
+        debugger
         if (this.props.preference === "no preference"){
           
             this.props.createPreference(this.state).then(
@@ -45,6 +46,7 @@ class PreferencesForm extends React.Component{
 
 
     render(){
+        // debugger
         return (
             <div className="preference-form-container">
                 <div className="prefs-header-box">
@@ -52,6 +54,10 @@ class PreferencesForm extends React.Component{
                     <h5>Update at any time for custom results!</h5>
                 </div>
                 <form className="prefs-form" onSubmit={this.handleSubmit}>
+
+                    <p>current</p>
+                    <p>{this.state.jobField}</p>          
+
                     <label>Search for jobs in&nbsp;</label>
                     <select className="prefs-input" value={this.state.jobField} onChange={this.update('jobField')}>
                         <option value = "" selected disabled hidden>Select a field of work</option>
@@ -64,6 +70,9 @@ class PreferencesForm extends React.Component{
                         <option value="Business">Business</option>
                         <option value="Insurance">Insurance</option>
                     </select><br/>
+
+                    <p>Curent</p>
+                    <p>{this.state.proximity}</p>
                     <label>Proximity:&nbsp;all jobs&nbsp;</label>
                     <select className="prefs-input" value={this.state.proximity} onChange={this.update('proximity')}>
                         <option value="" selected disabled hidden>Select proximity</option>
@@ -73,14 +82,22 @@ class PreferencesForm extends React.Component{
                         <option value="50">between 25 and 50 miles</option>
                         <option value="1000">over 50 miles</option>
                     </select><br/>
+
+                    <p>Curent</p>
+                    <p>{this.state.type}</p>
                     <label>Type of employment:&nbsp;</label>
                     <select className="prefs-input" value={this.state.type} onChange={this.update('type')}>
                         <option value="" selected disabled hidden>Select employment type</option>
                         <option value="Full-Time">Full-Time</option>
                         <option value="Part-Time">Part-Time</option>
-                        <option value="Remote">Remote</option>
+                        {/* <option value="Remote">Remote</option> */}
                     </select><br/>
+
+                    <p>Curent</p>
+                    <p>{this.state.salaryRange}</p>
                     <label>with a yearly salary&nbsp;</label>
+
+
                     <select className="prefs-input" value={this.state.salaryRange} onChange={this.update('salaryRange')}>
                         <option value="" selected disabled hidden>Select a salary range</option>
                         <option value="40000-60000">between $40,000 to $60,000</option>

@@ -11,7 +11,9 @@ class OnePageShow extends React.Component {
     }
 
     handleBack(){
+      
         this.props.history.push(`/users/${this.props.currentUser.id}/profile`)
+       
     }
 
     componentDidMount() {
@@ -56,7 +58,7 @@ class OnePageShow extends React.Component {
                             <h3>Remote:&nbsp;{remoteValue}</h3>
                             <h3>Salary:&nbsp;${onePage.startingPay}</h3>
                             <button className="follow-up-button">Follow up with {onePage.companyName}</button>
-                            <button className="follow-up-button" onClick={() => this.handleBack}>Back to Profile</button>
+                            <button className="follow-up-button" onClick={(e) => this.handleBack(e)}>Back to Profile</button>
                         </div>
                         <div className="onepage-show-lr">
                             <div className="op-group-1">

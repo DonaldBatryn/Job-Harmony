@@ -3,7 +3,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Switch } from 'react-router-dom';
 import NavBarContainer from './nav/navbar_container';
 import ModalContainer from './modal/modal_container';
-
+import MatchesContainer from './matches/match_index_container';
 import MainPage from './main/main_page';
 import UserShowContainer from './users/user_show_container';
 
@@ -32,6 +32,7 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
     </Switch> */}
     <Switch>
+      <ProtectedRoute exact path="/matches" component={MatchesContainer}/>
       <ProtectedRoute exact path="/preferences" component={PreferencesFormContainer}/>
       <ProtectedRoute path="/users/:userId/profile" component={UserShowContainer}/>
       <ProtectedRoute exact path="/home" component={MainPage}/>

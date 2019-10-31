@@ -19,7 +19,7 @@ class PreferencesForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        debugger
+        // debugger
         if (this.props.preference === "no preference"){
           
             this.props.createPreference(this.state).then(

@@ -96,15 +96,15 @@ router.patch('/:id',
         session: false
     }),
     (req, res) => {
-        console.log("Remove logs bc it is hard to see what is going on ")
-        console.log("Remove logs bc it is hard to see what is going on ")
-        console.log(req.user)
-        console.log("Remove logs bc it is hard to see what is going on ")
-        console.log("Remove logs bc it is hard to see what is going on ")
+        // console.log("Remove logs bc it is hard to see what is going on ")
+        // console.log("Remove logs bc it is hard to see what is going on ")
+        // console.log(req.user)
+        // console.log("Remove logs bc it is hard to see what is going on ")
+        // console.log("Remove logs bc it is hard to see what is going on ")
         Preference.findById(req.params.id).then(preference => {
-            console.log(11111111111)
-            console.log(preference)
-            console.log(11111111111)
+            // console.log(11111111111)
+            // console.log(preference)
+            // console.log(11111111111)
             const salaryRange = req.body.salaryRange.split("-")
             const salaryRangeHigh = salaryRange[1];
             const salaryRangeLow = salaryRange[0];
@@ -114,18 +114,21 @@ router.patch('/:id',
             preference.salaryRangeHigh = salaryRangeHigh;
             preference.salaryRangeLow = salaryRangeLow;
             preference.save()
-            console.log(2222222222)
-            console.log(preference)
-            console.log(2222222222)
+            // console.log(2222222222)
+            // console.log(preference)
+            // console.log(2222222222)
             
             .then(preference => res.json(preference));
         })
-        .catch(err =>
-
+        .catch(err => {
+            console.log(err)
             res.status(404).json({
                 nopreferencefound: 'No preference found with that ID',
                 err
             })
+        }
+
+
         );
     })
 module.exports = router;

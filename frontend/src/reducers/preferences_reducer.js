@@ -5,7 +5,7 @@ import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 
 export default function (state = {}, action) {
   Object.freeze(state);
-  debugger
+  // debugger
   switch (action.type) {
     case RECEIVE_PREFERENCES:
       return Object.assign({}, action.preference);

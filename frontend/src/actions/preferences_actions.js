@@ -24,7 +24,7 @@ export const createPreference = (preference) => dispatch => {
 }
 
 export const fetchPreference = (id) => dispatch => {
-    debugger
+    // debugger
     return (
         PreferenceAPIUtil.fetchPreference(id)
         .then(preference => dispatch(receivePreference(preference)))
@@ -33,7 +33,7 @@ export const fetchPreference = (id) => dispatch => {
 }
 
 export const updatePreference = (preference) => dispatch => {
-    // debugger 
+    debugger 
     return (
         PreferenceAPIUtil.updatePreference(preference)
         .then(preference => dispatch(receivePreference(preference)))

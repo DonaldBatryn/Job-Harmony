@@ -102,23 +102,23 @@ router.patch('/:id',
         // console.log("Remove logs bc it is hard to see what is going on ")
         // console.log("Remove logs bc it is hard to see what is going on ")
         Preference.findById(req.params.id).then(preference => {
-            // console.log(11111111111)
-            // console.log(preference)
-            // console.log(11111111111)
-            const salaryRange = req.body.salaryRange.split("-")
-            const salaryRangeHigh = salaryRange[1];
-            const salaryRangeLow = salaryRange[0];
+            console.log(11111111111)
+            console.log(req.body)
+            console.log(11111111111)
+            // const salaryRange = req.body.salaryRange.split("-")
+            const salaryRangeHigh = req.body.salaryRangeHigh;
+            const salaryRangeLow = req.body.salaryRangeLow;
             preference.jobField = req.body.jobField;
             preference.proximity = req.body.proximity;
             preference.type = req.body.type;
             preference.salaryRangeHigh = salaryRangeHigh;
             preference.salaryRangeLow = salaryRangeLow;
             preference.save()
-            // console.log(2222222222)
-            // console.log(preference)
-            // console.log(2222222222)
+            console.log(2222222222)
+            console.log(preference)
+            console.log(2222222222)
             
-            .then(preference => res.json(preference));
+            res.json(preference);
         })
         .catch(err => {
             console.log(err)
@@ -142,8 +142,8 @@ router.get('/:id',
         User.findById(req.params.id).then(user => {
             // console.log(user)
             Preference.findById(user.preference[0]).then(preference => {
-                console.log(user.preference[0])
-                console.log(preference)
+                // console.log(user.preference[0])
+                // console.log(preference)
             res.json(preference);
             })
             .catch(err => {

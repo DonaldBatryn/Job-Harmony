@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const fetchPreference = id => {
-    debugger
+    // debugger
     return axios.get(`/api/preferences/${id}`)
 }
 export const createPreference = preference => {

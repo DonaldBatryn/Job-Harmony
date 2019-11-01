@@ -24,7 +24,7 @@
 }
 
 .op-detail-header{
-  width: 95%;
+  width: 100%;
   height: 150px;
   /* background-color: pink; */
   display: flex;
@@ -83,7 +83,7 @@
 }
 
 .op-header-text{
-  width: 400px;
+  width: 500px;
   height: 150px;
   text-align: center;
 }

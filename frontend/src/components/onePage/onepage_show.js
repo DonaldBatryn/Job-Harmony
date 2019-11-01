@@ -1,30 +1,23 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 
 class OnePageShow extends React.Component {
     constructor(props) {
         super(props);
         this.onePageId = this.props.match.params.onePageId;
-        // this.showCoords = this.showCoords.bind(this);
         this.handleBack = this.handleBack.bind(this);
     }
 
     handleBack(){
-      
-        this.props.history.push(`/users/${this.props.currentUser.id}/profile`)
-       
+        this.props.history.push('/home')
     }
 
     componentDidMount() {
         let onePageId = this.props.match.params.onePageId;
         this.props.fetchOnePage(onePageId);
     }
-    // showCoords(e){
-    //     const mouseX = Math.floor(e.clientX);
-    //     const mouseY = Math.floor(e.clientY);
-    //     console.log("MouseX: " + mouseX + "MouseY: " + mouseY);
-    // }
+   
     render() {
         if (!this.props.onePage) {
             return <div>Loading...</div>
@@ -58,7 +51,7 @@ class OnePageShow extends React.Component {
                             <h3>Remote:&nbsp;{remoteValue}</h3>
                             <h3>Salary:&nbsp;${onePage.startingPay}</h3>
                             <button className="follow-up-button">Follow up with {onePage.companyName}</button>
-                            <button className="follow-up-button" onClick={(e) => this.handleBack(e)}>Back to Profile</button>
+                            <button className="follow-up-button" onClick={(e) => this.handleBack(e)}>Back to Home</button>
                         </div>
                         <div className="onepage-show-lr">
                             <div className="op-group-1">
@@ -74,7 +67,6 @@ class OnePageShow extends React.Component {
                                 <h3>{onePage.benefits}</h3>
                             </div>
                         </div>
-                        {/* <Link to={`/onePages/${this.onePageId}/edit`}>Edit this Page</Link> */}
                     </div>
                 </div>
             </div>

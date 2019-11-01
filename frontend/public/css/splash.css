@@ -1,13 +1,9 @@
-/* #root {
-    width: 100vw;
-    height: 100vh;
-} */
+
 .splash-container{
     display: flex;
     width: 100%;
     height: 100%;
     margin-top: 50px;
-    /* background-color: pink; */
 }
 
 .splash-title{
@@ -72,7 +68,6 @@
     background-image: url(https://harmonyd.com/wp-content/uploads/2018/05/18-HD-Perfect-Harmony-Dark-Flip.jpg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    /* background-color: grey; */
 }
 .splash-2 {
     background-image: url(https://harmonyd.com/wp-content/uploads/2018/05/18-HD-Perfect-Harmony-Dark-Flip.jpg);
@@ -99,7 +94,6 @@
     background-color: cornflowerblue;
 }
 .scroll-down {
-    /* transform: translate(0); */
     animation-name: down;
     animation-duration: 1s;
     animation-direction: reverse;
@@ -110,27 +104,21 @@
     animation-name: up;
     animation-duration: 1s;
     animation-fill-mode: forwards;
-    /* transform: translate(1000px); */
 }
 .scroll-two {
     position: absolute;
     animation-name: up;
     animation-duration: 1s;
     animation-fill-mode: forwards;
-    /* transform: translate(1000px); */
 }
 .scroll-three {
     position: absolute;
     animation-name: up;
     animation-duration: 1s;
     animation-fill-mode: forwards;
-    /* transform: translate(1000px); */
 }
 .scroll-four {
     position: absolute;
-    /* animation-name: up;
-    animation-duration: 100s; */
-    /* transform: translate(1000px); */
 }
 @keyframes up {
     0% {

@@ -4,7 +4,6 @@ import Buttons from './buttons';
 import { fetchUser, fetchUsers } from '../../actions/user_actions';
 
 const msp = (state, ownProps) => {
-    // let user = 
     return ({
         user: state.session.user
     })

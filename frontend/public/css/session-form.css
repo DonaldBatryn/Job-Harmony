@@ -4,20 +4,20 @@
   flex-direction: column;
   padding: 20px 30px;
   width: 350px;
-  
   border: 2px solid rgba(0, 0, 0, 1);
   background-color: white;
 }
+
 .login-form {
   padding: 60px 30px;
   display: flex;
   flex-direction: column;
-  
   width: 350px;
   height: 350px;
   border: 2px solid rgba(0, 0, 0, 1);
   background-color: white;
 }
+
 input {
   display: block;
   font-size: 14px;

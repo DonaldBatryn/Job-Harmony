@@ -5,26 +5,24 @@ import BrowseWindowContainer from '../browse/browse_window_container';
 
 class PendingIndexItem extends React.Component{
     constructor(props){
-        super(props)
-      
+      super(props)
+    
       this.handleClick = this.handleClick.bind(this);
       this.handleView = this.handleView.bind(this);
-        // this.handleDelete = this.handleDelete.bind(this);
-        this.state = { 
-          iconName: this.getRandomIcon()
-        }
+      this.state = { 
+        iconName: this.getRandomIcon()
       }
+    }
+
     handleClick() {
       this.props.receiveNewMain(this.props.onePage)
     }
+
     handleView(){
       let onePage = this.props;
       return this.props.onePage._id
     }
-    // handleDelete(){
-        // when delete route is done lets throw it here
-        // this.props.deleteLike(this.props.onePage._id)
-    // }
+
     getRandomIcon(){
         let randomNum = (this.props.onePage[0].jobTitle.length % 3) + 1;
         let jobField = this.props.onePage[0].jobField;
@@ -36,12 +34,12 @@ class PendingIndexItem extends React.Component{
         let { onePage } = this.props;
         return (
             <div className="pending-index-item" onClick={(e) => this.handleClick()}>
-                <div className={`icon ${this.state.iconName}`}></div>
-                <div className="like-info" onClick={this.handleView}>
-                    <h3 className="pending-job-title">{onePage[0].jobTitle}</h3>
-                    <h5 className="pending-company-name">{onePage[0].companyName}</h5>
-                </div>
-                </div>
+              <div className={`icon ${this.state.iconName}`}></div>
+              <div className="like-info" onClick={this.handleView}>
+                  <h3 className="pending-job-title">{onePage[0].jobTitle}</h3>
+                  <h5 className="pending-company-name">{onePage[0].companyName}</h5>
+              </div>
+            </div>
         )
     }
 }

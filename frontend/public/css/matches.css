@@ -1,0 +1,18 @@
+
+.matches-index-container{
+    margin: auto;
+    margin-top: 100px;
+    width: 1000px;
+    height: 600px;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 15px;
+}
+
+.matches-index-container h2{
+    margin-bottom: 20px;
+    font-size: 30px;
+}

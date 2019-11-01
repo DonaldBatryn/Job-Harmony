@@ -4,8 +4,6 @@
     top: 50px;
     bottom: 0;
     width: 100%;
-    /* background-color: pink; */
-    /* border: 1px solid black; */
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -16,8 +14,6 @@
 .pending-index-container{
     height: 99%;
     width: 25%;
-    /* background-color: lightblue; */
-    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -28,8 +24,6 @@
 .browse-buttons-container{
     height: 99%;
     width: 73%;
-    /* background-color: lightblue; */
-    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -42,8 +36,6 @@
     
     width: 98%;
     height: 94%;
-    /* background-color: lightgreen; */
-    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -53,8 +45,6 @@
 .browse-header-text{
     width: 98%;
     height: 6%;
-    /* background-color: yellow; */
-    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -64,8 +54,6 @@
 .browse-window{
     width: 98%;
     height: 98%;
-    /* background-color: gray; */
-    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -79,8 +67,6 @@
 .pending-header-text{
     width: 98%;
     height: 10%;
-    /* background-color: yellow; */
-    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -90,8 +76,6 @@
 .pending-index-rows{
     width: 98%;
     height: 87%;
-    /* background-color: yellow; */
-    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -123,8 +107,6 @@
 
 .pending-index-item:hover{
     background-image: linear-gradient(to bottom right, white, whitesmoke, lightgray);
-    /* transition: all 0.3s ease-in-out; */
-   
 }
 
 .like-info{
@@ -134,7 +116,6 @@
     align-items: center;
     width: 75%;
     height: 99%;
-    /* background-color: lightblue; */
 }
 
 
@@ -142,7 +123,6 @@
     padding-top: 10px;
     width: 99%;
     height: 50%;
-    /* background-color: yellow; */
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -154,12 +134,10 @@
     padding-left: 0px;
     width: 99%;
     height: 35%;
-    /* background-color: yellow; */
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    /* text-align: center; */
 }
 
 @media all and (max-width: 1100px) {

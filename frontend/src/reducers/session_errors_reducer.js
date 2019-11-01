@@ -13,7 +13,7 @@ const SessionErrorsReducer = (state = _nullErrors, action) => {
     case RECEIVE_SESSION_ERRORS:
       return action.errors;
     case RECEIVE_PREFERENCES_ERRORS:
-      debugger
+      // debugger
       return action.errors;
     case RECEIVE_CURRENT_USER:
       return _nullErrors;

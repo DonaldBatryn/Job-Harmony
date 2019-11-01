@@ -131,4 +131,41 @@ router.patch('/:id',
 
         );
     })
+router.get('/:id',
+
+
+    passport.authenticate('jwt', {
+        session: false
+    }),
+    (req, res) => {
+       
+        User.findById(req.params.id).then(user => {
+            // console.log(user)
+            Preference.findById(user.preference[0]).then(preference => {
+                console.log(user.preference[0])
+                console.log(preference)
+            res.json(preference);
+            })
+            .catch(err => {
+                console.log(err)
+                res.status(404).json({
+                    nopreferencefound: 'No preference found ',
+                    err
+                })
+            }
+
+
+            );
+        })
+        .catch(err => {
+            console.log(err)
+            res.status(404).json({
+                nopreferencefound: 'No User found ',
+                err
+            })
+        }
+
+
+        );
+    })
 module.exports = router;

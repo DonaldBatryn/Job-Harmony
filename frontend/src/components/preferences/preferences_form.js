@@ -17,6 +17,13 @@ class PreferencesForm extends React.Component{
         }
     }
 
+    componentDidMount(){
+        this.props.fetchPreference(this.state.id)
+        // .then(this.props.fetchRelevantOnePages())
+        // .then(this.props.history.push('home'))
+        debugger
+    }
+
     handleSubmit(e){
         e.preventDefault();
         // debugger
@@ -46,7 +53,10 @@ class PreferencesForm extends React.Component{
 
 
     render(){
-        // debugger
+        debugger
+        if (Object.keys(this.props.preference).length === 0){
+            return <div>aaaaa</div>
+        }
         return (
             <div className="preference-form-container">
                 <div className="prefs-header-box">
@@ -55,11 +65,11 @@ class PreferencesForm extends React.Component{
                 </div>
                 <form className="prefs-form" onSubmit={this.handleSubmit}>
 
-                    <p>current</p>
-                    <p>{this.state.jobField}</p>          
+                    {/* <p>current</p>
+                    <p>{this.props.preference.jobField}</p> */}
 
                     <label>Search for jobs in&nbsp;</label>
-                    <select className="prefs-input" value={this.state.jobField} onChange={this.update('jobField')}>
+                    <select className="prefs-input" value={this.props.preference.jobField} onChange={this.update('jobField')}>
                         <option value = "" selected disabled hidden>Select a field of work</option>
                         <option value="Finance">Finance</option>
                         <option value="SoftwareEngineering">Software Engineering</option>
@@ -71,10 +81,10 @@ class PreferencesForm extends React.Component{
                         <option value="Insurance">Insurance</option>
                     </select><br/>
 
-                    <p>Curent</p>
-                    <p>{this.state.proximity}</p>
+                    {/* <p>Curent</p>
+                    <p>{this.props.preference.proximity}</p> */}
                     <label>Proximity:&nbsp;all jobs&nbsp;</label>
-                    <select className="prefs-input" value={this.state.proximity} onChange={this.update('proximity')}>
+                    <select className="prefs-input" value={this.props.preference.proximity} onChange={this.update('proximity')}>
                         <option value="" selected disabled hidden>Select proximity</option>
                         <option value="5">less than 5 miles</option>
                         <option value="10">between 5 and 10 miles</option>
@@ -83,22 +93,20 @@ class PreferencesForm extends React.Component{
                         <option value="1000">over 50 miles</option>
                     </select><br/>
 
-                    <p>Curent</p>
-                    <p>{this.state.type}</p>
+                    {/* <p>Curent</p>
+                    <p>{this.props.preference.type}</p> */}
                     <label>Type of employment:&nbsp;</label>
-                    <select className="prefs-input" value={this.state.type} onChange={this.update('type')}>
+                    <select className="prefs-input" value={this.props.preference.type} onChange={this.update('type')}>
                         <option value="" selected disabled hidden>Select employment type</option>
                         <option value="Full-Time">Full-Time</option>
                         <option value="Part-Time">Part-Time</option>
                         {/* <option value="Remote">Remote</option> */}
                     </select><br/>
 
-                    <p>Curent</p>
-                    <p>{this.state.salaryRange}</p>
+                    {/* <p>Curent</p>
+                    <p>{this.props.preference.salaryRange}</p> */}
                     <label>with a yearly salary&nbsp;</label>
-
-
-                    <select className="prefs-input" value={this.state.salaryRange} onChange={this.update('salaryRange')}>
+                    <select className="prefs-input" value={this.props.preference.salaryRange} onChange={this.update('salaryRange')}>
                         <option value="" selected disabled hidden>Select a salary range</option>
                         <option value="40000-60000">between $40,000 to $60,000</option>
                         <option value="60000-80000">between $60,000 to $80,000</option>

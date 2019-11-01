@@ -9,9 +9,10 @@ import PreferencesForm from './preferences_form';
 const msp = state => {
     let preference;
     debugger
-    if (state.session.user.preference !== "no"){
+    // if (state.session.user.preference !== "no"){
+    if (state.session.user.preference ){
         
-        preference = state.session.user.preference
+        preference = state.entities.preferences
     }else{
         preference = "no preference"
     }
@@ -41,7 +42,8 @@ const mdp = (dispatch,ownProps) => {
     return({
             createPreference: (preference) => dispatch(createPreference(preference)), 
             updatePreference: (preference) => dispatch(updatePreference(preference)),
-            fetchRelevantOnePages: () => dispatch(fetchRelevantOnePages())
+            fetchRelevantOnePages: () => dispatch(fetchRelevantOnePages()),
+            fetchPreference: (id) => dispatch(fetchPreference(id))
     })
 }
 

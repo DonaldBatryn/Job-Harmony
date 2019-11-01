@@ -9,7 +9,6 @@
 }
 .nav-bar-user {
   border: 1px solid green;
-  /* position: fixed; */
   height: 50px;
   width: 100%;
   display: flex;
@@ -114,7 +113,6 @@ i {
   background-image: linear-gradient(to bottom right, white, whitesmoke, lightgray);
 }
 #dropdown button {
-  /* background-color: lightblue; */
 }
 
 .nav-image{
@@ -137,9 +135,7 @@ i {
 }
 
 .my-profile-btn {
-  /* background-color: black; */
   border: 1px solid lightgray;
-  /* width: 160px; */
   width: 100%;
   padding: 8.5px;
   font-size: 16px;

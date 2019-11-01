@@ -52,8 +52,3 @@ export const updateOnePage = onePage => dispatch => {
         .catch(err => dispatch(receiveOnePageErrors(err.response.data)))
     )
 }
- 
-
-window.fetchOnePage = fetchOnePage;
-window.createOnePage = createOnePage;
-window.updateOnePage = updateOnePage;

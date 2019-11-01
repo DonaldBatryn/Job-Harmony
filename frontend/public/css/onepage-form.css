@@ -4,7 +4,6 @@
     width: 75%;
     height: 700px;
     margin: 0 auto;
-    /* background-color: pink; */
     display: flex;
     justify-content: space-around;
     align-content: center;
@@ -16,7 +15,6 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    /* background-color: lightblue; */
     width: 70%;
     height: 91%;
     border: 1px solid gray;
@@ -27,7 +25,6 @@
 .company-name-div{
     width: 90%;
     height: 10%;
-    /* background-color: red; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -46,7 +43,6 @@
 .job-title-div{
     width: 90%;
     height: 10%;
-    /* background-color: red; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -65,7 +61,6 @@
 .job-description-div{
     width: 90%;
     height: 10%;
-    /* background-color: red; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -84,7 +79,6 @@
 .job-type-div{
     width: 90%;
     height: 10%;
-    /* background-color: red; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -103,7 +97,6 @@
 .job-remote-div{
     width: 90%;
     height: 10%;
-    /* background-color: red; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -122,7 +115,6 @@
 .job-benefits-div{
     width: 90%;
     height: 10%;
-    /* background-color: red; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -141,7 +133,6 @@
 .starting-pay-div{
     width: 90%;
     height: 10%;
-    /* background-color: red; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;

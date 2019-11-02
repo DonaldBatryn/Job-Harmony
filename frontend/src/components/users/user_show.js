@@ -24,6 +24,7 @@ class UserShow extends React.Component{
             resumeLink = <Link className="user-show-resume-link" to={`/resumes/${resume._id}`}>Your Resume</Link>
         }
         let allLikes = this.props.likes.map(onePage => {
+         
             let randomNum = (onePage[0].jobTitle.length % 3) + 1;
             return (
                 <li key={onePage[0]._id} className="user-show-li">

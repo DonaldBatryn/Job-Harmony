@@ -1,15 +1,5 @@
 
 .resume-show-container{
-    
-    
-    /* width: 455px;
-    height: 500px;
-    margin: 0 auto;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center; */
     padding: 40px;
     z-index:0;
     top: 50px;
@@ -25,21 +15,15 @@
 }
 
 .resume{
-    /* margin-top: 60px;
-    height: 98%;
-    width: 98%; */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-content: center;
-    
     border: 1px solid whitesmoke;
     border-radius: 5px;
     padding: 0 35px; 
-    
     z-index: 2;
     top: 70px;
-    
     width: 400px;
     height: 600px;
     background-color: whitesmoke;
@@ -54,42 +38,34 @@
 }
 
 .candidate-show{
-    /* background-color: lightblue; */
     width: 95%;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    /* margin: 0 10px; */
     color: rgba(0, 70, 200, 0.4)
 }
 
 .job-field-show{
-    /* background-color: lightblue; */
     width: 95%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* margin: 0 10px; */
 
 }
 
 .job-history-show{
-    /* background-color: lightblue; */
     width: 95%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* margin: 0 10px; */
 
 }
 
 .job-skills-show{
-    /* background-color: lightblue; */
     width: 95%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* margin: 0 10px; */
 
 }
 
@@ -98,7 +74,6 @@
 }
 
 .edit-button-show{
-    /* background-color: lightblue; */
     width: 130px;
     height: 40px;
     border-radius: 7px;
@@ -107,15 +82,12 @@
     justify-content: space-evenly;
     margin: auto;
     font-size: 16px;
-    
 }
+
 a.edit-button{
     text-decoration: none;
-
 }
 
 .edit-button-show:hover{
     background-color: rgba(0, 220, 0, 0.3);
-
-  
 }

@@ -30,6 +30,3 @@ export const fetchUser = (id) => dispatch => (
         .then(user => dispatch(receiveUser(user)))
         .catch(err => dispatch(receiveUserErrors(err.response.data)))
 )
-
-window.fetchUsers = fetchUsers;
-window.fetchUser = fetchUser;

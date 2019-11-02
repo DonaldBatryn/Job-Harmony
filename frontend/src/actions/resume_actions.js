@@ -30,8 +30,3 @@ export const updateResume = (resume) => dispatch => (
     .then(resume => dispatch(receiveResume(resume)))
     .catch(err => dispatch(receiveResumeErrors(err.response.data)))
 )
-
-
-window.fetchResume = fetchResume;
-window.createResume = createResume;
-window.updateResume = updateResume;

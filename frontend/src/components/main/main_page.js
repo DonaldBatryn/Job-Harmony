@@ -1,7 +1,6 @@
 import React from 'react';
 import BrowseWindowContainer from '../browse/browse_window_container'
 import PendingIndexContainer from '../pending/pending_index_container'
-// import ButtonsContainer from '../buttons/buttons_container'
 
 
 class MainPage extends React.Component {
@@ -12,7 +11,6 @@ class MainPage extends React.Component {
         <PendingIndexContainer />
         <div className="browse-buttons-container">
         <BrowseWindowContainer />
-        {/* <ButtonsContainer /> */}
         </div>
       </div>
     );

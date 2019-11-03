@@ -15,14 +15,14 @@ class PreferencesForm extends React.Component{
 
     update(field){
         return (e) => {
-            // debugger
+
             this.setState({[field]: e.target.value})
             
         }
     }
 
     componentDidMount(){
-        // debugger
+
         this.props.fetchPreference(this.props.preferences.id)
         // .then(this.props.fetchRelevantOnePages())
         // .then(this.props.history.push('home'))
@@ -36,7 +36,7 @@ class PreferencesForm extends React.Component{
                 this.props.history.push('home'))
         }else {
             this.state.id = this.props.preference._id
-            debugger
+
             this.props.updatePreference(this.state).then(this.props.fetchRelevantOnePages()).then(
                 this.props.history.push('home')
             )}
@@ -45,7 +45,7 @@ class PreferencesForm extends React.Component{
 
         renderErrors() {
         return ( <ul> {Object.keys(this.props.errors).map((error, i) => {
-            debugger
+
             return <li 
                     key={`error-${i}`}> 
                     {this.props.errors[error]} 
@@ -57,7 +57,7 @@ class PreferencesForm extends React.Component{
 
 
     render(){
-        debugger
+
         if (Object.keys(this.props.preference).length === 0){
             return <div>aaaaa</div>
         }

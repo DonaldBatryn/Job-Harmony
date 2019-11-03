@@ -1,18 +1,17 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import {
-    fetchRelevantOnePages
-} from '../../actions/onePage_actions'
+import { fetchRelevantOnePages } from '../../actions/onePage_actions'
 import { fetchPreference, createPreference, updatePreference } from '../../actions/preferences_actions';
 import PreferencesForm from './preferences_form';
 
 const msp = state => {
     let preference;
+
     // if (state.session.user.preference !== "no"){
     if (state.session.user.preference ){
         
         preference = state.entities.preferences;
-        debugger
+
     }else{
         preference = "no preference"
     }

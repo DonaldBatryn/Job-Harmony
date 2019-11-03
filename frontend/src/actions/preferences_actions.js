@@ -15,7 +15,7 @@ const receivePreferenceErrors = errors => ({
 
 
 export const createPreference = (preference) => dispatch => {
-    // debugger
+
     return (
         PreferenceAPIUtil.createPreference(preference)
         .then(preference => dispatch(receivePreference(preference)))
@@ -24,7 +24,7 @@ export const createPreference = (preference) => dispatch => {
 }
 
 export const fetchPreference = (id) => dispatch => {
-    // debugger
+
     return (
         PreferenceAPIUtil.fetchPreference(id)
         .then(preference => dispatch(receivePreference(preference)))
@@ -33,7 +33,7 @@ export const fetchPreference = (id) => dispatch => {
 }
 
 export const updatePreference = (preference) => dispatch => {
-    debugger 
+
     return (
         PreferenceAPIUtil.updatePreference(preference)
         .then(preference => dispatch(receivePreference(preference)))

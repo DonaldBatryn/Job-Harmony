@@ -1,17 +1,25 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import {
-    fetchRelevantOnePages
-} from '../../actions/onePage_actions'
+import { fetchRelevantOnePages } from '../../actions/onePage_actions'
 import { fetchPreference, createPreference, updatePreference } from '../../actions/preferences_actions';
 import PreferencesForm from './preferences_form';
 
 const msp = state => {
     let preference;
-    debugger
-    if (state.session.user.preference !== "no"){
+    // if (state.session.user.preference !== "no"){
+    if (state.entities.preferences) {
+        let pref = state.entities.preferences;
+        preference = {
+            id: pref._id,
+            userId: pref.userId,
+            jobField: pref.jobField,
+            proximity: pref.proximity,
+            type: pref.type,
+            salaryRangeHigh: pref.salaryRangeHigh,
+            salaryRangeLow: pref.salaryRangeLow,
+            salaryRange: `${pref.salaryRangeLow}-${pref.salaryRangeHigh}`
+        }
         
-        preference = state.session.user.preference
     }else{
         preference = "no preference"
     }
@@ -23,13 +31,6 @@ const msp = state => {
     }
     return ({
         user: state.session.user,
-        preferences: {
-            jobField: "",
-            proximity: "",
-            type: "",
-            salaryRange: "",
-            id: state.session.user.id
-        },
         preference,
         formType: "Set Preferences",
         errors
@@ -41,7 +42,8 @@ const mdp = (dispatch,ownProps) => {
     return({
             createPreference: (preference) => dispatch(createPreference(preference)), 
             updatePreference: (preference) => dispatch(updatePreference(preference)),
-            fetchRelevantOnePages: () => dispatch(fetchRelevantOnePages())
+            fetchRelevantOnePages: () => dispatch(fetchRelevantOnePages()),
+            fetchPreference: (id) => dispatch(fetchPreference(id))
     })
 }
 

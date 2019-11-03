@@ -1,5 +1,3 @@
-// import { RECEIVE_PREFERENCE } from "../actions/preference_actions";
-
 import { RECEIVE_PREFERENCES } from "../actions/preferences_actions";
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 

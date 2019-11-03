@@ -13,10 +13,13 @@ const receiveOnePage = onePage => ({
     type: RECEIVE_ONEPAGE,
     onePage: onePage.data
 })
-const receiveAllOnePages = onePages => ({
-    type: RECEIVE_ALL_ONEPAGES,
-    onePages: onePages.data
-})
+const receiveAllOnePages = onePages => {
+    debugger
+    return ({
+        type: RECEIVE_ALL_ONEPAGES,
+        onePages: onePages.data
+    })
+}
 
 const receiveOnePageErrors = errors => ({
     type: RECEIVE_ONEPAGE_ERRORS,

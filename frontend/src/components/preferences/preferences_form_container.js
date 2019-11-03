@@ -11,7 +11,8 @@ const msp = state => {
     // if (state.session.user.preference !== "no"){
     if (state.session.user.preference ){
         
-        preference = state.entities.preferences
+        preference = state.entities.preferences;
+        debugger
     }else{
         preference = "no preference"
     }

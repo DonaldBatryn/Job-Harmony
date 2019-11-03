@@ -98,16 +98,18 @@ router.patch('/:id',
     (req, res) => {
         // console.log("Remove logs bc it is hard to see what is going on ")
         // console.log("Remove logs bc it is hard to see what is going on ")
-        // console.log(req.user)
+        console.log(req.params.id)
         // console.log("Remove logs bc it is hard to see what is going on ")
         // console.log("Remove logs bc it is hard to see what is going on ")
         Preference.findById(req.params.id).then(preference => {
             console.log(11111111111)
             console.log(req.body)
             console.log(11111111111)
-            // const salaryRange = req.body.salaryRange.split("-")
-            const salaryRangeHigh = req.body.salaryRangeHigh;
-            const salaryRangeLow = req.body.salaryRangeLow;
+            const salaryRange = req.body.salaryRange.split("-")
+            const salaryRangeHigh = salaryRange[1];
+            const salaryRangeLow = salaryRange[0];
+            // const salaryRangeHigh = req.body.salaryRangeHigh;
+            // const salaryRangeLow = req.body.salaryRangeLow;
             preference.jobField = req.body.jobField;
             preference.proximity = req.body.proximity;
             preference.type = req.body.type;

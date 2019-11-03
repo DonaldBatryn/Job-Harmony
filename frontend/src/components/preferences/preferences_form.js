@@ -9,6 +9,7 @@ class PreferencesForm extends React.Component{
         this.state = this.props.preference;
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
+        
     }
 
 
@@ -16,11 +17,12 @@ class PreferencesForm extends React.Component{
         return (e) => {
             // debugger
             this.setState({[field]: e.target.value})
+            
         }
     }
 
     componentDidMount(){
-        debugger
+        // debugger
         this.props.fetchPreference(this.props.preferences.id)
         // .then(this.props.fetchRelevantOnePages())
         // .then(this.props.history.push('home'))
@@ -34,7 +36,7 @@ class PreferencesForm extends React.Component{
                 this.props.history.push('home'))
         }else {
             this.state.id = this.props.preference._id
-        
+            debugger
             this.props.updatePreference(this.state).then(this.props.fetchRelevantOnePages()).then(
                 this.props.history.push('home')
             )}
@@ -55,9 +57,12 @@ class PreferencesForm extends React.Component{
 
 
     render(){
+        debugger
         if (Object.keys(this.props.preference).length === 0){
             return <div>aaaaa</div>
         }
+        // preference["salaryRange"] = `${state.session.user.preference.salaryRangeLow}-${state.session.user.preference.salaryRangeHigh}`
+
         return (
             <div className="preference-form-container">
                 <div className="prefs-header-box">
@@ -107,7 +112,7 @@ class PreferencesForm extends React.Component{
                     {/* <p>Curent</p>
                     <p>{this.props.preference.salaryRange}</p> */}
                     <label>with a yearly salary&nbsp;</label>
-                    <select className="prefs-input" value={`${this.state.salaryRangeLow}-${this.state.salaryRangeLow}`} onChange={this.update('salaryRange')}>
+                    <select className="prefs-input" value={this.state.salaryRange} onChange={this.update('salaryRange')}>
                         <option value="" selected disabled hidden>Select a salary range</option>
                         <option value="40000-60000">between $40,000 to $60,000</option>
                         <option value="60000-80000">between $60,000 to $80,000</option>

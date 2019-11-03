@@ -14,7 +14,6 @@ const receiveOnePage = onePage => ({
     onePage: onePage.data
 })
 const receiveAllOnePages = onePages => {
-    debugger
     return ({
         type: RECEIVE_ALL_ONEPAGES,
         onePages: onePages.data

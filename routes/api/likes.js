@@ -10,7 +10,7 @@ const Resume = require("../../models/Resume")
 router.post("/:onePageId",
     passport.authenticate("jwt", {session: false}),
     (req, res) => {
-
+        console.log()
         const onePageId = req.params.onePageId
         const userId = req.user.id
 
@@ -25,11 +25,8 @@ router.post("/:onePageId",
                     // const employerEmail = employer.email
                     // res.json(employerEmail)
                     User.findById(req.user.id).then(user => {
-                        console.log(user.pendingOnePages)
                         user.pendingOnePages.push(req.params.onePageId)
                         user.save()
-                        console.log(11111111111111111111111111111)
-                        console.log(user.pendingOnePages)
                         const payload = {
                             // employerId: "WHERE DO I END UP?",
                             onePageId: onepage._id,

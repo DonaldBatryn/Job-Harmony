@@ -6,6 +6,7 @@ export const fetchAllOnePages = () => {
     return axios.get('/api/onePages/all')
 }
 export const fetchRelevantOnePages = () => {
+    debugger
     return axios.get('/api/matchers/')
 }
 export const createOnePage = onePage => {

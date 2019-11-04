@@ -37,7 +37,6 @@ router.post("/login", (req, res) => {
         .then(isMatch => {
           if (isMatch) {
             let preference;
-            console.log(user)
             if (user.preference[0]._id === undefined) {
               preference = "no"
             }else{

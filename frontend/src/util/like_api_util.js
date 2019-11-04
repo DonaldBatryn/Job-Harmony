@@ -7,6 +7,7 @@ export const fetchLike = onePageId => {
 //   return axios.get(`/api/likes/`)
 // }
 export const createLike = like => {
-  return axios.post(`/api/likes/${like.OnepageId}`, like)
+  debugger
+  return axios.post(`/api/likes/${like.OnepageId}`)
 }
 

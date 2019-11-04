@@ -9,13 +9,13 @@ export default function (state = {}, action) {
     case RECEIVE_LIKE:
       debugger
       return Object.assign({}, state, { [action.like.onePageId]: action.like.onePage });
-    case RECEIVE_CURRENT_USER:
-      let allOnePageIds = {};
-       action.currentUser.pendingOnePages.forEach(onePage => {
-        allOnePageIds[onePage._id] = onePage
-        debugger
-      }); 
-      return allOnePageIds
+    // case RECEIVE_CURRENT_USER:
+    //   let allOnePageIds = {};
+    //    action.currentUser.pendingOnePages.forEach(onePage => {
+    //     allOnePageIds[onePage._id] = onePage
+    //     debugger
+    //   }); 
+    //   return allOnePageIds
     case RECEIVE_USER_LOGOUT:
       return {};
     default:

@@ -11,7 +11,7 @@ router.post('/new',
     passport.authenticate('jwt', {
         session: false
     }), (req, res) => {
-
+        // console.log(req)
         User.findById(req.user.id).then(user => {
             if (user.preference.length > 0 ) {
                 Preference.findById(user.preference).then(preference => {

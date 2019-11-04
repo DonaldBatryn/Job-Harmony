@@ -12,6 +12,8 @@ router.get("/",
         session: false
     }),
     (req, res) => {
+        console.log(req)
+
         // the jobseekers id 
         const userId = req.user.id
         Preference.find({userId}).then(preference => {

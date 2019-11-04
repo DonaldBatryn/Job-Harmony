@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   // Render our root component and pass in the store as a prop
   const root = document.getElementById('root');
-
   window.dispatch = store.dispatch;
   const body = document.getElementsByClassName("fade-out")[0];
   body.classList.remove("fade-out");

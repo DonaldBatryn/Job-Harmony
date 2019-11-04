@@ -17,16 +17,16 @@ class PreferencesForm extends React.Component{
     }
 
     componentDidMount(){
-        if (!Object.keys(this.props.preference).length === 0) {
-            return 
-            debugger
+        debugger
+        if (this.state.has !== "no") {
+            this.props.fetchPreference(this.props.user.id)
         }
-        this.props.fetchPreference(this.props.user.id)
+        return
     }
 
     handleSubmit(e){
         e.preventDefault();
-        if (this.props.preference === "no preference"){
+        if (this.props.preference.has === "no") {
             this.props.createPreference(this.state).then(
                 this.props.history.push('home'))
         }else {
@@ -46,7 +46,10 @@ class PreferencesForm extends React.Component{
         } 
 
     render(){
-        if (this.state.userId === undefined) {
+        if (this.state.has === "no") {
+
+        }
+        else if (this.state.userId === undefined) {
             this.state = this.props.preference
         }
         return (
@@ -83,9 +86,16 @@ class PreferencesForm extends React.Component{
                     <label>Type of employment:&nbsp;</label>
                     <select className="prefs-input" value={this.state.type} onChange={this.update('type')}>
                         <option value="" selected disabled hidden>Select employment type</option>
-                        <option value="Full-Time">Full-Time</option>
-                        <option value="Part-Time">Part-Time</option>
+                        <option value="full time">Full-Time</option>
+                        <option value="part time">Part-Time</option>
                         {/* <option value="Remote">Remote</option> */}
+                    </select><br/>
+
+                    <label>Remote:&nbsp;</label>
+                    <select className="prefs-input" value={this.state.remote} onChange={this.update('remote')}>
+                        <option value="" selected disabled hidden>Select remote type</option>
+                        <option value={true}>Yes</option>
+                        <option value={false}>No</option>
                     </select><br/>
 
                     <label>with a yearly salary&nbsp;</label>

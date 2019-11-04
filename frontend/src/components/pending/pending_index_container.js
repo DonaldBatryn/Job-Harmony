@@ -7,14 +7,17 @@ import {
 } from '../../actions/onePage_actions';
 
 const msp = (state, ownProps) => {
-    let allLikes = Object.keys(state.entities.likes).map(id => {
-        return Object.values(state.entities.onePages).filter(onePage => {
-            return id === onePage._id
-        })
-    })
+    debugger
+    // let allLikes = Object.keys(state.entities.likes).map(id => {
+    //     return Object.values(state.entities.onePages).filter(onePage => {
+    //         return id === onePage._id
+    //     })
+    // })
+    let allLikes = Object.values(state.entities.likes)
     const onePage = Object.values(state.entities.onePages).filter(onePage => {
       return onePage._id
     })
+    debugger
   
     return ({
         onePage,

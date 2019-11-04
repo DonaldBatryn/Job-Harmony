@@ -289,7 +289,6 @@ const signupEmployers = (emmployer,num) => {
                 }
                 const newonepage = new OnePage(onepage)
                 newonepage.save()
-                // console.log(newonepage.description)
                 return newonepage
             })
             .catch(err => console.log(err))
@@ -350,9 +349,6 @@ const signupDemoUser = (demo, num) => {
                     }
                         const newPreference = new Preference(preference)
                         newPreference.save()
-                        // console.log(newUser)
-                        // console.log(newResume)
-                        // console.log(newPreference)
                         return newPreference
                 }).catch(err => console.log(err))
             }).catch(err => console.log(err))

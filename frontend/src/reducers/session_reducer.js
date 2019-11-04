@@ -15,7 +15,7 @@ export default function (state = initialState, action) {
   let newState;
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-      
+      debugger
       return {
         ...state,
         isAuthenticated: !!action.currentUser,

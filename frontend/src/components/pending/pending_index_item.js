@@ -24,8 +24,9 @@ class PendingIndexItem extends React.Component{
     }
 
     getRandomIcon(){
-        let randomNum = (this.props.onePage[0].jobTitle.length % 3) + 1;
-        let jobField = this.props.onePage[0].jobField;
+      debugger
+        let randomNum = (this.props.onePage.jobTitle.length % 3) + 1;
+        let jobField = this.props.onePage.jobField;
         let iconClassName = jobField + "-" + randomNum;
         return iconClassName;
     }
@@ -36,8 +37,8 @@ class PendingIndexItem extends React.Component{
             <div className="pending-index-item" onClick={(e) => this.handleClick()}>
               <div className={`icon ${this.state.iconName}`}></div>
               <div className="like-info" onClick={this.handleView}>
-                  <h3 className="pending-job-title">{onePage[0].jobTitle}</h3>
-                  <h5 className="pending-company-name">{onePage[0].companyName}</h5>
+                  <h3 className="pending-job-title">{onePage.jobTitle}</h3>
+                  <h5 className="pending-company-name">{onePage.companyName}</h5>
               </div>
             </div>
         )

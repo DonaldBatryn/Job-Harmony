@@ -9,11 +9,7 @@ router.post("/:resumeId" ,passport.authenticate("jwt", {session: false}), (req, 
     
     resumeId =   req.params.resumeId 
     userId =   req.user.id
-    // resumeId =  parseInt (req.params.resumeId) 
-    // userId =  parseInt (req.user.id)
-    // console.log("weeeeee made it ")
-    // console.log(typeof userId  )
-    // console.log(typeof resumeId  )
+
 
     const newMatch = new Match({employerId:userId, resumeId: resumeId})
     // const employee = User.findById(resume.userId)
@@ -25,16 +21,11 @@ router.post("/:resumeId" ,passport.authenticate("jwt", {session: false}), (req, 
             // };
             res.json({
                 success: true,
-                // payload
-        })
+            })
       }).catch(err => {
         res.status(404).json(err)
       });
-
-
     })
-
-    
 
 router.get("/:resumeId", passport.authenticate("jwt", {
       session: false
@@ -50,11 +41,6 @@ router.get("/:resumeId", passport.authenticate("jwt", {
       } 
     )
     .catch(res.status(400).json({message: "No matches found for that resume."}))
-
-    // if (resumeMatches.length){
-    //     res.status(404).json({noMatchesFound: "No matches found for that resume"})
-    // }
-    // then(resume => )
 })
  
 

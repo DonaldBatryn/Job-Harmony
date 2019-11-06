@@ -6,7 +6,7 @@ const Preference = require("../../models/Preference")
 
 
 
-router.get("/",
+router.get("/find",
     // so we have the id of the jobseeker that looking for onepages 
     passport.authenticate("jwt", {
         session: false

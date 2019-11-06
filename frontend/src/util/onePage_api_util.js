@@ -6,7 +6,7 @@ export const fetchAllOnePages = () => {
     return axios.get('/api/onePages/all')
 }
 export const fetchRelevantOnePages = () => {
-    return axios.get('/api/matchers/')
+    return axios.get('/api/matchers/find')
 }
 export const createOnePage = onePage => {
     return axios.post('/api/onePages/new', onePage)

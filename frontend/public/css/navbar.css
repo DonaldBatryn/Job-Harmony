@@ -14,13 +14,13 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: white;
+  background-color: transparent;
   position: fixed;
   top: 0;
   z-index: 2;
 }
 .session-btn {
-  background-color: white;
+  background-color: transparent;
   width: 100px;
   
   padding: 8.5px;
@@ -40,7 +40,7 @@
 
 .log-in-nav{
   font-size: 16px;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 .user-name-bar {
@@ -49,8 +49,8 @@
   align-items: center;
   height: 46px;
   width: 100px;
-  background-color: black;
-  color: white;
+  background: linear-gradient(262deg, #ff7854, #fd267d);
+  color: black;
   padding-left: 15px;
   border-radius: 3px;
   font-size: 14px;
@@ -121,7 +121,7 @@ i {
 }
 
 .logout-btn{
-  background-color: white;
+  background-color: transparent;
   width: 100%;
   margin: auto;
   font-size: 15px;
@@ -139,11 +139,12 @@ i {
   width: 100%;
   padding: 8.5px;
   font-size: 16px;
-  color: #f0e9e9;
+  color:black;
   font-weight: 400;
   border-radius: 3px;
   border: none;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .my-matches-btn, .username-btn{

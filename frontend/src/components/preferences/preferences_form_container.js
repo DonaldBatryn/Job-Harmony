@@ -19,7 +19,8 @@ const msp = state => {
             salaryRangeHigh: pref.salaryRangeHigh,
             salaryRangeLow: pref.salaryRangeLow,
             salaryRange: `${pref.salaryRangeLow}-${pref.salaryRangeHigh}`
-        }    
+        }
+        
     }else{
 
         preference = "no preference"

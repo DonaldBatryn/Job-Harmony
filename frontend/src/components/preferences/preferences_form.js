@@ -5,14 +5,34 @@ class PreferencesForm extends React.Component{
     constructor(props){
         super(props);
         this.renderErrors = this.renderErrors.bind(this)
-        this.state = this.props.preference;
+        console.log(this.props, "PROOOOOOPS");
+        if (this.props.preference === "no preference") {
+            this.state = {
+                "userId": this.props.user.id,
+                "jobField": "Select a field of work",
+                "proximity": "Select proximity",
+                "type": "Select employment type",
+                "salaryRange": "Select a salary range",
+                "salaryRangeHigh": "",
+                "salaryRangeLow": "",
+            }
+        } else {
+            this.state = this.props.preference;
+        }
+        console.log(this.state);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
     }
 
     update(field){
         return (e) => {
+            if(field === "salaryRange") {
+                let salaryRanges = e.target.value.split("-")
+                let lowRange = salaryRanges[0], highRange = salaryRanges[1]
+                this.setState({ "salaryRangeHigh": highRange, "salaryRangeLow": lowRange })
+            } 
             this.setState({[field]: e.target.value})
+            
         }
     }
 
@@ -27,9 +47,11 @@ class PreferencesForm extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         if (this.props.preference === "no preference"){
-            this.props.createPreference(this.state).then(
+            console.log("CREATE PREFERENCESSSSSS")
+            this.props.createPreference(this.state).then(this.props.fetchRelevantOnePages()).then(
                 this.props.history.push('home'))
         }else {
+            console.log("UPDATE PREFERENCESSSSSS")
             this.props.updatePreference(this.state).then(this.props.fetchRelevantOnePages()).then(
                 this.props.history.push('home')
             )}
@@ -46,9 +68,10 @@ class PreferencesForm extends React.Component{
         } 
 
     render(){
-        if (this.state.userId === undefined) {
-            this.state = this.props.preference
-        }
+        // if (this.state.userId === undefined) {
+        //     this.state = this.props.preference
+        // }
+        console.log(this.props, "props for pref form");
         return (
             <div className="preference-form-container">
                 <div className="prefs-header-box">
@@ -59,7 +82,7 @@ class PreferencesForm extends React.Component{
 
                     <label>Search for jobs in&nbsp;</label>
                     <select className="prefs-input" value={this.state.jobField} onChange={this.update('jobField')}>
-                        <option value = "" selected disabled hidden>Select a field of work</option>
+                        <option value="Select a field of work" disabled>Select a field of work</option>
                         <option value="Finance">Finance</option>
                         <option value="SoftwareEngineering">Software Engineering</option>
                         <option value="Healthcare">Healthcare</option>
@@ -72,7 +95,7 @@ class PreferencesForm extends React.Component{
 
                     <label>Proximity:&nbsp;all jobs&nbsp;</label>
                     <select className="prefs-input" value={this.state.proximity} onChange={this.update('proximity')}>
-                        <option value="" selected disabled hidden>Select proximity</option>
+                        <option value="Select proximity" disabled>Select proximity</option>
                         <option value="5">less than 5 miles</option>
                         <option value="10">between 5 and 10 miles</option>
                         <option value="25">between 10 and 25 miles</option>
@@ -82,7 +105,7 @@ class PreferencesForm extends React.Component{
 
                     <label>Type of employment:&nbsp;</label>
                     <select className="prefs-input" value={this.state.type} onChange={this.update('type')}>
-                        <option value="" selected disabled hidden>Select employment type</option>
+                        <option value="Select employment type" disabled>Select employment type</option>
                         <option value="Full-Time">Full-Time</option>
                         <option value="Part-Time">Part-Time</option>
                         {/* <option value="Remote">Remote</option> */}
@@ -90,7 +113,7 @@ class PreferencesForm extends React.Component{
 
                     <label>with a yearly salary&nbsp;</label>
                     <select className="prefs-input" value={this.state.salaryRange} onChange={this.update('salaryRange')}>
-                        <option value="" selected disabled hidden>Select a salary range</option>
+                        <option value="Select a salary range" disabled>Select a salary range</option>
                         <option value="40000-60000">between $40,000 to $60,000</option>
                         <option value="60000-80000">between $60,000 to $80,000</option>
                         <option value="80000-100000">between $80,000 to $100,000</option>

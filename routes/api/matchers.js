@@ -17,14 +17,14 @@ router.get("/find",
         const userId = req.user.id
         // const Id = req.params.aa
 
-        // console.log(userId)
+        console.log("userId", userId)
         // console.log(Id)
 
         Preference.find({userId}).then(preference => {
             
-            console.log("heyyyyyyyyyyyyyyy")
-            console.log(preference[0])
-            console.log("heyyyyyyyyyyyyyyy")
+            // console.log("heyyyyyyyyyyyyyyy")
+            // console.log(preference[0])
+            // console.log("heyyyyyyyyyyyyyyy")
             // console.log("sgrtfhgdrthges")
             OnePage.find({
                     // jobField: preference.jobField,

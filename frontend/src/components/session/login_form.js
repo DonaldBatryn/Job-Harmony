@@ -51,7 +51,7 @@ class LoginForm extends React.Component {
       password: "123456"
     };
     this.props.login(user)
-      .then(() => this.props.closeModal());;
+      .then(() => this.props.closeModal());
   }
 
   // Render the session errors if there are any

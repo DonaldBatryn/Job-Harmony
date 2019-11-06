@@ -22,7 +22,9 @@ router.get("/",
 
         Preference.find({userId}).then(preference => {
             
+            console.log("heyyyyyyyyyyyyyyy")
             console.log(preference[0])
+            console.log("heyyyyyyyyyyyyyyy")
             // console.log("sgrtfhgdrthges")
             OnePage.find({
                     // jobField: preference.jobField,
@@ -41,7 +43,7 @@ router.get("/",
                 
                 }).then(onePages => {
                     
-                console.log(onePages)
+                // console.log(onePages)
                     res.json(onePages)
                 }).catch(err => {
                     res.status(404).json(err)

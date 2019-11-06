@@ -14,14 +14,29 @@ const receivePreferenceErrors = errors => ({
 })
 
 
-export const createPreference = (preference) => dispatch => (
-    PreferenceAPIUtil.createPreference(preference)
-    .then(preference => dispatch(receivePreference(preference)))
-    .catch(err => dispatch(receivePreferenceErrors(err.response.data)))
-)
+export const createPreference = (preference) => dispatch => {
 
-export const updatePreference = (preference) => dispatch => (
-    PreferenceAPIUtil.updatePreference(preference)
-    .then(preference => dispatch(receivePreference(preference)))
-    .catch(err => dispatch(receivePreferenceErrors(err.response.data)))
-)
+    return (
+        PreferenceAPIUtil.createPreference(preference)
+        .then(preference => dispatch(receivePreference(preference)))
+        .catch(err => dispatch(receivePreferenceErrors(err.response.data)))
+    )
+}
+
+export const fetchPreference = (id) => dispatch => {
+
+    return (
+        PreferenceAPIUtil.fetchPreference(id)
+        .then(preference => dispatch(receivePreference(preference)))
+        .catch(err => dispatch(receivePreferenceErrors(err.response.data)))
+    )
+}
+
+export const updatePreference = (preference) => dispatch => {
+
+    return (
+        PreferenceAPIUtil.updatePreference(preference)
+        .then(preference => dispatch(receivePreference(preference)))
+        .catch(err => dispatch(receivePreferenceErrors(err.response.data)))
+    )
+}

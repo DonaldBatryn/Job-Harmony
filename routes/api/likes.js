@@ -62,11 +62,11 @@ router.get("/:OnepageId", (req, res) => {
         OnePage.findById(OnepageId)
             .select("resumes")
             .populate('resumes', "benefits startingPay")
-            console.log("take me out if the populate is working ok if it is not then replace the line above with the line below ")
+            // console.log("take me out if the populate is working ok if it is not then replace the line above with the line below ")
             // .populate('resumes', "igg benefits startingPay")
             .exec()
             .then((onepage) => {
-                console.log(onepage)
+                // console.log(onepage)
                 res.json(onepage)
             }).catch(err =>
                 res.status(404).json({

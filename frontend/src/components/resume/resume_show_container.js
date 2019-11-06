@@ -3,8 +3,6 @@ import { withRouter } from 'react-router';
 import ResumeShow from './resume_show'
 import { updateResume, fetchResume } from '../../actions/resume_actions'
 const msp = (state, ownProps) => {
-    // let resume = Object.values(state.entities.resumes)
-    //     .find(resume => resume.userId === ownProps.match.params.userId);
     let resume = state.entities.resumes[ownProps.match.params.resumeId]
     return ({
         currentUser: state.session.user,

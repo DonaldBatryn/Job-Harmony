@@ -1,12 +1,7 @@
-/* .onepage-show {
-  border: 1px solid black;
-}
- */
 
 .onepage-detail-container{
   width: 100%;
   height: 100%;
-  /* background-color: yellow; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -24,43 +19,43 @@
 }
 
 .op-detail-header{
-  width: 95%;
-  height: 40vh;
-  /* background-color: pink; */
+  width: 100%;
+  height: 150px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .op-detail-bottom-box{
+  padding-top: 20px;
   width: 95%;
-  height: 600px;
-  /* background-color: pink; */
+  height: 500px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  overflow: hidden;
+  overflow-y: scroll;
+  border-top: 5px solid lightgray;
 }
 
 .op-detail-left{
   width: 45%;
   height: 100%;
-  /* background-color: lightblue; */
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: left;
 }
 
 .op-detail-right{
   width: 45%;
   height: 100%;
-  /* background-color: lightblue; */
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: left;
 }
 
@@ -79,17 +74,103 @@
 }
 
 .op-header-text{
-  width: 45%;
-  height: 100%;
+  width: 500px;
+  height: 150px;
+  text-align: center;
 }
 
-/* .swipe-left {
-  right: -800px;
-  -webkit-animation: slide 1s;
-  animation: slide 1s;
-  animation-direction: alternate-reverse;
-  animation-delay: 0s;
-} */
+.salary-div{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid lightgray;
+}
+
+.salary-div h3{
+  margin-right: 40px;
+}
+
+.job-descrip-div{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0 20px 0;
+  border-bottom: 2px solid lightgray;
+}
+
+.job-descrip-div p{
+  margin-right: 57px;
+}
+
+.skills-req-div{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  
+}
+
+.skills-req-div h3{
+  margin: 20px 0 20px 0;
+  text-decoration: underline;
+}
+
+.skills-req-div ul{
+  list-style: square;
+}
+
+.position-div{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-bottom: 2px solid lightgray;
+}
+
+.position-div h3{
+  margin: 0 20px 0  0;
+}
+
+.remote-div{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-bottom: 2px solid lightgray;
+}
+
+.remote-div h3{
+  margin: 0 60px 0  0;
+}
+
+.benefits-div{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+.benefits-div h3{
+  text-decoration: underline;
+}
+
+.benefits-div p{
+  margin-top: 20px;
+}
+
+
+
 .swipe-left {
   position: relative;
   animation-name: not-interested;
@@ -183,7 +264,6 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  /* background-color: lightgreen; */
   height: 75%;
   width: 70%;
 }
@@ -193,7 +273,6 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  /* background-color: lightblue; */
   width: 99%;
   height: 99%;
 }
@@ -203,7 +282,6 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  /* background-color: lightblue; */
   width: 99%;
   height: 99%;
 }
@@ -213,7 +291,6 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  /* background-color: pink; */
   width: 35%;
   height: 90%;
 }
@@ -223,7 +300,6 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  /* background-color: pink; */
   width: 60%;
   height: 90%;
 }
@@ -233,7 +309,6 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  /* background-color: pink; */
 }
 
 .follow-up-button{
@@ -253,7 +328,6 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  /* background-color: pink; */
   width: 60%;
   height: 100%;
   overflow-y: scroll;
@@ -270,21 +344,16 @@
 .op-group-1{
   width: 95%;
   height: auto;
-  /* background-color: red; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 }
 
-.op-group-1 > h3{
-  /* margin-left: 100px; */
-}
 
 .op-group-2{
   width: 95%;
   height: auto;
-  /* background-color: red; */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -313,7 +382,6 @@
 .op-group-3{
   width: 95%;
   height: auto;
-  /* background-color: red; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -337,4 +405,39 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+}
+
+@media all and (max-width: 800px){
+  .op-detail-bottom-box{
+    height: auto;
+    min-height: 800px;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .op-header-text{
+    font-size: 10px;
+    height: 60px;
+  }
+
+  .banner{
+    min-width: 80px;
+  }
+
+  .op-detail-left{
+    margin-top: 5px;
+    width: 95%;
+    min-width: 400px;
+  }
+
+  .op-detail-right{
+    margin-top: 5px;
+    width: 95%;
+    min-width: 400px;
+  }
+
+  .skills-req-div{
+    height: 400px;
+    margin-bottom: 5px;
+  }
 }

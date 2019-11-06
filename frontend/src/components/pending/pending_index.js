@@ -3,13 +3,11 @@ import { withRouter } from 'react-router-dom';
 import PendingIndexItem from './pending_index_item';
 
 class PendingIndex extends React.Component{
-    // constructor(props){
-    //     super(props)
-    // }
+    
 
     render(){
-        let allLikes = this.props.likedOnePages.map(onePage => {
-            return <PendingIndexItem key={onePage._id} onePage={onePage} receiveNewMain={this.props.receiveNewMain} />
+        let allLikes = this.props.likedOnePages.map((onePage, i) => {
+            return <PendingIndexItem key={i} onePage={onePage} receiveNewMain={this.props.receiveNewMain} />
         })
         return (
             <div className="pending-index-container">

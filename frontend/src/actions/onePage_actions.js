@@ -13,10 +13,12 @@ const receiveOnePage = onePage => ({
     type: RECEIVE_ONEPAGE,
     onePage: onePage.data
 })
-const receiveAllOnePages = onePages => ({
-    type: RECEIVE_ALL_ONEPAGES,
-    onePages: onePages.data
-})
+const receiveAllOnePages = onePages => {
+    return ({
+        type: RECEIVE_ALL_ONEPAGES,
+        onePages: onePages.data
+    })
+}
 
 const receiveOnePageErrors = errors => ({
     type: RECEIVE_ONEPAGE_ERRORS,
@@ -52,8 +54,3 @@ export const updateOnePage = onePage => dispatch => {
         .catch(err => dispatch(receiveOnePageErrors(err.response.data)))
     )
 }
- 
-
-window.fetchOnePage = fetchOnePage;
-window.createOnePage = createOnePage;
-window.updateOnePage = updateOnePage;

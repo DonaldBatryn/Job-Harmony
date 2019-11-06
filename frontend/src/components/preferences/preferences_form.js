@@ -56,16 +56,22 @@ class PreferencesForm extends React.Component{
                 this.props.history.push('home')
             )}
     }
-    
-        renderErrors() {
-        return ( <ul> {Object.keys(this.props.errors).map((error, i) => {
-            return <li 
-                    key={`error-${i}`}> 
-                    {this.props.errors[error]} 
-                   </li>})} 
+    renderErrors() {
+        return <ul>Just empty error</ul>
+        return ( <ul> 
+                    {
+                        Object.keys(this.props.errors).map((error, i) => {
+                            return (
+                                <li 
+                                    key={`error-${i}`}> 
+                                    {this.props.errors[error]} 
+                                </li>
+                            )}
+                        )
+                    } 
                 </ul>
             );
-        } 
+    } 
 
     render(){
         // if (this.state.userId === undefined) {

@@ -4,16 +4,9 @@ const Preference = require("../../models/Preference")
 const User = require('../../models/User');
 const validatesPreferenceInput = require('../../validations/preference_input');
 const passport = require('passport');
-
-
-
 router.post('/new',
-    passport.authenticate('jwt', {
-        session: false
-    }), (req, res) => {
-
+    passport.authenticate('jwt', {session: false}), (req, res) => {
         User.findById(req.user.id).then(user => {
-            // console.log(user)
             if (user.preference.length > 0 ) {
                 console.log(user.preference);
                 Preference.findById(user.preference).then(preference => {
@@ -34,18 +27,6 @@ router.post('/new',
                     errors,
                     isValid
                 } = validatesPreferenceInput(req.body)
-
-        //         if (!isValid) {
-        // console.log("TESTING TESTING");
-        // console.log("TESTING TESTING");
-        // console.log("TESTING TESTING");
-        // let {
-        //     errors,
-        //     isValid
-        // } = validatesPreferenceInput(req.body)
-
-        //             return res.status(400).json(errors)
-        //         }
                 const userId = req.user.id;
                 const jobField = req.body.jobField;
                 const proximity = req.body.proximity;
@@ -53,8 +34,6 @@ router.post('/new',
                 const salaryRange = req.body.salaryRange.split("-")
                 const salaryRangeHigh = salaryRange[1];
                 const salaryRangeLow = salaryRange[0];
-                // Preference.findOne
-
                 const newPreference = new Preference({
                     userId,
                     jobField,
@@ -62,13 +41,10 @@ router.post('/new',
                     type,
                     salaryRangeHigh,
                     salaryRangeLow
-
                 });
                 newPreference.save().then(preference => {
-
                     User.findById(userId).then((user) => {
                         user.preference.push(preference)
-                        // console.log(user)
                         user.save()
                         res.json(user)
                     }).catch(err => {
@@ -77,16 +53,12 @@ router.post('/new',
                 }).catch(err => {
                     console.log(err)
                     res.status(404).json(err)
-
                 });
-        
             }
-        
         }).catch(err => {
     console.log(err)
     res.status(404).json(err)
-
-});
+    });
 })
 
 

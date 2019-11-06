@@ -14,7 +14,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background: linear-gradient(262deg, #ff7854, #fd267d)
+  background: linear-gradient(262deg, #ff7854, #fd267d);
   position: fixed;
   top: 0;
   z-index: 2;

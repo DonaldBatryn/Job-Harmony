@@ -8,7 +8,7 @@
 
 }
 .nav-bar-user {
-  border: 1px solid green;
+  border: 1px solid;
   height: 50px;
   width: 100%;
   display: flex;
@@ -83,6 +83,7 @@ i {
 .down {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
+  border-color: black;
 }
 .dropdown-items {
   position: absolute;

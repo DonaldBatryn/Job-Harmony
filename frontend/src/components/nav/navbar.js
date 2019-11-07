@@ -6,12 +6,28 @@ import logo from '../../images/jobHarmonyLogo.png'
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
+    this.container = React.createRef();
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
     this.state = { dropdown: 'dropdown-hidden' }
     this.toggleDropdown = this.toggleDropdown.bind(this);
     this.openModalFor = this.openModalFor.bind(this);
   }
+  componentDidMount() {
+    document.addEventListener("mousedown", this.handleClickOutside);
+  }
+  componentWillUnmount() {
+    document.removeEventListener("mousedown", this.handleClickOutside);
+  }
+
+  handleClickOutside = e => {
+    if (this.container.current && !this.container.current.contains(e.target)) {
+      this.setState({
+         dropdown: 'dropdown-hidden'
+      });
+    }
+  };
+
   toggleDropdown() {
     if (this.state.dropdown === 'dropdown-hidden') {
       this.setState({ dropdown: 'dropdown-visible' });
@@ -30,6 +46,7 @@ class NavBar extends React.Component {
     this.props.history.push("/")
     
   }
+
   // Selectively render links dependent on whether the user is logged in
   getLinks() {
     let createLink;
@@ -64,6 +81,7 @@ class NavBar extends React.Component {
             <i className="down"></i>
           </div>
           <ul id='dropdown' className={this.state.dropdown}>
+            <div className="container" ref={this.container}>
             <span onClick={this.toggleDropdown} className="dropdown-items">
               <li className="drop-list-item">
                 <button className="logout-btn"><Link to={'/home'}>Browse Jobs</Link></button></li>
@@ -76,6 +94,7 @@ class NavBar extends React.Component {
               <li className="drop-list-item">
                 <button className="logout-btn" onClick={this.logoutUser}>Logout</button></li>
             </span>
+            </div>
           </ul>
 
         </div>

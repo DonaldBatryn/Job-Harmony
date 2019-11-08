@@ -16,24 +16,12 @@ class LoginForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
-  // Once the user has been authenticated, redirect to the Tweets page
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.currentUser === true) {
-  //     this.props.history.push('/tweets');
-  //   }
-
-  //   // Set or clear errors
-  //   this.setState({ errors: nextProps.errors })
-  // }
-
-  // Handle field updates (called in the render method)
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
   }
 
-  // Handle form submission
   handleSubmit(e) {
     e.preventDefault();
 
@@ -45,7 +33,7 @@ class LoginForm extends React.Component {
       .then(() => this.props.closeModal());
   }
   handleDemo(e) {
-    // e.preventDefault();
+
     let user = {
       email: "demo@demo.demo",
       password: "123456"
@@ -54,7 +42,7 @@ class LoginForm extends React.Component {
       .then(() => this.props.closeModal());;
   }
 
-  // Render the session errors if there are any
+
   renderErrors() {
     return (
       <ul>
@@ -85,7 +73,7 @@ class LoginForm extends React.Component {
             />
             <br />
             <input type="submit" value="Submit" />
-            <button id="demo" className="session-button" onClick={() => this.handleDemo()}>Demo User</button>
+            <button id="demo"  onClick={() => this.handleDemo()}>Log In as a Guest</button>
             {this.renderErrors()}
           </div>
         </form>

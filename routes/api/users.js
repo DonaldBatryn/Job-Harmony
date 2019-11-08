@@ -25,6 +25,8 @@ router.post("/login", (req, res) => {
   })  
     .populate('preference')
     .populate('resume')
+    // made the header too large
+    // .populate('pendingOnePages')
     .exec()
     .then(user => {
       if (!user) {
@@ -36,8 +38,7 @@ router.post("/login", (req, res) => {
         .then(isMatch => {
           if (isMatch) {
             let preference;
-            console.log(user.preference)
-            if (!user.preference) {
+            if (user.preference[0]._id === undefined) {
               preference = "no"
             }else{
               preference = user.preference[0]
@@ -50,13 +51,14 @@ router.post("/login", (req, res) => {
               fName: user.fName,
               lName: user.lName,
               resume: user.resume,
-              preference
+              preference,
+              pendingOnePages: user.pendingOnePages
 
             };
-            // console.log(user.resume)
             jwt.sign(payload, keys.secretOrKey, {
               expiresIn: 3600
             }, (err, token) => {
+              // console.log(payload)
               res.json({
                 success: true,
                 token: "Bearer " + token

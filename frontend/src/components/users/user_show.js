@@ -23,26 +23,27 @@ class UserShow extends React.Component{
         } else {
             resumeLink = <Link className="user-show-resume-link" to={`/resumes/${resume._id}`}>Your Resume</Link>
         }
+        debugger
         let allLikes = this.props.likes.map(onePage => {
-         
-            let randomNum = (onePage[0].jobTitle.length % 3) + 1;
+            debugger
+            let randomNum = (onePage.jobTitle.length % 3) + 1;
             return (
-                <li key={onePage[0]._id} className="user-show-li">
-                    <div className={`icon ${onePage[0].jobField}-${randomNum}`}/>
-                    <h4>{onePage[0].jobTitle}</h4>
-                    <button className="user-show-li-btn" onClick={() => this.handleView(onePage[0]._id)}>View Job</button>
+                <li key={onePage._id} className="user-show-li">
+                    <div className={`icon ${onePage.jobField}-${randomNum}`}/>
+                    <h4>{onePage.jobTitle}</h4>
+                    <button className="user-show-li-btn" onClick={() => this.handleView(onePage._id)}>View Job</button>
                 </li>
             )
         })
 
         let randomMatches = this.props.likes.map((onePage, i) => {
-            let randomNum = (onePage[0].jobTitle.length % 3) + 1;
+            let randomNum = (onePage.jobTitle.length % 3) + 1;
             if ((i % 2 === 0) && (i !== 0)){
                 return (
-                    <li key={onePage[0]._id} className="user-show-li">
-                        <div className={`icon ${onePage[0].jobField}-${randomNum}`} />
-                        <h4>{onePage[0].jobTitle}</h4>
-                        <button className="user-show-li-btn" onClick={() => this.handleView(onePage[0]._id)}>View Match</button>
+                    <li key={onePage._id} className="user-show-li">
+                        <div className={`icon ${onePage.jobField}-${randomNum}`} />
+                        <h4>{onePage.jobTitle}</h4>
+                        <button className="user-show-li-btn" onClick={() => this.handleView(onePage._id)}>View Match</button>
                     </li>
                 )
             } else {

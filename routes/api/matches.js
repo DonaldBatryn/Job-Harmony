@@ -21,16 +21,11 @@ router.post("/:resumeId" ,passport.authenticate("jwt", {session: false}), (req, 
             // };
             res.json({
                 success: true,
-                // payload
-        })
+            })
       }).catch(err => {
         res.status(404).json(err)
       });
-
-
     })
-
-    
 
 router.get("/:resumeId", passport.authenticate("jwt", {
       session: false
@@ -46,11 +41,6 @@ router.get("/:resumeId", passport.authenticate("jwt", {
       } 
     )
     .catch(res.status(400).json({message: "No matches found for that resume."}))
-
-    // if (resumeMatches.length){
-    //     res.status(404).json({noMatchesFound: "No matches found for that resume"})
-    // }
-    // then(resume => )
 })
  
 

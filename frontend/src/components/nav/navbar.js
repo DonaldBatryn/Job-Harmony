@@ -68,47 +68,54 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div className="nav-bar-user">
-          <Link className="nav-image" to="/home"><img className="nav-image" src={logo} alt=""/></Link>
-          <Link to={`/users/${this.props.user.id}/profile`}>
-            <button className="session-btn my-profile-btn">My Profile</button>
-          </Link>
-          <Link to="/matches">
-            <button className="session-btn my-matches-btn">My Matches</button>
-          </Link>
-          <div className="user-name-bar" 
-            onClick={this.toggleDropdown}>
-            <span className="username-btn">{this.props.user.fName}</span>
-            <i className="down"></i>
+          <div className="navbar-left">
+            <Link className="nav-image" to="/home"><img className="nav-image" src={logo} alt=""/></Link>
           </div>
-          <ul id='dropdown' className={this.state.dropdown}>
-            <div className="container" ref={this.container}>
-            <span onClick={this.toggleDropdown} className="dropdown-items">
-              <li className="drop-list-item">
-                <button className="logout-btn"><Link to={'/home'}>Browse Jobs</Link></button></li>
-              <li className="drop-list-item">
-                <button className="logout-btn"><Link to={`/users/${this.props.user.id}/profile`}>Profile</Link></button></li>
-              <li className="drop-list-item">
-                <button className="logout-btn"><Link to={'/preferences'}>Preferences</Link></button></li>
-              <li className="drop-list-item">
-                <button className="logout-btn">{createLink}</button></li>
-              <li className="drop-list-item">
-                <button className="logout-btn" onClick={this.logoutUser}>Logout</button></li>
-            </span>
+          <div className="navbar-right">
+            <Link to={`/users/${this.props.user.id}/profile`}>
+              <button className="session-btn my-profile-btn">My Profile</button>
+            </Link>
+            <Link to="/matches">
+              <button className="session-btn my-matches-btn">My Matches</button>
+            </Link>
+            <div className="user-name-bar" 
+              onClick={this.toggleDropdown}>
+              <span className="username-btn">{this.props.user.fName}</span>
+              <i className="down"></i>
             </div>
-          </ul>
-
+            <ul id='dropdown' className={this.state.dropdown}>
+              <div className="container" ref={this.container}>
+              <span onClick={this.toggleDropdown} className="dropdown-items">
+                <li className="drop-list-item">
+                  <button className="logout-btn"><Link to={'/home'}>Browse Jobs</Link></button></li>
+                <li className="drop-list-item">
+                  <button className="logout-btn"><Link to={`/users/${this.props.user.id}/profile`}>Profile</Link></button></li>
+                <li className="drop-list-item">
+                  <button className="logout-btn"><Link to={'/preferences'}>Preferences</Link></button></li>
+                <li className="drop-list-item">
+                  <button className="logout-btn">{createLink}</button></li>
+                <li className="drop-list-item">
+                  <button className="logout-btn" onClick={this.logoutUser}>Logout</button></li>
+              </span>
+              </div>
+            </ul>
+          </div>
         </div>
       );
     } else {
       return (
         <div className="nav-bar-user">
-          <Link className="nav-image" to="/home"><img className="nav-image" src={logo} alt=""/></Link>
-          <button className="session-btn" onClick={this.openModalFor('signup')}>
-            <Link className="my-profile-btn" to={'/signup'}>Signup</Link>
-          </button>
-          <button className="session-btn log-in-nav" onClick={this.openModalFor('login')}>
-            Login
-          </button>
+          <div className="navbar-left">
+            <Link className="nav-image" to="/home"><img className="nav-image" src={logo} alt=""/></Link>
+          </div>
+          <div className="navbar-right">
+            <button className="session-btn" onClick={this.openModalFor('signup')}>
+              <Link className="my-profile-btn" to={'/signup'}>Signup</Link>
+            </button>
+            <button className="session-btn log-in-nav" onClick={this.openModalFor('login')}>
+              Login
+            </button>
+          </div>
         </div>
       );
     }

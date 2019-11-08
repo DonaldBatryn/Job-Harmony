@@ -5,7 +5,6 @@ export const fetchLike = onePageId => {
 }
 
 export const createLike = like => {
-  debugger
   return axios.post(`/api/likes/${like.OnepageId}`)
 }
 

@@ -4,19 +4,18 @@ import { fetchAllOnePages } from '../../actions/onePage_actions';
 import UserShow from './user_show'
 
 const msp = state => {
+    debugger
     let resume;
     if (state.session.resume){
         resume = state.session.resume
     } else {
         resume = null
     }
-    let onePagesArray = Array.from(Object.values(state.entities.onePages))
+    let likesArray = Array.from(Object.values(state.entities.likes))
     return {
         user: state.session.user,
         resume: resume,
-        likes: Object.keys(state.entities.likes).map(onePageId => {
-            return onePagesArray.filter(onepage => onepage._id === onePageId)
-        })
+        likes: likesArray
     }
 }
 

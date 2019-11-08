@@ -22,7 +22,6 @@ class BrowseWindow extends React.Component{
         // this.props.fetchAllOnePages()
         this.props.fetchRelevantOnePages().then(one => {
             this.props.fetchLikes()
-            debugger
         })
     }
 

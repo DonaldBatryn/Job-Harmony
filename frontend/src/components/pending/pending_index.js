@@ -6,9 +6,7 @@ class PendingIndex extends React.Component{
     
 
     render(){
-        debugger
         let allLikes = this.props.likedOnePages.map((onePage, i) => {
-            debugger
             return <PendingIndexItem key={i} onePage={onePage} receiveNewMain={this.props.receiveNewMain} />
         })
         return (

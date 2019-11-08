@@ -6,7 +6,6 @@ import PreferencesForm from './preferences_form';
 
 const msp = state => {
     let preference;
-    debugger
     if (state.session.user.preference !== "no"){
     // if (state.entities.preferences) {
         let pref = state.entities.preferences;

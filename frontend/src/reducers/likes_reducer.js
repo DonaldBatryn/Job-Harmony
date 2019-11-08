@@ -7,7 +7,6 @@ export default function (state = {}, action) {
     case RECEIVE_ALL_LIKES:
       return action.likes;
     case RECEIVE_LIKE:
-      debugger
       return Object.assign({}, state, { [action.like.onePageId]: action.like.onePage });
     case RECEIVE_USER_LOGOUT:
       return {};

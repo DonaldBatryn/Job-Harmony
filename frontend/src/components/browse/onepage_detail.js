@@ -2,16 +2,6 @@ import React from 'react';
 
 
 const OnePageDetail = ({ onePage}) => {
-  debugger
-  debugger
-  debugger
-  debugger
-  debugger
-  debugger
-  debugger
-  debugger
-  debugger
-  debugger
   let jobTitle = onePage.jobTitle;
   let jobField = onePage.jobField;
   let jobSkills = onePage.jobSkills.split(",");

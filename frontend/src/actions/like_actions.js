@@ -6,7 +6,6 @@ export const RECEIVE_LIKE = 'RECEIVE_LIKE';
 
 
 const receiveAllLikes = likes => {
-    debugger
     return ({
         type: RECEIVE_ALL_LIKES,
         likes: likes.data

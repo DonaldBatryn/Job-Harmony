@@ -15,20 +15,15 @@ class PendingIndexItem extends React.Component{
     }
 
     handleClick() {
-      debugger
-      debugger
-      debugger
       this.props.receiveNewMain(this.props.onePage)
     }
 
     handleView(){
-      debugger
       let onePage = this.props;
       return this.props.onePage._id
     }
 
     getRandomIcon(){
-      debugger
         let randomNum = (this.props.onePage.jobTitle.length % 3) + 1;
         let jobField = this.props.onePage.jobField;
         let iconClassName = jobField + "-" + randomNum;
@@ -36,7 +31,6 @@ class PendingIndexItem extends React.Component{
     }
 
     render(){
-      debugger
         let { onePage } = this.props;
         return (
             <div className="pending-index-item" onClick={(e) => this.handleClick()}>

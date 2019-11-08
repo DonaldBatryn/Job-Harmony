@@ -17,7 +17,6 @@ class PreferencesForm extends React.Component{
     }
 
     componentDidMount(){
-        debugger
         if (this.state.has !== "no") {
             this.props.fetchPreference(this.props.user.id)
         }

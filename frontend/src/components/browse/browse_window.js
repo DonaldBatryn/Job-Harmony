@@ -20,7 +20,9 @@ class BrowseWindow extends React.Component{
       }    
     componentDidMount(){
         // this.props.fetchAllOnePages()
-        this.props.fetchRelevantOnePages()
+        this.props.fetchRelevantOnePages().then(one => {
+            this.props.fetchLikes()
+        })
     }
 
     handleNext(){

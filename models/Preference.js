@@ -24,6 +24,9 @@ const PreferenceSchema = new Schema({
     salaryRangeLow: {
         type: Number,
         required: true
+    },
+    remote: {
+        type: Boolean
     }
 });
 

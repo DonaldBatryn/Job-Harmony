@@ -29,6 +29,9 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
+  pendingOnePages: {
+    type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'onePages'}]
+  },
   resume: [{ type: mongoose.Schema.Types.ObjectId, ref: 'resumes'}],
   preference: [{ type: mongoose.Schema.Types.ObjectId, ref: 'preferences'}]
   

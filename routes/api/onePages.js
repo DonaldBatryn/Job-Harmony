@@ -58,7 +58,6 @@ router.patch('/:id/edit',
 
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    // console.log(req.params.id)
     OnePage.findById(req.params.id)
       .then(onePage => {
         const { errors, isValid } = validatesOnePageInput(req.body);

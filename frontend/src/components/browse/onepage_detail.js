@@ -2,7 +2,6 @@ import React from 'react';
 
 
 const OnePageDetail = ({ onePage}) => {
-
   let jobTitle = onePage.jobTitle;
   let jobField = onePage.jobField;
   let jobSkills = onePage.jobSkills.split(",");
@@ -12,7 +11,7 @@ const OnePageDetail = ({ onePage}) => {
   let catchPhrase = onePage.catchPhrase;
   let randomNum = (jobTitle.length % 3) + 1;
   let remoteValue;
-  if (onePage.remote === "true"){
+  if (onePage.remote === true){
     remoteValue = "Yes"
   } else {
     remoteValue = "No"

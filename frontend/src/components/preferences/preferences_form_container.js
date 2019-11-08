@@ -6,22 +6,34 @@ import PreferencesForm from './preferences_form';
 
 const msp = state => {
     let preference;
-    // if (state.session.user.preference !== "no"){
-    if (state.entities.preferences) {
+    if (state.session.user.preference !== "no"){
+    // if (state.entities.preferences) {
         let pref = state.entities.preferences;
         preference = {
             id: pref._id,
+            remote: pref.remote,
             userId: pref.userId,
             jobField: pref.jobField,
             proximity: pref.proximity,
             type: pref.type,
             salaryRangeHigh: pref.salaryRangeHigh,
             salaryRangeLow: pref.salaryRangeLow,
-            salaryRange: `${pref.salaryRangeLow}-${pref.salaryRangeHigh}`
+            salaryRange: `${pref.salaryRangeLow}-${pref.salaryRangeHigh}`,
+            has: "yes"
         }
-        
     }else{
-        preference = "no preference"
+        preference = {
+            id: "",
+            userId: state.session.user.id,
+            jobField: "",
+            proximity: "",
+            type: "",
+            salaryRangeHigh: "",
+            salaryRangeLow: "",
+            salaryRange: "",
+            remote: true,
+            has: "no"
+        }
     }
     let errors;
     if (state.errors.session) {

@@ -15,10 +15,14 @@ class PendingIndexItem extends React.Component{
     }
 
     handleClick() {
+      debugger
+      debugger
+      debugger
       this.props.receiveNewMain(this.props.onePage)
     }
 
     handleView(){
+      debugger
       let onePage = this.props;
       return this.props.onePage._id
     }
@@ -32,6 +36,7 @@ class PendingIndexItem extends React.Component{
     }
 
     render(){
+      debugger
         let { onePage } = this.props;
         return (
             <div className="pending-index-item" onClick={(e) => this.handleClick()}>

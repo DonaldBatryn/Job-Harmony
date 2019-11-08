@@ -4,10 +4,17 @@ export const RECEIVE_ONEPAGE = 'RECEIVE_ONEPAGE';
 export const RECEIVE_ALL_ONEPAGES = 'RECEIVE_ALL_ONEPAGES';
 export const RECEIVE_ONEPAGE_ERRORS = 'RECEIVE_ONEPAGE_ERRORS';
 
-export const receiveNewMain = onePage => ({
-  type: RECEIVE_NEW_MAIN,
-  onePage: onePage
-})
+export const receiveNewMain = onePage => {
+    
+    debugger
+    debugger
+
+
+    return ({
+        type: RECEIVE_NEW_MAIN,
+        onePage: onePage
+    })
+}
 
 const receiveOnePage = onePage => ({
     type: RECEIVE_ONEPAGE,

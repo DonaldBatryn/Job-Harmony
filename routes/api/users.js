@@ -25,7 +25,8 @@ router.post("/login", (req, res) => {
   })  
     .populate('preference')
     .populate('resume')
-    .populate('pendingOnePages')
+    // made the header too large
+    // .populate('pendingOnePages')
     .exec()
     .then(user => {
       if (!user) {
@@ -57,6 +58,7 @@ router.post("/login", (req, res) => {
             jwt.sign(payload, keys.secretOrKey, {
               expiresIn: 3600
             }, (err, token) => {
+              // console.log(payload)
               res.json({
                 success: true,
                 token: "Bearer " + token

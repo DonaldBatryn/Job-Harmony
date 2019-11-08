@@ -52,8 +52,10 @@ router.get("/:OnepageId", (req, res) => {
    // id of the one page that is being used to send back an array of  
    // job seeker
    const OnepageId = req.params.OnepageId
-
+    console.log(OnepageId)
+    console.log(111111111111111111111111)
         OnePage.findById(OnepageId)
+
             .select("resumes")
             .populate('resumes', "benefits startingPay")
             .exec()
@@ -65,6 +67,27 @@ router.get("/:OnepageId", (req, res) => {
                 })
             );
 });
+
+
+router.patch("/all",
+    passport.authenticate("jwt", {
+        session: false
+    }), (req, res) => {
+        // id of the one page that is being used to send back an array of  
+        // job seeker
+
+        User.findById(req.user.id)
+            .populate('pendingOnePages')
+            .exec()
+            .then((user) => {
+                console.log(user.pendingOnePages)
+                res.json(user.pendingOnePages)
+            }).catch(err =>
+                res.status(404).json({
+                    nopendingOnePagesFound: "No pendingOnePages found from that User"
+                })
+            );
+    });
 
 module.exports = router;
 

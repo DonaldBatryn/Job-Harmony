@@ -54,6 +54,7 @@ export const signup = user => dispatch => {
 // Upon login, set the session token and dispatch the current user. Dispatch errors on failure.
 export const login = user => dispatch => (
   APIUtil.login(user).then(res => {
+    debugger
     const { token } = res.data;
     localStorage.setItem('jwtToken', token);
     APIUtil.setAuthToken(token);

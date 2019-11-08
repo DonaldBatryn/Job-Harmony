@@ -5,7 +5,7 @@ import {
     // fetchAllOnePages,
     fetchRelevantOnePages
 } from '../../actions/onePage_actions'
-import { createLike } from '../../actions/like_actions'
+import { createLike,fetchLikes } from '../../actions/like_actions'
 
 
 const msp = state => ({
@@ -20,7 +20,8 @@ const mdp = dispatch => {
     return {
         // fetchAllOnePages: () => dispatch(fetchAllOnePages()),
         fetchRelevantOnePages: () => dispatch(fetchRelevantOnePages()),
-        createLike: like => dispatch(createLike(like))
+        createLike: like => dispatch(createLike(like)),
+        fetchLikes: () => dispatch(fetchLikes())
     }
 }
 

@@ -8,25 +8,25 @@
 
 }
 .nav-bar-user {
-  border: 1px solid green;
+  border: 1px solid;
   height: 50px;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: black;
+  background: linear-gradient(262deg, #ff7854, #fd267d);
   position: fixed;
   top: 0;
   z-index: 2;
 }
 .session-btn {
-  background-color: black;
+  background-color: transparent;
   width: 100px;
   
   padding: 8.5px;
   font-size: 12px;
-  color: #f0e9e9;
-  font-weight: 400;
+  color: black;
+  font-weight: 750;
   border-radius: 3px;
   border: none;
   cursor: pointer;
@@ -40,7 +40,7 @@
 
 .log-in-nav{
   font-size: 16px;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 .user-name-bar {
@@ -49,12 +49,11 @@
   align-items: center;
   height: 46px;
   width: 100px;
-  background-color: black;
-  color: white;
+  color: black;
   padding-left: 15px;
   border-radius: 3px;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 750;
   -webkit-transition-property: background;
   -webkit-transition-duration: 0.3s;
   -webkit-transition-timing-function: ease-in-out;
@@ -84,6 +83,7 @@ i {
 .down {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
+  border-color: black;
 }
 .dropdown-items {
   position: absolute;
@@ -121,7 +121,7 @@ i {
 }
 
 .logout-btn{
-  background-color: white;
+  background-color: transparent;
   width: 100%;
   margin: auto;
   font-size: 15px;
@@ -139,11 +139,12 @@ i {
   width: 100%;
   padding: 8.5px;
   font-size: 16px;
-  color: #f0e9e9;
-  font-weight: 400;
+  color:black;
+  font-weight: 750;
   border-radius: 3px;
   border: none;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .my-matches-btn, .username-btn{

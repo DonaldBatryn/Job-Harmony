@@ -305,7 +305,7 @@ router.post('/newDemoUser', (req, res) => {
     const demoUser = {
         'email': `demo@demo.demo`,
         'password': '123456',
-        'fName': 'guest',
+        'fName': 'Guest',
         'lName': 'demo',
         'zipCode': 61920,
         'role': 'Job-Seeker'
